@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "eyebrow": "Wildcore Retreats · Sierra Calderona, Spanje",
+    "title": "Trailrunnen, natuur en ontspanning<br>in het hart van de Sierra Calderona.",
+    "lead": "Een kleinschalig weekend voor sportieve mensen die meer willen beleven en minder willen presteren.",
+    "cta1": "Ontdek het weekend",
+    "cta2": "Boek jouw plek",
+    "trust": [
+      { "strong": "3 dagen", "text": "in de bergen" },
+      { "strong": "Kleine groep", "text": ", veel aandacht" },
+      { "strong": "Alle niveaus", "text": "welkom" },
+      { "strong": "Villa + zwembad", "text": ", vlucht v.a. Valencia" }
+    ]
+  },
+  "intro": {
+    "eyebrow": "Waarom Wildcore",
+    "title": "Dit weekend draait niet om presteren.<br>Het draait om beleven.",
+    "paragraphs": [
+      "Trailrunnen gaat voor ons niet over snelheid of competitie. Het gaat over buiten zijn, bewegen in de natuur en merken wat er gebeurt zodra je even afstand neemt van de drukte van alledag.",
+      "In de Sierra Calderona lopen we op gevoel. Geen strak schema, geen focus op tijden of prestaties. We stoppen waar het mooi is, kijken uit over de vallei, maken een foto, of staan gewoon even stil in de natuur. Wandelen mag altijd, overal.",
+      "Dit weekend is er voor iedereen met een redelijke basisconditie en een gezonde dosis nieuwsgierigheid — of je nu al jaren loopt of nog nooit een trail hebt gezet."
+    ],
+    "statement": "“Niet presteren. Beleven.”"
+  },
+  "features": [
+    { "title": "Voor beginners én doorzetters", "text": "Speciaal ontwikkeld voor beginnende trailrunners en sportieve wandelaars die de natuur willen ontdekken. Iedereen loopt op zijn eigen niveau — er is altijd ruimte om te wandelen waar nodig." },
+    { "title": "Een villa met zwembad &amp; panorama", "text": "Je woont niet in een hotel, maar in een sfeervolle villa midden in het groen — met zwembad, ruim terras en uitzicht over de bergen. De perfecte plek om na een dag op de trails helemaal tot rust te komen." },
+    { "title": "Dennenbossen &amp; glooiende bergpaden", "text": "We lopen door indrukwekkende landschappen: geurende dennenbossen, glooiende bergpaden en verrassende paadjes die je nooit alleen zou vinden. Elke route heeft zijn eigen sfeer en tempo." },
+    { "title": "Uitzichten die je niet snel vergeet", "text": "Het hoogtepunt: jouw eerste zelfverzekerde trailrun door de Spaanse natuur. Met uitzichtpunten over ravijnen, valleien en rotsformaties die je bijblijven, lang nadat je weer thuis bent." },
+    { "title": "Sport, rust &amp; gezelligheid", "text": "Een perfecte combinatie van sportieve uitdaging, ontspanning en verbinding. Na de runs: goed eten, goede gesprekken, en tijd om elkaar écht te leren kennen — in een bewust kleine groep." }
+  ],
+  "gallery": {
+    "eyebrow": "In beeld",
+    "title": "De sfeer van het weekend",
+    "text": "Bergpaden, kloven, rustpunten en een villa om op adem te komen — een impressie van waar je terechtkomt."
+  },
+  "program": {
+    "eyebrow": "Weekend indeling",
+    "title": "Drie dagen, drie routes",
+    "text": "Elke dag heeft zijn eigen karakter — van een zachte start tot het hoogtepunt van het weekend en een rustig herstelloopje om van na te genieten.",
+    "days": [
+      { "label": "Vrijdag", "name": "Casinos Sunset Loop", "stat1": "8 km", "stat2": "±180 hm", "text": "Een zachte start. We verkennen de paden rond Casinos terwijl de zon ondergaat over de vallei — perfect om te wennen aan het terrein en elkaar te leren kennen." },
+      { "label": "Zaterdag", "name": "Serra Calderona Grand Loop", "stat1": "20–23 km", "stat2": "±850 hm", "text": "Het hart van het weekend: een langere tocht door indrukwekkende landschappen en langs uitzichtpunten die je niet snel vergeet. Wandelen mag altijd." },
+      { "label": "Zondag", "name": "Rebalsadors Recovery Loop", "stat1": "13–15 km", "stat2": "±500 hm", "text": "Een rustiger vervolg langs kloven en watervallen, met alle tijd om na te genieten voordat je huiswaarts keert." }
+    ],
+    "stats": { "kmLabel": "Totale afstand", "hmLabel": "Hoogtemeters", "daysLabel": "Dagen bergen", "levels": "Alle", "levelsLabel": "Niveaus welkom" }
+  },
+  "villa": {
+    "eyebrow": "Jouw thuisbasis",
+    "title": "Villa El Pinar, bij Casinos",
+    "paragraphs": [
+      "Tijdens dit weekend verblijf je niet in een hotel, maar in een sfeervolle, vrijstaande villa die voelt als een thuis weg van huis — in de rustige urbanisatie El Pinar, vlakbij het authentieke dorp Casinos.",
+      "De villa ligt midden in het groen met uitzicht over de bergen van de Sierra Calderona. Na een dag op de trails ontspan je aan het zwembad, op het terras of in de tuin. Binnen draait alles om een warme, huiselijke sfeer: koffie in de ochtend, verhalen na de trailrun, en gezonde, voedzame maaltijden zonder haast."
+    ],
+    "amenities": [
+      "Zwembad &amp; zonneterras",
+      "Panoramisch bergzicht",
+      "Gezamenlijke leefruimte",
+      "Grote tuin om tot rust te komen",
+      "Ontbijt, lunch &amp; diner inbegrepen",
+      "Ruimte voor iedereen, geen haast"
+    ]
+  },
+  "host": {
+    "eyebrow": "Over je gastheer",
+    "title": "Maurizio Salazar",
+    "paragraphs": [
+      "Ik woon een groot deel van het jaar aan de voet van de Sierra Calderona. Van beroep ben ik sport- en shiatsutherapeut, en al mijn hele leven gefascineerd door beweging, gezondheid en de kracht van de natuur.",
+      "Door mijn werk zie ik dagelijks hoe belangrijk het is om even uit de dagelijkse routine te stappen en tijd te maken voor jezelf. De natuur is voor mij altijd een plek geweest om op te laden — die rust en vrijheid deel ik graag met anderen.",
+      "Daarom organiseer ik kleinschalige trailrunweekenden. Geen prestatiegerichte sportreis, maar een toegankelijke ervaring waarin beweging, natuur, ontspanning en verbinding centraal staan. Ik neem je graag mee de bergen in."
+    ],
+    "sign": "— Maurizio"
+  },
+  "pricing": {
+    "eyebrow": "Prijzen",
+    "title": "Kies jouw weekend",
+    "text": "Beide opties zijn volledig verzorgd — van luchthavenvervoer tot begeleiding tijdens elke run.",
+    "cards": [
+      {
+        "tag": "",
+        "title": "Weekend",
+        "dates": "Vrijdag t/m zondag",
+        "price": "€495",
+        "unit": "p.p.",
+        "items": ["Verblijf in Villa El Pinar", "Ontbijt, lunch &amp; 2 gezamenlijke diners", "Luchthavenvervoer v.a. Valencia Airport", "Trailtransfers", "Begeleiding tijdens alle runs"],
+        "cta": "Vraag jouw plek aan"
+      },
+      {
+        "tag": "Extra dag rust",
+        "title": "Lang weekend",
+        "dates": "Donderdag t/m zondag",
+        "price": "€645",
+        "unit": "p.p.",
+        "items": ["Verblijf in Villa El Pinar", "Ontbijt, lunch &amp; 3 gezamenlijke diners", "Luchthavenvervoer v.a. Valencia Airport", "Trailtransfers", "Begeleiding tijdens alle runs"],
+        "cta": "Vraag jouw plek aan"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Boek jouw plek",
+    "title": "Klaar om de bergen in te gaan?",
+    "text": "Stuur een bericht en we nemen snel contact met je op — of neem rechtstreeks contact op via onderstaande gegevens.",
+    "email": "info@wildcoreretreats.com",
+    "location": "Villa El Pinar, Casinos — Sierra Calderona, Spanje",
+    "reachability": "Luchthavenvervoer inbegrepen v.a. Valencia Airport"
+  }
+}

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildcore CMS — Beheer</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f8f2e6; --cream-deep:#eadec8; --green-deep:#3f4a34; --green-mid:#5c6b48;
+    --sage:#a79b6e; --terracotta:#bd5f31; --terracotta-dark:#a14f26; --ink:#2b2a22; --white:#fff;
+    --shadow:0 20px 50px -20px rgba(43,42,34,0.35);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Work Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.5;}
+  h1,h2,h3{font-family:'Fraunces',serif;color:var(--green-deep);margin:0 0 0.3em;}
+  a{color:var(--terracotta-dark);}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* LOGIN SCREEN */
+  #loginScreen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+  .login-card{background:var(--white);border-radius:20px;box-shadow:var(--shadow);padding:44px 40px;max-width:380px;width:100%;text-align:center;}
+  .login-card img{height:52px;width:52px;border-radius:50%;margin-bottom:14px;}
+  .login-card p.sub{color:#6c6852;font-size:0.92rem;margin-bottom:1.6em;}
+  .field{text-align:left;margin-bottom:16px;}
+  .field label{display:block;font-size:0.82rem;font-weight:600;color:var(--green-deep);margin-bottom:6px;}
+  .field input, .field textarea{
+    width:100%;padding:12px 14px;border:1.5px solid #e3d9c4;border-radius:10px;
+    font-family:'Work Sans',sans-serif;font-size:0.95rem;background:#fbf7ef;
+  }
+  .field textarea{resize:vertical;min-height:70px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:13px 28px;border-radius:100px;font-weight:600;font-size:0.95rem;
+    border:none;cursor:pointer;transition:all .2s ease;font-family:'Work Sans',sans-serif;
+  }
+  .btn-primary{background:var(--terracotta);color:var(--white);width:100%;}
+  .btn-primary:hover{background:var(--terracotta-dark);}
+  .btn-primary:disabled{background:#c9c0a8;cursor:not-allowed;}
+  .btn-ghost{background:transparent;color:var(--green-deep);border:1.5px solid var(--green-deep);}
+  .btn-ghost:hover{background:var(--green-deep);color:var(--white);}
+  .msg{font-size:0.86rem;margin-top:14px;border-radius:10px;padding:10px 14px;}
+  .msg.error{background:#fbe4d9;color:#8a3418;}
+  .msg.success{background:#e3ecda;color:var(--green-deep);}
+  .msg.info{background:#eee6d4;color:#6c6852;}
+  .hidden{display:none !important;}
+
+  /* EDITOR SHELL */
+  #editorScreen header{
+    position:sticky;top:0;z-index:20;background:rgba(248,242,230,0.96);backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(63,74,52,0.12);padding:16px 0;
+  }
+  #editorScreen header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .brand-row{display:flex;align-items:center;gap:10px;}
+  .brand-row img{height:36px;width:36px;border-radius:50%;}
+  .brand-row span{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;}
+  .header-actions{display:flex;align-items:center;gap:12px;}
+
+  .tabs{display:flex;gap:8px;margin:28px 0 8px;flex-wrap:wrap;}
+  .tab-btn{
+    background:var(--cream-deep);border:1px solid rgba(63,74,52,0.15);border-radius:100px;
+    padding:9px 20px;font-size:0.88rem;font-weight:600;color:var(--green-deep);cursor:pointer;
+  }
+  .tab-btn.active{background:var(--green-deep);color:var(--white);}
+
+  .lang-panel{display:none;}
+  .lang-panel.active{display:block;}
+
+  .section-card{background:var(--white);border-radius:18px;box-shadow:0 8px 26px -16px rgba(43,42,34,0.3);padding:28px 30px;margin-bottom:22px;}
+  .section-card h2{font-size:1.25rem;margin-bottom:0.9em;padding-bottom:0.5em;border-bottom:1px solid #eee2cd;}
+  .section-card h3{font-size:1rem;color:var(--terracotta-dark);margin:1.2em 0 0.6em;}
+  .item-box{background:#faf6ec;border:1px solid #eee2cd;border-radius:12px;padding:16px 18px;margin-bottom:14px;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:640px){.grid-2{grid-template-columns:1fr;}}
+
+  .note{font-size:0.85rem;color:#8a8266;background:var(--cream-deep);border-radius:10px;padding:10px 14px;margin-bottom:22px;}
+
+  /* IMAGES */
+  .img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;}
+  .img-item{background:var(--white);border-radius:14px;box-shadow:0 8px 24px -16px rgba(43,42,34,0.3);overflow:hidden;}
+  .img-item img{width:100%;height:130px;object-fit:cover;display:block;background:#e7ddc7;}
+  .img-item .meta{padding:10px 12px;}
+  .img-item .meta code{font-size:0.72rem;color:#8a8266;word-break:break-all;}
+  .img-item input[type=file]{width:100%;font-size:0.72rem;margin-top:8px;}
+  .img-item.changed{outline:2px solid var(--terracotta);}
+
+  .publish-bar{
+    position:sticky;bottom:0;background:rgba(248,242,230,0.97);backdrop-filter:blur(8px);
+    border-top:1px solid rgba(63,74,52,0.15);padding:16px 0;margin-top:10px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:20;
+  }
+  .publish-bar .msg{margin:0;flex:1;min-width:220px;}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginScreen">
+  <div class="login-card">
+    <img src="../images/logo.png" alt="Wildcore Retreats">
+    <h1>Wildcore CMS</h1>
+    <p class="sub">Log in om teksten en foto's van de website te wijzigen.</p>
+    <form id="loginForm">
+      <div class="field">
+        <label for="username">Gebruikersnaam</label>
+        <input type="text" id="username" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="password">Wachtwoord</label>
+        <input type="password" id="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary" id="loginBtn">Inloggen</button>
+    </form>
+    <div id="loginMsg"></div>
+  </div>
+</div>
+
+<!-- EDITOR -->
+<div id="editorScreen" class="hidden">
+  <header>
+    <div class="wrap">
+      <div class="brand-row">
+        <img src="../images/logo.png" alt="Wildcore Retreats">
+        <span>Wildcore CMS</span>
+      </div>
+      <div class="header-actions">
+        <a href="../index.html" target="_blank" class="btn btn-ghost" style="padding:9px 18px;font-size:0.85rem;">Bekijk site ↗</a>
+        <button class="btn btn-ghost" id="logoutBtn" style="padding:9px 18px;font-size:0.85rem;">Uitloggen</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="note">Let op: de juridische algemene voorwaarden, de FAQ-tekst, menu-items en de kilometers/hoogtemeters-cijfers zijn met opzet niet aan te passen via dit systeem. Wil je die wijzigen, neem dan contact op met je ontwikkelaar.</div>
+
+    <div class="tabs" id="langTabs">
+      <button class="tab-btn active" data-lang="nl">🇳🇱 Nederlands</button>
+      <button class="tab-btn" data-lang="en">🇬🇧 English</button>
+      <button class="tab-btn" data-lang="es">🇪🇸 Español</button>
+    </div>
+
+    <div id="formHost"></div>
+
+    <h2 style="margin-top:36px;">Foto's</h2>
+    <p class="note">Upload een nieuwe foto om een bestaande te vervangen. De naam en plek van de foto op de website blijven hetzelfde — je vervangt alleen de inhoud.</p>
+    <div class="img-grid" id="imageGrid"></div>
+  </div>
+
+  <div class="publish-bar">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;width:100%;">
+      <div id="publishMsg" class="msg info" style="flex:1;min-width:220px;">Wijzigingen worden pas live zodra je op "Publiceren" klikt.</div>
+      <button class="btn btn-primary" id="publishBtn" style="width:auto;">Publiceren</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ======================================================================
+  // CONFIG — vul hier de URL van je Cloudflare Worker in zodra die live is.
+  // Zie de losse instructies ("CMS-instructies-voor-Kain.md") voor de stappen.
+  // ======================================================================
+  const WORKER_URL = "https://REPLACE-WITH-YOUR-WORKER-URL.workers.dev";
+
+  const LANGS = ['nl', 'en', 'es'];
+  const IMAGE_FILES = [
+    "trail-runner-forest.jpg","trail-descent-autumn.jpg","host-portrait.jpg","ruins-viewpoint.jpg",
+    "villa-exterior.jpg","river-canyon.jpg","pool-sunset.jpg","valley-view.jpg",
+    "canyon-cliffs.jpg","waterfall-steps.jpg","villa-flowers.jpg","mountain-steps-trail.jpg","logo.png"
+  ];
+
+  const SECTION_TITLES = {
+    hero:"Hero (bovenaan de pagina)", intro:"Waarom Wildcore", features:"5 kenmerken",
+    gallery:"Galerij — introtekst", program:"Programma", villa:"Villa", host:"Gastheer",
+    pricing:"Prijzen", contact:"Contact"
+  };
+  const LABELS = {
+    features:"Kenmerk",
+    eyebrow:"Eyebrow (klein label)", title:"Titel", lead:"Ondertitel", cta1:"Knop 1",
+    cta2:"Knop 2", trust:"Vertrouwens-items", strong:"Vet gedeelte", text:"Tekst",
+    paragraphs:"Paragraaf", statement:"Uitgelichte quote", days:"Dag", label:"Dag-label",
+    name:"Routenaam", stat1:"Statistiek 1", stat2:"Statistiek 2", stats:"Statistiek-labels",
+    kmLabel:"Label: totale afstand", hmLabel:"Label: hoogtemeters", daysLabel:"Label: dagen",
+    levels:"Niveaus-waarde", levelsLabel:"Label: niveaus", amenities:"Voorziening",
+    sign:"Ondertekening", cards:"Prijskaart", tag:"Badge-tekst", dates:"Data", price:"Prijs",
+    unit:"Eenheid", items:"Inbegrepen-item", cta:"Knoptekst", email:"E-mailadres",
+    location:"Locatie", reachability:"Bereikbaarheid"
+  };
+  const MULTILINE = new Set(['title','lead','text','paragraphs','statement']);
+
+  function labelFor(key){ return LABELS[key] || (key.charAt(0).toUpperCase() + key.slice(1)); }
+
+  let contentData = {};   // { nl: {...}, en: {...}, es: {...} }
+  let sessionToken = sessionStorage.getItem('wildcore_cms_token') || null;
+  let changedImages = {}; // { 'images/foo.jpg': dataURL }
+
+  // ---------- Recursive form builder ----------
+  function buildNode(value, path, keyName, depth, indexSuffix){
+    if (typeof value === 'string') {
+      const id = 'f_' + path.replace(/[^a-zA-Z0-9]/g, '_');
+      const tag = MULTILINE.has(keyName) || value.length > 60 ? 'textarea' : 'input';
+      const rows = tag === 'textarea' ? ' rows="3"' : '';
+      const inputEl = tag === 'textarea'
+        ? `<textarea id="${id}" data-path="${path}"${rows}>${escapeHtml(value)}</textarea>`
+        : `<input type="text" id="${id}" data-path="${path}" value="${escapeAttr(value)}">`;
+      const displayLabel = labelFor(keyName) + (indexSuffix ? ' ' + indexSuffix : '');
+      return `<div class="field"><label for="${id}">${displayLabel}</label>${inputEl}</div>`;
+    }
+    if (Array.isArray(value)) {
+      let html = '';
+      value.forEach((item, i) => {
+        if (typeof item === 'object' && item !== null) {
+          html += `<div class="item-box"><h3>${labelFor(keyName)} ${i + 1}</h3><div class="grid-2">`;
+          Object.keys(item).forEach(k => {
+            html += buildNode(item[k], path + '.' + i + '.' + k, k, depth + 1);
+          });
+          html += `</div></div>`;
+        } else {
+          html += buildNode(item, path + '.' + i, keyName, depth + 1, i + 1);
+        }
+      });
+      return html;
+    }
+    if (typeof value === 'object' && value !== null) {
+      let html = depth > 0 ? `<h3>${labelFor(keyName)}</h3><div class="grid-2">` : '';
+      Object.keys(value).forEach(k => {
+        html += buildNode(value[k], path + '.' + k, k, depth + 1);
+      });
+      html += depth > 0 ? `</div>` : '';
+      return html;
+    }
+    return '';
+  }
+
+  function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function escapeAttr(s){ return escapeHtml(s).replace(/"/g,'&quot;'); }
+
+  function renderLangForm(lang, data){
+    let html = '';
+    Object.keys(data).forEach(section => {
+      html += `<div class="section-card"><h2>${SECTION_TITLES[section] || labelFor(section)}</h2>`;
+      html += buildNode(data[section], section, section, 0);
+      html += `</div>`;
+    });
+    return html;
+  }
+
+  function renderAllForms(){
+    const host = document.getElementById('formHost');
+    host.innerHTML = '';
+    LANGS.forEach(lang => {
+      const panel = document.createElement('div');
+      panel.className = 'lang-panel' + (lang === 'nl' ? ' active' : '');
+      panel.id = 'panel_' + lang;
+      panel.innerHTML = renderLangForm(lang, contentData[lang]);
+      host.appendChild(panel);
+    });
+  }
+
+  function collectLangData(lang){
+    const data = JSON.parse(JSON.stringify(contentData[lang]));
+    document.querySelectorAll('#panel_' + lang + ' [data-path]').forEach(el => {
+      const parts = el.getAttribute('data-path').split('.');
+      let ref = data;
+      for (let i = 0; i < parts.length - 1; i++) {
+        ref = ref[parts[i]];
+      }
+      ref[parts[parts.length - 1]] = el.value;
+    });
+    return data;
+  }
+
+  // ---------- Tabs ----------
+  document.getElementById('langTabs').addEventListener('click', (e) => {
+    const btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const lang = btn.getAttribute('data-lang');
+    document.querySelectorAll('.lang-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel_' + lang).classList.add('active');
+  });
+
+  // ---------- Images ----------
+  function renderImageGrid(){
+    const grid = document.getElementById('imageGrid');
+    grid.innerHTML = '';
+    IMAGE_FILES.forEach(file => {
+      const path = 'images/' + file;
+      const item = document.createElement('div');
+      item.className = 'img-item';
+      item.id = 'img_' + file.replace(/[^a-zA-Z0-9]/g, '_');
+      item.innerHTML = `
+        <img src="../${path}" alt="${file}">
+        <div class="meta">
+          <code>${file}</code>
+          <input type="file" accept="image/*" data-image-path="${path}">
+        </div>`;
+      grid.appendChild(item);
+    });
+  }
+
+  document.getElementById('imageGrid').addEventListener('change', (e) => {
+    const input = e.target.closest('input[type=file]');
+    if (!input || !input.files[0]) return;
+    const path = input.getAttribute('data-image-path');
+    const file = input.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      changedImages[path] = reader.result; // data:image/...;base64,....
+      const item = input.closest('.img-item');
+      item.classList.add('changed');
+      item.querySelector('img').src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // ---------- Login ----------
+  document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = document.getElementById('loginMsg');
+    const btn = document.getElementById('loginBtn');
+    if (WORKER_URL.includes('REPLACE-WITH-YOUR-WORKER-URL')) {
+      msg.innerHTML = '<div class="msg error">De CMS-backend is nog niet gekoppeld. Vraag je ontwikkelaar om de Cloudflare Worker te deployen en de WORKER_URL in te vullen.</div>';
+      return;
+    }
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value;
+    btn.disabled = true; btn.textContent = 'Bezig met inloggen...';
+    try {
+      const res = await fetch(WORKER_URL + '/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+      const data = await res.json();
+      if (!res.ok || !data.token) {
+        msg.innerHTML = '<div class="msg error">' + (data.error || 'Onjuiste inloggegevens.') + '</div>';
+        btn.disabled = false; btn.textContent = 'Inloggen';
+        return;
+      }
+      sessionToken = data.token;
+      sessionStorage.setItem('wildcore_cms_token', sessionToken);
+      await enterEditor();
+    } catch (err) {
+      msg.innerHTML = '<div class="msg error">Kon geen verbinding maken met de CMS-backend. Probeer het later opnieuw.</div>';
+      btn.disabled = false; btn.textContent = 'Inloggen';
+    }
+  });
+
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    sessionStorage.removeItem('wildcore_cms_token');
+    sessionToken = null;
+    document.getElementById('editorScreen').classList.add('hidden');
+    document.getElementById('loginScreen').classList.remove('hidden');
+  });
+
+  async function enterEditor(){
+    document.getElementById('loginScreen').classList.add('hidden');
+    document.getElementById('editorScreen').classList.remove('hidden');
+    const [nl, en, es] = await Promise.all([
+      fetch('../content-nl.json?v=' + Date.now()).then(r => r.json()),
+      fetch('../content-en.json?v=' + Date.now()).then(r => r.json()),
+      fetch('../content-es.json?v=' + Date.now()).then(r => r.json())
+    ]);
+    contentData = { nl, en, es };
+    renderAllForms();
+    renderImageGrid();
+  }
+
+  // ---------- Publish ----------
+  document.getElementById('publishBtn').addEventListener('click', async () => {
+    const msg = document.getElementById('publishMsg');
+    const btn = document.getElementById('publishBtn');
+    if (WORKER_URL.includes('REPLACE-WITH-YOUR-WORKER-URL')) {
+      msg.className = 'msg error';
+      msg.textContent = 'De CMS-backend is nog niet gekoppeld.';
+      return;
+    }
+    btn.disabled = true; btn.textContent = 'Bezig met publiceren...';
+    msg.className = 'msg info';
+    msg.textContent = 'Wijzigingen worden gepubliceerd...';
+
+    const content = {
+      nl: collectLangData('nl'),
+      en: collectLangData('en'),
+      es: collectLangData('es')
+    };
+    const images = Object.keys(changedImages).map(path => ({ path, dataUrl: changedImages[path] }));
+
+    try {
+      const res = await fetch(WORKER_URL + '/publish', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: sessionToken, content, images })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        msg.className = 'msg error';
+        msg.textContent = data.error || 'Publiceren is mislukt.';
+        btn.disabled = false; btn.textContent = 'Publiceren';
+        return;
+      }
+      msg.className = 'msg success';
+      msg.textContent = 'Gepubliceerd! De website wordt bijgewerkt — dit kan tot ongeveer een minuut duren.';
+      changedImages = {};
+      document.querySelectorAll('.img-item.changed').forEach(el => el.classList.remove('changed'));
+      contentData = content;
+    } catch (err) {
+      msg.className = 'msg error';
+      msg.textContent = 'Kon geen verbinding maken met de CMS-backend.';
+    }
+    btn.disabled = false; btn.textContent = 'Publiceren';
+  });
+
+  // ---------- Init ----------
+  if (sessionToken) {
+    enterEditor();
+  }
+</script>
+</body>
+</html>

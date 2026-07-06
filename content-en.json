@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "eyebrow": "Wildcore Retreats · Sierra Calderona, Spain",
+    "title": "Trail running, nature and relaxation<br>in the heart of the Sierra Calderona.",
+    "lead": "A small-scale weekend for active people who want to experience more and perform less.",
+    "cta1": "Discover the weekend",
+    "cta2": "Book your spot",
+    "trust": [
+      { "strong": "3 days", "text": "in the mountains" },
+      { "strong": "Small group", "text": ", lots of attention" },
+      { "strong": "All levels", "text": "welcome" },
+      { "strong": "Villa + pool", "text": ", transfer from Valencia" }
+    ]
+  },
+  "intro": {
+    "eyebrow": "Why Wildcore",
+    "title": "This weekend isn't about performing.<br>It's about experiencing.",
+    "paragraphs": [
+      "For us, trail running isn't about speed or competition. It's about being outdoors, moving in nature, and noticing what happens once you step away from the rush of everyday life.",
+      "In the Sierra Calderona we run by feel. No strict schedule, no focus on times or performance. We stop where it's beautiful, look out over the valley, take a photo, or simply stand still in nature for a moment. Walking is always allowed, anywhere.",
+      "This weekend is for anyone with a reasonable base fitness and a healthy dose of curiosity — whether you've been running for years or have never set foot on a trail."
+    ],
+    "statement": "“Not performing. Experiencing.”"
+  },
+  "features": [
+    { "title": "For beginners and go-getters alike", "text": "Specially designed for beginner trail runners and active hikers who want to discover nature. Everyone moves at their own level — there's always room to walk when needed." },
+    { "title": "A villa with pool &amp; panorama", "text": "You don't stay in a hotel, but in an atmospheric villa surrounded by greenery — with a pool, spacious terrace and mountain views. The perfect place to fully unwind after a day on the trails." },
+    { "title": "Pine forests &amp; rolling mountain trails", "text": "We run through breathtaking landscapes: fragrant pine forests, rolling mountain trails and surprising little paths you'd never find on your own. Every route has its own atmosphere and pace." },
+    { "title": "Views you won't forget any time soon", "text": "The highlight: your first confident trail run through the Spanish landscape. With viewpoints over ravines, valleys and rock formations that stay with you long after you're back home." },
+    { "title": "Sport, rest &amp; good company", "text": "A perfect combination of physical challenge, relaxation and connection. After the runs: good food, good conversation, and time to really get to know each other — in a deliberately small group." }
+  ],
+  "gallery": {
+    "eyebrow": "Gallery",
+    "title": "The feel of the weekend",
+    "text": "Mountain trails, canyons, quiet resting spots and a villa to catch your breath — a glimpse of where you'll end up."
+  },
+  "program": {
+    "eyebrow": "Weekend schedule",
+    "title": "Three days, three routes",
+    "text": "Each day has its own character — from a gentle start to the highlight of the weekend and a relaxed recovery loop to enjoy the afterglow.",
+    "days": [
+      { "label": "Friday", "name": "Casinos Sunset Loop", "stat1": "8 km", "stat2": "±180 m", "text": "A gentle start. We explore the trails around Casinos as the sun sets over the valley — perfect for getting used to the terrain and getting to know each other." },
+      { "label": "Saturday", "name": "Serra Calderona Grand Loop", "stat1": "20–23 km", "stat2": "±850 m", "text": "The heart of the weekend: a longer route through breathtaking landscapes and past viewpoints you won't soon forget. Walking is always allowed." },
+      { "label": "Sunday", "name": "Rebalsadors Recovery Loop", "stat1": "13–15 km", "stat2": "±500 m", "text": "A calmer finish along ravines and waterfalls, with plenty of time to soak it all in before heading home." }
+    ],
+    "stats": { "kmLabel": "Total distance", "hmLabel": "Elevation gain", "daysLabel": "Days in the mountains", "levels": "All", "levelsLabel": "Levels welcome" }
+  },
+  "villa": {
+    "eyebrow": "Your home base",
+    "title": "Villa El Pinar, near Casinos",
+    "paragraphs": [
+      "During this weekend you won't stay in a hotel, but in an atmospheric, detached villa that feels like a home away from home — in the quiet urbanisation of El Pinar, right next to the authentic village of Casinos.",
+      "The villa sits amid greenery with views over the mountains of the Sierra Calderona. After a day on the trails you unwind by the pool, on the terrace or in the garden. Inside, it's all about a warm, homely atmosphere: coffee in the morning, stories after the trail run, and healthy, wholesome meals without any rush."
+    ],
+    "amenities": [
+      "Pool &amp; sun terrace",
+      "Panoramic mountain views",
+      "Shared living space",
+      "Large garden to unwind in",
+      "Breakfast, lunch &amp; dinner included",
+      "Room for everyone, no rush"
+    ]
+  },
+  "host": {
+    "eyebrow": "About your host",
+    "title": "Maurizio Salazar",
+    "paragraphs": [
+      "I live at the foot of the Sierra Calderona for much of the year. By profession I'm a sports and shiatsu therapist, and I've been fascinated by movement, health and the power of nature my entire life.",
+      "Through my work I see every day how important it is to step out of your daily routine and make time for yourself. Nature has always been a place for me to recharge — and that sense of rest and freedom is what I love sharing with others.",
+      "That's why I organise small-scale trail running weekends. Not a performance-driven sports trip, but an accessible experience where movement, nature, relaxation and connection take centre stage. I'd love to take you into the mountains."
+    ],
+    "sign": "— Maurizio"
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "Choose your weekend",
+    "text": "Both options are fully organised — from airport transfers to guidance on every run.",
+    "cards": [
+      {
+        "tag": "",
+        "title": "Weekend",
+        "dates": "Friday to Sunday",
+        "price": "€495",
+        "unit": "pp",
+        "items": ["Stay at Villa El Pinar", "Breakfast, lunch &amp; 2 shared dinners", "Airport transfer from Valencia Airport", "Trail transfers", "Guidance on every run"],
+        "cta": "Request your spot"
+      },
+      {
+        "tag": "Extra day to unwind",
+        "title": "Long weekend",
+        "dates": "Thursday to Sunday",
+        "price": "€645",
+        "unit": "pp",
+        "items": ["Stay at Villa El Pinar", "Breakfast, lunch &amp; 3 shared dinners", "Airport transfer from Valencia Airport", "Trail transfers", "Guidance on every run"],
+        "cta": "Request your spot"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Book your spot",
+    "title": "Ready to head into the mountains?",
+    "text": "Send a message and we'll get back to you quickly — or contact us directly using the details below.",
+    "email": "info@wildcoreretreats.com",
+    "location": "Villa El Pinar, Casinos — Sierra Calderona, Spain",
+    "reachability": "Airport transfer included from Valencia Airport"
+  }
+}

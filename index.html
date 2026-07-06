@@ -359,17 +359,22 @@
 
   /* GALLERY / SFEERBEELDEN */
   .gallery-head{text-align:center;max-width:700px;margin:0 auto 50px;}
-  .gallery-grid{
-    columns:4 220px;column-gap:16px;
+  .slideshow{
+    position:relative;max-width:900px;margin:0 auto;border-radius:24px;overflow:hidden;
+    box-shadow:var(--shadow);aspect-ratio:16/9;background:#1c2016;
   }
-  .gallery-item{
-    break-inside:avoid;margin-bottom:16px;border-radius:14px;overflow:hidden;
-    box-shadow:var(--shadow);position:relative;
+  .slideshow .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;}
+  .slideshow .slide.active{opacity:1;z-index:1;}
+  .slideshow .slide img{width:100%;height:100%;object-fit:cover;}
+  .slideshow-dots{
+    position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+    display:flex;gap:8px;z-index:2;
   }
-  .gallery-item img{width:100%;display:block;transition:transform .6s ease;}
-  .gallery-item:hover img{transform:scale(1.06);}
-  .gallery-item.tall img{aspect-ratio:3/4;object-fit:cover;}
-  .gallery-item.wide img{aspect-ratio:4/3;object-fit:cover;}
+  .slideshow-dots button{
+    width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.55);
+    border:none;cursor:pointer;padding:0;transition:all .3s ease;
+  }
+  .slideshow-dots button.active{background:#fff;width:24px;border-radius:5px;}
 
   /* Reveal helpers (initial state set by GSAP; CSS fallback if JS disabled) */
   .gsap-ready .reveal, .gsap-ready .reveal-left, .gsap-ready .reveal-right, .gsap-ready .reveal-scale{visibility:visible;}
@@ -387,7 +392,7 @@
     .villa-gallery img{height:200px;}
     .pad{padding:70px 0;}
     .intro{padding:80px 0 60px;}
-    .gallery-grid{columns:2 160px;}
+    .slideshow{aspect-ratio:4/3;border-radius:18px;}
     .nav-inner{padding:8px 8px 8px 16px;}
     .lang-switch > button{padding:7px 10px;font-size:0.78rem;}
     .brand span{display:none;}
@@ -449,18 +454,18 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <span class="eyebrow">Wildcore Retreats · Sierra Calderona, Spanje</span>
-      <h1>Trailrunnen, natuur en ontspanning<br>in het hart van de Sierra Calderona.</h1>
-      <p class="lead">Een kleinschalig weekend voor sportieve mensen die meer willen beleven en minder willen presteren.</p>
+      <span class="eyebrow" data-key="hero.eyebrow">Wildcore Retreats · Sierra Calderona, Spanje</span>
+      <h1 data-key="hero.title">Trailrunnen, natuur en ontspanning<br>in het hart van de Sierra Calderona.</h1>
+      <p class="lead" data-key="hero.lead">Een kleinschalig weekend voor sportieve mensen die meer willen beleven en minder willen presteren.</p>
       <div class="hero-ctas">
-        <a href="#ervaring" class="btn btn-outline">Ontdek het weekend</a>
-        <a href="#contact" class="btn btn-primary">Boek jouw plek</a>
+        <a href="#ervaring" class="btn btn-outline" data-key="hero.cta1">Ontdek het weekend</a>
+        <a href="#contact" class="btn btn-primary" data-key="hero.cta2">Boek jouw plek</a>
       </div>
       <div class="hero-trust">
-        <div><strong>3 dagen</strong> in de bergen</div>
-        <div><strong>Kleine groep</strong>, veel aandacht</div>
-        <div><strong>Alle niveaus</strong> welkom</div>
-        <div><strong>Villa + zwembad</strong>, vlucht v.a. Valencia</div>
+        <div><strong data-key="hero.trust.0.strong">3 dagen</strong> <span data-key="hero.trust.0.text">in de bergen</span></div>
+        <div><strong data-key="hero.trust.1.strong">Kleine groep</strong><span data-key="hero.trust.1.text">, veel aandacht</span></div>
+        <div><strong data-key="hero.trust.2.strong">Alle niveaus</strong> <span data-key="hero.trust.2.text">welkom</span></div>
+        <div><strong data-key="hero.trust.3.strong">Villa + zwembad</strong><span data-key="hero.trust.3.text">, vlucht v.a. Valencia</span></div>
       </div>
     </div>
     <div class="scroll-cue">Scroll ↓</div>
@@ -469,12 +474,12 @@
   <!-- INTRO / PHILOSOPHY -->
   <section class="intro" id="ervaring">
     <div class="container reveal">
-      <span class="eyebrow">Waarom Wildcore</span>
-      <h2>Dit weekend draait niet om presteren.<br>Het draait om beleven.</h2>
-      <p>Trailrunnen gaat voor ons niet over snelheid of competitie. Het gaat over buiten zijn, bewegen in de natuur en merken wat er gebeurt zodra je even afstand neemt van de drukte van alledag.</p>
-      <p>In de Sierra Calderona lopen we op gevoel. Geen strak schema, geen focus op tijden of prestaties. We stoppen waar het mooi is, kijken uit over de vallei, maken een foto, of staan gewoon even stil in de natuur. Wandelen mag altijd, overal.</p>
-      <p>Dit weekend is er voor iedereen met een redelijke basisconditie en een gezonde dosis nieuwsgierigheid — of je nu al jaren loopt of nog nooit een trail hebt gezet.</p>
-      <p class="statement">"Niet presteren. Beleven."</p>
+      <span class="eyebrow" data-key="intro.eyebrow">Waarom Wildcore</span>
+      <h2 data-key="intro.title">Dit weekend draait niet om presteren.<br>Het draait om beleven.</h2>
+      <p data-key="intro.paragraphs.0">Trailrunnen gaat voor ons niet over snelheid of competitie. Het gaat over buiten zijn, bewegen in de natuur en merken wat er gebeurt zodra je even afstand neemt van de drukte van alledag.</p>
+      <p data-key="intro.paragraphs.1">In de Sierra Calderona lopen we op gevoel. Geen strak schema, geen focus op tijden of prestaties. We stoppen waar het mooi is, kijken uit over de vallei, maken een foto, of staan gewoon even stil in de natuur. Wandelen mag altijd, overal.</p>
+      <p data-key="intro.paragraphs.2">Dit weekend is er voor iedereen met een redelijke basisconditie en een gezonde dosis nieuwsgierigheid — of je nu al jaren loopt of nog nooit een trail hebt gezet.</p>
+      <p class="statement" data-key="intro.statement">"Niet presteren. Beleven."</p>
     </div>
   </section>
 
@@ -485,8 +490,8 @@
       <div class="feature-row reveal-row">
         <div class="feature-text reveal-left">
           <span class="feature-num">01</span>
-          <h3>Voor beginners én doorzetters</h3>
-          <p>Speciaal ontwikkeld voor beginnende trailrunners en sportieve wandelaars die de natuur willen ontdekken. Iedereen loopt op zijn eigen niveau — er is altijd ruimte om te wandelen waar nodig.</p>
+          <h3 data-key="features.0.title">Voor beginners én doorzetters</h3>
+          <p data-key="features.0.text">Speciaal ontwikkeld voor beginnende trailrunners en sportieve wandelaars die de natuur willen ontdekken. Iedereen loopt op zijn eigen niveau — er is altijd ruimte om te wandelen waar nodig.</p>
         </div>
         <div class="feature-img reveal-right"><img src="images/mountain-steps-trail.jpg" alt="Bergpad met houten trappen in de Sierra Calderona"></div>
       </div>
@@ -494,8 +499,8 @@
       <div class="feature-row reverse reveal-row">
         <div class="feature-text reveal-right">
           <span class="feature-num">02</span>
-          <h3>Een villa met zwembad &amp; panorama</h3>
-          <p>Je woont niet in een hotel, maar in een sfeervolle villa midden in het groen — met zwembad, ruim terras en uitzicht over de bergen. De perfecte plek om na een dag op de trails helemaal tot rust te komen.</p>
+          <h3 data-key="features.1.title">Een villa met zwembad &amp; panorama</h3>
+          <p data-key="features.1.text">Je woont niet in een hotel, maar in een sfeervolle villa midden in het groen — met zwembad, ruim terras en uitzicht over de bergen. De perfecte plek om na een dag op de trails helemaal tot rust te komen.</p>
         </div>
         <div class="feature-img reveal-left"><img src="images/pool-sunset.jpg" alt="Zwembad bij zonsondergang in Villa El Pinar"></div>
       </div>
@@ -503,8 +508,8 @@
       <div class="feature-row reveal-row">
         <div class="feature-text reveal-left">
           <span class="feature-num">03</span>
-          <h3>Dennenbossen &amp; glooiende bergpaden</h3>
-          <p>We lopen door indrukwekkende landschappen: geurende dennenbossen, glooiende bergpaden en verrassende paadjes die je nooit alleen zou vinden. Elke route heeft zijn eigen sfeer en tempo.</p>
+          <h3 data-key="features.2.title">Dennenbossen &amp; glooiende bergpaden</h3>
+          <p data-key="features.2.text">We lopen door indrukwekkende landschappen: geurende dennenbossen, glooiende bergpaden en verrassende paadjes die je nooit alleen zou vinden. Elke route heeft zijn eigen sfeer en tempo.</p>
         </div>
         <div class="feature-img reveal-right"><img src="images/trail-descent-autumn.jpg" alt="Trailrunner op een bergpad met vergezicht"></div>
       </div>
@@ -512,8 +517,8 @@
       <div class="feature-row reverse reveal-row">
         <div class="feature-text reveal-right">
           <span class="feature-num">04</span>
-          <h3>Uitzichten die je niet snel vergeet</h3>
-          <p>Het hoogtepunt: jouw eerste zelfverzekerde trailrun door de Spaanse natuur. Met uitzichtpunten over ravijnen, valleien en rotsformaties die je bijblijven, lang nadat je weer thuis bent.</p>
+          <h3 data-key="features.3.title">Uitzichten die je niet snel vergeet</h3>
+          <p data-key="features.3.text">Het hoogtepunt: jouw eerste zelfverzekerde trailrun door de Spaanse natuur. Met uitzichtpunten over ravijnen, valleien en rotsformaties die je bijblijven, lang nadat je weer thuis bent.</p>
         </div>
         <div class="feature-img reveal-left"><img src="images/canyon-cliffs.jpg" alt="Uitzicht over kloof in de Sierra Calderona"></div>
       </div>
@@ -521,8 +526,8 @@
       <div class="feature-row reveal-row">
         <div class="feature-text reveal-left">
           <span class="feature-num">05</span>
-          <h3>Sport, rust &amp; gezelligheid</h3>
-          <p>Een perfecte combinatie van sportieve uitdaging, ontspanning en verbinding. Na de runs: goed eten, goede gesprekken, en tijd om elkaar écht te leren kennen — in een bewust kleine groep.</p>
+          <h3 data-key="features.4.title">Sport, rust &amp; gezelligheid</h3>
+          <p data-key="features.4.text">Een perfecte combinatie van sportieve uitdaging, ontspanning en verbinding. Na de runs: goed eten, goede gesprekken, en tijd om elkaar écht te leren kennen — in een bewust kleine groep.</p>
         </div>
         <div class="feature-img reveal-right"><img src="images/valley-view.jpg" alt="Uitzicht over de vallei bij Casinos"></div>
       </div>
@@ -534,23 +539,24 @@
   <section class="pad alt-bg" id="sfeerbeelden">
     <div class="container">
       <div class="gallery-head section-head">
-        <span class="eyebrow">In beeld</span>
-        <h2>De sfeer van het weekend</h2>
-        <p>Bergpaden, kloven, rustpunten en een villa om op adem te komen — een impressie van waar je terechtkomt.</p>
+        <span class="eyebrow" data-key="gallery.eyebrow">In beeld</span>
+        <h2 data-key="gallery.title">De sfeer van het weekend</h2>
+        <p data-key="gallery.text">Bergpaden, kloven, rustpunten en een villa om op adem te komen — een impressie van waar je terechtkomt.</p>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item tall gallery-reveal"><img src="images/trail-runner-forest.jpg" alt="Trailrunner in het dennenbos"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="images/pool-sunset.jpg" alt="Zwembad bij zonsondergang"></div>
-        <div class="gallery-item tall gallery-reveal"><img src="images/ruins-viewpoint.jpg" alt="Uitzicht bij oude ruïnes nabij Casinos"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="images/villa-flowers.jpg" alt="Villa El Pinar met bloeiende klimplant"></div>
-        <div class="gallery-item tall gallery-reveal"><img src="images/river-canyon.jpg" alt="Rivier door een kloof"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="images/trail-descent-autumn.jpg" alt="Afdaling over een herfstpad"></div>
-        <div class="gallery-item tall gallery-reveal"><img src="images/mountain-steps-trail.jpg" alt="Houten trappen tegen de rotswand"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="images/villa-exterior.jpg" alt="Villa El Pinar exterieur"></div>
-        <div class="gallery-item tall gallery-reveal"><img src="images/canyon-cliffs.jpg" alt="Uitzicht over de kloof"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="images/valley-view.jpg" alt="Vergezicht over de vallei"></div>
-        <div class="gallery-item tall gallery-reveal"><img src="images/waterfall-steps.jpg" alt="Watervallen bij de Rebalsadors"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="images/host-portrait.jpg" alt="Maurizio, je gastheer"></div>
+      <div class="slideshow reveal" id="gallerySlideshow">
+        <div class="slide active"><img src="images/trail-runner-forest.jpg" alt="Trailrunner in het dennenbos"></div>
+        <div class="slide"><img src="images/pool-sunset.jpg" alt="Zwembad bij zonsondergang"></div>
+        <div class="slide"><img src="images/ruins-viewpoint.jpg" alt="Uitzicht bij oude ruïnes nabij Casinos"></div>
+        <div class="slide"><img src="images/villa-flowers.jpg" alt="Villa El Pinar met bloeiende klimplant"></div>
+        <div class="slide"><img src="images/river-canyon.jpg" alt="Rivier door een kloof"></div>
+        <div class="slide"><img src="images/trail-descent-autumn.jpg" alt="Afdaling over een herfstpad"></div>
+        <div class="slide"><img src="images/mountain-steps-trail.jpg" alt="Houten trappen tegen de rotswand"></div>
+        <div class="slide"><img src="images/villa-exterior.jpg" alt="Villa El Pinar exterieur"></div>
+        <div class="slide"><img src="images/canyon-cliffs.jpg" alt="Uitzicht over de kloof"></div>
+        <div class="slide"><img src="images/valley-view.jpg" alt="Vergezicht over de vallei"></div>
+        <div class="slide"><img src="images/waterfall-steps.jpg" alt="Watervallen bij de Rebalsadors"></div>
+        <div class="slide"><img src="images/host-portrait.jpg" alt="Maurizio, je gastheer"></div>
+        <div class="slideshow-dots"></div>
       </div>
     </div>
   </section>
@@ -559,51 +565,51 @@
   <section class="pad alt-bg" id="programma">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Weekend indeling</span>
-        <h2>Drie dagen, drie routes</h2>
-        <p>Elke dag heeft zijn eigen karakter — van een zachte start tot het hoogtepunt van het weekend en een rustig herstelloopje om van na te genieten.</p>
+        <span class="eyebrow" data-key="program.eyebrow">Weekend indeling</span>
+        <h2 data-key="program.title">Drie dagen, drie routes</h2>
+        <p data-key="program.text">Elke dag heeft zijn eigen karakter — van een zachte start tot het hoogtepunt van het weekend en een rustig herstelloopje om van na te genieten.</p>
       </div>
 
       <div class="program-grid">
         <div class="day-card gallery-reveal">
           <img class="bg" src="images/ruins-viewpoint.jpg" alt="Uitzicht bij zonsondergang nabij Casinos">
-          <span class="day-label">Vrijdag</span>
-          <h3>Casinos Sunset Loop</h3>
-          <div class="stats"><span>8 km</span><span>±180 hm</span></div>
-          <p>Een zachte start. We verkennen de paden rond Casinos terwijl de zon ondergaat over de vallei — perfect om te wennen aan het terrein en elkaar te leren kennen.</p>
+          <span class="day-label" data-key="program.days.0.label">Vrijdag</span>
+          <h3 data-key="program.days.0.name">Casinos Sunset Loop</h3>
+          <div class="stats"><span data-key="program.days.0.stat1">8 km</span><span data-key="program.days.0.stat2">±180 hm</span></div>
+          <p data-key="program.days.0.text">Een zachte start. We verkennen de paden rond Casinos terwijl de zon ondergaat over de vallei — perfect om te wennen aan het terrein en elkaar te leren kennen.</p>
         </div>
         <div class="day-card gallery-reveal">
           <img class="bg" src="images/river-canyon.jpg" alt="Rivier door een kloof in de Sierra Calderona">
-          <span class="day-label">Zaterdag</span>
-          <h3>Serra Calderona Grand Loop</h3>
-          <div class="stats"><span>20–23 km</span><span>±850 hm</span></div>
-          <p>Het hart van het weekend: een langere tocht door indrukwekkende landschappen en langs uitzichtpunten die je niet snel vergeet. Wandelen mag altijd.</p>
+          <span class="day-label" data-key="program.days.1.label">Zaterdag</span>
+          <h3 data-key="program.days.1.name">Serra Calderona Grand Loop</h3>
+          <div class="stats"><span data-key="program.days.1.stat1">20–23 km</span><span data-key="program.days.1.stat2">±850 hm</span></div>
+          <p data-key="program.days.1.text">Het hart van het weekend: een langere tocht door indrukwekkende landschappen en langs uitzichtpunten die je niet snel vergeet. Wandelen mag altijd.</p>
         </div>
         <div class="day-card gallery-reveal">
           <img class="bg" src="images/waterfall-steps.jpg" alt="Watervallen bij de Rebalsadors">
-          <span class="day-label">Zondag</span>
-          <h3>Rebalsadors Recovery Loop</h3>
-          <div class="stats"><span>13–15 km</span><span>±500 hm</span></div>
-          <p>Een rustiger vervolg langs kloven en watervallen, met alle tijd om na te genieten voordat je huiswaarts keert.</p>
+          <span class="day-label" data-key="program.days.2.label">Zondag</span>
+          <h3 data-key="program.days.2.name">Rebalsadors Recovery Loop</h3>
+          <div class="stats"><span data-key="program.days.2.stat1">13–15 km</span><span data-key="program.days.2.stat2">±500 hm</span></div>
+          <p data-key="program.days.2.text">Een rustiger vervolg langs kloven en watervallen, met alle tijd om na te genieten voordat je huiswaarts keert.</p>
         </div>
       </div>
 
       <div class="total-bar reveal">
         <div class="stat">
           <div class="stat-number"><span class="counter" data-target="43">0</span><span class="unit">km</span></div>
-          <span class="stat-label">Totale afstand</span>
+          <span class="stat-label" data-key="program.stats.kmLabel">Totale afstand</span>
         </div>
         <div class="stat">
           <div class="stat-number">±<span class="counter" data-target="1500">0</span><span class="unit">hm</span></div>
-          <span class="stat-label">Hoogtemeters</span>
+          <span class="stat-label" data-key="program.stats.hmLabel">Hoogtemeters</span>
         </div>
         <div class="stat">
           <div class="stat-number"><span class="counter" data-target="3">0</span></div>
-          <span class="stat-label">Dagen bergen</span>
+          <span class="stat-label" data-key="program.stats.daysLabel">Dagen bergen</span>
         </div>
         <div class="stat">
-          <div class="stat-number">Alle</div>
-          <span class="stat-label">Niveaus welkom</span>
+          <div class="stat-number" data-key="program.stats.levels">Alle</div>
+          <span class="stat-label" data-key="program.stats.levelsLabel">Niveaus welkom</span>
         </div>
       </div>
     </div>
@@ -614,17 +620,17 @@
     <div class="container">
       <div class="villa-wrap">
         <div class="villa-text reveal-left">
-          <span class="eyebrow">Jouw thuisbasis</span>
-          <h2>Villa El Pinar, bij Casinos</h2>
-          <p>Tijdens dit weekend verblijf je niet in een hotel, maar in een sfeervolle, vrijstaande villa die voelt als een thuis weg van huis — in de rustige urbanisatie El Pinar, vlakbij het authentieke dorp Casinos.</p>
-          <p>De villa ligt midden in het groen met uitzicht over de bergen van de Sierra Calderona. Na een dag op de trails ontspan je aan het zwembad, op het terras of in de tuin. Binnen draait alles om een warme, huiselijke sfeer: koffie in de ochtend, verhalen na de trailrun, en gezonde, voedzame maaltijden zonder haast.</p>
+          <span class="eyebrow" data-key="villa.eyebrow">Jouw thuisbasis</span>
+          <h2 data-key="villa.title">Villa El Pinar, bij Casinos</h2>
+          <p data-key="villa.paragraphs.0">Tijdens dit weekend verblijf je niet in een hotel, maar in een sfeervolle, vrijstaande villa die voelt als een thuis weg van huis — in de rustige urbanisatie El Pinar, vlakbij het authentieke dorp Casinos.</p>
+          <p data-key="villa.paragraphs.1">De villa ligt midden in het groen met uitzicht over de bergen van de Sierra Calderona. Na een dag op de trails ontspan je aan het zwembad, op het terras of in de tuin. Binnen draait alles om een warme, huiselijke sfeer: koffie in de ochtend, verhalen na de trailrun, en gezonde, voedzame maaltijden zonder haast.</p>
           <ul class="amenities">
-            <li>Zwembad &amp; zonneterras</li>
-            <li>Panoramisch bergzicht</li>
-            <li>Gezamenlijke leefruimte</li>
-            <li>Grote tuin om tot rust te komen</li>
-            <li>Ontbijt, lunch &amp; diner inbegrepen</li>
-            <li>Ruimte voor iedereen, geen haast</li>
+            <li data-key="villa.amenities.0">Zwembad &amp; zonneterras</li>
+            <li data-key="villa.amenities.1">Panoramisch bergzicht</li>
+            <li data-key="villa.amenities.2">Gezamenlijke leefruimte</li>
+            <li data-key="villa.amenities.3">Grote tuin om tot rust te komen</li>
+            <li data-key="villa.amenities.4">Ontbijt, lunch &amp; diner inbegrepen</li>
+            <li data-key="villa.amenities.5">Ruimte voor iedereen, geen haast</li>
           </ul>
         </div>
         <div class="villa-gallery reveal-right">
@@ -641,12 +647,12 @@
       <div class="host-wrap">
         <img class="reveal-left" src="images/host-portrait.jpg" alt="Maurizio Salazar, gastheer Wildcore Retreats">
         <div class="host-text reveal-right">
-          <span class="eyebrow">Over je gastheer</span>
-          <h2>Maurizio Salazar</h2>
-          <p>Ik woon een groot deel van het jaar aan de voet van de Sierra Calderona. Van beroep ben ik sport- en shiatsutherapeut, en al mijn hele leven gefascineerd door beweging, gezondheid en de kracht van de natuur.</p>
-          <p>Door mijn werk zie ik dagelijks hoe belangrijk het is om even uit de dagelijkse routine te stappen en tijd te maken voor jezelf. De natuur is voor mij altijd een plek geweest om op te laden — die rust en vrijheid deel ik graag met anderen.</p>
-          <p>Daarom organiseer ik kleinschalige trailrunweekenden. Geen prestatiegerichte sportreis, maar een toegankelijke ervaring waarin beweging, natuur, ontspanning en verbinding centraal staan. Ik neem je graag mee de bergen in.</p>
-          <p class="host-sign">— Maurizio</p>
+          <span class="eyebrow" data-key="host.eyebrow">Over je gastheer</span>
+          <h2 data-key="host.title">Maurizio Salazar</h2>
+          <p data-key="host.paragraphs.0">Ik woon een groot deel van het jaar aan de voet van de Sierra Calderona. Van beroep ben ik sport- en shiatsutherapeut, en al mijn hele leven gefascineerd door beweging, gezondheid en de kracht van de natuur.</p>
+          <p data-key="host.paragraphs.1">Door mijn werk zie ik dagelijks hoe belangrijk het is om even uit de dagelijkse routine te stappen en tijd te maken voor jezelf. De natuur is voor mij altijd een plek geweest om op te laden — die rust en vrijheid deel ik graag met anderen.</p>
+          <p data-key="host.paragraphs.2">Daarom organiseer ik kleinschalige trailrunweekenden. Geen prestatiegerichte sportreis, maar een toegankelijke ervaring waarin beweging, natuur, ontspanning en verbinding centraal staan. Ik neem je graag mee de bergen in.</p>
+          <p class="host-sign" data-key="host.sign">— Maurizio</p>
         </div>
       </div>
     </div>
@@ -656,37 +662,37 @@
   <section class="pad" id="prijzen">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Prijzen</span>
-        <h2>Kies jouw weekend</h2>
-        <p>Beide opties zijn volledig verzorgd — van luchthavenvervoer tot begeleiding tijdens elke run.</p>
+        <span class="eyebrow" data-key="pricing.eyebrow">Prijzen</span>
+        <h2 data-key="pricing.title">Kies jouw weekend</h2>
+        <p data-key="pricing.text">Beide opties zijn volledig verzorgd — van luchthavenvervoer tot begeleiding tijdens elke run.</p>
       </div>
       <div class="price-grid">
         <div class="price-card gallery-reveal">
-          <h3>Weekend</h3>
-          <p style="color:#8a8266;font-size:0.9rem;margin-bottom:0;">Vrijdag t/m zondag</p>
-          <div class="amount">€495 <small>p.p.</small></div>
+          <h3 data-key="pricing.cards.0.title">Weekend</h3>
+          <p style="color:#8a8266;font-size:0.9rem;margin-bottom:0;" data-key="pricing.cards.0.dates">Vrijdag t/m zondag</p>
+          <div class="amount"><span data-key="pricing.cards.0.price">€495</span> <small data-key="pricing.cards.0.unit">p.p.</small></div>
           <ul>
-            <li>Verblijf in Villa El Pinar</li>
-            <li>Ontbijt, lunch &amp; 2 gezamenlijke diners</li>
-            <li>Luchthavenvervoer v.a. Valencia Airport</li>
-            <li>Trailtransfers</li>
-            <li>Begeleiding tijdens alle runs</li>
+            <li data-key="pricing.cards.0.items.0">Verblijf in Villa El Pinar</li>
+            <li data-key="pricing.cards.0.items.1">Ontbijt, lunch &amp; 2 gezamenlijke diners</li>
+            <li data-key="pricing.cards.0.items.2">Luchthavenvervoer v.a. Valencia Airport</li>
+            <li data-key="pricing.cards.0.items.3">Trailtransfers</li>
+            <li data-key="pricing.cards.0.items.4">Begeleiding tijdens alle runs</li>
           </ul>
-          <a href="#contact" class="btn btn-outline-dark" style="width:100%;justify-content:center;">Vraag jouw plek aan</a>
+          <a href="#contact" class="btn btn-outline-dark" style="width:100%;justify-content:center;" data-key="pricing.cards.0.cta">Vraag jouw plek aan</a>
         </div>
         <div class="price-card highlight gallery-reveal">
-          <span class="tag">Extra dag rust</span>
-          <h3>Lang weekend</h3>
-          <p style="color:#8a8266;font-size:0.9rem;margin-bottom:0;">Donderdag t/m zondag</p>
-          <div class="amount">€645 <small>p.p.</small></div>
+          <span class="tag" data-key="pricing.cards.1.tag">Extra dag rust</span>
+          <h3 data-key="pricing.cards.1.title">Lang weekend</h3>
+          <p style="color:#8a8266;font-size:0.9rem;margin-bottom:0;" data-key="pricing.cards.1.dates">Donderdag t/m zondag</p>
+          <div class="amount"><span data-key="pricing.cards.1.price">€645</span> <small data-key="pricing.cards.1.unit">p.p.</small></div>
           <ul>
-            <li>Verblijf in Villa El Pinar</li>
-            <li>Ontbijt, lunch &amp; 3 gezamenlijke diners</li>
-            <li>Luchthavenvervoer v.a. Valencia Airport</li>
-            <li>Trailtransfers</li>
-            <li>Begeleiding tijdens alle runs</li>
+            <li data-key="pricing.cards.1.items.0">Verblijf in Villa El Pinar</li>
+            <li data-key="pricing.cards.1.items.1">Ontbijt, lunch &amp; 3 gezamenlijke diners</li>
+            <li data-key="pricing.cards.1.items.2">Luchthavenvervoer v.a. Valencia Airport</li>
+            <li data-key="pricing.cards.1.items.3">Trailtransfers</li>
+            <li data-key="pricing.cards.1.items.4">Begeleiding tijdens alle runs</li>
           </ul>
-          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Vraag jouw plek aan</a>
+          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;" data-key="pricing.cards.1.cta">Vraag jouw plek aan</a>
         </div>
       </div>
     </div>
@@ -783,21 +789,21 @@
     <div class="container">
       <div class="contact-wrap">
         <div class="reveal-left">
-          <span class="eyebrow">Boek jouw plek</span>
-          <h2>Klaar om de bergen in te gaan?</h2>
-          <p>Stuur een bericht en we nemen snel contact met je op — of neem rechtstreeks contact op via onderstaande gegevens.</p>
+          <span class="eyebrow" data-key="contact.eyebrow">Boek jouw plek</span>
+          <h2 data-key="contact.title">Klaar om de bergen in te gaan?</h2>
+          <p data-key="contact.text">Stuur een bericht en we nemen snel contact met je op — of neem rechtstreeks contact op via onderstaande gegevens.</p>
           <div class="contact-info">
             <div>
               <div class="label">E-mail</div>
-              <div>info@wildcoreretreats.com</div>
+              <div data-key="contact.email">info@wildcoreretreats.com</div>
             </div>
             <div>
               <div class="label">Locatie</div>
-              <div>Villa El Pinar, Casinos — Sierra Calderona, Spanje</div>
+              <div data-key="contact.location">Villa El Pinar, Casinos — Sierra Calderona, Spanje</div>
             </div>
             <div>
               <div class="label">Bereikbaarheid</div>
-              <div>Luchthavenvervoer inbegrepen v.a. Valencia Airport</div>
+              <div data-key="contact.reachability">Luchthavenvervoer inbegrepen v.a. Valencia Airport</div>
             </div>
           </div>
           <div class="social-row">
@@ -891,97 +897,143 @@
     }
   });
 
-  // ---- GSAP animations ----
-  if (window.gsap && window.ScrollTrigger) {
-    gsap.registerPlugin(ScrollTrigger);
-    document.documentElement.classList.add('gsap-ready');
-
-    // HERO intro timeline
-    var heroTl = gsap.timeline({defaults:{ease:'power3.out', duration:1}});
-    heroTl
-      .from('.hero .eyebrow', {opacity:0, y:20, duration:0.7})
-      .from('.hero h1', {opacity:0, y:40}, '-=0.4')
-      .from('.hero .lead', {opacity:0, y:30}, '-=0.6')
-      .from('.hero-ctas .btn', {opacity:0, y:20, stagger:0.12}, '-=0.5')
-      .from('.hero-trust', {opacity:0, y:20}, '-=0.4')
-      .from('.scroll-cue', {opacity:0}, '-=0.3');
-
-    // Subtle hero background parallax on scroll
-    gsap.to('.hero', {
-      backgroundPosition: '50% 60%',
-      ease: 'none',
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-    });
-
-    // Generic fade-up reveal
-    gsap.utils.toArray('.reveal').forEach(function(el){
-      gsap.from(el, {
-        opacity:0, y:60, duration:1, ease:'power3.out',
-        scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
-      });
-    });
-
-    // Slide in from left
-    gsap.utils.toArray('.reveal-left').forEach(function(el){
-      gsap.from(el, {
-        opacity:0, x:-70, duration:1, ease:'power3.out',
-        scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
-      });
-    });
-
-    // Slide in from right
-    gsap.utils.toArray('.reveal-right').forEach(function(el){
-      gsap.from(el, {
-        opacity:0, x:70, duration:1, ease:'power3.out',
-        scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
-      });
-    });
-
-    // Staggered groups: feature rows, day-cards, gallery, price cards
-    gsap.utils.toArray('.program-grid').forEach(function(grid){
-      gsap.from(grid.querySelectorAll('.day-card'), {
-        opacity:0, y:70, scale:0.96, duration:0.9, stagger:0.15, ease:'power3.out',
-        scrollTrigger:{ trigger: grid, start:'top 82%' }
-      });
-    });
-
-    gsap.utils.toArray('.price-grid').forEach(function(grid){
-      gsap.from(grid.querySelectorAll('.price-card'), {
-        opacity:0, y:60, duration:0.9, stagger:0.15, ease:'power3.out',
-        scrollTrigger:{ trigger: grid, start:'top 82%' }
-      });
-    });
-
-    gsap.utils.toArray('.gallery-grid').forEach(function(grid){
-      gsap.from(grid.querySelectorAll('.gallery-item'), {
-        opacity:0, y:50, scale:0.94, duration:0.8, stagger:{amount:0.9, grid:'auto', from:'start'}, ease:'power2.out',
-        scrollTrigger:{ trigger: grid, start:'top 85%' }
-      });
-    });
-
-    // Counter animation for stats bar
-    gsap.utils.toArray('.counter').forEach(function(el){
-      var target = parseFloat(el.getAttribute('data-target'));
-      var obj = {val:0};
-      ScrollTrigger.create({
-        trigger: el,
-        start: 'top 90%',
-        onEnter: function(){
-          gsap.to(obj, {
-            val: target, duration: 1.6, ease:'power1.out',
-            onUpdate: function(){ el.textContent = Math.round(obj.val).toLocaleString('nl-NL'); }
-          });
-        },
-        once: true
-      });
-    });
-  } else {
-    // Fallback: if GSAP fails to load, make sure everything is simply visible
-    document.documentElement.classList.add('gsap-ready');
-    document.querySelectorAll('.counter').forEach(function(el){
-      el.textContent = Math.round(parseFloat(el.getAttribute('data-target'))).toLocaleString('nl-NL');
+  // ---- Content loader (CMS) ----
+  // Applies editable text from content-nl.json onto every [data-key] element.
+  // If the fetch fails (offline, file missing, etc.) the hardcoded HTML text
+  // below simply stays as-is, so the site always works.
+  function applyContent(data){
+    document.querySelectorAll('[data-key]').forEach(function(el){
+      var path = el.getAttribute('data-key').split('.');
+      var val = data;
+      for (var i = 0; i < path.length; i++){
+        if (val == null) break;
+        val = val[path[i]];
+      }
+      if (typeof val === 'string') el.innerHTML = val;
     });
   }
+
+  function initSite(){
+    // Auto-playing slideshow (independent of GSAP)
+    document.querySelectorAll('.slideshow').forEach(function(container){
+      var slides = container.querySelectorAll('.slide');
+      var dotsWrap = container.querySelector('.slideshow-dots');
+      if (!slides.length) return;
+      var current = 0;
+      slides.forEach(function(s, i){
+        var dot = document.createElement('button');
+        dot.setAttribute('aria-label', 'Ga naar foto ' + (i + 1));
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', function(){ goTo(i); resetTimer(); });
+        dotsWrap.appendChild(dot);
+      });
+      var dots = dotsWrap.querySelectorAll('button');
+      function goTo(i){
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = i;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+      var timer = setInterval(function(){ goTo((current + 1) % slides.length); }, 4500);
+      function resetTimer(){
+        clearInterval(timer);
+        timer = setInterval(function(){ goTo((current + 1) % slides.length); }, 4500);
+      }
+    });
+
+    // ---- GSAP animations ----
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      document.documentElement.classList.add('gsap-ready');
+
+      // HERO intro timeline
+      var heroTl = gsap.timeline({defaults:{ease:'power3.out', duration:1}});
+      heroTl
+        .from('.hero .eyebrow', {opacity:0, y:20, duration:0.7})
+        .from('.hero h1', {opacity:0, y:40}, '-=0.4')
+        .from('.hero .lead', {opacity:0, y:30}, '-=0.6')
+        .from('.hero-ctas .btn', {opacity:0, y:20, stagger:0.12}, '-=0.5')
+        .from('.hero-trust', {opacity:0, y:20}, '-=0.4')
+        .from('.scroll-cue', {opacity:0}, '-=0.3');
+
+      // Subtle hero background parallax on scroll
+      gsap.to('.hero', {
+        backgroundPosition: '50% 60%',
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+      });
+
+      // Generic fade-up reveal
+      gsap.utils.toArray('.reveal').forEach(function(el){
+        gsap.from(el, {
+          opacity:0, y:60, duration:1, ease:'power3.out',
+          scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
+        });
+      });
+
+      // Slide in from left
+      gsap.utils.toArray('.reveal-left').forEach(function(el){
+        gsap.from(el, {
+          opacity:0, x:-70, duration:1, ease:'power3.out',
+          scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
+        });
+      });
+
+      // Slide in from right
+      gsap.utils.toArray('.reveal-right').forEach(function(el){
+        gsap.from(el, {
+          opacity:0, x:70, duration:1, ease:'power3.out',
+          scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
+        });
+      });
+
+      // Staggered groups: feature rows, day-cards, gallery, price cards
+      gsap.utils.toArray('.program-grid').forEach(function(grid){
+        gsap.from(grid.querySelectorAll('.day-card'), {
+          opacity:0, y:70, scale:0.96, duration:0.9, stagger:0.15, ease:'power3.out',
+          scrollTrigger:{ trigger: grid, start:'top 82%' }
+        });
+      });
+
+      gsap.utils.toArray('.price-grid').forEach(function(grid){
+        gsap.from(grid.querySelectorAll('.price-card'), {
+          opacity:0, y:60, duration:0.9, stagger:0.15, ease:'power3.out',
+          scrollTrigger:{ trigger: grid, start:'top 82%' }
+        });
+      });
+
+
+      // Counter animation for stats bar
+      gsap.utils.toArray('.counter').forEach(function(el){
+        var target = parseFloat(el.getAttribute('data-target'));
+        var obj = {val:0};
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top 90%',
+          onEnter: function(){
+            gsap.to(obj, {
+              val: target, duration: 1.6, ease:'power1.out',
+              onUpdate: function(){ el.textContent = Math.round(obj.val).toLocaleString('nl-NL'); }
+            });
+          },
+          once: true
+        });
+      });
+    } else {
+      // Fallback: if GSAP fails to load, make sure everything is simply visible
+      document.documentElement.classList.add('gsap-ready');
+      document.querySelectorAll('.counter').forEach(function(el){
+        el.textContent = Math.round(parseFloat(el.getAttribute('data-target'))).toLocaleString('nl-NL');
+      });
+    }
+  }
+
+  fetch('content-nl.json?v=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(data){ applyContent(data); })
+    .catch(function(err){ console.warn('Wildcore content.json kon niet geladen worden, standaardtekst blijft staan.', err); })
+    .finally(function(){ initSite(); });
 </script>
 
 </body>

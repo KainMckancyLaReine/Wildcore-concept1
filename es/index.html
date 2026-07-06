@@ -360,17 +360,22 @@
 
   /* GALERÍA */
   .gallery-head{text-align:center;max-width:700px;margin:0 auto 50px;}
-  .gallery-grid{
-    columns:4 220px;column-gap:16px;
+  .slideshow{
+    position:relative;max-width:900px;margin:0 auto;border-radius:24px;overflow:hidden;
+    box-shadow:var(--shadow);aspect-ratio:16/9;background:#1c2016;
   }
-  .gallery-item{
-    break-inside:avoid;margin-bottom:16px;border-radius:14px;overflow:hidden;
-    box-shadow:var(--shadow);position:relative;
+  .slideshow .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;}
+  .slideshow .slide.active{opacity:1;z-index:1;}
+  .slideshow .slide img{width:100%;height:100%;object-fit:cover;}
+  .slideshow-dots{
+    position:absolute;bottom:18px;left:50%;transform:translateX(-50%);
+    display:flex;gap:8px;z-index:2;
   }
-  .gallery-item img{width:100%;display:block;transition:transform .6s ease;}
-  .gallery-item:hover img{transform:scale(1.06);}
-  .gallery-item.tall img{aspect-ratio:3/4;object-fit:cover;}
-  .gallery-item.wide img{aspect-ratio:4/3;object-fit:cover;}
+  .slideshow-dots button{
+    width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.55);
+    border:none;cursor:pointer;padding:0;transition:all .3s ease;
+  }
+  .slideshow-dots button.active{background:#fff;width:24px;border-radius:5px;}
 
   /* Reveal helpers (initial state set by GSAP; CSS fallback if JS disabled) */
   .gsap-ready .reveal, .gsap-ready .reveal-left, .gsap-ready .reveal-right, .gsap-ready .reveal-scale{visibility:visible;}
@@ -388,7 +393,7 @@
     .villa-gallery img{height:200px;}
     .pad{padding:70px 0;}
     .intro{padding:80px 0 60px;}
-    .gallery-grid{columns:2 160px;}
+    .slideshow{aspect-ratio:4/3;border-radius:18px;}
     .nav-inner{padding:8px 8px 8px 16px;}
     .lang-switch > button{padding:7px 10px;font-size:0.78rem;}
     .brand span{display:none;}
@@ -450,18 +455,18 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <span class="eyebrow">Wildcore Retreats · Sierra Calderona, España</span>
-      <h1>Trailrunning, naturaleza y relax<br>en el corazón de la Sierra Calderona.</h1>
-      <p class="lead">Un fin de semana a pequeña escala para personas activas que quieren vivir más y rendir menos.</p>
+      <span class="eyebrow" data-key="hero.eyebrow">Wildcore Retreats · Sierra Calderona, España</span>
+      <h1 data-key="hero.title">Trailrunning, naturaleza y relax<br>en el corazón de la Sierra Calderona.</h1>
+      <p class="lead" data-key="hero.lead">Un fin de semana a pequeña escala para personas activas que quieren vivir más y rendir menos.</p>
       <div class="hero-ctas">
-        <a href="#ervaring" class="btn btn-outline">Descubre el fin de semana</a>
-        <a href="#contact" class="btn btn-primary">Reserva tu plaza</a>
+        <a href="#ervaring" class="btn btn-outline" data-key="hero.cta1">Descubre el fin de semana</a>
+        <a href="#contact" class="btn btn-primary" data-key="hero.cta2">Reserva tu plaza</a>
       </div>
       <div class="hero-trust">
-        <div><strong>3 días</strong> en la montaña</div>
-        <div><strong>Grupo reducido</strong>, mucha atención</div>
-        <div><strong>Todos los niveles</strong> son bienvenidos</div>
-        <div><strong>Villa + piscina</strong>, traslado desde Valencia</div>
+        <div><strong data-key="hero.trust.0.strong">3 días</strong> <span data-key="hero.trust.0.text">en la montaña</span></div>
+        <div><strong data-key="hero.trust.1.strong">Grupo reducido</strong><span data-key="hero.trust.1.text">, mucha atención</span></div>
+        <div><strong data-key="hero.trust.2.strong">Todos los niveles</strong> <span data-key="hero.trust.2.text">son bienvenidos</span></div>
+        <div><strong data-key="hero.trust.3.strong">Villa + piscina</strong><span data-key="hero.trust.3.text">, traslado desde Valencia</span></div>
       </div>
     </div>
     <div class="scroll-cue">Desliza ↓</div>
@@ -470,12 +475,12 @@
   <!-- INTRO / FILOSOFÍA -->
   <section class="intro" id="ervaring">
     <div class="container reveal">
-      <span class="eyebrow">Por qué Wildcore</span>
-      <h2>Este fin de semana no va de rendir.<br>Va de vivir.</h2>
-      <p>Para nosotros, el trailrunning no va de velocidad ni de competición. Va de estar al aire libre, moverte en la naturaleza y notar qué pasa cuando te alejas un momento del ajetreo del día a día.</p>
-      <p>En la Sierra Calderona corremos según el momento. Sin horarios estrictos, sin fijarnos en tiempos ni rendimiento. Paramos donde es bonito, contemplamos el valle, hacemos una foto, o simplemente nos quedamos un momento quietos en la naturaleza. Caminar siempre está permitido, en cualquier tramo.</p>
-      <p>Este fin de semana es para cualquiera con una condición física razonable y una buena dosis de curiosidad — tanto si llevas años corriendo como si nunca has pisado un sendero.</p>
-      <p class="statement">«No rendir. Vivir.»</p>
+      <span class="eyebrow" data-key="intro.eyebrow">Por qué Wildcore</span>
+      <h2 data-key="intro.title">Este fin de semana no va de rendir.<br>Va de vivir.</h2>
+      <p data-key="intro.paragraphs.0">Para nosotros, el trailrunning no va de velocidad ni de competición. Va de estar al aire libre, moverte en la naturaleza y notar qué pasa cuando te alejas un momento del ajetreo del día a día.</p>
+      <p data-key="intro.paragraphs.1">En la Sierra Calderona corremos según el momento. Sin horarios estrictos, sin fijarnos en tiempos ni rendimiento. Paramos donde es bonito, contemplamos el valle, hacemos una foto, o simplemente nos quedamos un momento quietos en la naturaleza. Caminar siempre está permitido, en cualquier tramo.</p>
+      <p data-key="intro.paragraphs.2">Este fin de semana es para cualquiera con una condición física razonable y una buena dosis de curiosidad — tanto si llevas años corriendo como si nunca has pisado un sendero.</p>
+      <p class="statement" data-key="intro.statement">«No rendir. Vivir.»</p>
     </div>
   </section>
 
@@ -486,8 +491,8 @@
       <div class="feature-row reveal-row">
         <div class="feature-text reveal-left">
           <span class="feature-num">01</span>
-          <h3>Para principiantes y también para los más constantes</h3>
-          <p>Diseñado especialmente para corredores de trail principiantes y senderistas activos que quieren descubrir la naturaleza. Cada uno va a su propio ritmo — siempre hay margen para caminar cuando haga falta.</p>
+          <h3 data-key="features.0.title">Para principiantes y también para los más constantes</h3>
+          <p data-key="features.0.text">Diseñado especialmente para corredores de trail principiantes y senderistas activos que quieren descubrir la naturaleza. Cada uno va a su propio ritmo — siempre hay margen para caminar cuando haga falta.</p>
         </div>
         <div class="feature-img reveal-right"><img src="../images/mountain-steps-trail.jpg" alt="Sendero de montaña con escalones de madera en la Sierra Calderona"></div>
       </div>
@@ -495,8 +500,8 @@
       <div class="feature-row reverse reveal-row">
         <div class="feature-text reveal-right">
           <span class="feature-num">02</span>
-          <h3>Una villa con piscina y vistas panorámicas</h3>
-          <p>No te alojas en un hotel, sino en una villa con encanto rodeada de vegetación — con piscina, amplia terraza y vistas a las montañas. El lugar perfecto para desconectar del todo después de un día en los senderos.</p>
+          <h3 data-key="features.1.title">Una villa con piscina y vistas panorámicas</h3>
+          <p data-key="features.1.text">No te alojas en un hotel, sino en una villa con encanto rodeada de vegetación — con piscina, amplia terraza y vistas a las montañas. El lugar perfecto para desconectar del todo después de un día en los senderos.</p>
         </div>
         <div class="feature-img reveal-left"><img src="../images/pool-sunset.jpg" alt="Piscina al atardecer en Villa El Pinar"></div>
       </div>
@@ -504,8 +509,8 @@
       <div class="feature-row reveal-row">
         <div class="feature-text reveal-left">
           <span class="feature-num">03</span>
-          <h3>Pinares y senderos de montaña ondulantes</h3>
-          <p>Corremos por paisajes impresionantes: pinares con aroma a resina, senderos de montaña ondulantes y caminos sorprendentes que nunca encontrarías por tu cuenta. Cada ruta tiene su propio ambiente y ritmo.</p>
+          <h3 data-key="features.2.title">Pinares y senderos de montaña ondulantes</h3>
+          <p data-key="features.2.text">Corremos por paisajes impresionantes: pinares con aroma a resina, senderos de montaña ondulantes y caminos sorprendentes que nunca encontrarías por tu cuenta. Cada ruta tiene su propio ambiente y ritmo.</p>
         </div>
         <div class="feature-img reveal-right"><img src="../images/trail-descent-autumn.jpg" alt="Corredor de trail en un sendero de montaña con vistas"></div>
       </div>
@@ -513,8 +518,8 @@
       <div class="feature-row reverse reveal-row">
         <div class="feature-text reveal-right">
           <span class="feature-num">04</span>
-          <h3>Vistas que no olvidarás fácilmente</h3>
-          <p>El momento culminante: tu primera carrera de trail con confianza por el paisaje español. Con miradores sobre barrancos, valles y formaciones rocosas que se te quedan grabados mucho después de volver a casa.</p>
+          <h3 data-key="features.3.title">Vistas que no olvidarás fácilmente</h3>
+          <p data-key="features.3.text">El momento culminante: tu primera carrera de trail con confianza por el paisaje español. Con miradores sobre barrancos, valles y formaciones rocosas que se te quedan grabados mucho después de volver a casa.</p>
         </div>
         <div class="feature-img reveal-left"><img src="../images/canyon-cliffs.jpg" alt="Vista sobre un barranco en la Sierra Calderona"></div>
       </div>
@@ -522,8 +527,8 @@
       <div class="feature-row reveal-row">
         <div class="feature-text reveal-left">
           <span class="feature-num">05</span>
-          <h3>Deporte, descanso y buena compañía</h3>
-          <p>Una combinación perfecta de reto físico, relax y conexión. Después de correr: buena comida, buenas conversaciones y tiempo para conocerse de verdad — en un grupo deliberadamente reducido.</p>
+          <h3 data-key="features.4.title">Deporte, descanso y buena compañía</h3>
+          <p data-key="features.4.text">Una combinación perfecta de reto físico, relax y conexión. Después de correr: buena comida, buenas conversaciones y tiempo para conocerse de verdad — en un grupo deliberadamente reducido.</p>
         </div>
         <div class="feature-img reveal-right"><img src="../images/valley-view.jpg" alt="Vista sobre el valle cerca de Casinos"></div>
       </div>
@@ -535,23 +540,24 @@
   <section class="pad alt-bg" id="sfeerbeelden">
     <div class="container">
       <div class="gallery-head section-head">
-        <span class="eyebrow">Galería</span>
-        <h2>El ambiente del fin de semana</h2>
-        <p>Senderos de montaña, barrancos, rincones tranquilos y una villa para recuperar el aliento — un vistazo a dónde vas a estar.</p>
+        <span class="eyebrow" data-key="gallery.eyebrow">Galería</span>
+        <h2 data-key="gallery.title">El ambiente del fin de semana</h2>
+        <p data-key="gallery.text">Senderos de montaña, barrancos, rincones tranquilos y una villa para recuperar el aliento — un vistazo a dónde vas a estar.</p>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item tall gallery-reveal"><img src="../images/trail-runner-forest.jpg" alt="Corredor de trail en el pinar"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="../images/pool-sunset.jpg" alt="Piscina al atardecer"></div>
-        <div class="gallery-item tall gallery-reveal"><img src="../images/ruins-viewpoint.jpg" alt="Mirador junto a antiguas ruinas cerca de Casinos"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="../images/villa-flowers.jpg" alt="Villa El Pinar con planta trepadora en flor"></div>
-        <div class="gallery-item tall gallery-reveal"><img src="../images/river-canyon.jpg" alt="Río atravesando un barranco"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="../images/trail-descent-autumn.jpg" alt="Bajada por un sendero otoñal"></div>
-        <div class="gallery-item tall gallery-reveal"><img src="../images/mountain-steps-trail.jpg" alt="Escalones de madera junto a la pared rocosa"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="../images/villa-exterior.jpg" alt="Exterior de Villa El Pinar"></div>
-        <div class="gallery-item tall gallery-reveal"><img src="../images/canyon-cliffs.jpg" alt="Vista sobre el barranco"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="../images/valley-view.jpg" alt="Vista panorámica del valle"></div>
-        <div class="gallery-item tall gallery-reveal"><img src="../images/waterfall-steps.jpg" alt="Cascadas en los Rebalsadors"></div>
-        <div class="gallery-item wide gallery-reveal"><img src="../images/host-portrait.jpg" alt="Maurizio, tu anfitrión"></div>
+      <div class="slideshow reveal" id="gallerySlideshow">
+        <div class="slide active"><img src="../images/trail-runner-forest.jpg" alt="Corredor de trail en el pinar"></div>
+        <div class="slide"><img src="../images/pool-sunset.jpg" alt="Piscina al atardecer"></div>
+        <div class="slide"><img src="../images/ruins-viewpoint.jpg" alt="Mirador junto a antiguas ruinas cerca de Casinos"></div>
+        <div class="slide"><img src="../images/villa-flowers.jpg" alt="Villa El Pinar con planta trepadora en flor"></div>
+        <div class="slide"><img src="../images/river-canyon.jpg" alt="Río atravesando un barranco"></div>
+        <div class="slide"><img src="../images/trail-descent-autumn.jpg" alt="Bajada por un sendero otoñal"></div>
+        <div class="slide"><img src="../images/mountain-steps-trail.jpg" alt="Escalones de madera junto a la pared rocosa"></div>
+        <div class="slide"><img src="../images/villa-exterior.jpg" alt="Exterior de Villa El Pinar"></div>
+        <div class="slide"><img src="../images/canyon-cliffs.jpg" alt="Vista sobre el barranco"></div>
+        <div class="slide"><img src="../images/valley-view.jpg" alt="Vista panorámica del valle"></div>
+        <div class="slide"><img src="../images/waterfall-steps.jpg" alt="Cascadas en los Rebalsadors"></div>
+        <div class="slide"><img src="../images/host-portrait.jpg" alt="Maurizio, tu anfitrión"></div>
+        <div class="slideshow-dots"></div>
       </div>
     </div>
   </section>
@@ -560,51 +566,51 @@
   <section class="pad alt-bg" id="programma">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Programa del fin de semana</span>
-        <h2>Tres días, tres rutas</h2>
-        <p>Cada día tiene su propio carácter — desde un comienzo suave hasta el momento culminante del fin de semana y una ruta de recuperación tranquila para disfrutar de las sensaciones.</p>
+        <span class="eyebrow" data-key="program.eyebrow">Programa del fin de semana</span>
+        <h2 data-key="program.title">Tres días, tres rutas</h2>
+        <p data-key="program.text">Cada día tiene su propio carácter — desde un comienzo suave hasta el momento culminante del fin de semana y una ruta de recuperación tranquila para disfrutar de las sensaciones.</p>
       </div>
 
       <div class="program-grid">
         <div class="day-card gallery-reveal">
           <img class="bg" src="../images/ruins-viewpoint.jpg" alt="Vista al atardecer cerca de Casinos">
-          <span class="day-label">Viernes</span>
-          <h3>Casinos Sunset Loop</h3>
-          <div class="stats"><span>8 km</span><span>±180 m</span></div>
-          <p>Un comienzo suave. Exploramos los senderos alrededor de Casinos mientras el sol se pone sobre el valle — perfecto para acostumbrarse al terreno y conocer al grupo.</p>
+          <span class="day-label" data-key="program.days.0.label">Viernes</span>
+          <h3 data-key="program.days.0.name">Casinos Sunset Loop</h3>
+          <div class="stats"><span data-key="program.days.0.stat1">8 km</span><span data-key="program.days.0.stat2">±180 m</span></div>
+          <p data-key="program.days.0.text">Un comienzo suave. Exploramos los senderos alrededor de Casinos mientras el sol se pone sobre el valle — perfecto para acostumbrarse al terreno y conocer al grupo.</p>
         </div>
         <div class="day-card gallery-reveal">
           <img class="bg" src="../images/river-canyon.jpg" alt="Río a través de un barranco en la Sierra Calderona">
-          <span class="day-label">Sábado</span>
-          <h3>Serra Calderona Grand Loop</h3>
-          <div class="stats"><span>20–23 km</span><span>±850 m</span></div>
-          <p>El corazón del fin de semana: una ruta más larga por paisajes impresionantes y miradores que no olvidarás fácilmente. Caminar siempre está permitido.</p>
+          <span class="day-label" data-key="program.days.1.label">Sábado</span>
+          <h3 data-key="program.days.1.name">Serra Calderona Grand Loop</h3>
+          <div class="stats"><span data-key="program.days.1.stat1">20–23 km</span><span data-key="program.days.1.stat2">±850 m</span></div>
+          <p data-key="program.days.1.text">El corazón del fin de semana: una ruta más larga por paisajes impresionantes y miradores que no olvidarás fácilmente. Caminar siempre está permitido.</p>
         </div>
         <div class="day-card gallery-reveal">
           <img class="bg" src="../images/waterfall-steps.jpg" alt="Cascadas en los Rebalsadors">
-          <span class="day-label">Domingo</span>
-          <h3>Rebalsadors Recovery Loop</h3>
-          <div class="stats"><span>13–15 km</span><span>±500 m</span></div>
-          <p>Un cierre más tranquilo junto a barrancos y cascadas, con tiempo de sobra para disfrutarlo antes de volver a casa.</p>
+          <span class="day-label" data-key="program.days.2.label">Domingo</span>
+          <h3 data-key="program.days.2.name">Rebalsadors Recovery Loop</h3>
+          <div class="stats"><span data-key="program.days.2.stat1">13–15 km</span><span data-key="program.days.2.stat2">±500 m</span></div>
+          <p data-key="program.days.2.text">Un cierre más tranquilo junto a barrancos y cascadas, con tiempo de sobra para disfrutarlo antes de volver a casa.</p>
         </div>
       </div>
 
       <div class="total-bar reveal">
         <div class="stat">
           <div class="stat-number"><span class="counter" data-target="43">0</span><span class="unit">km</span></div>
-          <span class="stat-label">Distancia total</span>
+          <span class="stat-label" data-key="program.stats.kmLabel">Distancia total</span>
         </div>
         <div class="stat">
           <div class="stat-number">±<span class="counter" data-target="1500">0</span><span class="unit">m</span></div>
-          <span class="stat-label">Desnivel acumulado</span>
+          <span class="stat-label" data-key="program.stats.hmLabel">Desnivel acumulado</span>
         </div>
         <div class="stat">
           <div class="stat-number"><span class="counter" data-target="3">0</span></div>
-          <span class="stat-label">Días en la montaña</span>
+          <span class="stat-label" data-key="program.stats.daysLabel">Días en la montaña</span>
         </div>
         <div class="stat">
-          <div class="stat-number">Todos</div>
-          <span class="stat-label">los niveles bienvenidos</span>
+          <div class="stat-number" data-key="program.stats.levels">Todos</div>
+          <span class="stat-label" data-key="program.stats.levelsLabel">los niveles bienvenidos</span>
         </div>
       </div>
     </div>
@@ -615,17 +621,17 @@
     <div class="container">
       <div class="villa-wrap">
         <div class="villa-text reveal-left">
-          <span class="eyebrow">Tu base de operaciones</span>
-          <h2>Villa El Pinar, junto a Casinos</h2>
-          <p>Durante este fin de semana no te alojas en un hotel, sino en una villa independiente con encanto que se siente como un hogar lejos de casa — en la tranquila urbanización de El Pinar, junto al auténtico pueblo de Casinos.</p>
-          <p>La villa está rodeada de vegetación con vistas a las montañas de la Sierra Calderona. Después de un día en los senderos, te relajas junto a la piscina, en la terraza o en el jardín. Por dentro, todo gira en torno a un ambiente cálido y hogareño: café por la mañana, historias después de correr, y comidas sanas y sabrosas sin prisas.</p>
+          <span class="eyebrow" data-key="villa.eyebrow">Tu base de operaciones</span>
+          <h2 data-key="villa.title">Villa El Pinar, junto a Casinos</h2>
+          <p data-key="villa.paragraphs.0">Durante este fin de semana no te alojas en un hotel, sino en una villa independiente con encanto que se siente como un hogar lejos de casa — en la tranquila urbanización de El Pinar, junto al auténtico pueblo de Casinos.</p>
+          <p data-key="villa.paragraphs.1">La villa está rodeada de vegetación con vistas a las montañas de la Sierra Calderona. Después de un día en los senderos, te relajas junto a la piscina, en la terraza o en el jardín. Por dentro, todo gira en torno a un ambiente cálido y hogareño: café por la mañana, historias después de correr, y comidas sanas y sabrosas sin prisas.</p>
           <ul class="amenities">
-            <li>Piscina y terraza soleada</li>
-            <li>Vistas panorámicas a la montaña</li>
-            <li>Espacio común para compartir</li>
-            <li>Amplio jardín para desconectar</li>
-            <li>Desayuno, comida y cena incluidos</li>
-            <li>Espacio para todos, sin prisas</li>
+            <li data-key="villa.amenities.0">Piscina y terraza soleada</li>
+            <li data-key="villa.amenities.1">Vistas panorámicas a la montaña</li>
+            <li data-key="villa.amenities.2">Espacio común para compartir</li>
+            <li data-key="villa.amenities.3">Amplio jardín para desconectar</li>
+            <li data-key="villa.amenities.4">Desayuno, comida y cena incluidos</li>
+            <li data-key="villa.amenities.5">Espacio para todos, sin prisas</li>
           </ul>
         </div>
         <div class="villa-gallery reveal-right">
@@ -642,12 +648,12 @@
       <div class="host-wrap">
         <img class="reveal-left" src="../images/host-portrait.jpg" alt="Maurizio Salazar, anfitrión de Wildcore Retreats">
         <div class="host-text reveal-right">
-          <span class="eyebrow">Sobre tu anfitrión</span>
-          <h2>Maurizio Salazar</h2>
-          <p>Vivo gran parte del año al pie de la Sierra Calderona. De profesión soy terapeuta deportivo y de shiatsu, y llevo toda la vida fascinado por el movimiento, la salud y el poder de la naturaleza.</p>
-          <p>A través de mi trabajo veo cada día lo importante que es salir de la rutina diaria y dedicarse tiempo a uno mismo. La naturaleza siempre ha sido para mí un lugar para recargar energías — y esa sensación de calma y libertad es lo que me encanta compartir con los demás.</p>
-          <p>Por eso organizo fines de semana de trailrunning a pequeña escala. No un viaje deportivo centrado en el rendimiento, sino una experiencia accesible donde el movimiento, la naturaleza, el descanso y la conexión son lo principal. Me encantaría llevarte a la montaña.</p>
-          <p class="host-sign">— Maurizio</p>
+          <span class="eyebrow" data-key="host.eyebrow">Sobre tu anfitrión</span>
+          <h2 data-key="host.title">Maurizio Salazar</h2>
+          <p data-key="host.paragraphs.0">Vivo gran parte del año al pie de la Sierra Calderona. De profesión soy terapeuta deportivo y de shiatsu, y llevo toda la vida fascinado por el movimiento, la salud y el poder de la naturaleza.</p>
+          <p data-key="host.paragraphs.1">A través de mi trabajo veo cada día lo importante que es salir de la rutina diaria y dedicarse tiempo a uno mismo. La naturaleza siempre ha sido para mí un lugar para recargar energías — y esa sensación de calma y libertad es lo que me encanta compartir con los demás.</p>
+          <p data-key="host.paragraphs.2">Por eso organizo fines de semana de trailrunning a pequeña escala. No un viaje deportivo centrado en el rendimiento, sino una experiencia accesible donde el movimiento, la naturaleza, el descanso y la conexión son lo principal. Me encantaría llevarte a la montaña.</p>
+          <p class="host-sign" data-key="host.sign">— Maurizio</p>
         </div>
       </div>
     </div>
@@ -657,37 +663,37 @@
   <section class="pad" id="prijzen">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Precios</span>
-        <h2>Elige tu fin de semana</h2>
-        <p>Ambas opciones están completamente organizadas — desde el traslado al aeropuerto hasta el acompañamiento en cada ruta.</p>
+        <span class="eyebrow" data-key="pricing.eyebrow">Precios</span>
+        <h2 data-key="pricing.title">Elige tu fin de semana</h2>
+        <p data-key="pricing.text">Ambas opciones están completamente organizadas — desde el traslado al aeropuerto hasta el acompañamiento en cada ruta.</p>
       </div>
       <div class="price-grid">
         <div class="price-card gallery-reveal">
-          <h3>Fin de semana</h3>
-          <p style="color:#8a8266;font-size:0.9rem;margin-bottom:0;">Viernes a domingo</p>
-          <div class="amount">495 € <small>p.p.</small></div>
+          <h3 data-key="pricing.cards.0.title">Fin de semana</h3>
+          <p style="color:#8a8266;font-size:0.9rem;margin-bottom:0;" data-key="pricing.cards.0.dates">Viernes a domingo</p>
+          <div class="amount"><span data-key="pricing.cards.0.price">495 €</span> <small data-key="pricing.cards.0.unit">p.p.</small></div>
           <ul>
-            <li>Alojamiento en Villa El Pinar</li>
-            <li>Desayuno, comida y 2 cenas compartidas</li>
-            <li>Traslado desde el aeropuerto de Valencia</li>
-            <li>Traslados a los senderos</li>
-            <li>Acompañamiento en cada ruta</li>
+            <li data-key="pricing.cards.0.items.0">Alojamiento en Villa El Pinar</li>
+            <li data-key="pricing.cards.0.items.1">Desayuno, comida y 2 cenas compartidas</li>
+            <li data-key="pricing.cards.0.items.2">Traslado desde el aeropuerto de Valencia</li>
+            <li data-key="pricing.cards.0.items.3">Traslados a los senderos</li>
+            <li data-key="pricing.cards.0.items.4">Acompañamiento en cada ruta</li>
           </ul>
-          <a href="#contact" class="btn btn-outline-dark" style="width:100%;justify-content:center;">Solicita tu plaza</a>
+          <a href="#contact" class="btn btn-outline-dark" style="width:100%;justify-content:center;" data-key="pricing.cards.0.cta">Solicita tu plaza</a>
         </div>
         <div class="price-card highlight gallery-reveal">
-          <span class="tag">Un día extra de descanso</span>
-          <h3>Fin de semana largo</h3>
-          <p style="color:#8a8266;font-size:0.9rem;margin-bottom:0;">Jueves a domingo</p>
-          <div class="amount">645 € <small>p.p.</small></div>
+          <span class="tag" data-key="pricing.cards.1.tag">Un día extra de descanso</span>
+          <h3 data-key="pricing.cards.1.title">Fin de semana largo</h3>
+          <p style="color:#8a8266;font-size:0.9rem;margin-bottom:0;" data-key="pricing.cards.1.dates">Jueves a domingo</p>
+          <div class="amount"><span data-key="pricing.cards.1.price">645 €</span> <small data-key="pricing.cards.1.unit">p.p.</small></div>
           <ul>
-            <li>Alojamiento en Villa El Pinar</li>
-            <li>Desayuno, comida y 3 cenas compartidas</li>
-            <li>Traslado desde el aeropuerto de Valencia</li>
-            <li>Traslados a los senderos</li>
-            <li>Acompañamiento en cada ruta</li>
+            <li data-key="pricing.cards.1.items.0">Alojamiento en Villa El Pinar</li>
+            <li data-key="pricing.cards.1.items.1">Desayuno, comida y 3 cenas compartidas</li>
+            <li data-key="pricing.cards.1.items.2">Traslado desde el aeropuerto de Valencia</li>
+            <li data-key="pricing.cards.1.items.3">Traslados a los senderos</li>
+            <li data-key="pricing.cards.1.items.4">Acompañamiento en cada ruta</li>
           </ul>
-          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Solicita tu plaza</a>
+          <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;" data-key="pricing.cards.1.cta">Solicita tu plaza</a>
         </div>
       </div>
     </div>
@@ -784,21 +790,21 @@
     <div class="container">
       <div class="contact-wrap">
         <div class="reveal-left">
-          <span class="eyebrow">Reserva tu plaza</span>
-          <h2>¿Listo para adentrarte en la montaña?</h2>
-          <p>Envíanos un mensaje y te responderemos enseguida — o contacta directamente con nosotros a través de los siguientes datos.</p>
+          <span class="eyebrow" data-key="contact.eyebrow">Reserva tu plaza</span>
+          <h2 data-key="contact.title">¿Listo para adentrarte en la montaña?</h2>
+          <p data-key="contact.text">Envíanos un mensaje y te responderemos enseguida — o contacta directamente con nosotros a través de los siguientes datos.</p>
           <div class="contact-info">
             <div>
               <div class="label">Correo electrónico</div>
-              <div>info@wildcoreretreats.com</div>
+              <div data-key="contact.email">info@wildcoreretreats.com</div>
             </div>
             <div>
               <div class="label">Ubicación</div>
-              <div>Villa El Pinar, Casinos — Sierra Calderona, España</div>
+              <div data-key="contact.location">Villa El Pinar, Casinos — Sierra Calderona, España</div>
             </div>
             <div>
               <div class="label">Cómo llegar</div>
-              <div>Traslado desde el aeropuerto de Valencia incluido</div>
+              <div data-key="contact.reachability">Traslado desde el aeropuerto de Valencia incluido</div>
             </div>
           </div>
           <div class="social-row">
@@ -892,97 +898,140 @@
     }
   });
 
-  // ---- GSAP animations ----
-  if (window.gsap && window.ScrollTrigger) {
-    gsap.registerPlugin(ScrollTrigger);
-    document.documentElement.classList.add('gsap-ready');
-
-    // HERO intro timeline
-    var heroTl = gsap.timeline({defaults:{ease:'power3.out', duration:1}});
-    heroTl
-      .from('.hero .eyebrow', {opacity:0, y:20, duration:0.7})
-      .from('.hero h1', {opacity:0, y:40}, '-=0.4')
-      .from('.hero .lead', {opacity:0, y:30}, '-=0.6')
-      .from('.hero-ctas .btn', {opacity:0, y:20, stagger:0.12}, '-=0.5')
-      .from('.hero-trust', {opacity:0, y:20}, '-=0.4')
-      .from('.scroll-cue', {opacity:0}, '-=0.3');
-
-    // Subtle hero background parallax on scroll
-    gsap.to('.hero', {
-      backgroundPosition: '50% 60%',
-      ease: 'none',
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-    });
-
-    // Generic fade-up reveal
-    gsap.utils.toArray('.reveal').forEach(function(el){
-      gsap.from(el, {
-        opacity:0, y:60, duration:1, ease:'power3.out',
-        scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
-      });
-    });
-
-    // Slide in from left
-    gsap.utils.toArray('.reveal-left').forEach(function(el){
-      gsap.from(el, {
-        opacity:0, x:-70, duration:1, ease:'power3.out',
-        scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
-      });
-    });
-
-    // Slide in from right
-    gsap.utils.toArray('.reveal-right').forEach(function(el){
-      gsap.from(el, {
-        opacity:0, x:70, duration:1, ease:'power3.out',
-        scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
-      });
-    });
-
-    // Staggered groups: feature rows, day-cards, gallery, price cards
-    gsap.utils.toArray('.program-grid').forEach(function(grid){
-      gsap.from(grid.querySelectorAll('.day-card'), {
-        opacity:0, y:70, scale:0.96, duration:0.9, stagger:0.15, ease:'power3.out',
-        scrollTrigger:{ trigger: grid, start:'top 82%' }
-      });
-    });
-
-    gsap.utils.toArray('.price-grid').forEach(function(grid){
-      gsap.from(grid.querySelectorAll('.price-card'), {
-        opacity:0, y:60, duration:0.9, stagger:0.15, ease:'power3.out',
-        scrollTrigger:{ trigger: grid, start:'top 82%' }
-      });
-    });
-
-    gsap.utils.toArray('.gallery-grid').forEach(function(grid){
-      gsap.from(grid.querySelectorAll('.gallery-item'), {
-        opacity:0, y:50, scale:0.94, duration:0.8, stagger:{amount:0.9, grid:'auto', from:'start'}, ease:'power2.out',
-        scrollTrigger:{ trigger: grid, start:'top 85%' }
-      });
-    });
-
-    // Counter animation for stats bar
-    gsap.utils.toArray('.counter').forEach(function(el){
-      var target = parseFloat(el.getAttribute('data-target'));
-      var obj = {val:0};
-      ScrollTrigger.create({
-        trigger: el,
-        start: 'top 90%',
-        onEnter: function(){
-          gsap.to(obj, {
-            val: target, duration: 1.6, ease:'power1.out',
-            onUpdate: function(){ el.textContent = Math.round(obj.val).toLocaleString('es-ES'); }
-          });
-        },
-        once: true
-      });
-    });
-  } else {
-    // Fallback: if GSAP fails to load, make sure everything is simply visible
-    document.documentElement.classList.add('gsap-ready');
-    document.querySelectorAll('.counter').forEach(function(el){
-      el.textContent = Math.round(parseFloat(el.getAttribute('data-target'))).toLocaleString('es-ES');
+  // ---- Content loader (CMS) ----
+  function applyContent(data){
+    document.querySelectorAll('[data-key]').forEach(function(el){
+      var path = el.getAttribute('data-key').split('.');
+      var val = data;
+      for (var i = 0; i < path.length; i++){
+        if (val == null) break;
+        val = val[path[i]];
+      }
+      if (typeof val === 'string') el.innerHTML = val;
     });
   }
+
+  function initSite(){
+    // Auto-playing slideshow (independent of GSAP)
+    document.querySelectorAll('.slideshow').forEach(function(container){
+      var slides = container.querySelectorAll('.slide');
+      var dotsWrap = container.querySelector('.slideshow-dots');
+      if (!slides.length) return;
+      var current = 0;
+      slides.forEach(function(s, i){
+        var dot = document.createElement('button');
+        dot.setAttribute('aria-label', 'Ir a la foto ' + (i + 1));
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', function(){ goTo(i); resetTimer(); });
+        dotsWrap.appendChild(dot);
+      });
+      var dots = dotsWrap.querySelectorAll('button');
+      function goTo(i){
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = i;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+      var timer = setInterval(function(){ goTo((current + 1) % slides.length); }, 4500);
+      function resetTimer(){
+        clearInterval(timer);
+        timer = setInterval(function(){ goTo((current + 1) % slides.length); }, 4500);
+      }
+    });
+
+    // ---- GSAP animations ----
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      document.documentElement.classList.add('gsap-ready');
+
+      // HERO intro timeline
+      var heroTl = gsap.timeline({defaults:{ease:'power3.out', duration:1}});
+      heroTl
+        .from('.hero .eyebrow', {opacity:0, y:20, duration:0.7})
+        .from('.hero h1', {opacity:0, y:40}, '-=0.4')
+        .from('.hero .lead', {opacity:0, y:30}, '-=0.6')
+        .from('.hero-ctas .btn', {opacity:0, y:20, stagger:0.12}, '-=0.5')
+        .from('.hero-trust', {opacity:0, y:20}, '-=0.4')
+        .from('.scroll-cue', {opacity:0}, '-=0.3');
+
+      // Subtle hero background parallax on scroll
+      gsap.to('.hero', {
+        backgroundPosition: '50% 60%',
+        ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+      });
+
+      // Generic fade-up reveal
+      gsap.utils.toArray('.reveal').forEach(function(el){
+        gsap.from(el, {
+          opacity:0, y:60, duration:1, ease:'power3.out',
+          scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
+        });
+      });
+
+      // Slide in from left
+      gsap.utils.toArray('.reveal-left').forEach(function(el){
+        gsap.from(el, {
+          opacity:0, x:-70, duration:1, ease:'power3.out',
+          scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
+        });
+      });
+
+      // Slide in from right
+      gsap.utils.toArray('.reveal-right').forEach(function(el){
+        gsap.from(el, {
+          opacity:0, x:70, duration:1, ease:'power3.out',
+          scrollTrigger:{ trigger: el, start:'top 85%', toggleActions:'play none none reverse' }
+        });
+      });
+
+      // Staggered groups: feature rows, day-cards, gallery, price cards
+      gsap.utils.toArray('.program-grid').forEach(function(grid){
+        gsap.from(grid.querySelectorAll('.day-card'), {
+          opacity:0, y:70, scale:0.96, duration:0.9, stagger:0.15, ease:'power3.out',
+          scrollTrigger:{ trigger: grid, start:'top 82%' }
+        });
+      });
+
+      gsap.utils.toArray('.price-grid').forEach(function(grid){
+        gsap.from(grid.querySelectorAll('.price-card'), {
+          opacity:0, y:60, duration:0.9, stagger:0.15, ease:'power3.out',
+          scrollTrigger:{ trigger: grid, start:'top 82%' }
+        });
+      });
+
+
+      // Counter animation for stats bar
+      gsap.utils.toArray('.counter').forEach(function(el){
+        var target = parseFloat(el.getAttribute('data-target'));
+        var obj = {val:0};
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top 90%',
+          onEnter: function(){
+            gsap.to(obj, {
+              val: target, duration: 1.6, ease:'power1.out',
+              onUpdate: function(){ el.textContent = Math.round(obj.val).toLocaleString('es-ES'); }
+            });
+          },
+          once: true
+        });
+      });
+    } else {
+      // Fallback: if GSAP fails to load, make sure everything is simply visible
+      document.documentElement.classList.add('gsap-ready');
+      document.querySelectorAll('.counter').forEach(function(el){
+        el.textContent = Math.round(parseFloat(el.getAttribute('data-target'))).toLocaleString('es-ES');
+      });
+    }
+  }
+
+  fetch('../content-es.json?v=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(data){ applyContent(data); })
+    .catch(function(err){ console.warn('No se pudo cargar content.json de Wildcore, se mantiene el texto por defecto.', err); })
+    .finally(function(){ initSite(); });
 </script>
 
 </body>

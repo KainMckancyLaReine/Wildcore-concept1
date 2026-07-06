@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "eyebrow": "Wildcore Retreats · Sierra Calderona, España",
+    "title": "Trailrunning, naturaleza y relax<br>en el corazón de la Sierra Calderona.",
+    "lead": "Un fin de semana a pequeña escala para personas activas que quieren vivir más y rendir menos.",
+    "cta1": "Descubre el fin de semana",
+    "cta2": "Reserva tu plaza",
+    "trust": [
+      { "strong": "3 días", "text": "en la montaña" },
+      { "strong": "Grupo reducido", "text": ", mucha atención" },
+      { "strong": "Todos los niveles", "text": "son bienvenidos" },
+      { "strong": "Villa + piscina", "text": ", traslado desde Valencia" }
+    ]
+  },
+  "intro": {
+    "eyebrow": "Por qué Wildcore",
+    "title": "Este fin de semana no va de rendir.<br>Va de vivir.",
+    "paragraphs": [
+      "Para nosotros, el trailrunning no va de velocidad ni de competición. Va de estar al aire libre, moverte en la naturaleza y notar qué pasa cuando te alejas un momento del ajetreo del día a día.",
+      "En la Sierra Calderona corremos según el momento. Sin horarios estrictos, sin fijarnos en tiempos ni rendimiento. Paramos donde es bonito, contemplamos el valle, hacemos una foto, o simplemente nos quedamos un momento quietos en la naturaleza. Caminar siempre está permitido, en cualquier tramo.",
+      "Este fin de semana es para cualquiera con una condición física razonable y una buena dosis de curiosidad — tanto si llevas años corriendo como si nunca has pisado un sendero."
+    ],
+    "statement": "«No rendir. Vivir.»"
+  },
+  "features": [
+    { "title": "Para principiantes y también para los más constantes", "text": "Diseñado especialmente para corredores de trail principiantes y senderistas activos que quieren descubrir la naturaleza. Cada uno va a su propio ritmo — siempre hay margen para caminar cuando haga falta." },
+    { "title": "Una villa con piscina y vistas panorámicas", "text": "No te alojas en un hotel, sino en una villa con encanto rodeada de vegetación — con piscina, amplia terraza y vistas a las montañas. El lugar perfecto para desconectar del todo después de un día en los senderos." },
+    { "title": "Pinares y senderos de montaña ondulantes", "text": "Corremos por paisajes impresionantes: pinares con aroma a resina, senderos de montaña ondulantes y caminos sorprendentes que nunca encontrarías por tu cuenta. Cada ruta tiene su propio ambiente y ritmo." },
+    { "title": "Vistas que no olvidarás fácilmente", "text": "El momento culminante: tu primera carrera de trail con confianza por el paisaje español. Con miradores sobre barrancos, valles y formaciones rocosas que se te quedan grabados mucho después de volver a casa." },
+    { "title": "Deporte, descanso y buena compañía", "text": "Una combinación perfecta de reto físico, relax y conexión. Después de correr: buena comida, buenas conversaciones y tiempo para conocerse de verdad — en un grupo deliberadamente reducido." }
+  ],
+  "gallery": {
+    "eyebrow": "Galería",
+    "title": "El ambiente del fin de semana",
+    "text": "Senderos de montaña, barrancos, rincones tranquilos y una villa para recuperar el aliento — un vistazo a dónde vas a estar."
+  },
+  "program": {
+    "eyebrow": "Programa del fin de semana",
+    "title": "Tres días, tres rutas",
+    "text": "Cada día tiene su propio carácter — desde un comienzo suave hasta el momento culminante del fin de semana y una ruta de recuperación tranquila para disfrutar de las sensaciones.",
+    "days": [
+      { "label": "Viernes", "name": "Casinos Sunset Loop", "stat1": "8 km", "stat2": "±180 m", "text": "Un comienzo suave. Exploramos los senderos alrededor de Casinos mientras el sol se pone sobre el valle — perfecto para acostumbrarse al terreno y conocer al grupo." },
+      { "label": "Sábado", "name": "Serra Calderona Grand Loop", "stat1": "20–23 km", "stat2": "±850 m", "text": "El corazón del fin de semana: una ruta más larga por paisajes impresionantes y miradores que no olvidarás fácilmente. Caminar siempre está permitido." },
+      { "label": "Domingo", "name": "Rebalsadors Recovery Loop", "stat1": "13–15 km", "stat2": "±500 m", "text": "Un cierre más tranquilo junto a barrancos y cascadas, con tiempo de sobra para disfrutarlo antes de volver a casa." }
+    ],
+    "stats": { "kmLabel": "Distancia total", "hmLabel": "Desnivel acumulado", "daysLabel": "Días en la montaña", "levels": "Todos", "levelsLabel": "los niveles bienvenidos" }
+  },
+  "villa": {
+    "eyebrow": "Tu base de operaciones",
+    "title": "Villa El Pinar, junto a Casinos",
+    "paragraphs": [
+      "Durante este fin de semana no te alojas en un hotel, sino en una villa independiente con encanto que se siente como un hogar lejos de casa — en la tranquila urbanización de El Pinar, junto al auténtico pueblo de Casinos.",
+      "La villa está rodeada de vegetación con vistas a las montañas de la Sierra Calderona. Después de un día en los senderos, te relajas junto a la piscina, en la terraza o en el jardín. Por dentro, todo gira en torno a un ambiente cálido y hogareño: café por la mañana, historias después de correr, y comidas sanas y sabrosas sin prisas."
+    ],
+    "amenities": [
+      "Piscina y terraza soleada",
+      "Vistas panorámicas a la montaña",
+      "Espacio común para compartir",
+      "Amplio jardín para desconectar",
+      "Desayuno, comida y cena incluidos",
+      "Espacio para todos, sin prisas"
+    ]
+  },
+  "host": {
+    "eyebrow": "Sobre tu anfitrión",
+    "title": "Maurizio Salazar",
+    "paragraphs": [
+      "Vivo gran parte del año al pie de la Sierra Calderona. De profesión soy terapeuta deportivo y de shiatsu, y llevo toda la vida fascinado por el movimiento, la salud y el poder de la naturaleza.",
+      "A través de mi trabajo veo cada día lo importante que es salir de la rutina diaria y dedicarse tiempo a uno mismo. La naturaleza siempre ha sido para mí un lugar para recargar energías — y esa sensación de calma y libertad es lo que me encanta compartir con los demás.",
+      "Por eso organizo fines de semana de trailrunning a pequeña escala. No un viaje deportivo centrado en el rendimiento, sino una experiencia accesible donde el movimiento, la naturaleza, el descanso y la conexión son lo principal. Me encantaría llevarte a la montaña."
+    ],
+    "sign": "— Maurizio"
+  },
+  "pricing": {
+    "eyebrow": "Precios",
+    "title": "Elige tu fin de semana",
+    "text": "Ambas opciones están completamente organizadas — desde el traslado al aeropuerto hasta el acompañamiento en cada ruta.",
+    "cards": [
+      {
+        "tag": "",
+        "title": "Fin de semana",
+        "dates": "Viernes a domingo",
+        "price": "495 €",
+        "unit": "p.p.",
+        "items": ["Alojamiento en Villa El Pinar", "Desayuno, comida y 2 cenas compartidas", "Traslado desde el aeropuerto de Valencia", "Traslados a los senderos", "Acompañamiento en cada ruta"],
+        "cta": "Solicita tu plaza"
+      },
+      {
+        "tag": "Un día extra de descanso",
+        "title": "Fin de semana largo",
+        "dates": "Jueves a domingo",
+        "price": "645 €",
+        "unit": "p.p.",
+        "items": ["Alojamiento en Villa El Pinar", "Desayuno, comida y 3 cenas compartidas", "Traslado desde el aeropuerto de Valencia", "Traslados a los senderos", "Acompañamiento en cada ruta"],
+        "cta": "Solicita tu plaza"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Reserva tu plaza",
+    "title": "¿Listo para adentrarte en la montaña?",
+    "text": "Envíanos un mensaje y te responderemos enseguida — o contacta directamente con nosotros a través de los siguientes datos.",
+    "email": "info@wildcoreretreats.com",
+    "location": "Villa El Pinar, Casinos — Sierra Calderona, España",
+    "reachability": "Traslado desde el aeropuerto de Valencia incluido"
+  }
+}
