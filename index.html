@@ -275,8 +275,11 @@
   .villa-gallery img:first-child{grid-column:1/3;height:220px;}
 
   /* GASTHEER */
-  .host-wrap{display:grid;grid-template-columns:0.8fr 1.2fr;gap:60px;align-items:center;}
-  .host-wrap img{border-radius:20px;box-shadow:var(--shadow);height:520px;width:100%;object-fit:cover;}
+  .host-wrap{display:grid;grid-template-columns:0.8fr 1.2fr;gap:60px;align-items:start;}
+  .host-wrap img{
+    border-radius:20px;box-shadow:var(--shadow);height:520px;width:100%;object-fit:cover;
+    position:sticky;top:120px;
+  }
   .host-text p{color:#4a4736;}
   .host-sign{font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;color:var(--green-deep);margin-top:1em;}
 
@@ -388,7 +391,7 @@
     .program-grid{grid-template-columns:1fr;}
     .price-grid{grid-template-columns:1fr;}
     .amenities{grid-template-columns:1fr;}
-    .host-wrap img{height:360px;}
+    .host-wrap img{height:360px;position:static;}
     .villa-gallery img{height:200px;}
     .pad{padding:70px 0;}
     .intro{padding:80px 0 60px;}
@@ -649,9 +652,12 @@
         <div class="host-text reveal-right">
           <span class="eyebrow" data-key="host.eyebrow">Over je gastheer</span>
           <h2 data-key="host.title">Maurizio Salazar</h2>
-          <p data-key="host.paragraphs.0">Ik woon een groot deel van het jaar aan de voet van de Sierra Calderona. Van beroep ben ik sport- en shiatsutherapeut, en al mijn hele leven gefascineerd door beweging, gezondheid en de kracht van de natuur.</p>
-          <p data-key="host.paragraphs.1">Door mijn werk zie ik dagelijks hoe belangrijk het is om even uit de dagelijkse routine te stappen en tijd te maken voor jezelf. De natuur is voor mij altijd een plek geweest om op te laden — die rust en vrijheid deel ik graag met anderen.</p>
-          <p data-key="host.paragraphs.2">Daarom organiseer ik kleinschalige trailrunweekenden. Geen prestatiegerichte sportreis, maar een toegankelijke ervaring waarin beweging, natuur, ontspanning en verbinding centraal staan. Ik neem je graag mee de bergen in.</p>
+          <p data-key="host.paragraphs.0">Mijn naam is Maurizio Salazar en ik woon een groot deel van het jaar in de prachtige omgeving van Casinos, aan de voet van de Sierra Calderona.</p>
+          <p data-key="host.paragraphs.1">Van beroep ben ik sport- en shiatsutherapeut en al mijn hele leven gefascineerd door beweging, gezondheid en de kracht van de natuur. Sport heeft altijd een belangrijke rol gespeeld in mijn leven. Of het nu gaat om hardlopen, trailrunnen, wandelen of andere vormen van beweging; ik geloof dat actief zijn niet alleen goed is voor het lichaam, maar ook voor de geest.</p>
+          <p data-key="host.paragraphs.2">Door mijn werk heb ik dagelijks contact met mensen die gezonder, sterker en energieker willen leven. Daarbij zie ik hoe belangrijk het is om af en toe uit de dagelijkse routine te stappen en tijd te maken voor jezelf.</p>
+          <p data-key="host.paragraphs.3">De natuur is voor mij altijd een plek geweest om op te laden. In de bergen van de Sierra Calderona vind ik rust, vrijheid en avontuur. Dat gevoel wil ik graag delen met anderen.</p>
+          <p data-key="host.paragraphs.4">Vanuit die passie is het idee ontstaan om kleinschalige trailrunweekenden te organiseren. Geen prestatiegerichte sportreis, maar een toegankelijke ervaring waarin beweging, natuur, ontspanning en verbinding centraal staan.</p>
+          <p data-key="host.paragraphs.5">Ik nodig je uit om de trails, de omgeving en de ontspannen Spaanse levensstijl te ontdekken. Samen genieten we van mooie routes, gezonde maaltijden, goede gesprekken en de unieke sfeer van mijn huis in El Pinar.</p>
           <p class="host-sign" data-key="host.sign">— Maurizio</p>
         </div>
       </div>
