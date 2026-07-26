@@ -6,10 +6,22 @@
     "cta1": "Discover the weekend",
     "cta2": "Book your spot",
     "trust": [
-      { "strong": "3 days", "text": "in the mountains" },
-      { "strong": "Small group", "text": ", lots of attention" },
-      { "strong": "All levels", "text": "welcome" },
-      { "strong": "Villa + pool", "text": ", transfer from Valencia" }
+      {
+        "strong": "3 days",
+        "text": "in the mountains"
+      },
+      {
+        "strong": "Small group",
+        "text": ", lots of attention"
+      },
+      {
+        "strong": "All levels",
+        "text": "welcome"
+      },
+      {
+        "strong": "Villa + pool",
+        "text": ", transfer from Valencia"
+      }
     ]
   },
   "intro": {
@@ -18,32 +30,138 @@
     "paragraphs": [
       "For us, trail running isn't about speed or competition. It's about being outdoors, moving in nature, and noticing what happens once you step away from the rush of everyday life.",
       "In the Sierra Calderona we run by feel. No strict schedule, no focus on times or performance. We stop where it's beautiful, look out over the valley, take a photo, or simply stand still in nature for a moment. Walking is always allowed, anywhere.",
-      "This weekend is for anyone with a reasonable base fitness and a healthy dose of curiosity — whether you've been running for years or have never set foot on a trail."
+      "Trail run or hike? The choice is yours. Every route can be done as a trail run or as a hike, so you decide what suits you best. Whether you love to run or would rather take in the scenery on foot, the experience always comes first. We stay together as a group and adapt the pace to one another."
     ],
     "statement": "“Not performing. Experiencing.”"
   },
   "features": [
-    { "title": "For beginners and go-getters alike", "text": "Specially designed for beginner trail runners and active hikers who want to discover nature. Everyone moves at their own level — there's always room to walk when needed." },
-    { "title": "A villa with pool &amp; panorama", "text": "You don't stay in a hotel, but in an atmospheric villa surrounded by greenery — with a pool, spacious terrace and mountain views. The perfect place to fully unwind after a day on the trails." },
-    { "title": "Pine forests &amp; rolling mountain trails", "text": "We run through breathtaking landscapes: fragrant pine forests, rolling mountain trails and surprising little paths you'd never find on your own. Every route has its own atmosphere and pace." },
-    { "title": "Views you won't forget any time soon", "text": "The highlight: your first confident trail run through the Spanish landscape. With viewpoints over ravines, valleys and rock formations that stay with you long after you're back home." },
-    { "title": "Sport, rest &amp; good company", "text": "A perfect combination of physical challenge, relaxation and connection. After the runs: good food, good conversation, and time to really get to know each other — in a deliberately small group." }
+    {
+      "title": "Who is this weekend for?",
+      "paragraphs": [
+        "This weekend is meant for active people who enjoy running and want to discover trail running in nature. Experience with trail running isn't necessary, but a good base level of fitness is important. We therefore ask participants to be able to run comfortably for at least an hour and a half.",
+        "The group has a maximum of six participants, so that levels match well and we can run together as one group all weekend. We adapt the pace to each other, take our time where needed, and above all enjoy the nature, the trails and the shared experience."
+      ],
+      "statement": "Not about performing, but about experiencing it together."
+    },
+    {
+      "title": "A villa with a pool",
+      "text": "You'll be staying in my detached villa in El Pinar, a quiet spot in the middle of nature with a pool, spacious terraces and views of the mountains. The perfect place to fully unwind after a day on the trails."
+    },
+    {
+      "title": "Pine forests &amp; rolling mountain trails",
+      "text": "We run through breathtaking landscapes: fragrant pine forests, rolling mountain trails and surprising little paths you'd never find on your own. Every route has its own atmosphere and pace."
+    },
+    {
+      "title": "Views you won't forget any time soon",
+      "text": "The highlight: your first confident trail run through the Spanish landscape. With viewpoints over ravines, valleys and rock formations that stay with you long after you're back home."
+    },
+    {
+      "title": "Sport, rest &amp; good company",
+      "text": "A perfect combination of physical challenge, relaxation and connection. After the runs: good food, good conversation, and time to really get to know each other — in a deliberately small group."
+    }
   ],
   "gallery": {
     "eyebrow": "Gallery",
-    "title": "The feel of the weekend",
-    "text": "Mountain trails, canyons, quiet resting spots and a villa to catch your breath — a glimpse of where you'll end up."
+    "title": "The Sierra Calderona, up close",
+    "text": "Mountain trails through pine forest, canyons with running water and a villa looking out over the valley. Tap any photo to view it full size."
   },
   "program": {
     "eyebrow": "Weekend schedule",
     "title": "Three days, three routes",
     "text": "Each day has its own character — from a gentle start to the highlight of the weekend and a relaxed recovery loop to enjoy the afterglow.",
     "days": [
-      { "label": "Friday", "name": "Casinos Sunset Loop", "stat1": "8 km", "stat2": "±180 m", "text": "A gentle start. We explore the trails around Casinos as the sun sets over the valley — perfect for getting used to the terrain and getting to know each other." },
-      { "label": "Saturday", "name": "Serra Calderona Grand Loop", "stat1": "20–23 km", "stat2": "±850 m", "text": "The heart of the weekend: a longer route through breathtaking landscapes and past viewpoints you won't soon forget. Walking is always allowed." },
-      { "label": "Sunday", "name": "Rebalsadors Recovery Loop", "stat1": "13–15 km", "stat2": "±500 m", "text": "A calmer finish along ravines and waterfalls, with plenty of time to soak it all in before heading home." }
+      {
+        "label": "Friday",
+        "name": "Casinos Sunset Loop",
+        "stat1": "8 km",
+        "stat2": "±180 m",
+        "text": "A gentle start. We explore the trails around Casinos as the sun sets over the valley — perfect for getting used to the terrain and getting to know each other.",
+        "schedule": [
+          {
+            "time": "14:00 – 16:00",
+            "title": "Welcome in Casinos",
+            "text": "You arrive at the villa in El Pinar, where you can check in at your own pace and pick your room. Take your time to meet the other participants, enjoy a coffee on the terrace and let the journey fall away."
+          },
+          {
+            "time": "18:00",
+            "title": "Sunset Trail",
+            "text": "We open the weekend with a relaxed trail run around Casinos. A beautiful route over rolling paths and through pine forests, at an easy pace with plenty of time for the first views."
+          },
+          {
+            "time": "20:00",
+            "title": "Dinner together",
+            "text": "After the trail we sit down to a healthy, flavourful meal. A relaxed evening to get to know each other better."
+          }
+        ]
+      },
+      {
+        "label": "Saturday",
+        "name": "Serra Calderona Grand Loop",
+        "stat1": "20–23 km",
+        "stat2": "±850 m",
+        "text": "The heart of the weekend: a longer route through breathtaking landscapes and past viewpoints you won't soon forget. Walking is always allowed.",
+        "schedule": [
+          {
+            "time": "07:00 – 08:00",
+            "title": "Breakfast",
+            "text": "We start the day with a generous, nourishing breakfast so everyone has enough energy for the finest trail of the weekend."
+          },
+          {
+            "time": "09:00",
+            "title": "Departure for the main trail",
+            "text": "The impressive route through the Sierra Calderona, over varied mountain paths, through fragrant pine forests and past spectacular viewpoints. Along the way we take time for photos and lunch together out in nature."
+          },
+          {
+            "time": "16:00",
+            "title": "Back at the villa",
+            "text": "Time to unwind: a refreshing dip in the pool, a book on the terrace, or simply the quiet and the view over the mountains."
+          },
+          {
+            "time": "20:00",
+            "title": "Dinner together",
+            "text": "Another healthy, flavourful meal and a relaxed evening, looking ahead to tomorrow's trail."
+          }
+        ]
+      },
+      {
+        "label": "Sunday",
+        "name": "Rebalsadors Recovery Loop",
+        "stat1": "13–15 km",
+        "stat2": "±500 m",
+        "text": "A calmer finish along ravines and waterfalls, with plenty of time to soak it all in before heading home.",
+        "schedule": [
+          {
+            "time": "07:00 – 08:00",
+            "title": "Breakfast",
+            "text": "One more breakfast together before we head into the mountains for a relaxed close to the weekend."
+          },
+          {
+            "time": "09:00",
+            "title": "Morning trail",
+            "text": "A varied route through the Sierra Calderona where we enjoy the quiet, the nature and the wide views one last time."
+          },
+          {
+            "time": "13:00",
+            "title": "Lunch together",
+            "text": "Back at the villa we close the weekend with a convivial lunch on the terrace. A lovely moment to share experiences and savour it all."
+          },
+          {
+            "time": "15:00",
+            "title": "Farewell",
+            "text": "After a weekend full of nature, sport, relaxation and new encounters we say goodbye — with fresh energy, inspiration and perhaps a new love for trail running."
+          }
+        ]
+      }
     ],
-    "stats": { "kmLabel": "Total distance", "hmLabel": "Elevation gain", "daysLabel": "Days in the mountains", "levels": "All", "levelsLabel": "Levels welcome" }
+    "stats": {
+      "kmLabel": "Total distance",
+      "hmLabel": "Elevation gain",
+      "daysLabel": "Days in the mountains",
+      "levels": "All",
+      "levelsLabel": "Levels welcome"
+    },
+    "scheduleToggle": "View day schedule",
+    "scheduleToggleClose": "Hide day schedule"
   },
   "villa": {
     "eyebrow": "Your home base",
@@ -65,34 +183,137 @@
     "eyebrow": "About your host",
     "title": "Maurizio Salazar",
     "paragraphs": [
-      "I live at the foot of the Sierra Calderona for much of the year. By profession I'm a sports and shiatsu therapist, and I've been fascinated by movement, health and the power of nature my entire life.",
-      "Through my work I see every day how important it is to step out of your daily routine and make time for yourself. Nature has always been a place for me to recharge — and that sense of rest and freedom is what I love sharing with others.",
-      "That's why I organise small-scale trail running weekends. Not a performance-driven sports trip, but an accessible experience where movement, nature, relaxation and connection take centre stage. I'd love to take you into the mountains."
+      "My name is Maurizio Salazar and I live for much of the year in the beautiful surroundings of Casinos, at the foot of the Sierra Calderona.",
+      "By profession I'm a sports and shiatsu therapist, and I've been fascinated by movement, health and the power of nature my whole life. Sport has always played an important role for me. Whether it's running, trail running, hiking or any other kind of movement, I believe being active is good not only for the body but for the mind as well.",
+      "Through my work I'm in daily contact with people who want to live healthier, stronger and with more energy. It shows me again and again how important it is to step out of your daily routine now and then and make time for yourself.",
+      "Nature has always been the place where I recharge. In the mountains of the Sierra Calderona I find calm, freedom and adventure. That feeling is what I want to share with others.",
+      "Out of that passion came the idea of organising small-scale trail running weekends. Not a performance-driven sports trip, but an accessible experience where movement, nature, relaxation and connection take centre stage.",
+      "I'd like to invite you to discover the trails, the surroundings and the relaxed Spanish way of life. Together we enjoy beautiful routes, healthy meals, good conversation and the unique atmosphere of my home in El Pinar."
     ],
     "sign": "— Maurizio"
   },
   "pricing": {
     "eyebrow": "Pricing",
     "title": "Choose your weekend",
-    "text": "Both options are fully organised — from airport transfers to guidance on every run.",
-    "cards": [
+    "text": "Both weekends are fully organised — from airport transfers to guidance along the way.",
+    "price": "€495",
+    "unit": "pp",
+    "dates": "Friday to Sunday",
+    "cta": "Request your spot",
+    "includedLabel": "Included",
+    "included": [
+      "Stay at Villa El Pinar",
+      "Breakfast, lunch &amp; 2 shared dinners",
+      "Airport transfer from Valencia Airport",
+      "Transfers to the trailheads"
+    ],
+    "choiceLabel": "Choose your pace",
+    "options": [
       {
-        "tag": "",
-        "title": "Weekend",
-        "dates": "Friday to Sunday",
-        "price": "€495",
-        "unit": "pp",
-        "items": ["Stay at Villa El Pinar", "Breakfast, lunch &amp; 2 shared dinners", "Airport transfer from Valencia Airport", "Trail transfers", "Guidance on every run"],
-        "cta": "Request your spot"
+        "title": "Trail",
+        "text": "Guidance on every trail run"
       },
       {
-        "tag": "Extra day to unwind",
-        "title": "Long weekend",
-        "dates": "Thursday to Sunday",
-        "price": "€645",
-        "unit": "pp",
-        "items": ["Stay at Villa El Pinar", "Breakfast, lunch &amp; 3 shared dinners", "Airport transfer from Valencia Airport", "Trail transfers", "Guidance on every run"],
-        "cta": "Request your spot"
+        "title": "Hike",
+        "text": "Guidance on every hike"
+      }
+    ]
+  },
+  "practical": {
+    "eyebrow": "Practical info",
+    "title": "Good to know",
+    "text": "The most important practical information at a glance. The full terms and conditions are further below.",
+    "faq": [
+      {
+        "q": "Who is this weekend for?",
+        "a": "Open to anyone aged 18 or over with a reasonable base level of fitness. You are responsible for assessing your own physical condition and health. The group is kept deliberately small, so there's room for personal attention and everyone can move at their own pace, running or walking."
+      },
+      {
+        "q": "What's included?",
+        "a": "Accommodation at the villa, breakfast, lunch, 2 shared dinners, airport transfer from Valencia Airport, transfers to the trailheads and guidance on every trail run and hike."
+      },
+      {
+        "q": "Insurance",
+        "a": "Every participant is responsible for their own valid travel insurance, any cancellation insurance, and suitable sports cover if desired. We always recommend arranging this in advance."
+      },
+      {
+        "q": "Cancellation &amp; changes",
+        "a": "If you cancel your participation, the following costs apply, calculated from the departure date:",
+        "rows": [
+          {
+            "when": "Up to 8 weeks before departure",
+            "cost": "€50 administration fee"
+          },
+          {
+            "when": "8 to 4 weeks before departure",
+            "cost": "50% of the trip price"
+          },
+          {
+            "when": "4 to 2 weeks before departure",
+            "cost": "75% of the trip price"
+          },
+          {
+            "when": "Within 14 days before departure",
+            "cost": "100% of the trip price"
+          }
+        ],
+        "note": "No refund is given for early termination of the weekend or failure to show up on the departure date. Up to 7 days before departure you may nominate a replacement participant free of charge, provided this is reported in advance and approved. We recommend every participant take out cancellation insurance."
+      },
+      {
+        "q": "Programme changes",
+        "a": "Routes, activities or parts of the programme may be adjusted due to weather conditions, wildfire risk, local regulations or safety considerations. If the organiser cancels the weekend due to force majeure, insufficient participants or safety reasons, you will receive a full refund of the amount already paid."
+      }
+    ],
+    "termsTitle": "Full terms and conditions",
+    "terms": [
+      {
+        "title": "1. Applicability",
+        "text": "These terms apply to all bookings and participation in the Trail Running &amp; Hiking Weekend Sierra Calderona, organised by Wildcore Retreats. By registering, the participant agrees to these terms."
+      },
+      {
+        "title": "2. Participation",
+        "text": "Participation is open to persons aged 18 and over. The participant declares to be in sufficiently good health to take part in trail running and hiking activities and is responsible for assessing their own physical condition. The organiser reserves the right to refuse participation if deemed necessary for the safety of the participant or the group."
+      },
+      {
+        "title": "3. Bookings and payment",
+        "text": "A booking is final upon receipt of the deposit or full payment. The remaining balance must be paid no later than 30 days before departure. If payment is not received on time, the organiser may cancel the reservation."
+      },
+      {
+        "title": "4. Cancellation by the participant",
+        "text": "Up to 8 weeks before departure: €50 administration fee. From 8 to 4 weeks before departure: 50% of the trip price. From 4 to 2 weeks before departure: 75% of the trip price. Within 14 days before departure: 100% of the trip price. No refund is given for early termination of the weekend or failure to show up on the departure date. Participants are advised to take out travel and cancellation insurance.",
+        "text2": "<strong>Replacement participant:</strong> a participant may, up to 7 days before departure, nominate a replacement participant free of charge, provided the organiser is notified in advance, the replacement participant meets the participation conditions, and any additional costs resulting from the change are reimbursed."
+      },
+      {
+        "title": "5. Cancellation by the organiser",
+        "text": "The organiser reserves the right to cancel the weekend in case of insufficient participants, force majeure, extreme weather conditions or unforeseen safety risks. In that case, the amount already paid will be fully refunded. Any other costs, such as transport or insurance, fall outside the organiser's responsibility."
+      },
+      {
+        "title": "6. Risk and liability",
+        "text": "Trail running, hiking and outdoor activities carry inherent risks. Participation is entirely at your own risk. The organiser is not liable for injuries, accidents, loss, theft or damage to personal property, except in cases of intent or gross negligence. The participant remains responsible for their own actions at all times."
+      },
+      {
+        "title": "7. Conduct and safety",
+        "text": "Participants are expected to follow the guide's instructions, treat fellow participants, the accommodation and nature with respect, and avoid taking unacceptable risks during activities. The organiser may exclude a participant from further participation if their behaviour endangers the safety or wellbeing of the group."
+      },
+      {
+        "title": "8. Programme changes",
+        "text": "The organiser reserves the right to adjust routes, activities, timings or parts of the programme due to weather conditions, wildfire risk, local regulations or safety considerations."
+      },
+      {
+        "title": "9. Insurance",
+        "text": "Every participant is responsible for valid travel insurance, any cancellation insurance, and suitable sports cover if desired."
+      },
+      {
+        "title": "10. Photo and video material",
+        "text": "Photos and videos may be taken during the weekend for promotional purposes. If a participant objects to this, they must state so in writing in advance."
+      },
+      {
+        "title": "11. Personal data",
+        "text": "Personal data is used solely for organising and running the event and will not be shared with third parties without consent, unless necessary for carrying out the trip."
+      },
+      {
+        "title": "12. Force majeure",
+        "text": "Force majeure means any situation beyond the organiser's reasonable control, including natural disasters, wildfires, pandemics, strikes, government measures and extreme weather conditions. In such situations the programme may be adjusted, postponed or cancelled."
       }
     ]
   },
@@ -100,8 +321,8 @@
     "eyebrow": "Book your spot",
     "title": "Ready to head into the mountains?",
     "text": "Send a message and we'll get back to you quickly — or contact us directly using the details below.",
-    "email": "info@wildcoreretreats.com",
-    "location": "Villa El Pinar, Casinos — Sierra Calderona, Spain",
+    "email": "info@wildcore-retreats.nl",
+    "location": "Villa El Pinar, Casinos — Valencia",
     "reachability": "Airport transfer included from Valencia Airport"
   }
 }

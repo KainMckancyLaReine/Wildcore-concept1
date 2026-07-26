@@ -8,7 +8,7 @@
 <link rel="icon" href="../images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
   :root{
     --cream:#f8f2e6; --cream-deep:#eadec8; --green-deep:#3f4a34; --green-mid:#5c6b48;
@@ -135,7 +135,7 @@
   </header>
 
   <div class="wrap">
-    <div class="note">Let op: de juridische algemene voorwaarden, de FAQ-tekst, menu-items en de kilometers/hoogtemeters-cijfers zijn met opzet niet aan te passen via dit systeem. Wil je die wijzigen, neem dan contact op met je ontwikkelaar.</div>
+    <div class="note">Je kunt hier alle teksten van de website aanpassen, inclusief de FAQ en de algemene voorwaarden (onderaan, bij &ldquo;Praktisch &amp; voorwaarden&rdquo;). Let op: de menu-items en de cijfers in de balk met kilometers en hoogtemeters staan bewust vast. Wil je die wijzigen, neem dan contact op met je ontwikkelaar. Laat juridische teksten altijd nakijken voordat je publiceert.</div>
 
     <div class="tabs" id="langTabs">
       <button class="tab-btn active" data-lang="nl">🇳🇱 Nederlands</button>
@@ -169,13 +169,14 @@
   const IMAGE_FILES = [
     "trail-runner-forest.jpg","trail-descent-autumn.jpg","host-portrait.jpg","ruins-viewpoint.jpg",
     "villa-exterior.jpg","river-canyon.jpg","pool-sunset.jpg","valley-view.jpg",
-    "canyon-cliffs.jpg","waterfall-steps.jpg","villa-flowers.jpg","mountain-steps-trail.jpg","logo.png"
+    "canyon-cliffs.jpg","waterfall-steps.jpg","villa-flowers.jpg","mountain-steps-trail.jpg",
+    "og-cover.jpg","logo-mark.png","logo.png"
   ];
 
   const SECTION_TITLES = {
     hero:"Hero (bovenaan de pagina)", intro:"Waarom Wildcore", features:"5 kenmerken",
     gallery:"Galerij — introtekst", program:"Programma", villa:"Villa", host:"Gastheer",
-    pricing:"Prijzen", contact:"Contact"
+    pricing:"Prijzen", practical:"Praktisch & voorwaarden", contact:"Contact"
   };
   const LABELS = {
     features:"Kenmerk",
@@ -187,9 +188,16 @@
     levels:"Niveaus-waarde", levelsLabel:"Label: niveaus", amenities:"Voorziening",
     sign:"Ondertekening", cards:"Prijskaart", tag:"Badge-tekst", dates:"Data", price:"Prijs",
     unit:"Eenheid", items:"Inbegrepen-item", cta:"Knoptekst", email:"E-mailadres",
-    location:"Locatie", reachability:"Bereikbaarheid"
+    location:"Locatie", reachability:"Bereikbaarheid",
+    schedule:"Programmapunt", time:"Tijdstip",
+    scheduleToggle:"Knop: dagprogramma openen", scheduleToggleClose:"Knop: dagprogramma sluiten",
+    faq:"Vraag", q:"Vraag", a:"Antwoord", rows:"Tariefregel", when:"Wanneer", cost:"Kosten",
+    note:"Toelichting onder de tabel", terms:"Artikel", termsTitle:"Titel: volledige voorwaarden",
+    text2:"Tweede alinea",
+    included:"Inbegrepen-item", includedLabel:"Kopje boven de inbegrepen-lijst",
+    options:"Variant", choiceLabel:"Kopje boven de variantkeuze"
   };
-  const MULTILINE = new Set(['title','lead','text','paragraphs','statement']);
+  const MULTILINE = new Set(['title','lead','text','paragraphs','statement','a','note','text2','q']);
 
   function labelFor(key){ return LABELS[key] || (key.charAt(0).toUpperCase() + key.slice(1)); }
 
@@ -308,12 +316,32 @@
     if (!input || !input.files[0]) return;
     const path = input.getAttribute('data-image-path');
     const file = input.files[0];
+    const item = input.closest('.img-item');
+    const isPng = /\.png$/i.test(path);
+    const maxSide = isPng ? 512 : 1400;
     const reader = new FileReader();
     reader.onload = () => {
-      changedImages[path] = reader.result; // data:image/...;base64,....
-      const item = input.closest('.img-item');
-      item.classList.add('changed');
-      item.querySelector('img').src = reader.result;
+      const img = new Image();
+      img.onload = () => {
+        // Foto automatisch verkleinen, zodat de website snel blijft laden.
+        let { width: w, height: h } = img;
+        const scale = Math.min(1, maxSide / Math.max(w, h));
+        w = Math.round(w * scale); h = Math.round(h * scale);
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, w, h);
+        const out = isPng ? canvas.toDataURL('image/png') : canvas.toDataURL('image/jpeg', 0.72);
+        changedImages[path] = out;
+        item.classList.add('changed');
+        item.querySelector('img').src = out;
+      };
+      img.onerror = () => {
+        changedImages[path] = reader.result;
+        item.classList.add('changed');
+        item.querySelector('img').src = reader.result;
+      };
+      img.src = reader.result;
     };
     reader.readAsDataURL(file);
   });

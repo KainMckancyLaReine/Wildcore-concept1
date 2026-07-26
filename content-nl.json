@@ -6,10 +6,22 @@
     "cta1": "Ontdek het weekend",
     "cta2": "Boek jouw plek",
     "trust": [
-      { "strong": "3 dagen", "text": "in de bergen" },
-      { "strong": "Kleine groep", "text": ", veel aandacht" },
-      { "strong": "Alle niveaus", "text": "welkom" },
-      { "strong": "Villa + zwembad", "text": ", vlucht v.a. Valencia" }
+      {
+        "strong": "3 dagen",
+        "text": "in de bergen"
+      },
+      {
+        "strong": "Kleine groep",
+        "text": ", veel aandacht"
+      },
+      {
+        "strong": "Alle niveaus",
+        "text": "welkom"
+      },
+      {
+        "strong": "Villa + zwembad",
+        "text": ", vlucht v.a. Valencia"
+      }
     ]
   },
   "intro": {
@@ -18,32 +30,138 @@
     "paragraphs": [
       "Trailrunnen gaat voor ons niet over snelheid of competitie. Het gaat over buiten zijn, bewegen in de natuur en merken wat er gebeurt zodra je even afstand neemt van de drukte van alledag.",
       "In de Sierra Calderona lopen we op gevoel. Geen strak schema, geen focus op tijden of prestaties. We stoppen waar het mooi is, kijken uit over de vallei, maken een foto, of staan gewoon even stil in de natuur. Wandelen mag altijd, overal.",
-      "Dit weekend is er voor iedereen met een redelijke basisconditie en een gezonde dosis nieuwsgierigheid — of je nu al jaren loopt of nog nooit een trail hebt gezet."
+      "Trailrun of hike? De keuze is aan jou. Iedere route kan worden afgelegd als trailrun of als hike. Zo kies je zelf wat het beste bij je past. Of je nu graag hardloopt of liever wandelend van de natuur geniet, de beleving staat altijd centraal. We blijven als groep bij elkaar en passen het tempo aan elkaar aan."
     ],
     "statement": "“Niet presteren. Beleven.”"
   },
   "features": [
-    { "title": "Voor beginners én doorzetters", "text": "Speciaal ontwikkeld voor beginnende trailrunners en sportieve wandelaars die de natuur willen ontdekken. Iedereen loopt op zijn eigen niveau — er is altijd ruimte om te wandelen waar nodig." },
-    { "title": "Een villa met zwembad &amp; panorama", "text": "Je woont niet in een hotel, maar in een sfeervolle villa midden in het groen — met zwembad, ruim terras en uitzicht over de bergen. De perfecte plek om na een dag op de trails helemaal tot rust te komen." },
-    { "title": "Dennenbossen &amp; glooiende bergpaden", "text": "We lopen door indrukwekkende landschappen: geurende dennenbossen, glooiende bergpaden en verrassende paadjes die je nooit alleen zou vinden. Elke route heeft zijn eigen sfeer en tempo." },
-    { "title": "Uitzichten die je niet snel vergeet", "text": "Het hoogtepunt: jouw eerste zelfverzekerde trailrun door de Spaanse natuur. Met uitzichtpunten over ravijnen, valleien en rotsformaties die je bijblijven, lang nadat je weer thuis bent." },
-    { "title": "Sport, rust &amp; gezelligheid", "text": "Een perfecte combinatie van sportieve uitdaging, ontspanning en verbinding. Na de runs: goed eten, goede gesprekken, en tijd om elkaar écht te leren kennen — in een bewust kleine groep." }
+    {
+      "title": "Voor wie is dit weekend?",
+      "paragraphs": [
+        "Dit weekend is bedoeld voor sportieve mensen die graag hardlopen en kennis willen maken met trailrunnen in de natuur. Ervaring met trailrunnen is niet nodig, maar een goede basisconditie is wel belangrijk. We vragen deelnemers daarom om minimaal anderhalf uur rustig te kunnen hardlopen.",
+        "De groep bestaat uit maximaal zes deelnemers, zodat het niveau goed op elkaar aansluit en we het hele weekend samen als groep kunnen lopen. We passen het tempo aan elkaar aan, nemen de tijd waar nodig en genieten vooral van de natuur, de trails en de gezamenlijke beleving."
+      ],
+      "statement": "Niet presteren, maar samen beleven."
+    },
+    {
+      "title": "Een villa met zwembad",
+      "text": "Je verblijft in mijn vrijstaande villa in El Pinar, een rustige plek midden in de natuur met zwembad, ruime terrassen en uitzicht op de bergen. De perfecte plek om na een dag op de trails helemaal tot rust te komen."
+    },
+    {
+      "title": "Dennenbossen &amp; glooiende bergpaden",
+      "text": "We lopen door indrukwekkende landschappen: geurende dennenbossen, glooiende bergpaden en verrassende paadjes die je nooit alleen zou vinden. Elke route heeft zijn eigen sfeer en tempo."
+    },
+    {
+      "title": "Uitzichten die je niet snel vergeet",
+      "text": "Het hoogtepunt: jouw eerste zelfverzekerde trailrun door de Spaanse natuur. Met uitzichtpunten over ravijnen, valleien en rotsformaties die je bijblijven, lang nadat je weer thuis bent."
+    },
+    {
+      "title": "Sport, rust &amp; gezelligheid",
+      "text": "Een perfecte combinatie van sportieve uitdaging, ontspanning en verbinding. Na de runs: goed eten, goede gesprekken, en tijd om elkaar écht te leren kennen — in een bewust kleine groep."
+    }
   ],
   "gallery": {
     "eyebrow": "In beeld",
-    "title": "De sfeer van het weekend",
-    "text": "Bergpaden, kloven, rustpunten en een villa om op adem te komen — een impressie van waar je terechtkomt."
+    "title": "De Sierra Calderona, van dichtbij",
+    "text": "Bergpaden door dennenbos, kloven met stromend water en een villa met uitzicht over de vallei. Klik op een foto om hem groot te bekijken."
   },
   "program": {
     "eyebrow": "Weekend indeling",
     "title": "Drie dagen, drie routes",
     "text": "Elke dag heeft zijn eigen karakter — van een zachte start tot het hoogtepunt van het weekend en een rustig herstelloopje om van na te genieten.",
     "days": [
-      { "label": "Vrijdag", "name": "Casinos Sunset Loop", "stat1": "8 km", "stat2": "±180 hm", "text": "Een zachte start. We verkennen de paden rond Casinos terwijl de zon ondergaat over de vallei — perfect om te wennen aan het terrein en elkaar te leren kennen." },
-      { "label": "Zaterdag", "name": "Serra Calderona Grand Loop", "stat1": "20–23 km", "stat2": "±850 hm", "text": "Het hart van het weekend: een langere tocht door indrukwekkende landschappen en langs uitzichtpunten die je niet snel vergeet. Wandelen mag altijd." },
-      { "label": "Zondag", "name": "Rebalsadors Recovery Loop", "stat1": "13–15 km", "stat2": "±500 hm", "text": "Een rustiger vervolg langs kloven en watervallen, met alle tijd om na te genieten voordat je huiswaarts keert." }
+      {
+        "label": "Vrijdag",
+        "name": "Casinos Sunset Loop",
+        "stat1": "8 km",
+        "stat2": "±180 hm",
+        "text": "Een zachte start. We verkennen de paden rond Casinos terwijl de zon ondergaat over de vallei — perfect om te wennen aan het terrein en elkaar te leren kennen.",
+        "schedule": [
+          {
+            "time": "14:00 – 16:00",
+            "title": "Welkom in Casinos",
+            "text": "Je komt aan bij de villa in El Pinar, waar je rustig kunt inchecken en je kamer kunt uitzoeken. Neem de tijd om kennis te maken met de andere deelnemers, geniet van een kop koffie op het terras en laat de reis van je afglijden."
+          },
+          {
+            "time": "18:00",
+            "title": "Sunset Trail",
+            "text": "We beginnen het weekend met een ontspannen trailrun door de omgeving van Casinos. Een prachtige route over glooiende paden en door dennenbossen, in een rustig tempo met alle tijd voor de eerste uitzichten."
+          },
+          {
+            "time": "20:00",
+            "title": "Gezamenlijk diner",
+            "text": "Na de trail schuiven we aan voor een gezonde en smaakvolle maaltijd. Een ontspannen avond waarin we elkaar beter leren kennen."
+          }
+        ]
+      },
+      {
+        "label": "Zaterdag",
+        "name": "Serra Calderona Grand Loop",
+        "stat1": "20–23 km",
+        "stat2": "±850 hm",
+        "text": "Het hart van het weekend: een langere tocht door indrukwekkende landschappen en langs uitzichtpunten die je niet snel vergeet. Wandelen mag altijd.",
+        "schedule": [
+          {
+            "time": "07:00 – 08:00",
+            "title": "Ontbijt",
+            "text": "We starten de dag met een uitgebreid en voedzaam ontbijt, zodat iedereen voldoende energie heeft voor de mooiste trail van het weekend."
+          },
+          {
+            "time": "09:00",
+            "title": "Vertrek voor de hoofdtrail",
+            "text": "De indrukwekkende route door de Sierra Calderona, over afwisselende bergpaden, door geurende dennenbossen en langs spectaculaire uitzichtpunten. Onderweg nemen we de tijd om foto's te maken en samen te lunchen in de natuur."
+          },
+          {
+            "time": "16:00",
+            "title": "Terug bij de villa",
+            "text": "Tijd om te ontspannen: een verfrissende duik in het zwembad, een boek op het terras, of simpelweg genieten van de rust en het uitzicht over de bergen."
+          },
+          {
+            "time": "20:00",
+            "title": "Gezamenlijk diner",
+            "text": "Opnieuw een gezonde en smaakvolle maaltijd, en een ontspannen avond met een vooruitblik op de trail van morgen."
+          }
+        ]
+      },
+      {
+        "label": "Zondag",
+        "name": "Rebalsadors Recovery Loop",
+        "stat1": "13–15 km",
+        "stat2": "±500 hm",
+        "text": "Een rustiger vervolg langs kloven en watervallen, met alle tijd om na te genieten voordat je huiswaarts keert.",
+        "schedule": [
+          {
+            "time": "07:00 – 08:00",
+            "title": "Ontbijt",
+            "text": "Nog één keer samen ontbijten voordat we de bergen intrekken voor een ontspannen afsluiting van het weekend."
+          },
+          {
+            "time": "09:00",
+            "title": "Ochtendtrail",
+            "text": "Een afwisselende route door de Sierra Calderona waarbij we nog één keer genieten van de rust, de natuur en de prachtige vergezichten."
+          },
+          {
+            "time": "13:00",
+            "title": "Gezamenlijke lunch",
+            "text": "Terug bij de villa sluiten we het weekend af met een gezellige lunch op het terras. Een mooi moment om ervaringen uit te wisselen en na te genieten."
+          },
+          {
+            "time": "15:00",
+            "title": "Afscheid",
+            "text": "Na een weekend vol natuur, sport, ontspanning en nieuwe ontmoetingen nemen we afscheid — met nieuwe energie, inspiratie en misschien wel een nieuwe liefde voor trailrunnen."
+          }
+        ]
+      }
     ],
-    "stats": { "kmLabel": "Totale afstand", "hmLabel": "Hoogtemeters", "daysLabel": "Dagen bergen", "levels": "Alle", "levelsLabel": "Niveaus welkom" }
+    "stats": {
+      "kmLabel": "Totale afstand",
+      "hmLabel": "Hoogtemeters",
+      "daysLabel": "Dagen bergen",
+      "levels": "Alle",
+      "levelsLabel": "Niveaus welkom"
+    },
+    "scheduleToggle": "Bekijk dagprogramma",
+    "scheduleToggleClose": "Verberg dagprogramma"
   },
   "villa": {
     "eyebrow": "Jouw thuisbasis",
@@ -77,25 +195,125 @@
   "pricing": {
     "eyebrow": "Prijzen",
     "title": "Kies jouw weekend",
-    "text": "Beide opties zijn volledig verzorgd — van luchthavenvervoer tot begeleiding tijdens elke run.",
-    "cards": [
+    "text": "Beide weekenden zijn volledig verzorgd — van luchthavenvervoer tot begeleiding onderweg.",
+    "price": "€495",
+    "unit": "p.p.",
+    "dates": "Vrijdag t/m zondag",
+    "cta": "Vraag jouw plek aan",
+    "includedLabel": "Inbegrepen",
+    "included": [
+      "Verblijf in Villa El Pinar",
+      "Ontbijt, lunch &amp; 2 gezamenlijke diners",
+      "Luchthaventransfer v.a. Valencia Airport",
+      "Transfers naar de startpunten"
+    ],
+    "choiceLabel": "Kies je variant",
+    "options": [
       {
-        "tag": "",
-        "title": "Weekend",
-        "dates": "Vrijdag t/m zondag",
-        "price": "€495",
-        "unit": "p.p.",
-        "items": ["Verblijf in Villa El Pinar", "Ontbijt, lunch &amp; 2 gezamenlijke diners", "Luchthavenvervoer v.a. Valencia Airport", "Trailtransfers", "Begeleiding tijdens alle runs"],
-        "cta": "Vraag jouw plek aan"
+        "title": "Trail",
+        "text": "Begeleiding tijdens alle trailruns"
       },
       {
-        "tag": "Extra dag rust",
-        "title": "Lang weekend",
-        "dates": "Donderdag t/m zondag",
-        "price": "€645",
-        "unit": "p.p.",
-        "items": ["Verblijf in Villa El Pinar", "Ontbijt, lunch &amp; 3 gezamenlijke diners", "Luchthavenvervoer v.a. Valencia Airport", "Trailtransfers", "Begeleiding tijdens alle runs"],
-        "cta": "Vraag jouw plek aan"
+        "title": "Hike",
+        "text": "Begeleiding tijdens de hikes"
+      }
+    ]
+  },
+  "practical": {
+    "eyebrow": "Praktisch",
+    "title": "Goed om te weten",
+    "text": "De belangrijkste praktische informatie op een rij. De volledige algemene voorwaarden vind je onderaan.",
+    "faq": [
+      {
+        "q": "Voor wie is dit weekend?",
+        "a": "Deelname staat open voor personen van 18 jaar en ouder met een redelijke basisconditie. Je bent zelf verantwoordelijk voor het inschatten van je fysieke conditie en gezondheid. De groep wordt bewust klein gehouden, zodat er ruimte is voor persoonlijke aandacht en iedereen op zijn eigen tempo kan lopen of wandelen."
+      },
+      {
+        "q": "Wat is er inbegrepen?",
+        "a": "Verblijf in de villa, ontbijt, lunch, 2 gezamenlijke diners, luchthavenvervoer vanaf Valencia Airport, transfers naar de startpunten en begeleiding tijdens alle trails en hikes."
+      },
+      {
+        "q": "Verzekeringen",
+        "a": "Iedere deelnemer is zelf verantwoordelijk voor een geldige reisverzekering, een eventuele annuleringsverzekering en een passende sportdekking indien gewenst. We adviseren dit altijd vooraf te regelen."
+      },
+      {
+        "q": "Annulering &amp; wijzigingen",
+        "a": "Bij annulering van je deelname gelden onderstaande kosten, gerekend vanaf de vertrekdatum:",
+        "rows": [
+          {
+            "when": "Tot 8 weken voor vertrek",
+            "cost": "€50 administratiekosten"
+          },
+          {
+            "when": "8 tot 4 weken voor vertrek",
+            "cost": "50% van de reissom"
+          },
+          {
+            "when": "4 tot 2 weken voor vertrek",
+            "cost": "75% van de reissom"
+          },
+          {
+            "when": "Binnen 14 dagen voor vertrek",
+            "cost": "100% van de reissom"
+          }
+        ],
+        "note": "Bij voortijdige beëindiging van het weekend of het niet verschijnen op de vertrekdatum vindt geen restitutie plaats. Tot 7 dagen voor vertrek mag je kosteloos een vervangende deelnemer aandragen, mits vooraf gemeld en akkoord bevonden. We adviseren iedere deelnemer een annuleringsverzekering af te sluiten."
+      },
+      {
+        "q": "Programma-wijzigingen",
+        "a": "Routes, activiteiten of onderdelen van het programma kunnen worden aangepast bij weersomstandigheden, bosbrandgevaar, lokale regelgeving of veiligheidsoverwegingen. Bij annulering door de organisatie vanwege overmacht, onvoldoende deelnemers of veiligheidsredenen ontvang je het reeds betaalde bedrag volledig terug."
+      }
+    ],
+    "termsTitle": "Volledige algemene voorwaarden",
+    "terms": [
+      {
+        "title": "1. Toepasselijkheid",
+        "text": "Deze voorwaarden zijn van toepassing op alle boekingen en deelnames aan het Trailrun- en hikeweekend Sierra Calderona, georganiseerd door Wildcore Retreats. Door inschrijving verklaart de deelnemer akkoord te gaan met deze voorwaarden."
+      },
+      {
+        "title": "2. Deelname",
+        "text": "Deelname staat open voor personen van 18 jaar en ouder. De deelnemer verklaart in voldoende gezondheid te verkeren om deel te nemen aan trailrun- en wandelactiviteiten en is zelf verantwoordelijk voor het inschatten van zijn of haar fysieke conditie. De organisator behoudt zich het recht voor deelname te weigeren indien dit noodzakelijk wordt geacht voor de veiligheid van de deelnemer of de groep."
+      },
+      {
+        "title": "3. Boekingen en betaling",
+        "text": "Een boeking is definitief na ontvangst van de aanbetaling of volledige betaling. Het resterende bedrag dient uiterlijk 30 dagen voor vertrek te zijn voldaan. Indien betaling niet tijdig wordt ontvangen, kan de organisator de reservering annuleren."
+      },
+      {
+        "title": "4. Annulering door deelnemer",
+        "text": "Tot 8 weken voor vertrek: €50 administratiekosten. Van 8 tot 4 weken voor vertrek: 50% van de reissom. Van 4 tot 2 weken voor vertrek: 75% van de reissom. Binnen 14 dagen voor vertrek: 100% van de reissom. Bij voortijdige beëindiging van het weekend of het niet verschijnen op de vertrekdatum vindt geen restitutie plaats. Deelnemers wordt geadviseerd een reis- en annuleringsverzekering af te sluiten.",
+        "text2": "<strong>Vervangende deelnemer:</strong> een deelnemer mag tot 7 dagen voor vertrek kosteloos een vervangende deelnemer aandragen, mits de organisator hiervan vooraf op de hoogte wordt gebracht, de vervangende deelnemer voldoet aan de deelnamevoorwaarden, en eventuele extra kosten als gevolg van de wijziging worden vergoed."
+      },
+      {
+        "title": "5. Annulering door organisator",
+        "text": "De organisator behoudt zich het recht voor het weekend te annuleren bij onvoldoende deelnemers, overmacht, extreme weersomstandigheden of onvoorziene veiligheidsrisico's. In dat geval wordt het reeds betaalde deelnamebedrag volledig terugbetaald. Eventuele overige kosten, zoals vervoer of verzekeringen, vallen buiten de verantwoordelijkheid van de organisator."
+      },
+      {
+        "title": "6. Risico en aansprakelijkheid",
+        "text": "Trailrunnen, hiken en outdooractiviteiten brengen inherente risico’s met zich mee. Deelname geschiedt volledig op eigen risico. De organisator is niet aansprakelijk voor blessures, ongevallen, verlies, diefstal of schade aan persoonlijke eigendommen, tenzij sprake is van opzet of grove nalatigheid. De deelnemer blijft te allen tijde verantwoordelijk voor zijn of haar eigen handelen."
+      },
+      {
+        "title": "7. Gedrag en veiligheid",
+        "text": "Van deelnemers wordt verwacht dat zij instructies van de begeleider opvolgen, respectvol omgaan met mededeelnemers, accommodatie en natuur, en geen onaanvaardbare risico's nemen tijdens activiteiten. De organisator kan een deelnemer uitsluiten van verdere deelname indien diens gedrag de veiligheid of het welzijn van de groep in gevaar brengt."
+      },
+      {
+        "title": "8. Wijzigingen in programma",
+        "text": "De organisator behoudt zich het recht voor routes, activiteiten, tijdstippen of onderdelen van het programma aan te passen bij weersomstandigheden, bosbrandgevaar, lokale regelgeving of veiligheidsoverwegingen."
+      },
+      {
+        "title": "9. Verzekeringen",
+        "text": "Iedere deelnemer is zelf verantwoordelijk voor een geldige reisverzekering, een eventuele annuleringsverzekering en een passende sportdekking indien gewenst."
+      },
+      {
+        "title": "10. Beeldmateriaal",
+        "text": "Tijdens het weekend kunnen foto's en video's worden gemaakt voor promotionele doeleinden. Indien een deelnemer hier bezwaar tegen heeft, dient dit vooraf schriftelijk kenbaar te worden gemaakt."
+      },
+      {
+        "title": "11. Persoonsgegevens",
+        "text": "Persoonsgegevens worden uitsluitend gebruikt voor de organisatie en uitvoering van het evenement en worden niet zonder toestemming aan derden verstrekt, tenzij dit noodzakelijk is voor de uitvoering van de reis."
+      },
+      {
+        "title": "12. Overmacht",
+        "text": "Onder overmacht wordt verstaan iedere situatie buiten de redelijke invloed van de organisator, waaronder natuurrampen, bosbranden, pandemieën, stakingen, overheidsmaatregelen en extreme weersomstandigheden. In dergelijke situaties kan het programma worden aangepast, verplaatst of geannuleerd."
       }
     ]
   },
@@ -103,8 +321,8 @@
     "eyebrow": "Boek jouw plek",
     "title": "Klaar om de bergen in te gaan?",
     "text": "Stuur een bericht en we nemen snel contact met je op — of neem rechtstreeks contact op via onderstaande gegevens.",
-    "email": "info@wildcoreretreats.com",
-    "location": "Villa El Pinar, Casinos — Sierra Calderona, Spanje",
+    "email": "info@wildcore-retreats.nl",
+    "location": "Villa El Pinar, Casinos — Valencia",
     "reachability": "Luchthavenvervoer inbegrepen v.a. Valencia Airport"
   }
 }

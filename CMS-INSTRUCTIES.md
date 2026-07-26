@@ -22,16 +22,19 @@ gratis voor dit soort gebruik (ruim binnen de gratis limiet).
 
 ## Wat de klant wél en niet kan wijzigen
 
-**Wel:** alle teksten op de vijf secties (hero, waarom Wildcore, kenmerken,
-programma, villa, gastheer, prijzen, contactgegevens) in alle drie de talen,
-plus alle 12 foto's + het logo (door een nieuwe foto te uploaden op dezelfde
-plek).
+**Wel:** alle teksten van alle secties (hero, waarom Wildcore, kenmerken,
+galerij, programma, villa, gastheer, prijzen, praktisch & voorwaarden,
+contactgegevens) in alle drie de talen, plus alle foto's + het logo (door een
+nieuwe foto te uploaden op dezelfde plek). Geüploade foto's worden in de
+browser automatisch verkleind, zodat de site snel blijft.
 
 **Niet, met opzet:**
-- De volledige juridische algemene voorwaarden en de FAQ-tekst in de
-  "Praktisch"-sectie — dit is bewust vast gehouden, zodat er nooit per ongeluk
-  een juridische fout in sluipt.
 - De menu-items en footer-tekst (vaste sitenavigatie).
+- De keuzelijst met weekenden in het contactformulier, en het e-mailadres
+  waar het formulier naartoe stuurt.
+- De inhoud van het JSON-LD-blok in de `<head>` (waaronder de FAQ-gegevens
+  voor Google). Wijzigt de klant de FAQ-teksten, werk dan het `FAQPage`-blok
+  in de drie HTML-bestanden bij.
 - De cijfers in de statistiekenbalk (43 km / 1500 hm / 3 dagen) — alleen de
   bijschriften eronder zijn aanpasbaar. Dit voorkomt dat de tekst en de
   geanimeerde telling uit elkaar gaan lopen.
