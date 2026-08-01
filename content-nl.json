@@ -38,7 +38,7 @@
     {
       "title": "Voor wie is dit weekend?",
       "paragraphs": [
-        "Dit weekend is bedoeld voor sportieve mensen die graag hardlopen en kennis willen maken met trailrunnen in de natuur. Ervaring met trailrunnen is niet nodig, maar een goede basisconditie is wel belangrijk. We vragen deelnemers daarom om minimaal anderhalf uur rustig te kunnen hardlopen.",
+        "Dit weekend is bedoeld voor sportieve mensen die graag actief in de natuur zijn. Je kunt deelnemen als trailrunner of als hiker. Ervaring is niet nodig, maar een goede basisconditie is wel belangrijk. We vragen deelnemers daarom om minimaal anderhalf uur rustig te kunnen hardlopen of wandelen op heuvelachtig terrein.",
         "De groep bestaat uit maximaal zes deelnemers, zodat het niveau goed op elkaar aansluit en we het hele weekend samen als groep kunnen lopen. We passen het tempo aan elkaar aan, nemen de tijd waar nodig en genieten vooral van de natuur, de trails en de gezamenlijke beleving."
       ],
       "statement": "Niet presteren, maar samen beleven."
@@ -57,7 +57,7 @@
     },
     {
       "title": "Sport, rust &amp; gezelligheid",
-      "text": "Een perfecte combinatie van sportieve uitdaging, ontspanning en verbinding. Na de runs: goed eten, goede gesprekken, en tijd om elkaar écht te leren kennen — in een bewust kleine groep."
+      "text": "Een perfecte combinatie van sportieve uitdaging, ontspanning en verbinding. Na de runs: goed eten, goede gesprekken, en tijd om elkaar écht te leren kennen, in een bewust kleine groep."
     }
   ],
   "gallery": {
@@ -68,14 +68,14 @@
   "program": {
     "eyebrow": "Weekend indeling",
     "title": "Drie dagen, drie routes",
-    "text": "Elke dag heeft zijn eigen karakter — van een zachte start tot het hoogtepunt van het weekend en een rustig herstelloopje om van na te genieten.",
+    "text": "Elke dag heeft zijn eigen karakter, van een zachte start tot het hoogtepunt van het weekend en een rustig herstelloopje om van na te genieten.",
     "days": [
       {
         "label": "Vrijdag",
         "name": "Casinos Sunset Loop",
         "stat1": "8 km",
         "stat2": "±180 hm",
-        "text": "Een zachte start. We verkennen de paden rond Casinos terwijl de zon ondergaat over de vallei — perfect om te wennen aan het terrein en elkaar te leren kennen.",
+        "text": "Een zachte start. We verkennen de paden rond Casinos terwijl de zon ondergaat over de vallei, perfect om te wennen aan het terrein en elkaar te leren kennen.",
         "schedule": [
           {
             "time": "14:00 – 16:00",
@@ -148,7 +148,7 @@
           {
             "time": "15:00",
             "title": "Afscheid",
-            "text": "Na een weekend vol natuur, sport, ontspanning en nieuwe ontmoetingen nemen we afscheid — met nieuwe energie, inspiratie en misschien wel een nieuwe liefde voor trailrunnen."
+            "text": "Na een weekend vol natuur, sport, ontspanning en nieuwe ontmoetingen nemen we afscheid, met nieuwe energie, inspiratie en misschien wel een nieuwe liefde voor trailrunnen."
           }
         ]
       }
@@ -167,7 +167,7 @@
     "eyebrow": "Jouw thuisbasis",
     "title": "Villa El Pinar, bij Casinos",
     "paragraphs": [
-      "Tijdens dit weekend verblijf je niet in een hotel, maar in een sfeervolle, vrijstaande villa die voelt als een thuis weg van huis — in de rustige urbanisatie El Pinar, vlakbij het authentieke dorp Casinos.",
+      "Tijdens dit weekend verblijf je niet in een hotel, maar in een sfeervolle, vrijstaande villa die voelt als een thuis weg van huis, in de rustige urbanisatie El Pinar, vlakbij het authentieke dorp Casinos.",
       "De villa ligt midden in het groen met uitzicht over de bergen van de Sierra Calderona. Na een dag op de trails ontspan je aan het zwembad, op het terras of in de tuin. Binnen draait alles om een warme, huiselijke sfeer: koffie in de ochtend, verhalen na de trailrun, en gezonde, voedzame maaltijden zonder haast."
     ],
     "amenities": [
@@ -195,7 +195,7 @@
   "pricing": {
     "eyebrow": "Prijzen",
     "title": "Kies jouw weekend",
-    "text": "Beide weekenden zijn volledig verzorgd — van luchthavenvervoer tot begeleiding onderweg.",
+    "text": "Beide weekenden zijn volledig verzorgd, van luchthavenvervoer tot begeleiding onderweg.",
     "price": "€495",
     "unit": "p.p.",
     "dates": "Vrijdag t/m zondag",
@@ -325,9 +325,9 @@
   "contact": {
     "eyebrow": "Boek jouw plek",
     "title": "Klaar om de bergen in te gaan?",
-    "text": "Stuur een bericht en we nemen snel contact met je op — of neem rechtstreeks contact op via onderstaande gegevens.",
+    "text": "Stuur een bericht en we nemen snel contact met je op, of neem rechtstreeks contact op via onderstaande gegevens.",
     "email": "info@wildcore-retreats.nl",
-    "location": "Villa El Pinar, Casinos — Valencia",
+    "location": "Villa El Pinar, Casinos, Valencia",
     "reachability": "Luchthavenvervoer inbegrepen v.a. Valencia Airport"
   }
 }

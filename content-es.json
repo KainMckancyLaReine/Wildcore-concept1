@@ -38,7 +38,7 @@
     {
       "title": "¿Para quién es este fin de semana?",
       "paragraphs": [
-        "Este fin de semana está pensado para personas activas a las que les gusta correr y quieren descubrir el trail running en plena naturaleza. No hace falta experiencia previa en trail, pero sí una buena condición física de base. Por eso pedimos a los participantes que puedan correr con soltura durante al menos una hora y media.",
+        "Este fin de semana está pensado para personas activas a las que les gusta estar en plena naturaleza. Puedes participar como trail runner o como senderista. No hace falta experiencia previa, pero sí una buena condición física de base. Por eso pedimos a los participantes que puedan correr o caminar con soltura durante al menos una hora y media por terreno con desnivel.",
         "El grupo es de un máximo de seis participantes, para que los niveles encajen bien y podamos correr juntos como grupo durante todo el fin de semana. Adaptamos el ritmo unos a otros, nos tomamos el tiempo necesario y, sobre todo, disfrutamos de la naturaleza, los senderos y la experiencia compartida."
       ],
       "statement": "No se trata de rendir, sino de vivirlo juntos."
@@ -57,7 +57,7 @@
     },
     {
       "title": "Deporte, descanso y buena compañía",
-      "text": "Una combinación perfecta de reto físico, relax y conexión. Después de correr: buena comida, buenas conversaciones y tiempo para conocerse de verdad — en un grupo deliberadamente reducido."
+      "text": "Una combinación perfecta de reto físico, relax y conexión. Después de correr: buena comida, buenas conversaciones y tiempo para conocerse de verdad, en un grupo deliberadamente reducido."
     }
   ],
   "gallery": {
@@ -68,14 +68,14 @@
   "program": {
     "eyebrow": "Programa del fin de semana",
     "title": "Tres días, tres rutas",
-    "text": "Cada día tiene su propio carácter — desde un comienzo suave hasta el momento culminante del fin de semana y una ruta de recuperación tranquila para disfrutar de las sensaciones.",
+    "text": "Cada día tiene su propio carácter, desde un comienzo suave hasta el momento culminante del fin de semana y una ruta de recuperación tranquila para disfrutar de las sensaciones.",
     "days": [
       {
         "label": "Viernes",
         "name": "Casinos Sunset Loop",
         "stat1": "8 km",
         "stat2": "±180 m",
-        "text": "Un comienzo suave. Exploramos los senderos alrededor de Casinos mientras el sol se pone sobre el valle — perfecto para acostumbrarse al terreno y conocer al grupo.",
+        "text": "Un comienzo suave. Exploramos los senderos alrededor de Casinos mientras el sol se pone sobre el valle, perfecto para acostumbrarse al terreno y conocer al grupo.",
         "schedule": [
           {
             "time": "14:00 – 16:00",
@@ -148,7 +148,7 @@
           {
             "time": "15:00",
             "title": "Despedida",
-            "text": "Tras un fin de semana lleno de naturaleza, deporte, descanso y nuevos encuentros nos despedimos — con energía nueva, inspiración y quizá un nuevo amor por el trail running."
+            "text": "Tras un fin de semana lleno de naturaleza, deporte, descanso y nuevos encuentros nos despedimos, con energía nueva, inspiración y quizá un nuevo amor por el trail running."
           }
         ]
       }
@@ -167,7 +167,7 @@
     "eyebrow": "Tu base de operaciones",
     "title": "Villa El Pinar, junto a Casinos",
     "paragraphs": [
-      "Durante este fin de semana no te alojas en un hotel, sino en una villa independiente con encanto que se siente como un hogar lejos de casa — en la tranquila urbanización de El Pinar, junto al auténtico pueblo de Casinos.",
+      "Durante este fin de semana no te alojas en un hotel, sino en una villa independiente con encanto que se siente como un hogar lejos de casa, en la tranquila urbanización de El Pinar, junto al auténtico pueblo de Casinos.",
       "La villa está rodeada de vegetación con vistas a las montañas de la Sierra Calderona. Después de un día en los senderos, te relajas junto a la piscina, en la terraza o en el jardín. Por dentro, todo gira en torno a un ambiente cálido y hogareño: café por la mañana, historias después de correr, y comidas sanas y sabrosas sin prisas."
     ],
     "amenities": [
@@ -195,7 +195,7 @@
   "pricing": {
     "eyebrow": "Precios",
     "title": "Elige tu fin de semana",
-    "text": "Ambos fines de semana están completamente organizados — desde el traslado al aeropuerto hasta el acompañamiento durante el camino.",
+    "text": "Ambos fines de semana están completamente organizados, desde el traslado al aeropuerto hasta el acompañamiento durante el camino.",
     "price": "495 €",
     "unit": "p.p.",
     "dates": "Viernes a domingo",
@@ -320,9 +320,9 @@
   "contact": {
     "eyebrow": "Reserva tu plaza",
     "title": "¿Listo para adentrarte en la montaña?",
-    "text": "Envíanos un mensaje y te responderemos enseguida — o contacta directamente con nosotros a través de los siguientes datos.",
+    "text": "Envíanos un mensaje y te responderemos enseguida, o contacta directamente con nosotros a través de los siguientes datos.",
     "email": "info@wildcore-retreats.nl",
-    "location": "Villa El Pinar, Casinos — Valencia",
+    "location": "Villa El Pinar, Casinos, Valencia",
     "reachability": "Traslado desde el aeropuerto de Valencia incluido"
   }
 }

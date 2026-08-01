@@ -38,7 +38,7 @@
     {
       "title": "Who is this weekend for?",
       "paragraphs": [
-        "This weekend is meant for active people who enjoy running and want to discover trail running in nature. Experience with trail running isn't necessary, but a good base level of fitness is important. We therefore ask participants to be able to run comfortably for at least an hour and a half.",
+        "This weekend is meant for active people who love being outdoors. You can join as a trail runner or as a hiker. No experience is required, but a good base level of fitness is important. We therefore ask participants to be able to run or walk comfortably for at least an hour and a half on hilly terrain.",
         "The group has a maximum of six participants, so that levels match well and we can run together as one group all weekend. We adapt the pace to each other, take our time where needed, and above all enjoy the nature, the trails and the shared experience."
       ],
       "statement": "Not about performing, but about experiencing it together."
@@ -57,7 +57,7 @@
     },
     {
       "title": "Sport, rest &amp; good company",
-      "text": "A perfect combination of physical challenge, relaxation and connection. After the runs: good food, good conversation, and time to really get to know each other — in a deliberately small group."
+      "text": "A perfect combination of physical challenge, relaxation and connection. After the runs: good food, good conversation, and time to really get to know each other, in a deliberately small group."
     }
   ],
   "gallery": {
@@ -68,14 +68,14 @@
   "program": {
     "eyebrow": "Weekend schedule",
     "title": "Three days, three routes",
-    "text": "Each day has its own character — from a gentle start to the highlight of the weekend and a relaxed recovery loop to enjoy the afterglow.",
+    "text": "Each day has its own character, from a gentle start to the highlight of the weekend and a relaxed recovery loop to enjoy the afterglow.",
     "days": [
       {
         "label": "Friday",
         "name": "Casinos Sunset Loop",
         "stat1": "8 km",
         "stat2": "±180 m",
-        "text": "A gentle start. We explore the trails around Casinos as the sun sets over the valley — perfect for getting used to the terrain and getting to know each other.",
+        "text": "A gentle start. We explore the trails around Casinos as the sun sets over the valley, perfect for getting used to the terrain and getting to know each other.",
         "schedule": [
           {
             "time": "14:00 – 16:00",
@@ -148,7 +148,7 @@
           {
             "time": "15:00",
             "title": "Farewell",
-            "text": "After a weekend full of nature, sport, relaxation and new encounters we say goodbye — with fresh energy, inspiration and perhaps a new love for trail running."
+            "text": "After a weekend full of nature, sport, relaxation and new encounters we say goodbye, with fresh energy, inspiration and perhaps a new love for trail running."
           }
         ]
       }
@@ -167,7 +167,7 @@
     "eyebrow": "Your home base",
     "title": "Villa El Pinar, near Casinos",
     "paragraphs": [
-      "During this weekend you won't stay in a hotel, but in an atmospheric, detached villa that feels like a home away from home — in the quiet urbanisation of El Pinar, right next to the authentic village of Casinos.",
+      "During this weekend you won't stay in a hotel, but in an atmospheric, detached villa that feels like a home away from home, in the quiet urbanisation of El Pinar, right next to the authentic village of Casinos.",
       "The villa sits amid greenery with views over the mountains of the Sierra Calderona. After a day on the trails you unwind by the pool, on the terrace or in the garden. Inside, it's all about a warm, homely atmosphere: coffee in the morning, stories after the trail run, and healthy, wholesome meals without any rush."
     ],
     "amenities": [
@@ -195,7 +195,7 @@
   "pricing": {
     "eyebrow": "Pricing",
     "title": "Choose your weekend",
-    "text": "Both weekends are fully organised — from airport transfers to guidance along the way.",
+    "text": "Both weekends are fully organised, from airport transfers to guidance along the way.",
     "price": "€495",
     "unit": "pp",
     "dates": "Friday to Sunday",
@@ -325,9 +325,9 @@
   "contact": {
     "eyebrow": "Book your spot",
     "title": "Ready to head into the mountains?",
-    "text": "Send a message and we'll get back to you quickly — or contact us directly using the details below.",
+    "text": "Send a message and we'll get back to you quickly, or contact us directly using the details below.",
     "email": "info@wildcore-retreats.nl",
-    "location": "Villa El Pinar, Casinos — Valencia",
+    "location": "Villa El Pinar, Casinos, Valencia",
     "reachability": "Airport transfer included from Valencia Airport"
   }
 }
