@@ -650,7 +650,8 @@
     .program-grid{grid-template-columns:1fr;}
     .amenities{grid-template-columns:1fr;}
     .host-wrap img{height:360px;}
-    .villa-gallery img{height:200px;}
+    .villa-gallery img{height:auto;aspect-ratio:4/3;}
+    .villa-gallery img:first-child{aspect-ratio:16/9;}
     .pad{padding:70px 0;}
     .intro{padding:80px 0 60px;}
     .nav-inner{padding:8px 8px 8px 16px;}
@@ -663,9 +664,15 @@
 
   @media (max-width: 480px){
     .container{padding:0 20px;}
-    .villa-gallery{grid-template-columns:1fr;}
-    .villa-gallery img:first-child{grid-column:1;height:200px;}
-    .villa-gallery img{height:220px;}
+    .villa-gallery{grid-template-columns:1fr;gap:12px;}
+    .villa-gallery img{height:auto;aspect-ratio:4/3;}
+    .villa-gallery img:first-child{grid-column:1;aspect-ratio:4/3;}
+    details{padding:18px 18px;border-radius:12px;}
+    details summary{font-size:1rem;gap:14px;align-items:flex-start;}
+    details .body{font-size:0.93rem;}
+    details .body table{font-size:0.85rem;}
+    details .body td{padding:7px 4px;}
+    h1,h2,h3,summary{overflow-wrap:break-word;}
     .hero-inner{padding:120px 20px 60px;}
     .hero h1{font-size:clamp(2rem,9vw,2.6rem);}
     .day-card{padding:28px 22px;min-height:400px;}
