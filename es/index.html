@@ -678,6 +678,49 @@
     .day-card{padding:28px 22px;min-height:400px;}
   }
 
+
+  /* ============ BOEK-POPUP (formulier) ============ */
+  .book-modal .modal-card{padding:34px 34px 0;max-width:560px;}
+  .book-modal .modal-card::after{display:none;}
+  .book-modal .modal-close{z-index:3;}
+  .book-hero{position:relative;margin:-34px -34px 0;height:150px;overflow:hidden;}
+  .book-hero img{width:100%;height:100%;object-fit:cover;object-position:center 58%;}
+  .book-hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(20,24,16,0.10) 0%, rgba(248,242,230,0) 38%, rgba(248,242,230,0.92) 88%, var(--cream) 100%);
+  }
+  .book-head{position:relative;text-align:center;padding:0 34px;margin-top:-32px;}
+  .book-logo{
+    width:66px;height:66px;border-radius:50%;margin:0 auto 12px;
+    border:3px solid var(--cream);background:var(--cream);
+    box-shadow:0 12px 26px -14px rgba(18,20,13,0.75);
+  }
+  .book-modal .modal-title{padding-right:0;margin:0.25em 0 0;}
+  .book-lead{margin:10px 0 0;font-size:0.93rem;color:#5b5847;line-height:1.55;}
+  .book-body{overflow-y:auto;margin-top:20px;padding:0 2px 30px 0;}
+  .book-body form.contact-form{background:transparent;box-shadow:none;padding:0;border-radius:0;}
+  .book-body form.contact-form input,
+  .book-body form.contact-form select,
+  .book-body form.contact-form textarea{background:var(--white);}
+  .book-body form.contact-form textarea{min-height:88px;}
+  @media (max-width: 620px){
+    .book-modal .modal-card{padding:24px 20px 0;max-height:88vh;max-height:88dvh;}
+    .book-hero{margin:-24px -20px 0;height:118px;}
+    .book-head{padding:0 26px;margin-top:-28px;}
+    .book-logo{width:58px;height:58px;margin-bottom:10px;}
+    .book-modal .modal-title{font-size:1.3rem;}
+    .book-lead{font-size:0.88rem;margin-top:8px;}
+    .book-body{margin-top:16px;padding-bottom:calc(24px + env(safe-area-inset-bottom));}
+    /* 16px voorkomt dat iOS inzoomt bij het invullen */
+    .book-body form.contact-form input,
+    .book-body form.contact-form select,
+    .book-body form.contact-form textarea{font-size:16px;margin-bottom:14px;padding:11px 13px;}
+    .book-body form.contact-form label{font-size:0.82rem;margin-bottom:5px;}
+    .book-body form.contact-form textarea{min-height:76px;}
+    .book-body form.contact-form button{padding:14px;font-size:0.98rem;}
+    .book-body .form-note{font-size:0.78rem;}
+  }
+
   /* ============ TOEGANKELIJKHEID & AFWERKING ============ */
   .skip-link{
     position:absolute;left:-9999px;top:0;z-index:200;
@@ -1716,6 +1759,26 @@
 
 
 <!-- POP-UP: dagprogramma -->
+<!-- BOEK-POPUP: aanvraagformulier -->
+<div class="modal book-modal" id="bookModal" hidden>
+  <div class="modal-backdrop" data-book-close></div>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="bookModalTitle">
+    <button class="modal-close" type="button" data-book-close aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <div class="book-hero">
+      <img loading="lazy" decoding="async" width="1400" height="1050" src="../images/pool-sunset.jpg?v=2" alt="Piscina al atardecer en Villa El Pinar">
+    </div>
+    <div class="book-head">
+      <img class="book-logo" loading="eager" decoding="async" width="256" height="256" src="../images/logo-mark.png" alt="Wildcore Retreats">
+      <span class="modal-label">Reserva tu plaza</span>
+      <h3 class="modal-title" id="bookModalTitle">Solicita tu plaza</h3>
+      <p class="book-lead">Déjanos tus datos y te responderemos enseguida.</p>
+    </div>
+    <div class="book-body" id="bookModalBody"></div>
+  </div>
+</div>
+
 <div class="modal" id="dayModal" hidden>
   <div class="modal-backdrop" data-close></div>
   <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="dayModalTitle">
@@ -2023,6 +2086,70 @@
     .then(function(data){ applyContent(data); })
     .catch(function(err){ console.warn('No se pudo cargar content.json de Wildcore, se mantiene el texto por defecto.', err); })
     .finally(function(){ initSite(); });
+</script>
+
+<script>
+(function(){
+  var modal = document.getElementById('bookModal');
+  if (!modal) return;
+  var card = modal.querySelector('.modal-card');
+  var slot = document.getElementById('bookModalBody');
+  var srcForm = document.querySelector('.contact-section form.contact-form');
+  var lastFocused = null, hideTimer = null, built = false;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function build(){
+    if (built || !srcForm) return;
+    var clone = srcForm.cloneNode(true);
+    clone.classList.remove('reveal-right');
+    clone.removeAttribute('style');
+    clone.querySelectorAll('[id]').forEach(function(el){
+      var old = el.id;
+      el.id = 'bk-' + old;
+      clone.querySelectorAll('label[for="' + old + '"]').forEach(function(l){ l.setAttribute('for', 'bk-' + old); });
+    });
+    slot.appendChild(clone);
+    built = true;
+  }
+
+  function open(trigger){
+    build();
+    lastFocused = trigger || null;
+    clearTimeout(hideTimer);
+    modal.hidden = false;
+    document.body.classList.add('modal-open');
+    requestAnimationFrame(function(){ modal.classList.add('open'); });
+    modal.querySelector('.modal-close').focus({ preventScroll: true });
+    modal.querySelector('.book-body').scrollTop = 0;
+  }
+
+  function close(){
+    if (modal.hidden) return;
+    modal.classList.remove('open');
+    document.body.classList.remove('modal-open');
+    hideTimer = setTimeout(function(){ modal.hidden = true; }, reduce ? 0 : 340);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('a.nav-book, a.btn[href="#contact"], a.price-cta').forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); open(a); });
+  });
+
+  modal.querySelectorAll('[data-book-close]').forEach(function(el){
+    el.addEventListener('click', close);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (modal.hidden) return;
+    if (e.key === 'Escape'){ e.preventDefault(); close(); return; }
+    if (e.key !== 'Tab') return;
+    var f = card.querySelectorAll('button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
+})();
 </script>
 
 </body>
