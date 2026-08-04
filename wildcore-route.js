@@ -11,9 +11,17 @@
     var REDUCED = window.matchMedia &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* one lap of the trail, plus a breather at the summit before it resets */
+    /* one lap of the trail, plus a short breather at the summit before it resets */
     var RUN_MS = 17000;
-    var HOLD_MS = 2600;
+    var HOLD_MS = 900;
+
+    /* eased progress — each day's run starts and settles gently instead of
+       snapping to a stop, which is what makes the loop feel smooth */
+    function ease(t) {
+        if (t <= 0) return 0;
+        if (t >= 1) return 1;
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
 
     var COPY = {
         nl: { eyebrow: 'De route', dist: 'Afstand', elev: 'Hoogtemeters',
@@ -522,6 +530,17 @@
         function sumTo(arr, n) { var s = 0; for (var i = 0; i < n; i++) s += arr[i] || 0; return s; }
 
         var day = 0;   /* which route is running */
+        var locale = lang();
+        var lastKm = '', lastHm = '';
+
+        /* the three strokes that make up each day's trail, looked up once —
+           querying them every frame is what used to make the loop stutter */
+        var strokes = routes.map(function (rt) {
+            return [rt.line,
+                    $('.wc-trail-glow.wc-day-' + rt.i, root),
+                    $('.wc-trail-case.wc-day-' + rt.i, root)]
+                   .filter(Boolean);
+        });
 
         function place(p) {
             var r = routes[day];
@@ -533,23 +552,27 @@
         function paint(p) {
             var r = routes[day];
             /* the active route draws itself; the days already walked stay drawn */
-            routes.forEach(function (rt) {
+            routes.forEach(function (rt, i) {
                 var done = rt.i < day ? 1 : (rt.i === day ? p : 0);
-                [rt.line, $('.wc-trail-glow.wc-day-' + rt.i, root),
-                 $('.wc-trail-case.wc-day-' + rt.i, root)].forEach(function (n) {
-                    if (n) n.style.strokeDashoffset = rt.len * (1 - done);
-                });
+                var off = rt.len * (1 - done);
+                strokes[i].forEach(function (n) { n.style.strokeDashoffset = off; });
             });
 
             /* overall progress across the weekend feeds the land and the ticks */
             var g = (day + p) / routes.length;
             root.style.setProperty('--p', g);
-            root.setAttribute('data-day', day);
+            if (root.getAttribute('data-day') !== String(day)) {
+                root.setAttribute('data-day', day);
+            }
             place(p);
 
-            kmOut.textContent = Math.round(sumTo(kmPer, day) + (kmPer[day] || 0) * p) + ' km';
-            hmOut.textContent = Math.round(sumTo(hmPer, day) + (hmPer[day] || 0) * p)
-                .toLocaleString(lang()) + ' hm';
+            /* the counters only get touched when the rounded number actually
+               changes — writing the same text 60x a second costs paint time */
+            var km = Math.round(sumTo(kmPer, day) + (kmPer[day] || 0) * p) + ' km';
+            if (km !== lastKm) { lastKm = km; kmOut.textContent = km; }
+            var hm = Math.round(sumTo(hmPer, day) + (hmPer[day] || 0) * p)
+                .toLocaleString(locale) + ' hm';
+            if (hm !== lastHm) { lastHm = hm; hmOut.textContent = hm; }
 
             pins.forEach(function (pin, i) {
                 var on = i < day || (i === day && p >= 0.5);
@@ -592,7 +615,11 @@
                 /* a fresh day wipes the previous route's finish state */
                 root.classList.remove('is-finished');
             }
-            paint(within <= LAP ? within / LAP : 1);
+            var holding = within > LAP;
+            /* the runner dips out during the breather so the jump to the next
+               day's start point is a fade rather than a teleport */
+            root.classList.toggle('is-holding', holding);
+            paint(holding ? 1 : ease(within / LAP));
             raf = requestAnimationFrame(frame);
         }
         function start() {
@@ -605,6 +632,7 @@
             running = false;
             cancelAnimationFrame(raf);
             root.classList.remove('is-live');
+            root.classList.remove('is-holding');
         }
 
         if ('IntersectionObserver' in window) {

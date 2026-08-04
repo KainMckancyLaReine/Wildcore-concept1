@@ -631,9 +631,13 @@
    always know which dot is moving */
 .wc-runner{
     position:absolute;left:0;top:0;width:26px;height:26px;margin:-13px;
-    opacity:0;transition:opacity .4s ease;z-index:3;
+    opacity:0;transition:opacity .3s ease;z-index:3;
+    will-change:left,top,opacity;
 }
 .wc-route.is-live .wc-runner{opacity:1;}
+/* during the breather between days the runner fades, so moving to the next
+   day's starting point reads as a hand-off instead of a jump */
+.wc-route.is-live.is-holding .wc-runner{opacity:.2;}
 .wc-runner .body{
     position:absolute;inset:0;border-radius:50%;
     background:var(--green-deep,#3f4a34);
