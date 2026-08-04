@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Wildcore Retreats — Footsteps between the feature blocks
+   A short trail of prints crosses each gap, appearing one at a time as you
+   scroll — as if someone walked from one block down to the next.
+   ========================================================================== */
+
+.features .container{position:relative;}
+/* the content always sits on top of the trail */
+.features .feature-row{position:relative;z-index:1;}
+
+.wc-steps{
+    position:absolute;inset:0;z-index:0;
+    pointer-events:none;overflow:visible;
+}
+
+.wc-step{
+    opacity:0;
+    transform:scale(.45);
+    transform-box:fill-box;transform-origin:50% 50%;
+    transition:opacity .5s ease, transform .62s cubic-bezier(.34,1.5,.5,1);
+}
+.wc-step.is-on{opacity:1;transform:scale(1);}
+
+.wc-step .sole{fill:var(--green-deep,#3f4a34);opacity:.34;}
+.wc-step .heel{fill:var(--green-deep,#3f4a34);opacity:.28;}
+/* every few prints one lands in terracotta, so the trail has a pulse */
+.wc-step.accent .sole{fill:var(--terracotta,#bd5f31);opacity:.5;}
+.wc-step.accent .heel{fill:var(--terracotta,#bd5f31);opacity:.42;}
+
+/* stacked on a phone there is barely a gap left to walk through */
+@media (max-width: 860px){
+    .wc-steps{display:none;}
+}
+@media (prefers-reduced-motion: reduce){
+    .wc-step{opacity:.55;transform:none;transition:none;}
+}
