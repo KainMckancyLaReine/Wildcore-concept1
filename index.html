@@ -524,6 +524,26 @@
     align-self:flex-start;display:inline-block;background:var(--terracotta);color:var(--white);
     text-transform:uppercase;letter-spacing:0.14em;font-size:0.66rem;font-weight:700;
     padding:6px 14px;border-radius:999px;margin:0 0 16px;
+    position:relative;overflow:hidden;
+    animation:badgePulse 3.6s ease-in-out infinite;
+  }
+  .price-badge::after{
+    content:"";position:absolute;top:0;left:-70%;width:50%;height:100%;
+    background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.55) 50%,rgba(255,255,255,0) 100%);
+    transform:skewX(-20deg);pointer-events:none;
+    animation:badgeShine 5.2s ease-in-out infinite;
+  }
+  @keyframes badgePulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(189,95,49,0.5);}
+    55%{box-shadow:0 0 0 8px rgba(189,95,49,0);}
+  }
+  @keyframes badgeShine{
+    0%{left:-70%;}
+    40%{left:130%;}
+    100%{left:130%;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .price-badge,.price-badge::after{animation:none;}
   }
   .price-note{
     margin:12px 0 0;font-size:0.82rem;line-height:1.5;color:#c9d0bc;max-width:34ch;
