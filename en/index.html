@@ -188,7 +188,7 @@
           "name": "Who is this weekend for?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Open to anyone aged 18 or over with a reasonable base level of fitness. You are responsible for assessing your own physical condition and health. The group is kept deliberately small, so there's room for personal attention."
+            "text": "Open to anyone aged 18 or over with a good base level of fitness. You are responsible for assessing your own physical condition and health. The group is kept deliberately small, so there's room for personal attention."
           }
         },
         {
@@ -517,6 +517,14 @@
   .price-figure .amount small{
     font-family:'Work Sans',sans-serif;font-size:0.95rem;font-weight:500;color:#c9d0bc;
   }
+  .price-badge{
+    align-self:flex-start;display:inline-block;background:var(--terracotta);color:var(--white);
+    text-transform:uppercase;letter-spacing:0.14em;font-size:0.66rem;font-weight:700;
+    padding:6px 14px;border-radius:999px;margin:0 0 16px;
+  }
+  .price-note{
+    margin:12px 0 0;font-size:0.82rem;line-height:1.5;color:#c9d0bc;max-width:34ch;
+  }
   .price-cta{margin-top:26px;justify-content:center;width:100%;}
 
   .price-included{padding:44px 44px 40px;}
@@ -564,6 +572,8 @@
   @media (max-width: 860px){
     .price-panel{grid-template-columns:1fr;max-width:560px;}
     .price-figure{padding:38px 32px 34px;text-align:center;align-items:center;}
+    .price-badge{align-self:center;}
+    .price-note{margin-left:auto;margin-right:auto;}
     .price-cta{max-width:320px;}
     .price-included{padding:32px 30px 30px;}
     .price-included ul{grid-template-columns:1fr;gap:0;}
@@ -1191,7 +1201,7 @@
       <h2 data-key="intro.title">This weekend isn't about performing.<br>It's about experiencing.</h2>
       <p data-key="intro.paragraphs.0">For us, trail running isn't about speed or competition. It's about being outdoors, moving in nature, and noticing what happens once you step away from the rush of everyday life.</p>
       <p data-key="intro.paragraphs.1">In the Sierra Calderona we run by feel. No strict schedule, no focus on times or performance. We stop where it's beautiful, look out over the valley, take a photo, or simply stand still in nature for a moment.</p>
-      <p data-key="intro.paragraphs.2">Trail run or hike? The choice is yours. Every route can be done as a trail run or as a hike, so you decide what suits you best. Whether you love to run or would rather take in the scenery on foot, the experience always comes first. We stay together as a group and adapt the pace to one another.</p>
+      <p data-key="intro.paragraphs.2">Trail run or hike? The choice is yours. Every route can be done as a trail run or as a hike, so you decide what suits you best. Whether you love to run or would rather take in the scenery on foot, the experience always comes first. We stay together as a group.</p>
       <p class="statement" data-key="intro.statement">"Not performing. Experiencing."</p>
       <div class="logo-rule" aria-hidden="true">
         <span class="line"></span>
@@ -1210,7 +1220,8 @@
           <span class="feature-num">01</span>
           <h3 data-key="features.0.title">Who is this weekend for?</h3>
           <p data-key="features.0.paragraphs.0">This weekend is meant for active people who love being outdoors. You can join as a trail runner or as a hiker. No experience is required, but a good base level of fitness is important. We therefore ask participants to be able to run or walk comfortably for at least an hour and a half on hilly terrain.</p>
-          <p data-key="features.0.paragraphs.1">The group has a maximum of six participants, so that levels match well and we can run together as one group all weekend. We adapt the pace to each other, take our time where needed, and above all enjoy the nature, the trails and the shared experience.</p>
+          <p data-key="features.0.paragraphs.1">The group has a maximum of six participants. It's exactly this small scale that allows for personal guidance, attention for everyone and a relaxed atmosphere.</p>
+          <p data-key="features.0.paragraphs.2">Whether you come on your own or with someone else, you are very welcome. Together we'll make it a sporty, relaxed and inspiring weekend, with nature, movement and good company at its heart.</p>
           <p class="feature-statement" data-key="features.0.statement">Not about performing, but about experiencing it together.</p>
         </div>
         <div class="feature-img reveal-right"><img loading="lazy" decoding="async" width="1050" height="1400" src="../images/mountain-steps-trail.jpg" alt="Mountain trail with wooden steps in the Sierra Calderona"></div>
@@ -1542,8 +1553,10 @@
       <div class="price-panel reveal">
         <div class="price-figure">
           <img class="price-watermark" src="../images/logo-mark.png" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true">
+          <span class="price-badge" data-key="pricing.badge">Introductory price</span>
           <p class="price-dates" data-key="pricing.dates">Friday to Sunday</p>
           <div class="amount"><span data-key="pricing.price">€495</span> <small data-key="pricing.unit">pp</small></div>
+          <p class="price-note" data-key="pricing.note">A special rate for this first edition. This price applies as long as spots are available.</p>
           <a href="#contact" class="btn btn-primary price-cta" data-key="pricing.cta">Request your spot</a>
         </div>
         <div class="price-included">
@@ -1592,7 +1605,7 @@
         <details open>
           <summary data-key="practical.faq.0.q">Who is this weekend for?</summary>
           <div class="body">
-            <p data-key="practical.faq.0.a">Open to anyone aged 18 or over with a reasonable base level of fitness. You are responsible for assessing your own physical condition and health. The group is kept deliberately small, so there's room for personal attention.</p>
+            <p data-key="practical.faq.0.a">Open to anyone aged 18 or over with a good base level of fitness. You are responsible for assessing your own physical condition and health. The group is kept deliberately small, so there's room for personal attention.</p>
           </div>
         </details>
 

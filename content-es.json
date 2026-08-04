@@ -30,7 +30,7 @@
     "paragraphs": [
       "Para nosotros, el trailrunning no va de velocidad ni de competición. Va de estar al aire libre, moverte en la naturaleza y notar qué pasa cuando te alejas un momento del ajetreo del día a día.",
       "En la Sierra Calderona corremos según el momento. Sin horarios estrictos, sin fijarnos en tiempos ni rendimiento. Paramos donde es bonito, contemplamos el valle, hacemos una foto, o simplemente nos quedamos un momento quietos en la naturaleza.",
-      "¿Trail o senderismo? Tú eliges. Cada ruta se puede hacer corriendo o caminando, así que eliges lo que mejor encaja contigo. Tanto si te gusta correr como si prefieres disfrutar de la naturaleza a pie, la experiencia siempre es lo primero. Nos mantenemos juntos como grupo y adaptamos el ritmo entre todos."
+      "¿Trail o senderismo? Tú eliges. Cada ruta se puede hacer corriendo o caminando, así que eliges lo que mejor encaja contigo. Tanto si te gusta correr como si prefieres disfrutar de la naturaleza a pie, la experiencia siempre es lo primero. Nos mantenemos juntos como grupo."
     ],
     "statement": "«No rendir. Vivir.»"
   },
@@ -39,7 +39,8 @@
       "title": "¿Para quién es este fin de semana?",
       "paragraphs": [
         "Este fin de semana está pensado para personas activas a las que les gusta estar en plena naturaleza. Puedes participar como trail runner o como senderista. No hace falta experiencia previa, pero sí una buena condición física de base. Por eso pedimos a los participantes que puedan correr o caminar con soltura durante al menos una hora y media por terreno con desnivel.",
-        "El grupo es de un máximo de seis participantes, para que los niveles encajen bien y podamos correr juntos como grupo durante todo el fin de semana. Adaptamos el ritmo unos a otros, nos tomamos el tiempo necesario y, sobre todo, disfrutamos de la naturaleza, los senderos y la experiencia compartida."
+        "El grupo es de un máximo de seis participantes. Precisamente ese formato reducido permite un acompañamiento personal, atención para cada uno y un ambiente relajado.",
+        "Tanto si vienes solo como acompañado, eres muy bienvenido. Juntos haremos de este un fin de semana deportivo, relajado e inspirador, con la naturaleza, el movimiento y la buena compañía como protagonistas."
       ],
       "statement": "No se trata de rendir, sino de vivirlo juntos."
     },
@@ -199,6 +200,8 @@
     "price": "495 €",
     "unit": "p.p.",
     "dates": "Viernes a domingo",
+    "badge": "Precio de lanzamiento",
+    "note": "Tarifa especial para esta primera edición. Este precio se mantiene mientras queden plazas.",
     "cta": "Solicita tu plaza",
     "includedLabel": "Incluido",
     "included": [
@@ -226,7 +229,7 @@
     "faq": [
       {
         "q": "¿Para quién es este fin de semana?",
-        "a": "Abierto a cualquier persona mayor de 18 años con una condición física razonable. Eres responsable de valorar tu propia condición física y estado de salud. El grupo se mantiene deliberadamente reducido, para que haya espacio para la atención personal."
+        "a": "Abierto a cualquier persona mayor de 18 años con una buena condición física. Eres responsable de valorar tu propia condición física y estado de salud. El grupo se mantiene deliberadamente reducido, para que haya espacio para la atención personal."
       },
       {
         "q": "¿Qué incluye?",

@@ -188,7 +188,7 @@
           "name": "Voor wie is dit weekend?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Deelname staat open voor personen van 18 jaar en ouder met een redelijke basisconditie. Je bent zelf verantwoordelijk voor het inschatten van je fysieke conditie en gezondheid. De groep wordt bewust klein gehouden, zodat er ruimte is voor persoonlijke aandacht."
+            "text": "Deelname staat open voor personen van 18 jaar en ouder met een goede basisconditie. Je bent zelf verantwoordelijk voor het inschatten van je fysieke conditie en gezondheid. De groep wordt bewust klein gehouden, zodat er ruimte is voor persoonlijke aandacht."
           }
         },
         {
@@ -520,6 +520,14 @@
   .price-figure .amount small{
     font-family:'Work Sans',sans-serif;font-size:0.95rem;font-weight:500;color:#c9d0bc;
   }
+  .price-badge{
+    align-self:flex-start;display:inline-block;background:var(--terracotta);color:var(--white);
+    text-transform:uppercase;letter-spacing:0.14em;font-size:0.66rem;font-weight:700;
+    padding:6px 14px;border-radius:999px;margin:0 0 16px;
+  }
+  .price-note{
+    margin:12px 0 0;font-size:0.82rem;line-height:1.5;color:#c9d0bc;max-width:34ch;
+  }
   .price-cta{margin-top:26px;justify-content:center;width:100%;}
 
   .price-included{padding:44px 44px 40px;}
@@ -567,6 +575,8 @@
   @media (max-width: 860px){
     .price-panel{grid-template-columns:1fr;max-width:560px;}
     .price-figure{padding:38px 32px 34px;text-align:center;align-items:center;}
+    .price-badge{align-self:center;}
+    .price-note{margin-left:auto;margin-right:auto;}
     .price-cta{max-width:320px;}
     .price-included{padding:32px 30px 30px;}
     .price-included ul{grid-template-columns:1fr;gap:0;}
@@ -1196,7 +1206,7 @@
       <h2 data-key="intro.title">Dit weekend draait niet om presteren.<br>Het draait om beleven.</h2>
       <p data-key="intro.paragraphs.0">Trailrunnen gaat voor ons niet over snelheid of competitie. Het gaat over buiten zijn, bewegen in de natuur en merken wat er gebeurt zodra je even afstand neemt van de drukte van alledag.</p>
       <p data-key="intro.paragraphs.1">In de Sierra Calderona lopen we op gevoel. Geen strak schema, geen focus op tijden of prestaties. We stoppen waar het mooi is, kijken uit over de vallei, maken een foto, of staan gewoon even stil in de natuur.</p>
-      <p data-key="intro.paragraphs.2">Trailrun of hike? De keuze is aan jou. Iedere route kan worden afgelegd als trailrun of als hike. Zo kies je zelf wat het beste bij je past. Of je nu graag hardloopt of liever wandelend van de natuur geniet, de beleving staat altijd centraal. We blijven als groep bij elkaar en passen het tempo aan elkaar aan.</p>
+      <p data-key="intro.paragraphs.2">Trailrun of hike? De keuze is aan jou. Iedere route kan worden afgelegd als trailrun of als hike. Zo kies je zelf wat het beste bij je past. Of je nu graag hardloopt of liever wandelend van de natuur geniet, de beleving staat altijd centraal. We blijven als groep bij elkaar.</p>
       <p class="statement" data-key="intro.statement">"Niet presteren. Beleven."</p>
       <div class="logo-rule" aria-hidden="true">
         <span class="line"></span>
@@ -1215,7 +1225,8 @@
           <span class="feature-num">01</span>
           <h3 data-key="features.0.title">Voor wie is dit weekend?</h3>
           <p data-key="features.0.paragraphs.0">Dit weekend is bedoeld voor sportieve mensen die graag actief in de natuur zijn. Je kunt deelnemen als trailrunner of als hiker. Ervaring is niet nodig, maar een goede basisconditie is wel belangrijk. We vragen deelnemers daarom om minimaal anderhalf uur rustig te kunnen hardlopen of wandelen op heuvelachtig terrein.</p>
-          <p data-key="features.0.paragraphs.1">De groep bestaat uit maximaal zes deelnemers, zodat het niveau goed op elkaar aansluit en we het hele weekend samen als groep kunnen lopen. We passen het tempo aan elkaar aan, nemen de tijd waar nodig en genieten vooral van de natuur, de trails en de gezamenlijke beleving.</p>
+          <p data-key="features.0.paragraphs.1">De groep bestaat uit maximaal zes deelnemers. Juist deze kleinschaligheid zorgt voor persoonlijke begeleiding, aandacht voor iedereen en een ontspannen sfeer.</p>
+          <p data-key="features.0.paragraphs.2">Of je nu alleen komt of samen met iemand, je bent van harte welkom. Samen maken we er een sportief, ontspannen en inspirerend weekend van, waarin natuur, beweging en gezelligheid centraal staan.</p>
           <p class="feature-statement" data-key="features.0.statement">Niet presteren, maar samen beleven.</p>
         </div>
         <div class="feature-img reveal-right"><img loading="lazy" decoding="async" width="1050" height="1400" src="images/mountain-steps-trail.jpg" alt="Bergpad met houten trappen in de Sierra Calderona"></div>
@@ -1524,7 +1535,7 @@
           <span class="eyebrow" data-key="host.eyebrow">Over je gastheer</span>
           <h2 data-key="host.title">Maurizio Salazar</h2>
           <p data-key="host.paragraphs.0">Mijn naam is Maurizio Salazar en ik woon een groot deel van het jaar in de prachtige omgeving van Casinos, aan de voet van de Sierra Calderona.</p>
-          <p data-key="host.paragraphs.1">Van beroep ben ik sport- en shiatsutherapeut en al mijn hele leven gefascineerd door beweging, gezondheid en de kracht van de natuur. Sport heeft altijd een belangrijke rol gespeeld in mijn leven. Of het nu gaat om hardlopen, trailrunnen, wandelen of andere vormen van beweging; ik geloof dat actief zijn niet alleen goed is voor het lichaam, maar ook voor de geest.</p>
+          <p data-key="host.paragraphs.1">Van beroep ben ik sport- en shiatsutherapeut en ik ben al mijn hele leven gefascineerd door beweging, gezondheid en de kracht van de natuur. Sport heeft altijd een belangrijke rol gespeeld in mijn leven. Of het nu gaat om hardlopen, trailrunnen, wandelen of andere vormen van beweging; ik geloof dat actief zijn niet alleen goed is voor het lichaam, maar ook voor de geest.</p>
           <p data-key="host.paragraphs.2">Door mijn werk heb ik dagelijks contact met mensen die gezonder, sterker en energieker willen leven. Daarbij zie ik hoe belangrijk het is om af en toe uit de dagelijkse routine te stappen en tijd te maken voor jezelf.</p>
           <p data-key="host.paragraphs.3">De natuur is voor mij altijd een plek geweest om op te laden. In de bergen van de Sierra Calderona vind ik rust, vrijheid en avontuur. Dat gevoel wil ik graag delen met anderen.</p>
           <p data-key="host.paragraphs.4">Vanuit die passie is het idee ontstaan om kleinschalige trailrunweekenden te organiseren. Geen prestatiegerichte sportreis, maar een toegankelijke ervaring waarin beweging, natuur, ontspanning en verbinding centraal staan.</p>
@@ -1547,8 +1558,10 @@
       <div class="price-panel reveal">
         <div class="price-figure">
           <img class="price-watermark" src="images/logo-mark.png" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true">
+          <span class="price-badge" data-key="pricing.badge">Introductieprijs</span>
           <p class="price-dates" data-key="pricing.dates">Vrijdag t/m zondag</p>
           <div class="amount"><span data-key="pricing.price">€495</span> <small data-key="pricing.unit">p.p.</small></div>
+          <p class="price-note" data-key="pricing.note">Speciaal tarief voor de eerste editie. Deze prijs geldt zolang er plekken zijn.</p>
           <a href="#contact" class="btn btn-primary price-cta" data-key="pricing.cta">Vraag jouw plek aan</a>
         </div>
         <div class="price-included">
@@ -1597,7 +1610,7 @@
         <details open>
           <summary data-key="practical.faq.0.q">Voor wie is dit weekend?</summary>
           <div class="body">
-            <p data-key="practical.faq.0.a">Deelname staat open voor personen van 18 jaar en ouder met een redelijke basisconditie. Je bent zelf verantwoordelijk voor het inschatten van je fysieke conditie en gezondheid. De groep wordt bewust klein gehouden, zodat er ruimte is voor persoonlijke aandacht.</p>
+            <p data-key="practical.faq.0.a">Deelname staat open voor personen van 18 jaar en ouder met een goede basisconditie. Je bent zelf verantwoordelijk voor het inschatten van je fysieke conditie en gezondheid. De groep wordt bewust klein gehouden, zodat er ruimte is voor persoonlijke aandacht.</p>
           </div>
         </details>
 

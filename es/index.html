@@ -188,7 +188,7 @@
           "name": "¿Para quién es este fin de semana?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Abierto a cualquier persona mayor de 18 años con una condición física razonable. Eres responsable de valorar tu propia condición física y estado de salud. El grupo se mantiene deliberadamente reducido, para que haya espacio para la atención personal."
+            "text": "Abierto a cualquier persona mayor de 18 años con una buena condición física. Eres responsable de valorar tu propia condición física y estado de salud. El grupo se mantiene deliberadamente reducido, para que haya espacio para la atención personal."
           }
         },
         {
@@ -517,6 +517,14 @@
   .price-figure .amount small{
     font-family:'Work Sans',sans-serif;font-size:0.95rem;font-weight:500;color:#c9d0bc;
   }
+  .price-badge{
+    align-self:flex-start;display:inline-block;background:var(--terracotta);color:var(--white);
+    text-transform:uppercase;letter-spacing:0.14em;font-size:0.66rem;font-weight:700;
+    padding:6px 14px;border-radius:999px;margin:0 0 16px;
+  }
+  .price-note{
+    margin:12px 0 0;font-size:0.82rem;line-height:1.5;color:#c9d0bc;max-width:34ch;
+  }
   .price-cta{margin-top:26px;justify-content:center;width:100%;}
 
   .price-included{padding:44px 44px 40px;}
@@ -564,6 +572,8 @@
   @media (max-width: 860px){
     .price-panel{grid-template-columns:1fr;max-width:560px;}
     .price-figure{padding:38px 32px 34px;text-align:center;align-items:center;}
+    .price-badge{align-self:center;}
+    .price-note{margin-left:auto;margin-right:auto;}
     .price-cta{max-width:320px;}
     .price-included{padding:32px 30px 30px;}
     .price-included ul{grid-template-columns:1fr;gap:0;}
@@ -1191,7 +1201,7 @@
       <h2 data-key="intro.title">Este fin de semana no va de rendir.<br>Va de vivir.</h2>
       <p data-key="intro.paragraphs.0">Para nosotros, el trailrunning no va de velocidad ni de competición. Va de estar al aire libre, moverte en la naturaleza y notar qué pasa cuando te alejas un momento del ajetreo del día a día.</p>
       <p data-key="intro.paragraphs.1">En la Sierra Calderona corremos según el momento. Sin horarios estrictos, sin fijarnos en tiempos ni rendimiento. Paramos donde es bonito, contemplamos el valle, hacemos una foto, o simplemente nos quedamos un momento quietos en la naturaleza.</p>
-      <p data-key="intro.paragraphs.2">¿Trail o senderismo? Tú eliges. Cada ruta se puede hacer corriendo o caminando, así que eliges lo que mejor encaja contigo. Tanto si te gusta correr como si prefieres disfrutar de la naturaleza a pie, la experiencia siempre es lo primero. Nos mantenemos juntos como grupo y adaptamos el ritmo entre todos.</p>
+      <p data-key="intro.paragraphs.2">¿Trail o senderismo? Tú eliges. Cada ruta se puede hacer corriendo o caminando, así que eliges lo que mejor encaja contigo. Tanto si te gusta correr como si prefieres disfrutar de la naturaleza a pie, la experiencia siempre es lo primero. Nos mantenemos juntos como grupo.</p>
       <p class="statement" data-key="intro.statement">«No rendir. Vivir.»</p>
       <div class="logo-rule" aria-hidden="true">
         <span class="line"></span>
@@ -1210,7 +1220,8 @@
           <span class="feature-num">01</span>
           <h3 data-key="features.0.title">¿Para quién es este fin de semana?</h3>
           <p data-key="features.0.paragraphs.0">Este fin de semana está pensado para personas activas a las que les gusta estar en plena naturaleza. Puedes participar como trail runner o como senderista. No hace falta experiencia previa, pero sí una buena condición física de base. Por eso pedimos a los participantes que puedan correr o caminar con soltura durante al menos una hora y media por terreno con desnivel.</p>
-          <p data-key="features.0.paragraphs.1">El grupo es de un máximo de seis participantes, para que los niveles encajen bien y podamos correr juntos como grupo durante todo el fin de semana. Adaptamos el ritmo unos a otros, nos tomamos el tiempo necesario y, sobre todo, disfrutamos de la naturaleza, los senderos y la experiencia compartida.</p>
+          <p data-key="features.0.paragraphs.1">El grupo es de un máximo de seis participantes. Precisamente ese formato reducido permite un acompañamiento personal, atención para cada uno y un ambiente relajado.</p>
+          <p data-key="features.0.paragraphs.2">Tanto si vienes solo como acompañado, eres muy bienvenido. Juntos haremos de este un fin de semana deportivo, relajado e inspirador, con la naturaleza, el movimiento y la buena compañía como protagonistas.</p>
           <p class="feature-statement" data-key="features.0.statement">No se trata de rendir, sino de vivirlo juntos.</p>
         </div>
         <div class="feature-img reveal-right"><img loading="lazy" decoding="async" width="1050" height="1400" src="../images/mountain-steps-trail.jpg" alt="Sendero de montaña con escalones de madera en la Sierra Calderona"></div>
@@ -1542,8 +1553,10 @@
       <div class="price-panel reveal">
         <div class="price-figure">
           <img class="price-watermark" src="../images/logo-mark.png" alt="" width="320" height="320" loading="lazy" decoding="async" aria-hidden="true">
+          <span class="price-badge" data-key="pricing.badge">Precio de lanzamiento</span>
           <p class="price-dates" data-key="pricing.dates">Viernes a domingo</p>
           <div class="amount"><span data-key="pricing.price">495 €</span> <small data-key="pricing.unit">p.p.</small></div>
+          <p class="price-note" data-key="pricing.note">Tarifa especial para esta primera edición. Este precio se mantiene mientras queden plazas.</p>
           <a href="#contact" class="btn btn-primary price-cta" data-key="pricing.cta">Solicita tu plaza</a>
         </div>
         <div class="price-included">
@@ -1592,7 +1605,7 @@
         <details open>
           <summary data-key="practical.faq.0.q">¿Para quién es este fin de semana?</summary>
           <div class="body">
-            <p data-key="practical.faq.0.a">Abierto a cualquier persona mayor de 18 años con una condición física razonable. Eres responsable de valorar tu propia condición física y estado de salud. El grupo se mantiene deliberadamente reducido, para que haya espacio para la atención personal.</p>
+            <p data-key="practical.faq.0.a">Abierto a cualquier persona mayor de 18 años con una buena condición física. Eres responsable de valorar tu propia condición física y estado de salud. El grupo se mantiene deliberadamente reducido, para que haya espacio para la atención personal.</p>
           </div>
         </details>
 
