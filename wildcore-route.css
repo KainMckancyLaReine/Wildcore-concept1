@@ -1,0 +1,774 @@
+/* ==========================================================================
+   Wildcore Retreats — The Route
+   A living trail map for the weekend: the path draws itself under a runner
+   who climbs from the villa to the ridge and back down, waypoints light up as
+   they are passed, and the elevation profile fills in step for step.
+
+   Everything is driven from one --p (0 → 1) that wildcore-route.js writes each
+   frame, so the trail, the runner, the profile and the counters can never
+   drift apart.
+   ========================================================================== */
+
+.wc-route{
+    --p:0;
+    --line:rgba(167,155,110,.34);
+    position:relative;
+    margin:0 0 54px;
+    padding:30px 34px 26px;
+    border-radius:26px;
+    /* the section behind it is cream-deep, so the map sits on paper white to
+       read as a card rather than melting into the background */
+    background:
+        radial-gradient(130% 110% at 15% 0%, rgba(255,255,255,.9), transparent 62%),
+        var(--cream, #f8f2e6);
+    border:1px solid var(--line);
+    box-shadow:0 26px 60px -34px rgba(43,42,34,.5);
+    overflow:hidden;
+}
+/* the survey grid a printed map would carry */
+.wc-route::after{
+    content:'';position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+    background-image:
+        linear-gradient(to right, rgba(167,155,110,.17) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(167,155,110,.17) 1px, transparent 1px);
+    background-size:38px 38px;
+    mask-image:radial-gradient(125% 95% at 50% 45%, #000 45%, transparent 82%);
+    -webkit-mask-image:radial-gradient(125% 95% at 50% 45%, #000 45%, transparent 82%);
+}
+.wc-route > *{position:relative;z-index:1;}
+
+/* --------------------------------------------------------------- header -- */
+.wc-route-head{
+    display:flex;align-items:flex-end;justify-content:space-between;
+    gap:20px;flex-wrap:wrap;margin-bottom:14px;
+}
+.wc-route-eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:'Work Sans',sans-serif;font-size:.72rem;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--sage,#a79b6e);
+}
+.wc-route-eyebrow i{
+    width:7px;height:7px;border-radius:50%;background:var(--terracotta,#bd5f31);
+    display:block;flex:none;
+}
+.wc-route.is-live .wc-route-eyebrow i{animation:wc-pulse 2.2s ease-in-out infinite;}
+@keyframes wc-pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(.7);}}
+
+.wc-route-totals{display:flex;gap:26px;}
+.wc-route-totals div{text-align:right;}
+.wc-route-totals span{
+    display:block;font-family:'Work Sans',sans-serif;font-size:.66rem;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--sage,#a79b6e);
+    margin-bottom:1px;
+}
+.wc-route-totals b{
+    font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;
+    color:var(--green-deep,#3f4a34);line-height:1.1;
+}
+.wc-route-totals div:last-child b{color:var(--terracotta,#bd5f31);}
+
+/* ------------------------------------------------------------------ map -- */
+/* kept deliberately short — it is a strip of map above the day cards, not a
+   full-bleed illustration */
+.wc-map{
+    position:relative;width:100%;aspect-ratio:1000 / 330;
+    min-height:200px;max-height:340px;
+    border-radius:16px;overflow:hidden;
+    background:linear-gradient(180deg,#fbf7ee 0%, #f8f2e6 42%, #f5efe1 100%);
+    box-shadow:inset 0 0 0 1px rgba(167,155,110,.22);
+}
+/* a soft vignette settles the edges of the sheet */
+.wc-map::before{
+    content:'';position:absolute;inset:0;z-index:4;pointer-events:none;
+    border-radius:inherit;
+    box-shadow:inset 0 0 42px rgba(120,104,76,.13);
+}
+.wc-route-below{margin:44px 0 0;}
+.wc-map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;}
+
+/* ------------------------------------------------------------ the land --
+   Altitude bands the way a walking map colours them: green in the valley,
+   khaki on the slopes, warm stone up on the rock. Drawn twice — a faint
+   survey ghost that is always there, and the surveyed version that wipes in
+   from left to right as he walks. */
+.wc-map .wc-land-ghost{opacity:.28;}
+/* a mask rather than a hard clip, so the edge of the surveyed ground feathers
+   out ahead of him instead of standing there like a curtain */
+/* the 118% overshoot means the feather has cleared the right edge by the time
+   he tops out, so the finished map is fully surveyed */
+.wc-map .wc-land-live{
+    -webkit-mask-image:linear-gradient(90deg,
+        #000 calc(var(--p) * 118% - 90px), rgba(0,0,0,0) calc(var(--p) * 118%));
+    mask-image:linear-gradient(90deg,
+        #000 calc(var(--p) * 118% - 90px), rgba(0,0,0,0) calc(var(--p) * 118%));
+}
+.wc-map .lb-valley{fill:rgba(116,138,78,.4);}
+.wc-map .lb-slope {fill:rgba(142,148,88,.32);}
+.wc-map .lb-upper {fill:rgba(172,156,104,.36);}
+.wc-map .lb-rock  {fill:rgba(152,118,78,.32);}
+.wc-map .wc-river{
+    fill:none;stroke:rgba(96,140,150,.55);stroke-width:2.6;
+    stroke-linecap:round;vector-effect:non-scaling-stroke;
+}
+/* light travelling down the water */
+.wc-map .wc-river-lit{
+    fill:none;stroke:rgba(255,255,255,.75);stroke-width:1.6;stroke-linecap:round;
+    vector-effect:non-scaling-stroke;stroke-dasharray:26 300;
+}
+.wc-route.is-live .wc-map .wc-river-lit{animation:wc-flow 9s linear infinite;}
+@keyframes wc-flow{from{stroke-dashoffset:326;}to{stroke-dashoffset:0;}}
+/* ==========================================================================
+   THE DIORAMA — the map floats, flat and still
+   No 3D rotation, no perspective and no pointer parallax. The only motion is
+   the slow float and its shadow.
+   ========================================================================== */
+
+/* the slab breathes, as if it is held just off the paper */
+@keyframes wc-float{
+    0%,100%{translate:0 0;}
+    50%    {translate:0 -6px;}
+}
+/* and casts a shadow that softens as it rises. This is a box-shadow rather
+   than a pseudo-element because the map clips its own overflow — a shadow
+   drawn inside would never be visible below the slab. */
+.wc-route.is-live .wc-map{animation:wc-float 9s ease-in-out infinite,
+                                    wc-cast 9s ease-in-out infinite;}
+@keyframes wc-cast{
+    0%,100%{box-shadow:inset 0 0 0 1px rgba(167,155,110,.22),
+                       0 14px 26px -14px rgba(43,42,34,.55);}
+    50%    {box-shadow:inset 0 0 0 1px rgba(167,155,110,.22),
+                       0 26px 38px -18px rgba(43,42,34,.4);}
+}
+
+/* ---------------------------------------------------- modelled skyline --
+   Each peak is three shapes: a sunlit face, a shaded flank and, high up, a
+   cap of snow. The light sits on the left throughout, so the whole range
+   reads as one lit landscape instead of a row of triangles. Layers fade with
+   distance for depth. */
+.wc-map .wc-pk{stroke:none;}
+.wc-map .wc-pk-sh{stroke:none;fill:rgba(58,46,32,.3);}
+.wc-map .wc-pk-cap{stroke:none;fill:rgba(255,253,246,.9);}
+
+.wc-map .wc-pk.r0{fill:rgba(158,148,126,.3);}
+.wc-map .wc-pk-sh.r0{fill:rgba(84,72,54,.14);}
+.wc-map .wc-pk-cap.r0{fill:rgba(255,255,255,.5);}
+
+.wc-map .wc-pk.r1{fill:rgba(146,132,104,.44);}
+.wc-map .wc-pk-sh.r1{fill:rgba(72,60,44,.2);}
+.wc-map .wc-pk-cap.r1{fill:rgba(255,255,255,.68);}
+
+.wc-map .wc-pk.r2{fill:rgba(136,120,90,.58);}
+.wc-map .wc-pk-sh.r2{fill:rgba(64,52,38,.26);}
+
+.wc-map .wc-pk.r3{fill:rgba(120,106,76,.7);}
+.wc-map .wc-pk-sh.r3{fill:rgba(54,44,32,.3);}
+.wc-map .wc-pk-cap.r3{display:none;}
+
+/* the nearer a range, the more it drifts when the panel comes into view */
+.wc-ridge-layer{transition:transform 1.6s var(--km-ease);}
+.wc-route .wc-ridge-layer.r0{transform:translateY(10px);}
+.wc-route .wc-ridge-layer.r1{transform:translateY(14px);}
+.wc-route .wc-ridge-layer.r2{transform:translateY(18px);}
+.wc-route .wc-ridge-layer.r3{transform:translateY(24px);}
+.wc-route.is-in .wc-ridge-layer{transform:translateY(0);}
+
+.wc-map .wc-haze{fill:url(#wcHaze);opacity:.6;}
+
+/* sunlight travelling across the whole landscape */
+.wc-sun{
+    position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(100deg,
+        transparent 34%, rgba(255,238,196,.34) 48%, rgba(255,246,222,.16) 56%, transparent 70%);
+    mix-blend-mode:soft-light;opacity:0;
+}
+.wc-route.is-live .wc-sun{animation:wc-sun 26s ease-in-out infinite;}
+@keyframes wc-sun{
+    0%      {opacity:0;transform:translateX(-42%);}
+    18%,72% {opacity:1;}
+    100%    {opacity:0;transform:translateX(42%);}
+}
+
+/* ------------------------------------------------------------- the sky -- */
+.wc-sky{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;}
+.wc-cloud{
+    position:absolute;display:block;height:14px;border-radius:14px;
+    background:rgba(255,255,255,.72);
+    box-shadow:22px 4px 0 -3px rgba(255,255,255,.62), -20px 3px 0 -2px rgba(255,255,255,.55);
+}
+.wc-cloud.c1{width:52px;top:9%;  animation:wc-drift 96s linear infinite;}
+.wc-cloud.c2{width:38px;top:19%; height:11px;opacity:.75;animation:wc-drift 132s linear infinite;animation-delay:-40s;}
+.wc-cloud.c3{width:64px;top:5%;  height:16px;opacity:.6; animation:wc-drift 160s linear infinite;animation-delay:-90s;}
+@keyframes wc-drift{from{left:-14%;}to{left:112%;}}
+
+.wc-bird{position:absolute;display:block;width:15px;opacity:0;}
+.wc-bird svg{display:block;width:100%;height:auto;}
+.wc-bird path{fill:none;stroke:rgba(70,64,48,.5);stroke-width:1.4;stroke-linecap:round;}
+.wc-route.is-live .wc-bird{animation:wc-glide 26s linear infinite;}
+.wc-route.is-live .wc-bird.b1{top:13%;animation-duration:30s;}
+.wc-route.is-live .wc-bird.b2{top:19%;width:11px;animation-duration:38s;animation-delay:-11s;}
+.wc-route.is-live .wc-bird.b3{top:9%; width:9px; animation-duration:46s;animation-delay:-24s;}
+@keyframes wc-glide{
+    0%      {left:-6%;  opacity:0; transform:translateY(0);}
+    12%     {opacity:.9;}
+    50%     {transform:translateY(-11px);}
+    88%     {opacity:.9;}
+    100%    {left:104%; opacity:0; transform:translateY(4px);}
+}
+.wc-bird svg path{animation:wc-flap 1.5s ease-in-out infinite;transform-origin:50% 70%;}
+@keyframes wc-flap{0%,100%{transform:scaleY(1);}50%{transform:scaleY(.55);}}
+
+/* --------------------------------------------------------- map furniture -- */
+/* both instruments sit on their own chip, so they read as things printed on
+   the map rather than shapes floating over the terrain */
+.wc-compass{
+    position:absolute;right:2.4%;bottom:8%;width:40px;height:40px;z-index:3;
+    pointer-events:none;opacity:.85;
+    border-radius:50%;background:rgba(251,247,238,.82);
+    box-shadow:0 2px 10px -4px rgba(43,42,34,.4);
+}
+.wc-compass svg{width:100%;height:100%;display:block;
+    animation:wc-needle 14s ease-in-out infinite;transform-origin:50% 50%;}
+@keyframes wc-needle{0%,100%{transform:rotate(-2.5deg);}50%{transform:rotate(2.5deg);}}
+.wc-compass .cp-r{fill:rgba(255,255,255,.5);stroke:rgba(120,104,76,.55);stroke-width:1;}
+.wc-compass .cp-n{fill:var(--terracotta,#bd5f31);}
+.wc-compass .cp-s{fill:rgba(120,104,76,.5);}
+.wc-compass .cp-t{stroke:rgba(120,104,76,.6);stroke-width:1.2;stroke-linecap:round;}
+.wc-compass b{
+    position:absolute;left:50%;top:-9px;transform:translateX(-50%);
+    font-family:'Work Sans',sans-serif;font-size:.5rem;font-weight:700;
+    letter-spacing:.1em;color:rgba(90,80,60,.75);
+}
+.wc-scale{
+    position:absolute;right:2.4%;bottom:2.5%;z-index:3;pointer-events:none;
+    display:flex;align-items:center;gap:6px;
+    background:rgba(251,247,238,.8);border-radius:9px;padding:3px 7px;
+}
+.wc-scale i{
+    display:block;width:52px;height:5px;
+    border:1px solid rgba(90,80,60,.7);border-top:none;
+    background:linear-gradient(90deg,rgba(90,80,60,.7) 50%, transparent 50%);
+    background-size:50% 100%;
+}
+.wc-scale b{
+    font-family:'Work Sans',sans-serif;font-size:.52rem;font-weight:700;
+    letter-spacing:.1em;color:rgba(90,80,60,.8);
+}
+
+/* ------------------------------------------------------- what he passes -- */
+.wc-features{position:absolute;inset:0;pointer-events:none;}
+.wc-ft{
+    position:absolute;display:block;
+    width:calc(var(--s) * var(--fscale, 1) * 1px);
+    transform:translate(-50%,-100%) translateY(7px) scale(.6);
+    transform-origin:50% 100%;
+    opacity:0;
+    transition:opacity .55s ease, transform .7s cubic-bezier(.34,1.4,.5,1);
+}
+.wc-ft.is-shown{opacity:1;transform:translate(-50%,-100%) translateY(0) scale(1);}
+.wc-ft svg{display:block;width:100%;height:auto;overflow:visible;}
+
+.wc-ft .tr-t{fill:rgba(78,100,62,.85);}
+.wc-ft .tr-s{fill:rgba(120,92,62,.9);}
+.wc-ft-oak .tr-t{fill:rgba(102,124,74,.8);}
+.wc-ft:nth-of-type(even) .tr-t{fill:rgba(92,113,70,.82);}
+/* the canopies breathe, each on its own offset */
+.wc-route.is-live .wc-ft .sway{
+    transform-origin:50% 100%;
+    animation:wc-sway 5.4s ease-in-out infinite;
+    animation-delay:var(--d, 0s);
+}
+@keyframes wc-sway{
+    0%,100%{transform:rotate(-1.6deg) scaleY(1);}
+    50%    {transform:rotate(1.6deg) scaleY(1.03);}
+}
+.wc-ft .rk{fill:rgba(138,120,94,.75);}
+.wc-ft .rk-l{fill:none;stroke:rgba(255,255,255,.45);stroke-width:1.1;stroke-linejoin:round;}
+.wc-ft .pk{fill:rgba(146,128,100,.62);}
+.wc-ft .pk-sh{fill:rgba(90,78,60,.16);}
+.wc-ft .pk-cap{fill:rgba(255,255,255,.8);}
+.wc-ft .vg{fill:rgba(120,104,76,.7);}
+.wc-ft .vg-r{fill:rgba(189,95,49,.7);}
+.wc-ft .vg-w{fill:rgba(255,243,214,.9);}
+
+/* ---------------------------------------------------------- waterfalls --
+   The cliff is stepped rock; the water is a clipped curtain with streaks
+   running down it at different speeds, breaking into foam, ripples and spray
+   in the plunge pool before running on down the valley. */
+.wc-ft-fall{z-index:1;}
+.wc-ft .wf-rock{fill:rgba(134,116,90,.92);}
+.wc-ft .wf-rock.rk-dark{fill:rgba(108,92,70,.92);}
+.wc-ft .wf-strata{
+    fill:none;stroke:rgba(255,255,255,.22);stroke-width:.9;stroke-linecap:round;
+}
+
+/* the curtain and what runs down it. The streaks keep a resting opacity so
+   the fall still reads as water when the animation is paused. */
+.wc-ft .wf-body{opacity:.95;}
+.wc-ft .wf-st{fill:rgba(255,255,255,.55);}
+.wc-ft .wf-edge{
+    fill:none;stroke:rgba(255,255,255,.55);stroke-width:.9;stroke-linecap:round;
+}
+.wc-route.is-live .wc-ft-fall.is-shown .wf-st{
+    animation-name:wc-water;animation-timing-function:linear;
+    animation-iteration-count:infinite;
+}
+@keyframes wc-water{
+    0%  {transform:translateY(0);   opacity:0;}
+    14% {opacity:.95;}
+    76% {opacity:.8;}
+    100%{transform:translateY(50px);opacity:0;}
+}
+/* the crest where the water tips over the lip */
+.wc-ft .wf-lip{
+    fill:none;stroke:rgba(255,255,255,.9);stroke-width:1.6;stroke-linecap:round;
+}
+.wc-route.is-live .wc-ft-fall.is-shown .wf-lip{animation:wc-lip 2.8s ease-in-out infinite;}
+@keyframes wc-lip{0%,100%{opacity:.75;}50%{opacity:1;}}
+
+/* the pool it lands in */
+.wc-ft .wf-pool{fill:rgba(116,166,180,.55);}
+.wc-ft .wf-foam{fill:rgba(255,255,255,.75);}
+.wc-route.is-live .wc-ft-fall.is-shown .wf-foam{animation:wc-foam 1.9s ease-in-out infinite;}
+@keyframes wc-foam{
+    0%,100%{transform:scale(.9);  opacity:.6;}
+    50%    {transform:scale(1.12);opacity:.9;}
+}
+.wc-ft .wf-ring{
+    fill:none;stroke:rgba(255,255,255,.8);stroke-width:.9;opacity:0;
+    transform-origin:20px 45px;
+}
+.wc-route.is-live .wc-ft-fall.is-shown .wf-ring{animation:wc-ripple 3s ease-out infinite;}
+.wc-route.is-live .wc-ft-fall.is-shown .wf-ring.r2{animation-delay:-1s;}
+.wc-route.is-live .wc-ft-fall.is-shown .wf-ring.r3{animation-delay:-2s;}
+@keyframes wc-ripple{
+    0%  {opacity:.8;transform:scale(.3);}
+    100%{opacity:0; transform:scale(2.3);}
+}
+/* spray thrown up off the surface */
+.wc-ft .wf-sp{fill:rgba(255,255,255,.9);opacity:0;}
+.wc-route.is-live .wc-ft-fall.is-shown .wf-sp{
+    animation:wc-spray 2.1s ease-out infinite;
+}
+@keyframes wc-spray{
+    0%  {opacity:0;  transform:translateY(0) scale(.5);}
+    25% {opacity:.85;}
+    100%{opacity:0;  transform:translateY(-11px) scale(1.1);}
+}
+.wc-ft .wf-mist{fill:rgba(255,255,255,.34);filter:blur(3.5px);}
+.wc-route.is-live .wc-ft-fall.is-shown .wf-mist{animation:wc-mist 4.2s ease-in-out infinite;}
+@keyframes wc-mist{0%,100%{opacity:.25;}50%{opacity:.5;}}
+/* the stream leaving the pool */
+.wc-ft .wf-out{
+    fill:none;stroke:rgba(116,166,180,.7);stroke-width:1.8;stroke-linecap:round;
+}
+
+/* ------------------------------------------------------------ watermark -- */
+.wc-watermark{
+    position:absolute;left:50%;top:52%;width:34%;max-width:230px;height:auto;
+    transform:translate(-50%,-50%);
+    opacity:.055;z-index:2;pointer-events:none;user-select:none;
+    mix-blend-mode:multiply;
+}
+/* the two falls carry their name */
+.wc-ft-name{
+    position:absolute;left:50%;bottom:-13px;transform:translateX(-50%);
+    font-family:'Work Sans',sans-serif;font-size:.47rem;font-weight:600;
+    letter-spacing:.06em;font-style:italic;text-transform:none;
+    color:rgba(74,100,110,.85);white-space:nowrap;
+}
+.wc-ft .bg{fill:none;stroke:rgba(120,92,62,.85);stroke-width:1.6;stroke-linecap:round;}
+.wc-ft .bg-a{fill:none;stroke:rgba(120,92,62,.5);stroke-width:1.3;}
+.wc-ft .vw{fill:none;stroke:rgba(189,95,49,.75);stroke-width:1.8;}
+.wc-ft .vw-l{stroke:rgba(189,95,49,.75);stroke-width:1.6;stroke-linecap:round;}
+.wc-ft .cn{fill:none;stroke:rgba(90,76,56,.85);stroke-width:2.2;stroke-linecap:round;}
+/* peaks sit behind the trail, everything else in front of the land */
+.wc-ft-peak{z-index:0;}
+.wc-map svg{z-index:1;}
+.wc-features{z-index:2;}
+.wc-pin,.wc-flag,.wc-runner,.wc-summit{z-index:3;}
+
+/* the land underneath: contour rings */
+.wc-map .wc-contour{
+    fill:none;stroke:var(--sage,#a79b6e);stroke-width:1.1;opacity:.38;
+    vector-effect:non-scaling-stroke;
+}
+.wc-map .wc-contour.c2{opacity:.3;}
+.wc-map .wc-contour.c3{opacity:.22;}
+.wc-map .wc-ridge{
+    fill:none;stroke:var(--sage,#a79b6e);stroke-width:1.2;opacity:.5;
+    stroke-dasharray:3 7;vector-effect:non-scaling-stroke;
+}
+
+/* ==========================================================================
+   A RENDERED RELIEF MAP AS THE BASE
+   With images/route-map.jpg present, the photo becomes the terrain and every
+   shape I draw for the land steps aside — otherwise you would see painted
+   mountains on top of rendered ones. Everything that moves stays.
+   ========================================================================== */
+
+.wc-terrain{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center;
+    display:block;z-index:0;pointer-events:none;
+    opacity:0;animation:wc-terrain-in .9s ease forwards;
+}
+@keyframes wc-terrain-in{to{opacity:1;}}
+
+/* the drawn land gives way to the render */
+.wc-route.has-terrain .wc-land,
+.wc-route.has-terrain .wc-contour,
+.wc-route.has-terrain .wc-haze,
+.wc-route.has-terrain .wc-range,
+.wc-route.has-terrain .wc-river,
+.wc-route.has-terrain .wc-river-lit,
+.wc-route.has-terrain .wc-features,
+.wc-route.has-terrain .wc-sky{display:none;}
+.wc-route.has-terrain .wc-map{
+    background:#e8e3d6;
+    box-shadow:inset 0 0 0 1px rgba(167,155,110,.3);
+}
+/* on a photographic base the route needs a touch more weight to stay legible */
+.wc-route.has-terrain .wc-plan{stroke:rgba(255,255,255,.75);opacity:.5;}
+.wc-route.has-terrain .wc-trail-case{stroke:rgba(20,16,10,.35);stroke-width:8;}
+.wc-route.has-terrain .wc-trail{stroke-width:4;}
+.wc-route.has-terrain .wc-trail-glow{opacity:.3;stroke-width:13;}
+.wc-route.has-terrain .wc-tick{stroke:#fff;}
+.wc-route.has-terrain .wc-tick.is-passed{opacity:.6;}
+.wc-route.has-terrain .wc-flag{
+    background:rgba(255,255,255,.92);
+    box-shadow:0 6px 16px -8px rgba(0,0,0,.6);
+}
+.wc-route.has-terrain .wc-pin .stalk{background:rgba(255,255,255,.85);}
+.wc-route.has-terrain .wc-watermark{opacity:.08;mix-blend-mode:overlay;}
+
+/* ------------------------------------------------- three days, three routes --
+   All three are on the map as a planned line. The day that is running is drawn
+   over it in full colour; the days already walked stay drawn but step back. */
+.wc-map .wc-trail,
+.wc-map .wc-trail-case,
+.wc-map .wc-trail-glow{transition:opacity .6s ease,stroke-width .5s ease;}
+.wc-route[data-day="0"] .wc-day-1,
+.wc-route[data-day="0"] .wc-day-2,
+.wc-route[data-day="1"] .wc-day-2{opacity:0;}
+.wc-route[data-day="1"] .wc-day-0,
+.wc-route[data-day="2"] .wc-day-0,
+.wc-route[data-day="2"] .wc-day-1{opacity:.42;}
+.wc-route[data-day="1"] .wc-trail.wc-day-0,
+.wc-route[data-day="2"] .wc-trail.wc-day-0,
+.wc-route[data-day="2"] .wc-trail.wc-day-1{stroke-width:2.4;}
+/* the elevation strip swaps to the day being run */
+.wc-profile .wc-day-1,.wc-profile .wc-day-2{opacity:0;transition:opacity .5s ease;}
+.wc-route[data-day="1"] .wc-profile .wc-day-0,
+.wc-route[data-day="2"] .wc-profile .wc-day-0,
+.wc-route[data-day="2"] .wc-profile .wc-day-1{opacity:0;}
+.wc-route[data-day="1"] .wc-profile .wc-day-1,
+.wc-route[data-day="2"] .wc-profile .wc-day-2{opacity:1;}
+.wc-profile .wc-day-0{transition:opacity .5s ease;}
+
+/* the route as planned, and the route as run */
+.wc-map .wc-plan{
+    fill:none;stroke:var(--sage,#a79b6e);stroke-width:2.2;opacity:.65;
+    stroke-linecap:round;stroke-dasharray:1.5 8;
+    vector-effect:non-scaling-stroke;
+}
+.wc-map .wc-trail-glow{
+    fill:none;stroke:var(--terracotta,#bd5f31);stroke-width:11;opacity:.16;
+    stroke-linecap:round;
+    stroke-dasharray:var(--len);
+    stroke-dashoffset:calc(var(--len) * (1 - var(--p)));
+}
+/* a pale casing under the route, the way a printed map keeps its trail
+   legible whatever colour the terrain underneath happens to be */
+.wc-map .wc-trail-case{
+    fill:none;stroke:rgba(251,247,238,.9);stroke-width:7;
+    stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:var(--len);
+    stroke-dashoffset:calc(var(--len) * (1 - var(--p)));
+}
+.wc-map .wc-trail{
+    fill:none;stroke:var(--terracotta,#bd5f31);stroke-width:3.4;
+    stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:var(--len);
+    stroke-dashoffset:calc(var(--len) * (1 - var(--p)));
+}
+
+/* kilometre ticks along the way */
+.wc-map .wc-tick{
+    stroke:var(--green-deep,#3f4a34);stroke-width:1.4;opacity:0;
+    stroke-linecap:round;vector-effect:non-scaling-stroke;
+    transition:opacity .4s ease;
+}
+.wc-map .wc-tick.is-passed{opacity:.4;}
+
+/* ------------------------------------------------------------- markers -- */
+.wc-pin{
+    position:absolute;left:0;top:0;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+}
+.wc-pin .dot{
+    display:block;width:15px;height:15px;border-radius:50%;
+    background:var(--cream,#f8f2e6);
+    border:3px solid var(--sage,#a79b6e);
+    transition:border-color .5s ease,background .5s ease,transform .5s cubic-bezier(.22,1,.36,1);
+}
+.wc-pin.is-reached .dot{
+    border-color:var(--cream,#f8f2e6);
+    background:var(--terracotta,#bd5f31);
+    box-shadow:0 0 0 1px rgba(189,95,49,.55);
+    transform:scale(1.1);
+}
+/* the ring that snaps out the moment the runner arrives */
+.wc-pin .ring{
+    position:absolute;left:50%;top:50%;width:15px;height:15px;margin:-7.5px;
+    border-radius:50%;border:2px solid var(--terracotta,#bd5f31);
+    opacity:0;transform:scale(1);
+}
+.wc-pin.is-reached .ring{animation:wc-ping 1.1s cubic-bezier(.22,1,.36,1);}
+@keyframes wc-ping{
+    0%  {opacity:.8;transform:scale(1);}
+    100%{opacity:0;transform:scale(3.6);}
+}
+
+/* a hairline from the card down onto the trail, as on a printed route map */
+.wc-pin .stalk{
+    position:absolute;left:50%;bottom:8px;width:1px;height:18px;margin-left:-.5px;
+    background:rgba(120,104,76,.55);
+    transform-origin:50% 100%;transform:scaleY(0);
+    transition:transform .5s var(--km-ease);
+}
+.wc-pin.is-reached .stalk{transform:scaleY(1);}
+.wc-pin.pin-below .stalk{bottom:auto;top:8px;transform-origin:50% 0;}
+/* the day currently being walked gets the full-strength card */
+.wc-pin{opacity:.55;transition:opacity .5s ease;}
+.wc-pin.is-active,.wc-pin.is-reached{opacity:1;}
+
+/* the little card each waypoint carries */
+.wc-pin .card{
+    position:absolute;left:50%;bottom:26px;transform:translateX(-50%) translateY(6px);
+    min-width:150px;padding:9px 13px 10px;border-radius:13px;
+    background:var(--white,#fff);border:1px solid var(--line);
+    box-shadow:0 14px 30px -18px rgba(43,42,34,.55);
+    text-align:left;opacity:0;
+    transition:opacity .45s ease,transform .55s cubic-bezier(.22,1,.36,1);
+}
+.wc-pin.is-reached .card{opacity:1;transform:translateX(-50%) translateY(0);}
+.wc-pin .card em{
+    display:block;font-style:normal;
+    font-family:'Work Sans',sans-serif;font-size:.6rem;font-weight:700;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--terracotta,#bd5f31);
+    margin-bottom:2px;
+}
+.wc-pin .card strong{
+    display:block;font-family:'Fraunces',serif;font-size:.94rem;font-weight:600;
+    color:var(--green-deep,#3f4a34);line-height:1.25;margin-bottom:3px;
+}
+.wc-pin .card u{
+    display:block;text-decoration:none;
+    font-family:'Work Sans',sans-serif;font-size:.72rem;color:#6b6753;
+}
+/* the last card would fall off the right edge */
+.wc-pin.pin-end .card{left:auto;right:-4px;transform:translateX(0) translateY(6px);}
+.wc-pin.pin-end.is-reached .card{transform:translateX(0) translateY(0);}
+
+/* a pin near the top of the map has no room above it, so its card drops
+   below the dot instead of colliding with the totals in the header */
+.wc-pin.pin-below .card{bottom:auto;top:26px;transform:translateX(-50%) translateY(-6px);}
+.wc-pin.pin-below.is-reached .card{transform:translateX(-50%) translateY(0);}
+.wc-pin.pin-below.pin-end .card{transform:translateX(0) translateY(-6px);}
+.wc-pin.pin-below.pin-end.is-reached .card{transform:translateX(0) translateY(0);}
+
+/* start and finish flags */
+.wc-flag{
+    position:absolute;transform:translate(-50%,-100%);pointer-events:none;
+    font-family:'Work Sans',sans-serif;font-size:.6rem;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:var(--green-deep,#3f4a34);
+    background:var(--cream-deep,#eadec8);border-radius:11px;padding:3px 9px;
+    white-space:nowrap;
+    transition:background .5s ease,color .5s ease,transform .6s cubic-bezier(.34,1.5,.5,1);
+}
+
+/* ----------------------------------------------------- topping out ------ */
+.wc-route.is-finished .wc-flag-end{
+    background:var(--terracotta,#bd5f31);color:#fff;
+    transform:translate(-50%,-100%) scale(1.16);
+    box-shadow:0 10px 22px -10px rgba(189,95,49,.9);
+}
+.wc-flag-burst{
+    position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px;
+    border-radius:50%;border:2px solid var(--terracotta,#bd5f31);
+    opacity:0;pointer-events:none;
+}
+.wc-route.is-finished .wc-flag-burst{animation:wc-burst 1.4s cubic-bezier(.22,1,.36,1);}
+@keyframes wc-burst{
+    0%  {opacity:.9;transform:scale(1);}
+    100%{opacity:0;transform:scale(9);}
+}
+/* the little banner that confirms he made it — top left, where the map is
+   empty, so it never sits on top of the finish flag */
+.wc-summit{
+    position:absolute;left:2%;top:5%;
+    font-family:'Work Sans',sans-serif;font-size:.62rem;font-weight:700;
+    letter-spacing:.15em;text-transform:uppercase;
+    color:#fff;background:var(--green-deep,#3f4a34);
+    border-radius:13px;padding:5px 12px;white-space:nowrap;
+    opacity:0;transform:translateY(-7px) scale(.9);
+    transition:opacity .45s ease,transform .6s cubic-bezier(.34,1.5,.5,1);
+}
+.wc-route.is-finished .wc-summit{opacity:1;transform:translateY(0) scale(1);}
+/* the whole map warms up for a beat */
+.wc-route.is-finished .wc-map::after{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(60% 90% at 96% 30%, rgba(189,95,49,.16), transparent 70%);
+    animation:wc-warm 2.4s ease-out;
+}
+@keyframes wc-warm{0%{opacity:0;}25%{opacity:1;}100%{opacity:0;}}
+.wc-route.is-finished .wc-trail{stroke-width:3.8;}
+
+/* the runner, riding the exact same path */
+/* deliberately bigger and brighter than a waypoint pin, so at a glance you
+   always know which dot is moving */
+.wc-runner{
+    position:absolute;left:0;top:0;width:26px;height:26px;margin:-13px;
+    opacity:0;transition:opacity .4s ease;z-index:3;
+}
+.wc-route.is-live .wc-runner{opacity:1;}
+.wc-runner .body{
+    position:absolute;inset:0;border-radius:50%;
+    background:var(--green-deep,#3f4a34);
+    border:4px solid var(--cream,#f8f2e6);
+    box-shadow:0 0 0 1px rgba(63,74,52,.35), 0 10px 22px -8px rgba(43,42,34,.85);
+}
+.wc-runner .body::after{
+    content:'';position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;
+    border-radius:50%;background:var(--terracotta,#bd5f31);
+}
+.wc-runner .halo{
+    position:absolute;inset:-11px;border-radius:50%;
+    border:1.5px solid rgba(63,74,52,.45);
+    animation:wc-halo 1.8s ease-in-out infinite;
+}
+@keyframes wc-halo{
+    0%,100%{transform:scale(1);opacity:.7;}
+    50%    {transform:scale(1.28);opacity:0;}
+}
+
+/* ------------------------------------------------------------ elevation -- */
+.wc-profile{
+    position:relative;margin-top:16px;padding-top:14px;
+    border-top:1px solid var(--line);
+}
+.wc-profile-chart{position:relative;width:100%;height:58px;}
+.wc-profile-chart svg{position:absolute;inset:0;width:100%;height:100%;}
+.wc-profile .wc-elev-base{
+    fill:none;stroke:var(--sage,#a79b6e);stroke-width:1.5;opacity:.35;
+    vector-effect:non-scaling-stroke;
+}
+.wc-profile .wc-elev-fill{
+    fill:var(--terracotta,#bd5f31);opacity:.14;
+    clip-path:inset(0 calc((1 - var(--p)) * 100%) 0 0);
+}
+.wc-profile .wc-elev-line{
+    fill:none;stroke:var(--terracotta,#bd5f31);stroke-width:2;
+    stroke-linejoin:round;stroke-linecap:round;
+    vector-effect:non-scaling-stroke;
+    clip-path:inset(0 calc((1 - var(--p)) * 100%) 0 0);
+}
+/* the read-head sweeping the profile in time with the runner */
+.wc-profile .wc-head{
+    position:absolute;top:0;bottom:0;width:1px;
+    left:calc(var(--p) * 100%);
+    background:var(--terracotta,#bd5f31);opacity:.55;
+}
+.wc-profile .wc-head::after{
+    content:'';position:absolute;left:-3px;top:-3px;width:7px;height:7px;
+    border-radius:50%;background:var(--terracotta,#bd5f31);
+}
+.wc-profile-legend{
+    display:flex;justify-content:space-between;margin-top:7px;
+    font-family:'Work Sans',sans-serif;font-size:.63rem;font-weight:600;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--sage,#a79b6e);
+}
+
+/* --------------------------------------------------------------- entry -- */
+.wc-route{opacity:0;transform:translateY(26px);
+          transition:opacity .8s ease,transform .9s cubic-bezier(.22,1,.36,1);}
+.wc-route.is-in{opacity:1;transform:none;}
+
+/* ---------------------------------------------------------- responsive -- */
+@media (max-width:900px){
+    .wc-route{padding:24px 20px 20px;margin-bottom:40px;border-radius:22px;}
+    .wc-route-totals{gap:18px;}
+    .wc-route-totals b{font-size:1.28rem;}
+    .wc-map{aspect-ratio:1000 / 360;max-height:none;--fscale:.82;}
+    .wc-pin .card{min-width:128px;padding:7px 11px 8px;bottom:23px;}
+    .wc-pin .card strong{font-size:.85rem;}
+    .wc-pin .card u{font-size:.68rem;}
+    .wc-profile-chart{height:50px;}
+}
+@media (max-width:620px){
+    .wc-route{padding:20px 15px 16px;}
+    .wc-route-head{gap:12px;}
+    .wc-route-totals{gap:14px;}
+    .wc-route-totals b{font-size:1.1rem;}
+    .wc-route-totals span{font-size:.58rem;letter-spacing:.12em;}
+    .wc-map{aspect-ratio:1000 / 460;min-height:170px;--fscale:.6;}
+    .wc-summit{font-size:.55rem;padding:4px 9px;letter-spacing:.11em;}
+    /* the corner instruments and the waterfall names have no room to breathe
+       on a phone-width map */
+    .wc-scale{display:none;}
+    .wc-ft-name{display:none;}
+    .wc-compass{width:28px;height:28px;bottom:5%;}
+    .wc-compass b{font-size:.42rem;top:-7px;}
+    .wc-cloud.c3{display:none;}
+    /* the cards have nowhere to go on a phone — the pins carry a number
+       instead and the day is named in the legend below */
+    .wc-pin .card{display:none;}
+    .wc-pin .dot{width:13px;height:13px;}
+    .wc-flag{font-size:.55rem;padding:2px 7px;}
+    /* the start and finish sit almost on the edges — on a narrow map their
+       labels are pulled inward so neither gets clipped */
+    .wc-flag-start{transform:translate(-16%,-100%);}
+    .wc-flag-end{transform:translate(-84%,-100%);}
+    .wc-route.is-finished .wc-flag-end{transform:translate(-84%,-100%) scale(1.1);}
+    .wc-profile-chart{height:48px;}
+    .wc-profile-legend{font-size:.57rem;letter-spacing:.1em;}
+}
+
+/* the phone legend: three days listed under the map */
+.wc-route-days{display:none;}
+@media (max-width:620px){
+    .wc-route-days{
+        display:flex;flex-direction:column;gap:7px;
+        margin-top:14px;padding-top:13px;border-top:1px solid var(--line);
+    }
+    .wc-route-days li{
+        display:flex;align-items:center;gap:9px;list-style:none;
+        font-family:'Work Sans',sans-serif;font-size:.78rem;color:#4a4736;
+    }
+    .wc-route-days li i{
+        width:9px;height:9px;border-radius:50%;flex:none;
+        background:var(--cream-deep,#eadec8);
+        border:2px solid var(--sage,#a79b6e);
+        transition:background .4s ease,border-color .4s ease;
+    }
+    .wc-route-days li.is-reached i{
+        background:var(--terracotta,#bd5f31);border-color:var(--terracotta,#bd5f31);
+    }
+    .wc-route-days li b{font-weight:600;color:var(--green-deep,#3f4a34);}
+    .wc-route-days li span{margin-left:auto;color:var(--sage,#a79b6e);font-size:.72rem;}
+}
+
+@media (prefers-reduced-motion:reduce){
+    .wc-route{--p:1;opacity:1;transform:none;}
+    .wc-map{transform:none !important;animation:none !important;}
+    .wc-map::before{animation:none;}
+    .wc-ridge-layer,.wc-features,.wc-sky,.wc-map svg,
+    .wc-pin,.wc-flag,.wc-runner,.wc-summit{translate:0 0 !important;}
+    .wc-sun{display:none;}
+    .wc-runner,.wc-route .wc-head{display:none;}
+    .wc-pin .ring{display:none;}
+    .wc-route.is-live .wc-route-eyebrow i,
+    .wc-runner .halo{animation:none;}
+}
