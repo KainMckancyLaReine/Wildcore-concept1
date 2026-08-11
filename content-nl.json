@@ -79,9 +79,14 @@
         "text": "Een zachte start. We verkennen de paden rond Casinos terwijl de zon ondergaat over de vallei, perfect om te wennen aan het terrein en elkaar te leren kennen.",
         "schedule": [
           {
+            "time": "13:00",
+            "title": "Pick-up luchthaven Valencia",
+            "text": "Je kunt een vlucht kiezen die rond 13.00 uur op de luchthaven van Valencia aankomt. Wil je liever eerder arriveren? Dan kun je ook kiezen voor een vroege ochtendvlucht of zelfs een dag eerder komen. Zo heb je alle tijd om Valencia op eigen gelegenheid te ontdekken en alvast te genieten van de gezellige sfeer, mooie pleinen en heerlijke restaurants. De reis start officieel met de gezamenlijke transfer. Maak je hiervan gebruik, zorg er dan voor dat je rond 13.00 uur weer op de luchthaven bent, zodat we samen richting onze bestemming kunnen vertrekken."
+          },
+          {
             "time": "14:00 – 16:00",
             "title": "Welkom in Casinos",
-            "text": "Je komt aan bij de villa in El Pinar, waar je rustig kunt inchecken en je kamer kunt uitzoeken. Neem de tijd om kennis te maken met de andere deelnemers, geniet van een kop koffie op het terras en laat de reis van je afglijden."
+            "text": "Je komt aan bij de villa in El Pinar, waar je rustig kunt inchecken en je kamer kunt uitzoeken. Neem de tijd om kennis te maken met de andere deelnemers, geniet van een lichte lunch op het terras en laat de reis van je afglijden."
           },
           {
             "time": "18:00",
@@ -148,7 +153,7 @@
           },
           {
             "time": "15:00",
-            "title": "Afscheid",
+            "title": "Afscheid en luchthaventransfer",
             "text": "Na een weekend vol natuur, sport, ontspanning en nieuwe ontmoetingen nemen we afscheid, met nieuwe energie, inspiratie en misschien wel een nieuwe liefde voor trailrunnen."
           }
         ]
@@ -184,7 +189,7 @@
     "eyebrow": "Over je gastheer",
     "title": "Maurizio Salazar",
     "paragraphs": [
-      "Mijn naam is Maurizio Salazar en ik woon een groot deel van het jaar in de prachtige omgeving van Casinos, aan de voet van de Sierra Calderona.",
+      "Mijn naam is Maurizio Salazar en ik woon een deel van het jaar in de prachtige omgeving van Casinos, aan de voet van de Sierra Calderona.",
       "Van beroep ben ik sport- en shiatsutherapeut en ik ben al mijn hele leven gefascineerd door beweging, gezondheid en de kracht van de natuur. Sport heeft altijd een belangrijke rol gespeeld in mijn leven. Of het nu gaat om hardlopen, trailrunnen, wandelen of andere vormen van beweging; ik geloof dat actief zijn niet alleen goed is voor het lichaam, maar ook voor de geest.",
       "Door mijn werk heb ik dagelijks contact met mensen die gezonder, sterker en energieker willen leven. Daarbij zie ik hoe belangrijk het is om af en toe uit de dagelijkse routine te stappen en tijd te maken voor jezelf.",
       "De natuur is voor mij altijd een plek geweest om op te laden. In de bergen van de Sierra Calderona vind ik rust, vrijheid en avontuur. Dat gevoel wil ik graag delen met anderen.",
@@ -206,8 +211,8 @@
     "includedLabel": "Inbegrepen",
     "included": [
       "Verblijf in Villa El Pinar",
-      "Ontbijt, lunch &amp; 2 gezamenlijke diners",
-      "Luchthaventransfer v.a. Valencia Airport",
+      "Ontbijt, lunch &amp; gezamenlijke diners",
+      "Luchthaventransfer van en naar Valencia Airport",
       "Transfers naar de startpunten"
     ],
     "choiceLabel": "Kies je variant",

@@ -79,9 +79,14 @@
         "text": "Un comienzo suave. Exploramos los senderos alrededor de Casinos mientras el sol se pone sobre el valle, perfecto para acostumbrarse al terreno y conocer al grupo.",
         "schedule": [
           {
+            "time": "13:00",
+            "title": "Recogida en el aeropuerto de Valencia",
+            "text": "Puedes elegir un vuelo que llegue al aeropuerto de Valencia alrededor de las 13:00. ¿Prefieres llegar antes? También puedes tomar un vuelo temprano por la mañana o incluso venir un día antes. Así tendrás tiempo de sobra para descubrir Valencia por tu cuenta y disfrutar de su ambiente, sus bonitas plazas y sus excelentes restaurantes. El viaje comienza oficialmente con el traslado en grupo. Si lo utilizas, asegúrate de estar de vuelta en el aeropuerto sobre las 13:00 para que podamos salir juntos hacia nuestro destino."
+          },
+          {
             "time": "14:00 – 16:00",
             "title": "Bienvenida en Casinos",
-            "text": "Llegas a la villa de El Pinar, donde puedes registrarte con calma y elegir tu habitación. Tómate tu tiempo para conocer al resto del grupo, disfruta de un café en la terraza y deja atrás el viaje."
+            "text": "Llegas a la villa de El Pinar, donde puedes registrarte con calma y elegir tu habitación. Tómate tu tiempo para conocer al resto del grupo, disfruta de un almuerzo ligero en la terraza y deja atrás el viaje."
           },
           {
             "time": "18:00",
@@ -148,7 +153,7 @@
           },
           {
             "time": "15:00",
-            "title": "Despedida",
+            "title": "Despedida y traslado al aeropuerto",
             "text": "Tras un fin de semana lleno de naturaleza, deporte, descanso y nuevos encuentros nos despedimos, con energía nueva, inspiración y quizá un nuevo amor por el trail running."
           }
         ]
@@ -184,7 +189,7 @@
     "eyebrow": "Sobre tu anfitrión",
     "title": "Maurizio Salazar",
     "paragraphs": [
-      "Me llamo Maurizio Salazar y vivo gran parte del año en el precioso entorno de Casinos, al pie de la Sierra Calderona.",
+      "Me llamo Maurizio Salazar y vivo parte del año en el precioso entorno de Casinos, al pie de la Sierra Calderona.",
       "De profesión soy terapeuta deportivo y de shiatsu, y toda mi vida me ha fascinado el movimiento, la salud y la fuerza de la naturaleza. El deporte siempre ha tenido un papel importante para mí. Ya sea correr, hacer trail, caminar o cualquier otra forma de movimiento, creo que estar activo es bueno no solo para el cuerpo, sino también para la mente.",
       "Por mi trabajo estoy a diario en contacto con personas que quieren vivir de forma más sana, fuerte y con más energía. Eso me demuestra lo importante que es salir de vez en cuando de la rutina diaria y dedicarse tiempo a uno mismo.",
       "La naturaleza siempre ha sido para mí el lugar donde recargar energía. En las montañas de la Sierra Calderona encuentro calma, libertad y aventura. Es esa sensación la que quiero compartir con otros.",
@@ -206,8 +211,8 @@
     "includedLabel": "Incluido",
     "included": [
       "Alojamiento en Villa El Pinar",
-      "Desayuno, comida y 2 cenas compartidas",
-      "Traslado desde el aeropuerto de Valencia",
+      "Desayuno, comida y cenas compartidas",
+      "Traslado de ida y vuelta al aeropuerto de Valencia",
       "Traslados a los puntos de salida"
     ],
     "choiceLabel": "Elige tu ritmo",
