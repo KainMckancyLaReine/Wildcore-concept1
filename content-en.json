@@ -329,52 +329,132 @@
     "terms": [
       {
         "title": "1. Applicability",
-        "text": "These terms apply to all bookings and participation in the Trail Running &amp; Hiking Weekend Sierra Calderona, organised by Wildcore Retreats. By registering, the participant agrees to these terms."
+        "text": "These terms and conditions apply to all multi-day outdoor weekends organised by Wildcore Retreats, including trail running weekends, hiking weekends and comparable activities.",
+        "text2": "By registering, the participant confirms that they have read and agree to these terms and conditions."
       },
       {
         "title": "2. Participation",
-        "text": "Participation is open to persons aged 18 and over. The participant declares to be in sufficiently good health to take part in trail running and hiking activities and is responsible for assessing their own physical condition. The organiser reserves the right to refuse participation if deemed necessary for the safety of the participant or the group."
+        "items": [
+          "Participation is open to people aged 18 and over.",
+          "The participant declares that they are in sufficient physical and mental health to take part in the outdoor activities offered.",
+          "The participant is responsible for correctly assessing their own physical condition and for reporting any relevant medical circumstances in good time.",
+          "The organiser reserves the right to refuse participation, or to end it during the weekend, if this is considered necessary for the safety of the participant or the group. In that case no refund is given of the trip price or of programme parts or nights not used."
+        ]
       },
       {
-        "title": "3. Bookings and payment",
-        "text": "A booking is final upon receipt of the deposit or full payment. The remaining balance must be paid no later than 30 days before departure. If payment is not received on time, the organiser may cancel the reservation."
+        "title": "3. Booking and payment",
+        "items": [
+          "A booking is final once the deposit has been received, or – if the booking is made within 30 days before departure – once the full trip price has been received.",
+          "The full amount must be paid no later than 30 days before departure.",
+          "If payment is not received in time, the organiser reserves the right to cancel the reservation."
+        ]
       },
       {
         "title": "4. Cancellation by the participant",
-        "text": "Up to 8 weeks before departure: €50 administration fee. From 8 to 4 weeks before departure: 50% of the trip price. From 4 to 2 weeks before departure: 75% of the trip price. Within 14 days before departure: 100% of the trip price. No refund is given for early termination of the weekend or failure to show up on the departure date. Participants are advised to take out travel and cancellation insurance.",
-        "text2": "<strong>Replacement participant:</strong> a participant may, up to 7 days before departure, nominate a replacement participant free of charge, provided the organiser is notified in advance, the replacement participant meets the participation conditions, and any additional costs resulting from the change are reimbursed."
+        "text": "If participation is cancelled, the following cancellation charges apply, calculated from the departure date:",
+        "items": [
+          "Up to 8 weeks before departure: € 50 administration fee.",
+          "From 8 to 4 weeks before departure: 50% of the trip price.",
+          "From 4 to 2 weeks before departure: 75% of the trip price.",
+          "Within 14 days before departure: 100% of the trip price."
+        ],
+        "text2": "No refund of the trip price is given for early termination of the weekend, failure to show up on the departure date, or failure to meet the travel insurance requirement.",
+        "text3": "Up to two days before departure the participant may nominate a replacement participant free of charge, provided this is reported in advance and approved by the organisation.",
+        "text4": "For cancellation or early termination for personal reasons, taking out cancellation insurance is recommended."
       },
       {
         "title": "5. Cancellation by the organiser",
-        "text": "The organiser reserves the right to cancel the weekend in case of insufficient participants, force majeure, extreme weather conditions or unforeseen safety risks. In that case, the amount already paid will be fully refunded. Any other costs, such as transport or insurance, fall outside the organiser's responsibility."
+        "text": "The organiser reserves the right to cancel the weekend in the event of:",
+        "items": [
+          "too few participants;",
+          "force majeure;",
+          "extreme weather conditions;",
+          "wildfire risk;",
+          "unforeseen safety risks;",
+          "government measures or local regulations."
+        ],
+        "text2": "No later than four weeks before departure it is determined whether there are enough participants for the weekend to go ahead. The minimum number of participants per group is four.",
+        "text3": "This gives participants as much certainty as possible about the weekend going ahead before they book their flight, barring force majeure and other unforeseen circumstances.",
+        "text4": "If the organisation cancels the weekend in advance due to force majeure or safety reasons, the full trip price is refunded. The cost of travel to and from Valencia, travel insurance, cancellation insurance and other personal expenses are not part of the trip price and are not reimbursed by the organisation."
       },
       {
-        "title": "6. Risk and liability",
-        "text": "Trail running, hiking and outdoor activities carry inherent risks. Participation is entirely at your own risk. The organiser is not liable for injuries, accidents, loss, theft or damage to personal property, except in cases of intent or gross negligence. The participant remains responsible for their own actions at all times."
+        "title": "6. Programme changes",
+        "text": "Routes, activities, times and other parts of the programme may be adjusted if circumstances require it. This includes, among others:",
+        "items": [
+          "weather conditions;",
+          "wildfire risk;",
+          "local regulations;",
+          "safety considerations;",
+          "force majeure."
+        ],
+        "text2": "The organiser aims to keep any changes to a minimum, without compromising the quality and safety of the weekend."
       },
       {
-        "title": "7. Conduct and safety",
-        "text": "Participants are expected to follow the guide's instructions, treat fellow participants, the accommodation and nature with respect, and avoid taking unacceptable risks during activities. The organiser may exclude a participant from further participation if their behaviour endangers the safety or wellbeing of the group."
+        "title": "7. Flights and transport",
+        "text": "The participant is responsible for booking their own transport to and from Valencia.",
+        "text2": "Flight cancellations, delays and other travel disruptions beyond the organisation's control are not the organisation's responsibility, whatever the cause. This includes strikes, extreme weather, technical failures, traffic problems and situations in which a participant cannot reach the airport in time.",
+        "text3": "In the event of a delayed arrival, the organisation will still arrange an airport transfer where reasonably possible. This is scheduled so that the other participants are inconvenienced as little as possible."
       },
       {
-        "title": "8. Programme changes",
-        "text": "The organiser reserves the right to adjust routes, activities, timings or parts of the programme due to weather conditions, wildfire risk, local regulations or safety considerations."
+        "title": "8. Risk and liability",
+        "text": "Trail running, hiking, mountain walking and other outdoor activities carry inherent risks. Participation is entirely at your own risk. The organiser is not liable for:",
+        "items": [
+          "injuries;",
+          "accidents;",
+          "loss, theft or damage to personal belongings;",
+          "costs arising from flight changes, delays or cancellations;",
+          "indirect damage,"
+        ],
+        "text2": "unless there is intent or gross negligence on the part of the organiser. The participant remains responsible for their own actions at all times."
       },
       {
         "title": "9. Insurance",
-        "text": "Every participant is responsible for valid travel insurance, any cancellation insurance, and suitable sports cover if desired."
+        "text": "A valid basic travel insurance policy is required in order to take part.",
+        "text2": "The participant must check carefully in advance whether the activities offered during the weekend — such as trail running, hiking, mountain walking and mountain trails — are covered by their travel insurance. If necessary, the participant must arrange additional cover themselves.",
+        "text3": "Baggage insurance, cancellation insurance and other additional policies are not compulsory and are the participant's own responsibility.",
+        "text4": "The organisation would like to receive a copy of each participant's insurance policy sheet before the weekend begins."
       },
       {
-        "title": "10. Photo and video material",
-        "text": "Photos and videos may be taken during the weekend for promotional purposes. If a participant objects to this, they must state so in writing in advance."
+        "title": "10. Conduct and safety",
+        "text": "Every participant is expected to:",
+        "items": [
+          "follow the instructions of the guides;",
+          "treat other participants, the accommodation and nature with respect;",
+          "take no unacceptable risks;",
+          "not endanger the safety of the group;",
+          "not use alcohol, drugs or other substances in a way that negatively affects their own safety, that of other participants, or the running of the programme."
+        ],
+        "text2": "The organiser may exclude a participant from further participation, without refund of the trip price, if their behaviour endangers the safety, health or wellbeing of the group."
       },
       {
-        "title": "11. Personal data",
-        "text": "Personal data is used solely for organising and running the event and will not be shared with third parties without consent, unless necessary for carrying out the trip."
+        "title": "11. Photos and video",
+        "text": "Photos and videos may be taken during the weekend for promotional purposes.",
+        "text2": "If a participant objects to this, they must inform the organisation in writing before the weekend begins."
       },
       {
-        "title": "12. Force majeure",
-        "text": "Force majeure means any situation beyond the organiser's reasonable control, including natural disasters, wildfires, pandemics, strikes, government measures and extreme weather conditions. In such situations the programme may be adjusted, postponed or cancelled."
+        "title": "12. Personal data",
+        "text": "Personal data is processed solely for the organisation and running of the booked weekend and is not shared with third parties without consent, unless this is necessary to perform the agreement or follows from a legal obligation."
+      },
+      {
+        "title": "13. Force majeure",
+        "text": "Force majeure means any situation beyond the organiser's reasonable control, including but not limited to:",
+        "items": [
+          "natural disasters;",
+          "wildfires;",
+          "pandemics;",
+          "epidemics;",
+          "strikes;",
+          "government measures;",
+          "extreme weather conditions;",
+          "closed nature reserves;",
+          "emergencies."
+        ],
+        "text2": "In such situations the programme may be adjusted, moved or cancelled without the organiser being obliged to reimburse any costs other than the trip price already paid, insofar as permitted by law."
+      },
+      {
+        "title": "14. Applicable law and disputes",
+        "text": "These terms and conditions and all agreements between Wildcore Retreats and the participant are governed exclusively by Dutch law.",
+        "text2": "Disputes arising from or connected with this agreement will be submitted to the competent court in the district where Wildcore Retreats is established, unless mandatory legal provisions state otherwise."
       }
     ]
   },

@@ -329,52 +329,132 @@
     "terms": [
       {
         "title": "1. Toepasselijkheid",
-        "text": "Deze voorwaarden zijn van toepassing op alle boekingen en deelnames aan het Trailrun- en hikeweekend Sierra Calderona, georganiseerd door Wildcore Retreats. Door inschrijving verklaart de deelnemer akkoord te gaan met deze voorwaarden."
+        "text": "Deze algemene voorwaarden zijn van toepassing op alle meerdaagse outdoorweekenden georganiseerd door Wildcore Retreats, waaronder trailrunweekenden, hikeweekenden en vergelijkbare activiteiten.",
+        "text2": "Door inschrijving verklaart de deelnemer kennis te hebben genomen van en akkoord te gaan met deze algemene voorwaarden."
       },
       {
         "title": "2. Deelname",
-        "text": "Deelname staat open voor personen van 18 jaar en ouder. De deelnemer verklaart in voldoende gezondheid te verkeren om deel te nemen aan trailrun- en wandelactiviteiten en is zelf verantwoordelijk voor het inschatten van zijn of haar fysieke conditie. De organisator behoudt zich het recht voor deelname te weigeren indien dit noodzakelijk wordt geacht voor de veiligheid van de deelnemer of de groep."
+        "items": [
+          "Deelname staat open voor personen van 18 jaar en ouder.",
+          "De deelnemer verklaart in voldoende lichamelijke en geestelijke gezondheid te verkeren om deel te nemen aan de aangeboden outdooractiviteiten.",
+          "De deelnemer is zelf verantwoordelijk voor het juist inschatten van zijn of haar fysieke conditie en het tijdig melden van relevante medische bijzonderheden.",
+          "De organisator behoudt zich het recht voor deelname te weigeren of tijdens het weekend te beëindigen indien dit noodzakelijk wordt geacht voor de veiligheid van de deelnemer of de groep. In dat geval vindt geen restitutie plaats van de reissom of van niet-genoten programmaonderdelen of verblijfsdagen."
+        ]
       },
       {
-        "title": "3. Boekingen en betaling",
-        "text": "Een boeking is definitief na ontvangst van de aanbetaling of volledige betaling. Het resterende bedrag dient uiterlijk 30 dagen voor vertrek te zijn voldaan. Indien betaling niet tijdig wordt ontvangen, kan de organisator de reservering annuleren."
+        "title": "3. Boeking en betaling",
+        "items": [
+          "Een boeking is definitief na ontvangst van de aanbetaling, of – indien de boeking plaatsvindt binnen 30 dagen vóór vertrek – na ontvangst van de volledige reissom.",
+          "Het volledige bedrag dient uiterlijk 30 dagen vóór vertrek te zijn voldaan.",
+          "Indien de betaling niet tijdig is ontvangen, behoudt de organisator zich het recht voor de reservering te annuleren."
+        ]
       },
       {
-        "title": "4. Annulering door deelnemer",
-        "text": "Tot 8 weken voor vertrek: €50 administratiekosten. Van 8 tot 4 weken voor vertrek: 50% van de reissom. Van 4 tot 2 weken voor vertrek: 75% van de reissom. Binnen 14 dagen voor vertrek: 100% van de reissom. Bij voortijdige beëindiging van het weekend of het niet verschijnen op de vertrekdatum vindt geen restitutie plaats. Deelnemers wordt geadviseerd een reis- en annuleringsverzekering af te sluiten.",
-        "text2": "<strong>Vervangende deelnemer:</strong> een deelnemer mag tot 7 dagen voor vertrek kosteloos een vervangende deelnemer aandragen, mits de organisator hiervan vooraf op de hoogte wordt gebracht, de vervangende deelnemer voldoet aan de deelnamevoorwaarden, en eventuele extra kosten als gevolg van de wijziging worden vergoed."
+        "title": "4. Annulering door de deelnemer",
+        "text": "Bij annulering van de deelname gelden de volgende annuleringskosten, berekend vanaf de vertrekdatum:",
+        "items": [
+          "Tot 8 weken vóór vertrek: € 50 administratiekosten.",
+          "Van 8 tot 4 weken vóór vertrek: 50% van de reissom.",
+          "Van 4 tot 2 weken vóór vertrek: 75% van de reissom.",
+          "Binnen 14 dagen vóór vertrek: 100% van de reissom."
+        ],
+        "text2": "Bij voortijdige beëindiging van het weekend, het niet verschijnen op de vertrekdatum of het niet voldoen aan de reisverzekeringsplicht vindt geen restitutie van de reissom plaats.",
+        "text3": "Tot twee dagen vóór vertrek mag de deelnemer kosteloos een vervangende deelnemer aandragen, mits dit vooraf is gemeld en door de organisatie is goedgekeurd.",
+        "text4": "Voor annulering of voortijdige beëindiging om persoonlijke redenen wordt het afsluiten van een annuleringsverzekering aanbevolen."
       },
       {
-        "title": "5. Annulering door organisator",
-        "text": "De organisator behoudt zich het recht voor het weekend te annuleren bij onvoldoende deelnemers, overmacht, extreme weersomstandigheden of onvoorziene veiligheidsrisico's. In dat geval wordt het reeds betaalde deelnamebedrag volledig terugbetaald. Eventuele overige kosten, zoals vervoer of verzekeringen, vallen buiten de verantwoordelijkheid van de organisator."
+        "title": "5. Annulering door de organisator",
+        "text": "De organisator behoudt zich het recht voor het weekend te annuleren indien sprake is van:",
+        "items": [
+          "onvoldoende deelnemers;",
+          "overmacht;",
+          "extreme weersomstandigheden;",
+          "bosbrandgevaar;",
+          "onvoorziene veiligheidsrisico's;",
+          "overheidsmaatregelen of lokale regelgeving."
+        ],
+        "text2": "Uiterlijk vier weken vóór vertrek wordt vastgesteld of er voldoende deelnemers zijn om het weekend door te laten gaan. Het minimumaantal deelnemers per groep bedraagt vier deelnemers.",
+        "text3": "Hiermee biedt de organisatie deelnemers, behoudens overmacht en andere onvoorziene omstandigheden, zoveel mogelijk zekerheid over de doorgang van het weekend voordat zij hun vliegticket boeken.",
+        "text4": "Indien de organisatie het weekend vooraf annuleert als gevolg van overmacht of veiligheidsredenen, wordt de volledige reissom terugbetaald. De kosten voor vervoer van en naar Valencia, reisverzekeringen, annuleringsverzekeringen en overige persoonlijke kosten maken geen onderdeel uit van de reissom en worden niet door de organisatie vergoed."
       },
       {
-        "title": "6. Risico en aansprakelijkheid",
-        "text": "Trailrunnen, hiken en outdooractiviteiten brengen inherente risico’s met zich mee. Deelname geschiedt volledig op eigen risico. De organisator is niet aansprakelijk voor blessures, ongevallen, verlies, diefstal of schade aan persoonlijke eigendommen, tenzij sprake is van opzet of grove nalatigheid. De deelnemer blijft te allen tijde verantwoordelijk voor zijn of haar eigen handelen."
+        "title": "6. Programmawijzigingen",
+        "text": "Routes, activiteiten, tijdstippen en overige programmaonderdelen kunnen worden aangepast indien omstandigheden daarom vragen. Hieronder vallen onder meer:",
+        "items": [
+          "weersomstandigheden;",
+          "bosbrandgevaar;",
+          "lokale regelgeving;",
+          "veiligheidsoverwegingen;",
+          "overmacht."
+        ],
+        "text2": "De organisator streeft ernaar eventuele wijzigingen zoveel mogelijk te beperken, zonder afbreuk te doen aan de kwaliteit en veiligheid van het weekend."
       },
       {
-        "title": "7. Gedrag en veiligheid",
-        "text": "Van deelnemers wordt verwacht dat zij instructies van de begeleider opvolgen, respectvol omgaan met mededeelnemers, accommodatie en natuur, en geen onaanvaardbare risico's nemen tijdens activiteiten. De organisator kan een deelnemer uitsluiten van verdere deelname indien diens gedrag de veiligheid of het welzijn van de groep in gevaar brengt."
+        "title": "7. Vluchten en vervoer",
+        "text": "De deelnemer is zelf verantwoordelijk voor het boeken van vervoer van en naar Valencia.",
+        "text2": "Vluchtannuleringen, vertragingen en andere reisverstoringen die buiten de invloed van de organisatie liggen, ongeacht de oorzaak, vallen niet onder de verantwoordelijkheid van de organisatie. Hieronder vallen onder meer stakingen, extreme weersomstandigheden, technische storingen, verkeersproblemen en situaties waarin een deelnemer de luchthaven niet tijdig kan bereiken.",
+        "text3": "Bij een vertraagde aankomst verzorgt de organisatie, indien redelijkerwijs mogelijk, alsnog een luchthaventransfer. Deze wordt zodanig ingepland dat de overige deelnemers hiervan zo min mogelijk hinder ondervinden."
       },
       {
-        "title": "8. Wijzigingen in programma",
-        "text": "De organisator behoudt zich het recht voor routes, activiteiten, tijdstippen of onderdelen van het programma aan te passen bij weersomstandigheden, bosbrandgevaar, lokale regelgeving of veiligheidsoverwegingen."
+        "title": "8. Risico en aansprakelijkheid",
+        "text": "Trailrunning, hiken, bergwandelen en overige outdooractiviteiten brengen inherente risico's met zich mee. Deelname geschiedt volledig op eigen risico. De organisator is niet aansprakelijk voor:",
+        "items": [
+          "blessures;",
+          "ongevallen;",
+          "verlies, diefstal of beschadiging van persoonlijke eigendommen;",
+          "kosten die voortvloeien uit vluchtwijzigingen, vertragingen of annuleringen;",
+          "indirecte schade,"
+        ],
+        "text2": "tenzij sprake is van opzet of grove nalatigheid van de organisator. De deelnemer blijft te allen tijde verantwoordelijk voor zijn of haar eigen handelen."
       },
       {
         "title": "9. Verzekeringen",
-        "text": "Iedere deelnemer is zelf verantwoordelijk voor een geldige reisverzekering, een eventuele annuleringsverzekering en een passende sportdekking indien gewenst."
+        "text": "Voor deelname is een geldige basisreisverzekering verplicht.",
+        "text2": "De deelnemer dient vooraf zorgvuldig te controleren of de activiteiten die tijdens het weekend worden aangeboden, zoals trailrunning, hiken, bergwandelingen en bergtochten, onder de dekking van de reisverzekering vallen. Indien noodzakelijk dient de deelnemer hiervoor zelf een aanvullende dekking af te sluiten.",
+        "text3": "Een bagageverzekering, annuleringsverzekering of andere aanvullende verzekeringen zijn niet verplicht en vallen onder de eigen verantwoordelijkheid van de deelnemer.",
+        "text4": "De organisatie ontvangt graag uiterlijk vóór aanvang van het weekend een kopie van het polisblad van de reisverzekering van iedere deelnemer."
       },
       {
-        "title": "10. Beeldmateriaal",
-        "text": "Tijdens het weekend kunnen foto's en video's worden gemaakt voor promotionele doeleinden. Indien een deelnemer hier bezwaar tegen heeft, dient dit vooraf schriftelijk kenbaar te worden gemaakt."
+        "title": "10. Gedrag en veiligheid",
+        "text": "Van iedere deelnemer wordt verwacht dat hij of zij:",
+        "items": [
+          "instructies van de begeleiding opvolgt;",
+          "respectvol omgaat met andere deelnemers, accommodatie en natuur;",
+          "geen onaanvaardbare risico's neemt;",
+          "de veiligheid van de groep niet in gevaar brengt;",
+          "geen alcohol, drugs of andere middelen gebruikt op een wijze die de eigen veiligheid, die van andere deelnemers of de uitvoering van het programma negatief beïnvloedt."
+        ],
+        "text2": "De organisator kan een deelnemer zonder restitutie van de reissom uitsluiten van verdere deelname indien diens gedrag de veiligheid, gezondheid of het welzijn van de groep in gevaar brengt."
       },
       {
-        "title": "11. Persoonsgegevens",
-        "text": "Persoonsgegevens worden uitsluitend gebruikt voor de organisatie en uitvoering van het evenement en worden niet zonder toestemming aan derden verstrekt, tenzij dit noodzakelijk is voor de uitvoering van de reis."
+        "title": "11. Beeldmateriaal",
+        "text": "Tijdens het weekend kunnen foto's en video's worden gemaakt voor promotionele doeleinden.",
+        "text2": "Indien een deelnemer hier bezwaar tegen heeft, dient dit vóór aanvang van het weekend schriftelijk aan de organisatie kenbaar te worden gemaakt."
       },
       {
-        "title": "12. Overmacht",
-        "text": "Onder overmacht wordt verstaan iedere situatie buiten de redelijke invloed van de organisator, waaronder natuurrampen, bosbranden, pandemieën, stakingen, overheidsmaatregelen en extreme weersomstandigheden. In dergelijke situaties kan het programma worden aangepast, verplaatst of geannuleerd."
+        "title": "12. Persoonsgegevens",
+        "text": "Persoonsgegevens worden uitsluitend verwerkt voor de organisatie en uitvoering van het geboekte weekend en worden niet zonder toestemming aan derden verstrekt, tenzij dit noodzakelijk is voor de uitvoering van de overeenkomst of voortvloeit uit een wettelijke verplichting."
+      },
+      {
+        "title": "13. Overmacht",
+        "text": "Onder overmacht wordt verstaan iedere situatie buiten de redelijke invloed van de organisator, waaronder, maar niet uitsluitend:",
+        "items": [
+          "natuurrampen;",
+          "bosbranden;",
+          "pandemieën;",
+          "epidemieën;",
+          "stakingen;",
+          "overheidsmaatregelen;",
+          "extreme weersomstandigheden;",
+          "afgesloten natuurgebieden;",
+          "calamiteiten."
+        ],
+        "text2": "In dergelijke situaties kan het programma worden aangepast, verplaatst of geannuleerd zonder dat de organisator gehouden is tot vergoeding van andere kosten dan de reeds betaalde reissom, voor zover wettelijk toegestaan."
+      },
+      {
+        "title": "14. Toepasselijk recht en geschillen",
+        "text": "Op deze algemene voorwaarden en alle overeenkomsten tussen Wildcore Retreats en de deelnemer is uitsluitend Nederlands recht van toepassing.",
+        "text2": "Geschillen die voortvloeien uit of verband houden met deze overeenkomst worden voorgelegd aan de bevoegde rechter in het arrondissement waar Wildcore Retreats is gevestigd, tenzij dwingendrechtelijke bepalingen anders voorschrijven."
       }
     ]
   },

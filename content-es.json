@@ -329,52 +329,132 @@
     "terms": [
       {
         "title": "1. Aplicabilidad",
-        "text": "Estas condiciones se aplican a todas las reservas y participaciones en el Fin de Semana de Trail y Senderismo Sierra Calderona, organizado por Wildcore Retreats. Al inscribirse, el participante declara aceptar estas condiciones."
+        "text": "Estas condiciones generales se aplican a todos los fines de semana outdoor de varios días organizados por Wildcore Retreats, incluidos los fines de semana de trail running, de senderismo y actividades similares.",
+        "text2": "Al inscribirse, el participante declara haber leído y aceptar estas condiciones generales."
       },
       {
         "title": "2. Participación",
-        "text": "La participación está abierta a personas mayores de 18 años. El participante declara encontrarse en un estado de salud suficiente para realizar actividades de trailrunning y senderismo, y es responsable de valorar su propia condición física. La organización se reserva el derecho de denegar la participación si lo considera necesario para la seguridad del participante o del grupo."
+        "items": [
+          "La participación está abierta a personas mayores de 18 años.",
+          "El participante declara encontrarse en condiciones físicas y mentales suficientes para tomar parte en las actividades outdoor ofrecidas.",
+          "El participante es responsable de valorar correctamente su condición física y de comunicar a tiempo cualquier circunstancia médica relevante.",
+          "El organizador se reserva el derecho de denegar la participación, o de finalizarla durante el fin de semana, si lo considera necesario para la seguridad del participante o del grupo. En ese caso no se reembolsa el importe del viaje ni las partes del programa o noches no disfrutadas."
+        ]
       },
       {
-        "title": "3. Reservas y pago",
-        "text": "Una reserva es definitiva tras recibir la señal o el pago completo. El importe restante debe abonarse como máximo 30 días antes de la salida. Si el pago no se recibe a tiempo, la organización puede cancelar la reserva."
+        "title": "3. Reserva y pago",
+        "items": [
+          "La reserva es definitiva una vez recibido el depósito o, si la reserva se realiza dentro de los 30 días previos a la salida, una vez recibido el importe íntegro del viaje.",
+          "El importe total debe abonarse como máximo 30 días antes de la salida.",
+          "Si el pago no se recibe a tiempo, el organizador se reserva el derecho de cancelar la reserva."
+        ]
       },
       {
         "title": "4. Cancelación por parte del participante",
-        "text": "Hasta 8 semanas antes de la salida: 50 € de gastos de gestión. De 8 a 4 semanas antes de la salida: 50% del importe del viaje. De 4 a 2 semanas antes de la salida: 75% del importe del viaje. Menos de 14 días antes de la salida: 100% del importe del viaje. No se realiza ningún reembolso en caso de finalización anticipada del fin de semana o de no presentarse en la fecha de salida. Se recomienda a los participantes contratar un seguro de viaje y de cancelación.",
-        "text2": "<strong>Participante sustituto:</strong> un participante puede, hasta 7 días antes de la salida, proponer sin coste un participante sustituto, siempre que se informe a la organización con antelación, el sustituto cumpla las condiciones de participación, y se reembolsen los costes adicionales derivados del cambio."
+        "text": "En caso de cancelación de la participación se aplican los siguientes gastos, calculados desde la fecha de salida:",
+        "items": [
+          "Hasta 8 semanas antes de la salida: 50 € de gastos administrativos.",
+          "De 8 a 4 semanas antes de la salida: 50% del importe del viaje.",
+          "De 4 a 2 semanas antes de la salida: 75% del importe del viaje.",
+          "Dentro de los 14 días previos a la salida: 100% del importe del viaje."
+        ],
+        "text2": "No se reembolsa el importe del viaje en caso de finalización anticipada del fin de semana, de no presentarse en la fecha de salida o de no cumplir con la obligación de contratar un seguro de viaje.",
+        "text3": "Hasta dos días antes de la salida el participante puede proponer, sin coste, un participante sustituto, siempre que se comunique con antelación y la organización lo apruebe.",
+        "text4": "Para cancelaciones o finalizaciones anticipadas por motivos personales se recomienda contratar un seguro de cancelación."
       },
       {
-        "title": "5. Cancelación por parte de la organización",
-        "text": "La organización se reserva el derecho de cancelar el fin de semana en caso de número insuficiente de participantes, fuerza mayor, condiciones meteorológicas extremas o riesgos de seguridad imprevistos. En ese caso, se reembolsará íntegramente el importe ya abonado. Otros costes, como el transporte o los seguros, quedan fuera de la responsabilidad de la organización."
+        "title": "5. Cancelación por parte del organizador",
+        "text": "El organizador se reserva el derecho de cancelar el fin de semana en caso de:",
+        "items": [
+          "número insuficiente de participantes;",
+          "fuerza mayor;",
+          "condiciones meteorológicas extremas;",
+          "riesgo de incendio forestal;",
+          "riesgos de seguridad imprevistos;",
+          "medidas gubernamentales o normativa local."
+        ],
+        "text2": "A más tardar cuatro semanas antes de la salida se determina si hay suficientes participantes para que el fin de semana se celebre. El número mínimo de participantes por grupo es de cuatro.",
+        "text3": "Así la organización ofrece a los participantes la mayor certeza posible sobre la celebración del fin de semana antes de reservar su vuelo, salvo fuerza mayor y otras circunstancias imprevistas.",
+        "text4": "Si la organización cancela el fin de semana con antelación por fuerza mayor o motivos de seguridad, se devuelve el importe íntegro del viaje. Los gastos de desplazamiento de ida y vuelta a Valencia, los seguros de viaje, los seguros de cancelación y otros gastos personales no forman parte del precio del viaje y no son reembolsados por la organización."
       },
       {
-        "title": "6. Riesgo y responsabilidad",
-        "text": "El trail, el senderismo y las actividades al aire libre conllevan riesgos inherentes. La participación se realiza por cuenta y riesgo propios. La organización no se hace responsable de lesiones, accidentes, pérdidas, robos o daños a bienes personales, salvo en caso de dolo o negligencia grave. El participante sigue siendo responsable de sus propios actos en todo momento."
+        "title": "6. Cambios en el programa",
+        "text": "Las rutas, actividades, horarios y otras partes del programa pueden modificarse si las circunstancias lo exigen. Entre ellas:",
+        "items": [
+          "condiciones meteorológicas;",
+          "riesgo de incendio forestal;",
+          "normativa local;",
+          "motivos de seguridad;",
+          "fuerza mayor."
+        ],
+        "text2": "El organizador procura limitar al máximo cualquier cambio, sin comprometer la calidad ni la seguridad del fin de semana."
       },
       {
-        "title": "7. Conducta y seguridad",
-        "text": "Se espera que los participantes sigan las instrucciones del guía, traten con respeto a los demás participantes, el alojamiento y la naturaleza, y no asuman riesgos inaceptables durante las actividades. La organización puede excluir a un participante de seguir participando si su conducta pone en peligro la seguridad o el bienestar del grupo."
+        "title": "7. Vuelos y transporte",
+        "text": "El participante es responsable de reservar su transporte de ida y vuelta a Valencia.",
+        "text2": "Las cancelaciones de vuelos, los retrasos y otras incidencias de viaje ajenas al control de la organización no son responsabilidad de la organización, sea cual sea su causa. Esto incluye huelgas, condiciones meteorológicas extremas, averías técnicas, problemas de tráfico y situaciones en las que un participante no pueda llegar a tiempo al aeropuerto.",
+        "text3": "En caso de llegada con retraso, la organización organizará igualmente un traslado desde el aeropuerto siempre que sea razonablemente posible, programado de forma que afecte lo menos posible al resto de participantes."
       },
       {
-        "title": "8. Cambios en el programa",
-        "text": "La organización se reserva el derecho de modificar rutas, actividades, horarios o partes del programa por condiciones meteorológicas, riesgo de incendio forestal, normativa local o motivos de seguridad."
+        "title": "8. Riesgo y responsabilidad",
+        "text": "El trail running, el senderismo, las rutas de montaña y otras actividades outdoor conllevan riesgos inherentes. La participación es totalmente bajo tu propia responsabilidad. El organizador no se hace responsable de:",
+        "items": [
+          "lesiones;",
+          "accidentes;",
+          "pérdida, robo o daño de objetos personales;",
+          "gastos derivados de cambios de vuelo, retrasos o cancelaciones;",
+          "daños indirectos,"
+        ],
+        "text2": "salvo en caso de dolo o negligencia grave por parte del organizador. El participante sigue siendo responsable de sus propios actos en todo momento."
       },
       {
         "title": "9. Seguros",
-        "text": "Cada participante es responsable de contar con un seguro de viaje válido, un posible seguro de cancelación y una cobertura deportiva adecuada si lo desea."
+        "text": "Para participar es obligatorio disponer de un seguro de viaje básico en vigor.",
+        "text2": "El participante debe comprobar con antelación si las actividades ofrecidas durante el fin de semana —trail running, senderismo, rutas y travesías de montaña— están cubiertas por su seguro de viaje. Si es necesario, deberá contratar una cobertura adicional por su cuenta.",
+        "text3": "Un seguro de equipaje, de cancelación u otros seguros complementarios no son obligatorios y son responsabilidad del propio participante.",
+        "text4": "La organización agradece recibir una copia de la póliza del seguro de viaje de cada participante antes del inicio del fin de semana."
       },
       {
-        "title": "10. Material fotográfico y de vídeo",
-        "text": "Durante el fin de semana se pueden tomar fotografías y vídeos con fines promocionales. Si un participante tiene objeciones al respecto, debe comunicarlo por escrito con antelación."
+        "title": "10. Conducta y seguridad",
+        "text": "De cada participante se espera que:",
+        "items": [
+          "siga las instrucciones del acompañamiento;",
+          "trate con respeto a los demás participantes, el alojamiento y la naturaleza;",
+          "no asuma riesgos inaceptables;",
+          "no ponga en peligro la seguridad del grupo;",
+          "no consuma alcohol, drogas u otras sustancias de una manera que afecte negativamente a su propia seguridad, a la de los demás participantes o al desarrollo del programa."
+        ],
+        "text2": "El organizador puede excluir a un participante de la continuación del viaje, sin reembolso del importe, si su comportamiento pone en peligro la seguridad, la salud o el bienestar del grupo."
       },
       {
-        "title": "11. Datos personales",
-        "text": "Los datos personales se utilizan exclusivamente para la organización y realización del evento y no se comparten con terceros sin consentimiento, salvo que sea necesario para la ejecución del viaje."
+        "title": "11. Material gráfico",
+        "text": "Durante el fin de semana pueden tomarse fotografías y vídeos con fines promocionales.",
+        "text2": "Si un participante se opone, deberá comunicarlo por escrito a la organización antes del inicio del fin de semana."
       },
       {
-        "title": "12. Fuerza mayor",
-        "text": "Se entiende por fuerza mayor cualquier situación fuera del control razonable de la organización, incluyendo catástrofes naturales, incendios forestales, pandemias, huelgas, medidas gubernamentales y condiciones meteorológicas extremas. En tales situaciones, el programa puede modificarse, posponerse o cancelarse."
+        "title": "12. Datos personales",
+        "text": "Los datos personales se tratan únicamente para la organización y ejecución del fin de semana reservado y no se facilitan a terceros sin consentimiento, salvo que sea necesario para la ejecución del contrato o derive de una obligación legal."
+      },
+      {
+        "title": "13. Fuerza mayor",
+        "text": "Se entiende por fuerza mayor cualquier situación fuera del control razonable del organizador, incluidas, entre otras:",
+        "items": [
+          "catástrofes naturales;",
+          "incendios forestales;",
+          "pandemias;",
+          "epidemias;",
+          "huelgas;",
+          "medidas gubernamentales;",
+          "condiciones meteorológicas extremas;",
+          "espacios naturales cerrados;",
+          "emergencias."
+        ],
+        "text2": "En tales situaciones el programa puede modificarse, aplazarse o cancelarse sin que el organizador esté obligado a reembolsar otros gastos que el importe del viaje ya abonado, en la medida en que lo permita la ley."
+      },
+      {
+        "title": "14. Legislación aplicable y controversias",
+        "text": "A estas condiciones generales y a todos los acuerdos entre Wildcore Retreats y el participante les es de aplicación exclusiva el derecho neerlandés.",
+        "text2": "Las controversias derivadas de este acuerdo o relacionadas con él se someterán al tribunal competente del distrito donde Wildcore Retreats tiene su sede, salvo que disposiciones legales imperativas dispongan otra cosa."
       }
     ]
   },
