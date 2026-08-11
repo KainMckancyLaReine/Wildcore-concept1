@@ -227,6 +227,48 @@
       }
     ]
   },
+  "dates": {
+    "eyebrow": "Dates",
+    "title": "When are we going?",
+    "text": "Four weekends, each with its own character. You choose a trail running or hiking weekend in advance, so you spend the whole weekend with the same group.",
+    "editions": [
+      {
+        "type": "Trail run",
+        "month": "November 2026",
+        "days": "6 – 8 November",
+        "weekdays": "Friday to Sunday",
+        "status": "Places available",
+        "formLabel": "Trail running weekend — 6, 7, 8 November 2026"
+      },
+      {
+        "type": "Hike",
+        "month": "December 2026",
+        "days": "11 – 13 December",
+        "weekdays": "Friday to Sunday",
+        "status": "Places available",
+        "formLabel": "Hiking weekend — 11, 12, 13 December 2026"
+      },
+      {
+        "type": "Trail run",
+        "month": "January 2027",
+        "days": "29 – 31 January",
+        "weekdays": "Friday to Sunday",
+        "status": "Places available",
+        "formLabel": "Trail running weekend — 29, 30, 31 January 2027"
+      },
+      {
+        "type": "Hike",
+        "month": "March 2027",
+        "days": "5 – 7 March",
+        "weekdays": "Friday to Sunday",
+        "status": "Places available",
+        "formLabel": "Hiking weekend — 5, 6, 7 March 2027"
+      }
+    ],
+    "cta": "Request this date",
+    "unsure": "Not sure yet",
+    "note": "A maximum of six participants per weekend. With fewer than four sign-ups a weekend does not go ahead; you will hear from us no later than four weeks in advance."
+  },
   "practical": {
     "eyebrow": "Practical info",
     "title": "Good to know",

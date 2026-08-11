@@ -227,6 +227,48 @@
       }
     ]
   },
+  "dates": {
+    "eyebrow": "Fechas",
+    "title": "¿Cuándo vamos?",
+    "text": "Cuatro fines de semana, cada uno con su propio carácter. Eliges de antemano un fin de semana de trail o de senderismo, para pasar todo el fin de semana con el mismo grupo.",
+    "editions": [
+      {
+        "type": "Trail running",
+        "month": "Noviembre 2026",
+        "days": "6 – 8 de noviembre",
+        "weekdays": "de viernes a domingo",
+        "status": "Plazas disponibles",
+        "formLabel": "Fin de semana de trail — 6, 7 y 8 de noviembre de 2026"
+      },
+      {
+        "type": "Senderismo",
+        "month": "Diciembre 2026",
+        "days": "11 – 13 de diciembre",
+        "weekdays": "de viernes a domingo",
+        "status": "Plazas disponibles",
+        "formLabel": "Fin de semana de senderismo — 11, 12 y 13 de diciembre de 2026"
+      },
+      {
+        "type": "Trail running",
+        "month": "Enero 2027",
+        "days": "29 – 31 de enero",
+        "weekdays": "de viernes a domingo",
+        "status": "Plazas disponibles",
+        "formLabel": "Fin de semana de trail — 29, 30 y 31 de enero de 2027"
+      },
+      {
+        "type": "Senderismo",
+        "month": "Marzo 2027",
+        "days": "5 – 7 de marzo",
+        "weekdays": "de viernes a domingo",
+        "status": "Plazas disponibles",
+        "formLabel": "Fin de semana de senderismo — 5, 6 y 7 de marzo de 2027"
+      }
+    ],
+    "cta": "Solicitar esta fecha",
+    "unsure": "Aún no lo sé",
+    "note": "Máximo seis participantes por fin de semana. Con menos de cuatro inscripciones el fin de semana no se celebra; te lo comunicamos como máximo cuatro semanas antes."
+  },
   "practical": {
     "eyebrow": "Información práctica",
     "title": "Lo que debes saber",
