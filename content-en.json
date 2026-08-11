@@ -247,7 +247,10 @@
       },
       {
         "q": "Insurance",
-        "a": "Every participant is responsible for their own valid travel insurance, any cancellation insurance, and suitable sports cover if desired. We always recommend arranging this in advance."
+        "a": "A valid basic travel insurance policy is required to join our trips. Check your policy conditions carefully in advance to see whether mountain walking and mountain trails are covered. If they are not, you'll need to arrange additional cover yourself.",
+        "a2": "Additional baggage insurance, cancellation insurance or other extra cover is not required. Taking these out is a personal choice and the participant's own responsibility.",
+        "a3": "We'd like to receive a copy of each participant's insurance policy sheet before the trip begins, so we can check that the insurance requirement has been met.",
+        "tip": "Tip: if in doubt, contact your insurer to verify that the activities during the trip, such as mountain walking, are fully covered."
       },
       {
         "q": "Cancellation &amp; changes",
@@ -270,11 +273,14 @@
             "cost": "100% of the trip price"
           }
         ],
-        "note": "No refund is given for early termination of the weekend or failure to show up on the departure date. Up to 7 days before departure you may nominate a replacement participant free of charge, provided this is reported in advance and approved. We recommend every participant take out cancellation insurance."
+        "note": "No refund of the trip price is given for early termination of the weekend, failure to show up on the departure date, or failure to meet the compulsory travel insurance requirement. Up to two days before departure you may nominate a replacement participant free of charge, provided this is reported in advance and approved by the organisation. For cancellation or early termination for personal reasons, you can choose to take out cancellation insurance in addition to your travel insurance, so you can cover this financial risk."
       },
       {
-        "q": "Programme changes",
-        "a": "Routes, activities or parts of the programme may be adjusted due to weather conditions, wildfire risk, local regulations or safety considerations. If the organiser cancels the weekend due to force majeure, insufficient participants or safety reasons, you will receive a full refund of the amount already paid."
+        "q": "Programme, cancellation &amp; changes",
+        "a": "Routes, activities or parts of the programme may be adjusted due to weather conditions, wildfire risk, local regulations or other safety considerations.",
+        "a2": "If the organisation cancels the weekend in advance due to force majeure or safety reasons, you'll receive the full trip price back. The cost of your travel to and from Valencia is not part of the trip price and is not reimbursed by the organisation. To limit this risk, we advise you to book a flexible ticket, or one that allows a date change, where possible.",
+        "a3": "Flight cancellations, delays and other travel disruptions beyond the organisation's control are not the organisation's responsibility, whatever the cause. This includes strikes, extreme weather, technical failures, traffic problems and situations where a participant cannot reach the airport in time. If you arrive late, we'll still arrange an airport transfer where reasonably possible, scheduled so that the other participants are inconvenienced as little as possible.",
+        "a4": "No later than four weeks before departure we determine whether there are enough participants for the weekend to go ahead. The minimum group size is four participants. If there are too few, the weekend is cancelled. This gives participants as much certainty as possible about the weekend going ahead before they book their flight, barring force majeure and unforeseen circumstances."
       }
     ],
     "termsTitle": "Full terms and conditions",

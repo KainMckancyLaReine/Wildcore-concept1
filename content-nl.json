@@ -247,7 +247,10 @@
       },
       {
         "q": "Verzekeringen",
-        "a": "Iedere deelnemer is zelf verantwoordelijk voor een geldige reisverzekering, een eventuele annuleringsverzekering en een passende sportdekking indien gewenst. We adviseren dit altijd vooraf te regelen."
+        "a": "Voor deelname aan onze reizen is een geldige basisreisverzekering verplicht. Controleer vooraf zorgvuldig de polisvoorwaarden van je verzekering om na te gaan of bergwandelingen en bergtochten binnen de dekking vallen. Indien nodig dien je hiervoor zelf een aanvullende dekking af te sluiten.",
+        "a2": "Een aanvullende bagageverzekering, annuleringsverzekering of andere extra dekkingen zijn niet verplicht. Het afsluiten hiervan is een persoonlijke keuze en valt onder de verantwoordelijkheid van de deelnemer.",
+        "a3": "Wij ontvangen graag uiterlijk vóór aanvang van de reis een kopie van het polisblad van de reisverzekering van iedere deelnemer. Zo kunnen we controleren of aan de verzekeringsverplichting is voldaan.",
+        "tip": "Tip: neem bij twijfel contact op met je verzekeraar om te verifiëren of de activiteiten tijdens de reis, zoals bergwandelingen, volledig zijn meeverzekerd."
       },
       {
         "q": "Annulering &amp; wijzigingen",
@@ -270,11 +273,14 @@
             "cost": "100% van de reissom"
           }
         ],
-        "note": "Bij voortijdige beëindiging van het weekend of het niet verschijnen op de vertrekdatum vindt geen restitutie plaats. Tot 7 dagen voor vertrek mag je kosteloos een vervangende deelnemer aandragen, mits vooraf gemeld en akkoord bevonden. We adviseren iedere deelnemer een annuleringsverzekering af te sluiten."
+        "note": "Bij voortijdige beëindiging van het weekend, het niet verschijnen op de vertrekdatum of het niet voldoen aan de verplichte reisverzekeringsplicht vindt geen restitutie van de reissom plaats. Tot twee dagen vóór vertrek mag je kosteloos een vervangende deelnemer aandragen, mits dit vooraf is gemeld en door de organisatie is goedgekeurd. Voor annulering of voortijdige beëindiging om persoonlijke redenen kun je ervoor kiezen een annuleringsverzekering als aanvulling op je reisverzekering af te sluiten, zodat je dit financiële risico kunt afdekken."
       },
       {
-        "q": "Programma-wijzigingen",
-        "a": "Routes, activiteiten of onderdelen van het programma kunnen worden aangepast bij weersomstandigheden, bosbrandgevaar, lokale regelgeving of veiligheidsoverwegingen. Bij annulering door de organisatie vanwege overmacht, onvoldoende deelnemers of veiligheidsredenen ontvang je het reeds betaalde bedrag volledig terug."
+        "q": "Programma, annulering &amp; wijzigingen",
+        "a": "Routes, activiteiten of onderdelen van het programma kunnen worden aangepast vanwege weersomstandigheden, bosbrandgevaar, lokale regelgeving of andere veiligheidsoverwegingen.",
+        "a2": "Indien de organisatie het weekend vooraf annuleert als gevolg van overmacht of veiligheidsredenen, ontvang je de volledige reissom terug. De kosten voor je vervoer van en naar Valencia maken geen onderdeel uit van de reissom en worden niet door de organisatie vergoed. Om dit risico te beperken, adviseren wij je om – indien mogelijk – een flexibel vliegticket te boeken of een ticket waarbij een datumwijziging is toegestaan.",
+        "a3": "Vluchtannuleringen, vertragingen en andere reisverstoringen die buiten de invloed van de organisatie liggen, ongeacht de oorzaak, vallen niet onder de verantwoordelijkheid van de organisatie. Hieronder vallen onder meer stakingen, extreme weersomstandigheden, technische storingen, verkeersproblemen en situaties waarin een deelnemer de luchthaven niet tijdig kan bereiken. Bij een vertraagde aankomst verzorgen wij, indien redelijkerwijs mogelijk, alsnog een luchthaventransfer. Deze wordt zo ingepland dat de overige deelnemers hiervan zo min mogelijk hinder ondervinden.",
+        "a4": "Uiterlijk vier weken vóór vertrek wordt vastgesteld of er voldoende deelnemers zijn om het weekend door te laten gaan. Het minimumaantal deelnemers per groep is vier. Bij onvoldoende deelnemers wordt het weekend geannuleerd. Hiermee bieden wij deelnemers, behoudens overmacht en onvoorziene omstandigheden, zoveel mogelijk zekerheid over de doorgang van het weekend voordat zij hun vliegticket boeken."
       }
     ],
     "termsTitle": "Volledige algemene voorwaarden",
