@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.wildcoreretreats.com/sitemap.xml
+# Blokkeer CMS/admin en bronbestanden uit de index
+Disallow: /admin/
+Disallow: /cms-worker/
+Disallow: /brondata%20(originele%20foto's)/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://wildcore-retreats.nl/sitemap.xml
