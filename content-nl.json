@@ -204,9 +204,13 @@
     "text": "Beide weekenden zijn volledig verzorgd, van luchthavenvervoer tot begeleiding onderweg.",
     "price": "€495",
     "unit": "p.p.",
+    "priceEdition": "Eerste editie — 6, 7, 8 november 2026",
+    "nextLabel": "Vanaf december 2026",
+    "nextPrice": "€595",
+    "nextUnit": "p.p.",
     "dates": "Vrijdag t/m zondag",
     "badge": "Introductieprijs",
-    "note": "Speciaal tarief voor de eerste editie. Deze prijs geldt zolang er plekken zijn.",
+    "note": "De introductieprijs geldt alleen voor de eerste editie, zolang er plekken zijn.",
     "cta": "Vraag jouw plek aan",
     "includedLabel": "Inbegrepen",
     "included": [
@@ -237,32 +241,37 @@
         "month": "November 2026",
         "days": "6 – 8 november",
         "weekdays": "vrijdag t/m zondag",
+        "price": "€495 p.p.",
+        "priceTag": "Introductieprijs",
         "status": "Plekken beschikbaar",
-        "formLabel": "Trailrunweekend — 6, 7, 8 november 2026"
+        "formLabel": "Trailrunweekend — 6, 7, 8 november 2026 · €495"
       },
       {
         "type": "Hike",
         "month": "December 2026",
         "days": "11 – 13 december",
         "weekdays": "vrijdag t/m zondag",
+        "price": "€595 p.p.",
         "status": "Plekken beschikbaar",
-        "formLabel": "Hikeweekend — 11, 12, 13 december 2026"
+        "formLabel": "Hikeweekend — 11, 12, 13 december 2026 · €595"
       },
       {
         "type": "Trailrun",
         "month": "Januari 2027",
         "days": "29 – 31 januari",
         "weekdays": "vrijdag t/m zondag",
+        "price": "€595 p.p.",
         "status": "Plekken beschikbaar",
-        "formLabel": "Trailrunweekend — 29, 30, 31 januari 2027"
+        "formLabel": "Trailrunweekend — 29, 30, 31 januari 2027 · €595"
       },
       {
         "type": "Hike",
         "month": "Maart 2027",
         "days": "5 – 7 maart",
         "weekdays": "vrijdag t/m zondag",
+        "price": "€595 p.p.",
         "status": "Plekken beschikbaar",
-        "formLabel": "Hikeweekend — 5, 6, 7 maart 2027"
+        "formLabel": "Hikeweekend — 5, 6, 7 maart 2027 · €595"
       }
     ],
     "cta": "Vraag deze datum aan",

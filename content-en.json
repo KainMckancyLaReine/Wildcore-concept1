@@ -204,9 +204,13 @@
     "text": "Both weekends are fully organised, from airport transfers to guidance along the way.",
     "price": "€495",
     "unit": "pp",
+    "priceEdition": "First edition — 6, 7, 8 November 2026",
+    "nextLabel": "From December 2026",
+    "nextPrice": "€595",
+    "nextUnit": "pp",
     "dates": "Friday to Sunday",
     "badge": "Introductory price",
-    "note": "A special rate for this first edition. This price applies as long as spots are available.",
+    "note": "The introductory rate applies to the first edition only, as long as spots are available.",
     "cta": "Request your spot",
     "includedLabel": "Included",
     "included": [
@@ -237,32 +241,37 @@
         "month": "November 2026",
         "days": "6 – 8 November",
         "weekdays": "Friday to Sunday",
+        "price": "€495 pp",
+        "priceTag": "Introductory price",
         "status": "Places available",
-        "formLabel": "Trail running weekend — 6, 7, 8 November 2026"
+        "formLabel": "Trail running weekend — 6, 7, 8 November 2026 · €495"
       },
       {
         "type": "Hike",
         "month": "December 2026",
         "days": "11 – 13 December",
         "weekdays": "Friday to Sunday",
+        "price": "€595 pp",
         "status": "Places available",
-        "formLabel": "Hiking weekend — 11, 12, 13 December 2026"
+        "formLabel": "Hiking weekend — 11, 12, 13 December 2026 · €595"
       },
       {
         "type": "Trail run",
         "month": "January 2027",
         "days": "29 – 31 January",
         "weekdays": "Friday to Sunday",
+        "price": "€595 pp",
         "status": "Places available",
-        "formLabel": "Trail running weekend — 29, 30, 31 January 2027"
+        "formLabel": "Trail running weekend — 29, 30, 31 January 2027 · €595"
       },
       {
         "type": "Hike",
         "month": "March 2027",
         "days": "5 – 7 March",
         "weekdays": "Friday to Sunday",
+        "price": "€595 pp",
         "status": "Places available",
-        "formLabel": "Hiking weekend — 5, 6, 7 March 2027"
+        "formLabel": "Hiking weekend — 5, 6, 7 March 2027 · €595"
       }
     ],
     "cta": "Request this date",

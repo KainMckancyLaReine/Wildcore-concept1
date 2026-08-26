@@ -204,9 +204,13 @@
     "text": "Ambos fines de semana están completamente organizados, desde el traslado al aeropuerto hasta el acompañamiento durante el camino.",
     "price": "495 €",
     "unit": "p.p.",
+    "priceEdition": "Primera edición — 6, 7 y 8 de noviembre de 2026",
+    "nextLabel": "A partir de diciembre de 2026",
+    "nextPrice": "595 €",
+    "nextUnit": "p.p.",
     "dates": "Viernes a domingo",
     "badge": "Precio de lanzamiento",
-    "note": "Tarifa especial para esta primera edición. Este precio se mantiene mientras queden plazas.",
+    "note": "El precio de lanzamiento solo se aplica a la primera edición, mientras queden plazas.",
     "cta": "Solicita tu plaza",
     "includedLabel": "Incluido",
     "included": [
@@ -237,32 +241,37 @@
         "month": "Noviembre 2026",
         "days": "6 – 8 de noviembre",
         "weekdays": "de viernes a domingo",
+        "price": "495 € p.p.",
+        "priceTag": "Precio de lanzamiento",
         "status": "Plazas disponibles",
-        "formLabel": "Fin de semana de trail — 6, 7 y 8 de noviembre de 2026"
+        "formLabel": "Fin de semana de trail — 6, 7 y 8 de noviembre de 2026 · 495 €"
       },
       {
         "type": "Senderismo",
         "month": "Diciembre 2026",
         "days": "11 – 13 de diciembre",
         "weekdays": "de viernes a domingo",
+        "price": "595 € p.p.",
         "status": "Plazas disponibles",
-        "formLabel": "Fin de semana de senderismo — 11, 12 y 13 de diciembre de 2026"
+        "formLabel": "Fin de semana de senderismo — 11, 12 y 13 de diciembre de 2026 · 595 €"
       },
       {
         "type": "Trail running",
         "month": "Enero 2027",
         "days": "29 – 31 de enero",
         "weekdays": "de viernes a domingo",
+        "price": "595 € p.p.",
         "status": "Plazas disponibles",
-        "formLabel": "Fin de semana de trail — 29, 30 y 31 de enero de 2027"
+        "formLabel": "Fin de semana de trail — 29, 30 y 31 de enero de 2027 · 595 €"
       },
       {
         "type": "Senderismo",
         "month": "Marzo 2027",
         "days": "5 – 7 de marzo",
         "weekdays": "de viernes a domingo",
+        "price": "595 € p.p.",
         "status": "Plazas disponibles",
-        "formLabel": "Fin de semana de senderismo — 5, 6 y 7 de marzo de 2027"
+        "formLabel": "Fin de semana de senderismo — 5, 6 y 7 de marzo de 2027 · 595 €"
       }
     ],
     "cta": "Solicitar esta fecha",

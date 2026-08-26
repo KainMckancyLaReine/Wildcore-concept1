@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wildcore Retreats | Trail y senderismo en la Sierra Calderona</title>
-<meta name="description" content="Fin de semana de trail y senderismo en la Sierra Calderona, cerca de Valencia. Villa con piscina, grupo reducido y sin presión. Desde 495 € por persona.">
+<meta name="description" content="Fin de semana de trail y senderismo en la Sierra Calderona, cerca de Valencia. Villa con piscina, grupo reducido y sin presión. Primera edición 495 €, después 595 €.">
 <meta name="keywords" content="fin de semana trailrunning españa, retiro senderismo valencia, trailrunning sierra calderona, viaje trailrunning principiantes, fin de semana senderismo españa, escapada deportiva naturaleza, vacaciones trailrunning">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Wildcore Retreats">
@@ -116,7 +116,7 @@
       "@id": "https://wildcore-retreats.nl/es/#webpage",
       "url": "https://wildcore-retreats.nl/es/",
       "name": "Trail y senderismo en la Sierra Calderona | Wildcore",
-      "description": "Fin de semana de trail y senderismo en la Sierra Calderona, cerca de Valencia. Villa con piscina, grupo reducido y sin presión. Desde 495 € por persona.",
+      "description": "Fin de semana de trail y senderismo en la Sierra Calderona, cerca de Valencia. Villa con piscina, grupo reducido y sin presión. Primera edición 495 €, después 595 €.",
       "inLanguage": "es",
       "isPartOf": {
         "@id": "https://wildcore-retreats.nl/#website"
@@ -176,10 +176,22 @@
       "offers": [
         {
           "@type": "Offer",
-          "name": "Fin de semana de trail (de viernes a domingo)",
+          "name": "Fin de semana de trail — precio de lanzamiento, primera edición (6–8 de noviembre de 2026)",
           "price": "495",
           "priceCurrency": "EUR",
-          "url": "https://wildcore-retreats.nl/es/#prijzen",
+          "url": "https://wildcore-retreats.nl/#prijzen",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-11-08",
+          "seller": {
+            "@id": "https://wildcore-retreats.nl/#organization"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Fin de semana de trail (de viernes a domingo)",
+          "price": "595",
+          "priceCurrency": "EUR",
+          "url": "https://wildcore-retreats.nl/#prijzen",
           "availability": "https://schema.org/InStock",
           "priceValidUntil": "2027-12-31",
           "seller": {
@@ -189,9 +201,9 @@
         {
           "@type": "Offer",
           "name": "Fin de semana de senderismo (de viernes a domingo)",
-          "price": "495",
+          "price": "595",
           "priceCurrency": "EUR",
-          "url": "https://wildcore-retreats.nl/es/#prijzen",
+          "url": "https://wildcore-retreats.nl/#prijzen",
           "availability": "https://schema.org/InStock",
           "priceValidUntil": "2027-12-31",
           "seller": {
@@ -600,6 +612,24 @@
   .price-note{
     margin:12px 0 0;font-size:0.82rem;line-height:1.5;color:#c9d0bc;max-width:34ch;
   }
+  .price-edition{
+    margin:10px 0 0;font-size:0.84rem;font-weight:600;color:#e3e6da;
+  }
+  .price-next{
+    display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;
+    margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(255,255,255,0.18);
+  }
+  .price-next-label{
+    text-transform:uppercase;letter-spacing:0.14em;font-size:0.66rem;
+    font-weight:700;color:#c9d0bc;
+  }
+  .price-next-amount{
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.35rem;
+    line-height:1;color:var(--white);
+  }
+  .price-next-amount small{
+    font-family:'Work Sans',sans-serif;font-size:0.8rem;font-weight:500;color:#c9d0bc;
+  }
   .price-cta{margin-top:26px;justify-content:center;width:100%;}
 
   .price-included{padding:44px 44px 40px;}
@@ -649,6 +679,7 @@
     .price-figure{padding:38px 32px 34px;text-align:center;align-items:center;}
     .price-badge{align-self:center;}
     .price-note{margin-left:auto;margin-right:auto;}
+    .price-next{justify-content:center;}
     .price-cta{max-width:320px;}
     .price-included{padding:32px 30px 30px;}
     .price-included ul{grid-template-columns:1fr;gap:0;}
@@ -690,7 +721,16 @@
     font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;line-height:1.15;
     color:var(--green-deep);margin:0 0 6px;
   }
-  .date-weekdays{margin:0 0 16px;font-size:0.9rem;color:#5b5847;}
+  .date-weekdays{margin:0 0 12px;font-size:0.9rem;color:#5b5847;}
+  .date-price{
+    display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px;
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;color:var(--green-deep);
+  }
+  .date-price-tag{
+    font-family:'Work Sans',sans-serif;font-weight:700;font-size:0.6rem;
+    text-transform:uppercase;letter-spacing:0.12em;
+    background:var(--terracotta);color:var(--white);border-radius:999px;padding:4px 9px;
+  }
   .date-status{
     display:flex;align-items:center;gap:8px;margin:0 0 20px;
     font-size:0.84rem;color:var(--green-mid);font-weight:600;
@@ -1699,7 +1739,12 @@
           <span class="price-badge" data-key="pricing.badge">Precio de lanzamiento</span>
           <p class="price-dates" data-key="pricing.dates">Viernes a domingo</p>
           <div class="amount"><span data-key="pricing.price">495 €</span> <small data-key="pricing.unit">p.p.</small></div>
-          <p class="price-note" data-key="pricing.note">Tarifa especial para esta primera edición. Este precio se mantiene mientras queden plazas.</p>
+          <p class="price-edition" data-key="pricing.priceEdition">Primera edición — 6, 7 y 8 de noviembre de 2026</p>
+          <div class="price-next">
+            <span class="price-next-label" data-key="pricing.nextLabel">A partir de diciembre de 2026</span>
+            <span class="price-next-amount"><span data-key="pricing.nextPrice">595 €</span> <small data-key="pricing.nextUnit">p.p.</small></span>
+          </div>
+          <p class="price-note" data-key="pricing.note">El precio de lanzamiento solo se aplica a la primera edición, mientras queden plazas.</p>
           <a href="#contact" class="btn btn-primary price-cta" data-key="pricing.cta">Solicita tu plaza</a>
         </div>
         <div class="price-included">
@@ -1750,6 +1795,7 @@
           <p class="date-month" data-key="dates.editions.0.month">Noviembre 2026</p>
           <p class="date-days" data-key="dates.editions.0.days">6 – 8 de noviembre</p>
           <p class="date-weekdays" data-key="dates.editions.0.weekdays">de viernes a domingo</p>
+          <p class="date-price"><span data-key="dates.editions.0.price">495 € p.p.</span><span class="date-price-tag" data-key="dates.editions.0.priceTag">Precio de lanzamiento</span></p>
           <p class="date-status" data-key="dates.editions.0.status">Plazas disponibles</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Solicitar esta fecha</button>
         </article>
@@ -1758,6 +1804,7 @@
           <p class="date-month" data-key="dates.editions.1.month">Diciembre 2026</p>
           <p class="date-days" data-key="dates.editions.1.days">11 – 13 de diciembre</p>
           <p class="date-weekdays" data-key="dates.editions.1.weekdays">de viernes a domingo</p>
+          <p class="date-price"><span data-key="dates.editions.1.price">595 € p.p.</span></p>
           <p class="date-status" data-key="dates.editions.1.status">Plazas disponibles</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Solicitar esta fecha</button>
         </article>
@@ -1766,6 +1813,7 @@
           <p class="date-month" data-key="dates.editions.2.month">Enero 2027</p>
           <p class="date-days" data-key="dates.editions.2.days">29 – 31 de enero</p>
           <p class="date-weekdays" data-key="dates.editions.2.weekdays">de viernes a domingo</p>
+          <p class="date-price"><span data-key="dates.editions.2.price">595 € p.p.</span></p>
           <p class="date-status" data-key="dates.editions.2.status">Plazas disponibles</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Solicitar esta fecha</button>
         </article>
@@ -1774,6 +1822,7 @@
           <p class="date-month" data-key="dates.editions.3.month">Marzo 2027</p>
           <p class="date-days" data-key="dates.editions.3.days">5 – 7 de marzo</p>
           <p class="date-weekdays" data-key="dates.editions.3.weekdays">de viernes a domingo</p>
+          <p class="date-price"><span data-key="dates.editions.3.price">595 € p.p.</span></p>
           <p class="date-status" data-key="dates.editions.3.status">Plazas disponibles</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Solicitar esta fecha</button>
         </article>
@@ -2001,10 +2050,10 @@
 
           <label for="weekend">Fin de semana deseado</label>
           <select id="weekend" name="Fin de semana deseado">
-            <option data-edition="trail-2026-11" data-key="dates.editions.0.formLabel">Fin de semana de trail — 6, 7 y 8 de noviembre de 2026</option>
-            <option data-edition="hike-2026-12" data-key="dates.editions.1.formLabel">Fin de semana de senderismo — 11, 12 y 13 de diciembre de 2026</option>
-            <option data-edition="trail-2027-01" data-key="dates.editions.2.formLabel">Fin de semana de trail — 29, 30 y 31 de enero de 2027</option>
-            <option data-edition="hike-2027-03" data-key="dates.editions.3.formLabel">Fin de semana de senderismo — 5, 6 y 7 de marzo de 2027</option>
+            <option data-edition="trail-2026-11" data-key="dates.editions.0.formLabel">Fin de semana de trail — 6, 7 y 8 de noviembre de 2026 · 495 €</option>
+            <option data-edition="hike-2026-12" data-key="dates.editions.1.formLabel">Fin de semana de senderismo — 11, 12 y 13 de diciembre de 2026 · 595 €</option>
+            <option data-edition="trail-2027-01" data-key="dates.editions.2.formLabel">Fin de semana de trail — 29, 30 y 31 de enero de 2027 · 595 €</option>
+            <option data-edition="hike-2027-03" data-key="dates.editions.3.formLabel">Fin de semana de senderismo — 5, 6 y 7 de marzo de 2027 · 595 €</option>
             <option data-key="dates.unsure">Aún no lo sé</option>
           </select>
 

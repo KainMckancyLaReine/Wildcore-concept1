@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wildcore Retreats | Trailrun- &amp; hikeweekend Sierra Calderona</title>
-<meta name="description" content="Trailrun- en hikeweekend in de Sierra Calderona bij Valencia. Villa met zwembad, kleine groep, geen prestatiedruk. Ook voor beginners, vanaf €495 p.p.">
+<meta name="description" content="Trailrun- en hikeweekend in de Sierra Calderona bij Valencia. Villa met zwembad, kleine groep, geen prestatiedruk. Eerste editie €495 p.p., daarna €595.">
 <meta name="keywords" content="trailrun weekend spanje, hike retreat valencia, sierra calderona trailrunning, trailrun reis beginners, wandelweekend spanje, sportief weekend natuur, trailrunvakantie">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Wildcore Retreats">
@@ -116,7 +116,7 @@
       "@id": "https://wildcore-retreats.nl/#webpage",
       "url": "https://wildcore-retreats.nl/",
       "name": "Trailrun- & hikeweekend Sierra Calderona | Wildcore Retreats",
-      "description": "Trailrun- en hikeweekend in de Sierra Calderona bij Valencia. Villa met zwembad, kleine groep, geen prestatiedruk. Ook voor beginners, vanaf €495 p.p.",
+      "description": "Trailrun- en hikeweekend in de Sierra Calderona bij Valencia. Villa met zwembad, kleine groep, geen prestatiedruk. Eerste editie €495 p.p., daarna €595.",
       "inLanguage": "nl",
       "isPartOf": {
         "@id": "https://wildcore-retreats.nl/#website"
@@ -176,8 +176,20 @@
       "offers": [
         {
           "@type": "Offer",
-          "name": "Trail-weekend (vrijdag t/m zondag)",
+          "name": "Trail-weekend — introductieprijs eerste editie (6–8 november 2026)",
           "price": "495",
+          "priceCurrency": "EUR",
+          "url": "https://wildcore-retreats.nl/#prijzen",
+          "availability": "https://schema.org/InStock",
+          "priceValidUntil": "2026-11-08",
+          "seller": {
+            "@id": "https://wildcore-retreats.nl/#organization"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Trail-weekend (vrijdag t/m zondag)",
+          "price": "595",
           "priceCurrency": "EUR",
           "url": "https://wildcore-retreats.nl/#prijzen",
           "availability": "https://schema.org/InStock",
@@ -189,7 +201,7 @@
         {
           "@type": "Offer",
           "name": "Hike-weekend (vrijdag t/m zondag)",
-          "price": "495",
+          "price": "595",
           "priceCurrency": "EUR",
           "url": "https://wildcore-retreats.nl/#prijzen",
           "availability": "https://schema.org/InStock",
@@ -585,6 +597,24 @@
   .price-note{
     margin:12px 0 0;font-size:0.82rem;line-height:1.5;color:#c9d0bc;max-width:34ch;
   }
+  .price-edition{
+    margin:10px 0 0;font-size:0.84rem;font-weight:600;color:#e3e6da;
+  }
+  .price-next{
+    display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;
+    margin:16px 0 0;padding-top:14px;border-top:1px solid rgba(255,255,255,0.18);
+  }
+  .price-next-label{
+    text-transform:uppercase;letter-spacing:0.14em;font-size:0.66rem;
+    font-weight:700;color:#c9d0bc;
+  }
+  .price-next-amount{
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.35rem;
+    line-height:1;color:var(--white);
+  }
+  .price-next-amount small{
+    font-family:'Work Sans',sans-serif;font-size:0.8rem;font-weight:500;color:#c9d0bc;
+  }
   .price-cta{margin-top:26px;justify-content:center;width:100%;}
 
   .price-included{padding:44px 44px 40px;}
@@ -634,6 +664,7 @@
     .price-figure{padding:38px 32px 34px;text-align:center;align-items:center;}
     .price-badge{align-self:center;}
     .price-note{margin-left:auto;margin-right:auto;}
+    .price-next{justify-content:center;}
     .price-cta{max-width:320px;}
     .price-included{padding:32px 30px 30px;}
     .price-included ul{grid-template-columns:1fr;gap:0;}
@@ -675,7 +706,16 @@
     font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;line-height:1.15;
     color:var(--green-deep);margin:0 0 6px;
   }
-  .date-weekdays{margin:0 0 16px;font-size:0.9rem;color:#5b5847;}
+  .date-weekdays{margin:0 0 12px;font-size:0.9rem;color:#5b5847;}
+  .date-price{
+    display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 14px;
+    font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;color:var(--green-deep);
+  }
+  .date-price-tag{
+    font-family:'Work Sans',sans-serif;font-weight:700;font-size:0.6rem;
+    text-transform:uppercase;letter-spacing:0.12em;
+    background:var(--terracotta);color:var(--white);border-radius:999px;padding:4px 9px;
+  }
   .date-status{
     display:flex;align-items:center;gap:8px;margin:0 0 20px;
     font-size:0.84rem;color:var(--green-mid);font-weight:600;
@@ -1686,7 +1726,12 @@
           <span class="price-badge" data-key="pricing.badge">Introductieprijs</span>
           <p class="price-dates" data-key="pricing.dates">Vrijdag t/m zondag</p>
           <div class="amount"><span data-key="pricing.price">€495</span> <small data-key="pricing.unit">p.p.</small></div>
-          <p class="price-note" data-key="pricing.note">Speciaal tarief voor de eerste editie. Deze prijs geldt zolang er plekken zijn.</p>
+          <p class="price-edition" data-key="pricing.priceEdition">Eerste editie — 6, 7, 8 november 2026</p>
+          <div class="price-next">
+            <span class="price-next-label" data-key="pricing.nextLabel">Vanaf december 2026</span>
+            <span class="price-next-amount"><span data-key="pricing.nextPrice">€595</span> <small data-key="pricing.nextUnit">p.p.</small></span>
+          </div>
+          <p class="price-note" data-key="pricing.note">De introductieprijs geldt alleen voor de eerste editie, zolang er plekken zijn.</p>
           <a href="#contact" class="btn btn-primary price-cta" data-key="pricing.cta">Vraag jouw plek aan</a>
         </div>
         <div class="price-included">
@@ -1737,6 +1782,7 @@
           <p class="date-month" data-key="dates.editions.0.month">November 2026</p>
           <p class="date-days" data-key="dates.editions.0.days">6 – 8 november</p>
           <p class="date-weekdays" data-key="dates.editions.0.weekdays">vrijdag t/m zondag</p>
+          <p class="date-price"><span data-key="dates.editions.0.price">€495 p.p.</span><span class="date-price-tag" data-key="dates.editions.0.priceTag">Introductieprijs</span></p>
           <p class="date-status" data-key="dates.editions.0.status">Plekken beschikbaar</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Vraag deze datum aan</button>
         </article>
@@ -1745,6 +1791,7 @@
           <p class="date-month" data-key="dates.editions.1.month">December 2026</p>
           <p class="date-days" data-key="dates.editions.1.days">11 – 13 december</p>
           <p class="date-weekdays" data-key="dates.editions.1.weekdays">vrijdag t/m zondag</p>
+          <p class="date-price"><span data-key="dates.editions.1.price">€595 p.p.</span></p>
           <p class="date-status" data-key="dates.editions.1.status">Plekken beschikbaar</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Vraag deze datum aan</button>
         </article>
@@ -1753,6 +1800,7 @@
           <p class="date-month" data-key="dates.editions.2.month">Januari 2027</p>
           <p class="date-days" data-key="dates.editions.2.days">29 – 31 januari</p>
           <p class="date-weekdays" data-key="dates.editions.2.weekdays">vrijdag t/m zondag</p>
+          <p class="date-price"><span data-key="dates.editions.2.price">€595 p.p.</span></p>
           <p class="date-status" data-key="dates.editions.2.status">Plekken beschikbaar</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Vraag deze datum aan</button>
         </article>
@@ -1761,6 +1809,7 @@
           <p class="date-month" data-key="dates.editions.3.month">Maart 2027</p>
           <p class="date-days" data-key="dates.editions.3.days">5 – 7 maart</p>
           <p class="date-weekdays" data-key="dates.editions.3.weekdays">vrijdag t/m zondag</p>
+          <p class="date-price"><span data-key="dates.editions.3.price">€595 p.p.</span></p>
           <p class="date-status" data-key="dates.editions.3.status">Plekken beschikbaar</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Vraag deze datum aan</button>
         </article>
@@ -1988,10 +2037,10 @@
 
           <label for="weekend">Gewenst weekend</label>
           <select id="weekend" name="Gewenst weekend">
-            <option data-edition="trail-2026-11" data-key="dates.editions.0.formLabel">Trailrunweekend — 6, 7, 8 november 2026</option>
-            <option data-edition="hike-2026-12" data-key="dates.editions.1.formLabel">Hikeweekend — 11, 12, 13 december 2026</option>
-            <option data-edition="trail-2027-01" data-key="dates.editions.2.formLabel">Trailrunweekend — 29, 30, 31 januari 2027</option>
-            <option data-edition="hike-2027-03" data-key="dates.editions.3.formLabel">Hikeweekend — 5, 6, 7 maart 2027</option>
+            <option data-edition="trail-2026-11" data-key="dates.editions.0.formLabel">Trailrunweekend — 6, 7, 8 november 2026 · €495</option>
+            <option data-edition="hike-2026-12" data-key="dates.editions.1.formLabel">Hikeweekend — 11, 12, 13 december 2026 · €595</option>
+            <option data-edition="trail-2027-01" data-key="dates.editions.2.formLabel">Trailrunweekend — 29, 30, 31 januari 2027 · €595</option>
+            <option data-edition="hike-2027-03" data-key="dates.editions.3.formLabel">Hikeweekend — 5, 6, 7 maart 2027 · €595</option>
             <option data-key="dates.unsure">Nog niet zeker</option>
           </select>
 
