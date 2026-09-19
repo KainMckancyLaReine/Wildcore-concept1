@@ -116,3 +116,32 @@ hebben en zorgen dat stap 2 gedaan is. Verschijnen je 3 pagina's? Dan is het gel
 Je schema-data kun je testen op https://search.google.com/test/rich-results
 (plak daar `https://wildcore-retreats.nl/` in) — ik heb de JSON-LD al lokaal gevalideerd,
 alle 5 blokken zijn geldig.
+
+---
+
+# Update september 2026: landingspagina's per zoekwoord
+
+Een site van één pagina kan maar voor een paar zoektermen goed scoren. Daarom zijn er
+9 nieuwe pagina's bijgekomen, elk gericht op een groep zoekwoorden:
+
+| Pagina | Zoekwoorden |
+|---|---|
+| /trailrunning-weekend-valencia/ | trailrunning weekend Valencia, trailrun vakantie Valencia, trailrunning/trail running/trailrun Valencia, trailrunning retreat Valencia |
+| /wandelweekend-valencia/ | wandelweekend Valencia, wandelvakantie Valencia, hiking weekend Valencia, hiken Valencia |
+| /trailrunning-vakantie-spanje/ | trailrunning Spanje, trailrunning vakantie/weekend/retreat Spanje, sportretreat Spanje |
+| /wandelweekend-spanje/ | wandelweekend Spanje, hiking weekend Spanje, outdoor weekend Spanje |
+| /trailrunning-wandelen-casinos/ | trailrunning / hiking / wandelen Casinos Valencia |
+| /natuur-valencia-binnenland/ | natuur / wandelen / trailrunning Valencia binnenland, wandelen in Valencia, wandelen Valencia natuur, natuurvakantie Valencia |
+| /actieve-vakantie-valencia/ | actieve vakantie Valencia, sportieve vakantie Valencia, outdoor Valencia Spanje |
+| /en/trail-running-valencia/ | trail running Valencia, trail running Spain |
+| /en/hiking-retreat-spain/ | hiking Spain, hiking retreat Spain, hiking Valencia, hiking weekend Valencia |
+
+Homepage: titel is nu "Trailrunning weekend & hiking weekend Valencia", H1 noemt Valencia,
+en in de footer (NL/EN/ES) staan links naar alle nieuwe pagina's. Sitemap bijgewerkt.
+
+**Data of teksten wijzigen op deze pagina's:** pas de teksten aan in `_seo-generator/pages_*.py`
+(of de datums bovenin `build.py`) en draai `python3 _seo-generator/build.py`.
+Let op: na maart 2027 moeten de datums hier ook worden bijgewerkt (het CMS doet dit niet).
+
+**Na het pushen:** Search Console → Sitemaps → sitemap.xml opnieuw indienen, en via
+URL-inspectie voor elke nieuwe pagina "Indexering aanvragen".
