@@ -20,11 +20,11 @@ DATES = {
 }
 ROUTES = {
  'nl': [('Vrijdag','Casinos Discovery Loop','8 km','±180 hm','Rustige kennismaking met de paden rond Casinos, door dennenbos en over glooiende bergpaden.'),
-        ('Zaterdag','Serra Calderona Grand Loop','20–23 km','±850 hm','Het hoogtepunt: een lange dag door de Sierra Calderona, langs uitzichtpunten, met lunch onderweg in de natuur.'),
-        ('Zondag','Rebalsadors Recovery Loop','13–15 km','±500 hm','Rustiger afsluiter langs kloven en watervallen, daarna lunch op het terras en de transfer naar het vliegveld.')],
+        ('Zaterdag','Sierra Calderona Loop','16–18 km','±650 hm','Het hoogtepunt: een lange dag door de Sierra Calderona, langs uitzichtpunten, met lunch onderweg in de natuur.'),
+        ('Zondag','Llíria Loop','13–15 km','±500 hm','Rustiger afsluiter langs kloven en watervallen, daarna lunch op het terras en de transfer naar het vliegveld.')],
  'en': [('Friday','Casinos Discovery Loop','8 km','±180 m gain','An easy first loop on the trails around Casinos, through pine forest and rolling mountain paths.'),
-        ('Saturday','Serra Calderona Grand Loop','20–23 km','±850 m gain','The big day: a long route through the Sierra Calderona past viewpoints, with lunch out in nature.'),
-        ('Sunday','Rebalsadors Recovery Loop','13–15 km','±500 m gain','A gentler finish past gorges and waterfalls, then lunch on the terrace and the airport transfer.')],
+        ('Saturday','Sierra Calderona Loop','16–18 km','±650 m gain','The big day: a long route through the Sierra Calderona past viewpoints, with lunch out in nature.'),
+        ('Sunday','Llíria Loop','13–15 km','±500 m gain','A gentler finish past gorges and waterfalls, then lunch on the terrace and the airport transfer.')],
 }
 T = {
  'nl': dict(home='Home', book='Boek nu', weekend='Het weekend', dates='Data & prijzen', datesH='Komende weekenden', faqH='Veelgestelde vragen', relH='Lees ook',

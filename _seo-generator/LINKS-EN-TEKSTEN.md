@@ -57,8 +57,8 @@ op korte afstand van Valencia. Je kiest vooraf voor een trailrunweekend of een h
 zodat je met een groep loopt die hetzelfde tempo heeft.
 
 - Vrijdag: Casinos Discovery Loop (8 km)
-- Zaterdag: Serra Calderona Grand Loop (20–23 km)
-- Zondag: Rebalsadors Recovery Loop (13–15 km), langs kloven en watervallen
+- Zaterdag: Sierra Calderona Loop (16–18 km)
+- Zondag: Llíria Loop (13–15 km), langs kloven en watervallen
 
 Je verblijft in Villa El Pinar bij Casinos, met zwembad, terras en bergzicht. Inbegrepen:
 verblijf, 2x ontbijt, 3x lunch, 2x diner, luchthaventransfer van en naar Valencia Airport,
@@ -77,8 +77,8 @@ into the Sierra Calderona Natural Park: pine forests, gorges and viewpoints, jus
 Valencia. Choose a trail running weekend or a hiking weekend, so the whole group shares the same pace.
 
 - Friday: Casinos Discovery Loop (8 km)
-- Saturday: Serra Calderona Grand Loop (20–23 km)
-- Sunday: Rebalsadors Recovery Loop (13–15 km), past gorges and waterfalls
+- Saturday: Sierra Calderona Loop (16–18 km)
+- Sunday: Llíria Loop (13–15 km), past gorges and waterfalls
 
 You stay at Villa El Pinar near Casinos, with a pool, terrace and mountain views. Included:
 accommodation, 2 breakfasts, 3 lunches, 2 dinners, Valencia Airport transfers, transport to
