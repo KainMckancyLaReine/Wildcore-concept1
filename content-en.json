@@ -102,9 +102,9 @@
       },
       {
         "label": "Saturday",
-        "name": "Sierra Calderona Loop",
-        "stat1": "16–18 km",
-        "stat2": "±650 m",
+        "name": "Serra Calderona Grand Loop",
+        "stat1": "20–23 km",
+        "stat2": "±850 m",
         "text": "The heart of the weekend: a longer route through breathtaking landscapes and past viewpoints you won't soon forget. Walking is always allowed.",
         "schedule": [
           {
@@ -131,7 +131,7 @@
       },
       {
         "label": "Sunday",
-        "name": "Llíria Loop",
+        "name": "Rebalsadors Recovery Loop",
         "stat1": "13–15 km",
         "stat2": "±500 m",
         "text": "A calmer finish along ravines and waterfalls, with plenty of time to soak it all in before heading home.",
