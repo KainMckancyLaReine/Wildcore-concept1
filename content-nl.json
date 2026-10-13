@@ -102,9 +102,9 @@
       },
       {
         "label": "Zaterdag",
-        "name": "Serra Calderona Grand Loop",
-        "stat1": "20–23 km",
-        "stat2": "±850 hm",
+        "name": "Sierra Calderona Loop",
+        "stat1": "16–18 km",
+        "stat2": "±650 hm",
         "text": "Het hart van het weekend: een langere tocht door indrukwekkende landschappen en langs uitzichtpunten die je niet snel vergeet. Wandelen mag altijd.",
         "schedule": [
           {
@@ -131,10 +131,10 @@
       },
       {
         "label": "Zondag",
-        "name": "Rebalsadors Recovery Loop",
+        "name": "Llìria Recovery Loop",
         "stat1": "13–15 km",
         "stat2": "±500 hm",
-        "text": "Een rustiger vervolg langs kloven en watervallen, met alle tijd om na te genieten voordat je huiswaarts keert.",
+        "text": "Geniet van de rust, de mediterrane omgeving en de mooie uitzichten met alle tijd om na te genieten voordat je huiswaarts keert.",
         "schedule": [
           {
             "time": "07:00 – 08:00",
@@ -144,7 +144,7 @@
           {
             "time": "09:00",
             "title": "Ochtendtrail",
-            "text": "Een afwisselende route door de Sierra Calderona waarbij we nog één keer genieten van de rust, de natuur en de prachtige vergezichten."
+            "text": "Een afwisselende route door de natuur van Llíria waarbij we nog één keer genieten van de rust, de natuur en de prachtige vergezichten."
           },
           {
             "time": "13:00",
