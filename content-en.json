@@ -237,21 +237,12 @@
     "text": "Four weekends, each with its own character. You choose a trail running or hiking weekend in advance, so you spend the whole weekend with the same group.",
     "editions": [
       {
-        "type": "Trail run",
-        "month": "November 2026",
-        "days": "6 – 8 November",
-        "weekdays": "Friday to Sunday",
-        "price": "€495 pp",
-        "priceTag": "Introductory price",
-        "status": "Places available",
-        "formLabel": "Trail running weekend — 6, 7, 8 November 2026 · €495"
-      },
-      {
         "type": "Hike",
         "month": "December 2026",
         "days": "11 – 13 December",
         "weekdays": "Friday to Sunday",
         "price": "€595 pp",
+        "priceTag": "",
         "status": "Places available",
         "formLabel": "Hiking weekend — 11, 12, 13 December 2026 · €595"
       },
@@ -265,13 +256,22 @@
         "formLabel": "Trail running weekend — 29, 30, 31 January 2027 · €595"
       },
       {
-        "type": "Hike",
-        "month": "March 2027",
-        "days": "5 – 7 March",
+        "type": "Trail run",
+        "month": "februari 2027",
+        "days": "19 – 21 January",
         "weekdays": "Friday to Sunday",
         "price": "€595 pp",
         "status": "Places available",
-        "formLabel": "Hiking weekend — 5, 6, 7 March 2027 · €595"
+        "formLabel": "Trail running weekend — 19, 20, 21 februari 2027 · €595"
+      },
+      {
+        "type": "Trail",
+        "month": "March 2027",
+        "days": "12 – 14 March",
+        "weekdays": "Friday to Sunday",
+        "price": "€595 pp",
+        "status": "Places available",
+        "formLabel": "trail weekend — 12, 13, 14 March 2027 · €595"
       }
     ],
     "cta": "Request this date",
