@@ -237,21 +237,12 @@
     "text": "Cuatro fines de semana, cada uno con su propio carácter. Eliges de antemano un fin de semana de trail o de senderismo, para pasar todo el fin de semana con el mismo grupo.",
     "editions": [
       {
-        "type": "Trail running",
-        "month": "Noviembre 2026",
-        "days": "6 – 8 de noviembre",
-        "weekdays": "de viernes a domingo",
-        "price": "495 € p.p.",
-        "priceTag": "Precio de lanzamiento",
-        "status": "Plazas disponibles",
-        "formLabel": "Fin de semana de trail — 6, 7 y 8 de noviembre de 2026 · 495 €"
-      },
-      {
         "type": "Senderismo",
         "month": "Diciembre 2026",
         "days": "11 – 13 de diciembre",
         "weekdays": "de viernes a domingo",
         "price": "595 € p.p.",
+        "priceTag": "Precio de lanzamiento",
         "status": "Plazas disponibles",
         "formLabel": "Fin de semana de senderismo — 11, 12 y 13 de diciembre de 2026 · 595 €"
       },
@@ -265,13 +256,22 @@
         "formLabel": "Fin de semana de trail — 29, 30 y 31 de enero de 2027 · 595 €"
       },
       {
-        "type": "Senderismo",
-        "month": "Marzo 2027",
-        "days": "5 – 7 de marzo",
+        "type": "Trail running",
+        "month": "Febrero 2027",
+        "days": "19 – 21 de enero",
         "weekdays": "de viernes a domingo",
         "price": "595 € p.p.",
         "status": "Plazas disponibles",
-        "formLabel": "Fin de semana de senderismo — 5, 6 y 7 de marzo de 2027 · 595 €"
+        "formLabel": "Fin de semana de trail — 19, 20 y 21 de enero de 2027 · 595 €"
+      },
+      {
+        "type": "Trail running",
+        "month": "Marzo 2027",
+        "days": "12 – 14 de marzo",
+        "weekdays": "de viernes a domingo",
+        "price": "595 € p.p.",
+        "status": "Plazas disponibles",
+        "formLabel": "Fin de semana de trail — 12, 13 y 14 de marzo de 2027 · 595 €"
       }
     ],
     "cta": "Solicitar esta fecha",
