@@ -102,9 +102,9 @@
       },
       {
         "label": "Sábado",
-        "name": "Serra Calderona Grand Loop",
-        "stat1": "20–23 km",
-        "stat2": "±850 m",
+        "name": "Sierra Calderona Loop",
+        "stat1": "16–18 km",
+        "stat2": "±650 m",
         "text": "El corazón del fin de semana: una ruta más larga por paisajes impresionantes y miradores que no olvidarás fácilmente. Caminar siempre está permitido.",
         "schedule": [
           {
@@ -293,8 +293,8 @@
       },
       {
         "q": "Alojamiento",
-        "a": "Durante el fin de semana te alojas en nuestra acogedora villa de El Pinar, en plena naturaleza de Casinos. Duermes en una habitación doble compartida o, si prefieres estar más cerca de la naturaleza, en una cómoda tienda de glamping entre los pinos, también apta para dos personas.",
-        "a2": "Elijas la villa o la tienda de glamping, disfrutas de un entorno tranquilo y hogareño donde se unen el descanso, la comodidad y la naturaleza. Un lugar perfecto para recargar las pilas después de un día por los senderos."
+        "a": "Durante el fin de semana te alojas en nuestra acogedora villa de El Pinar, en plena naturaleza de Casinos. Duermes en una habitación doble compartida o, si prefieres estar más cerca de la naturaleza, en una caseta de jardìn entre los pinos, también apta para dos personas.",
+        "a2": "Elijas la villa ò la caseta de jardìn, disfrutas de un entorno tranquilo y hogareño donde se unen el descanso, la comodidad y la naturaleza. Un lugar perfecto para recargar las pilas después de un día por los senderos."
       },
       {
         "q": "Seguros",
