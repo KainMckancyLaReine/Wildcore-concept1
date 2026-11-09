@@ -74,6 +74,13 @@
   .section-card h2{font-size:1.25rem;margin-bottom:0.9em;padding-bottom:0.5em;border-bottom:1px solid #eee2cd;}
   .section-card h3{font-size:1rem;color:var(--terracotta-dark);margin:1.2em 0 0.6em;}
   .item-box{background:#faf6ec;border:1px solid #eee2cd;border-radius:12px;padding:16px 18px;margin-bottom:14px;}
+  .item-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .item-head h3{margin-top:0.2em;}
+  .btn-small{padding:7px 14px;font-size:0.8rem;border-radius:100px;cursor:pointer;font-family:inherit;font-weight:600;}
+  .btn-remove{background:transparent;color:#a3492e;border:1.5px solid #d9b3a6;}
+  .btn-remove:hover{background:#a3492e;color:#fff;border-color:#a3492e;}
+  .btn-add{background:var(--green-deep);color:#fff;border:0;padding:11px 20px;font-size:0.88rem;}
+  .btn-add:hover{opacity:0.9;}
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media (max-width:640px){.grid-2{grid-template-columns:1fr;}}
 
@@ -201,6 +208,7 @@
     editions:"Weekend", type:"Soort weekend", month:"Maand", weekdays:"Dagen",
     status:"Status", priceTag:"Badge naast de prijs",
     formLabel:"Tekst in de keuzelijst van het formulier",
+    endDate:"Laatste dag (bepaalt wanneer het weekend op 'Afgelopen' springt)",
     unsure:"Keuzelijst-optie: nog niet zeker"
   };
   const MULTILINE = new Set(['title','lead','text','paragraphs','statement','a','note','text2','q']);
@@ -217,17 +225,25 @@
       const id = 'f_' + path.replace(/[^a-zA-Z0-9]/g, '_');
       const tag = MULTILINE.has(keyName) || value.length > 60 ? 'textarea' : 'input';
       const rows = tag === 'textarea' ? ' rows="3"' : '';
+      const inputType = keyName === 'endDate' ? 'date' : 'text';
       const inputEl = tag === 'textarea'
         ? `<textarea id="${id}" data-path="${path}"${rows}>${escapeHtml(value)}</textarea>`
-        : `<input type="text" id="${id}" data-path="${path}" value="${escapeAttr(value)}">`;
+        : `<input type="${inputType}" id="${id}" data-path="${path}" value="${escapeAttr(value)}">`;
       const displayLabel = labelFor(keyName) + (indexSuffix ? ' ' + indexSuffix : '');
       return `<div class="field"><label for="${id}">${displayLabel}</label>${inputEl}</div>`;
     }
     if (Array.isArray(value)) {
       let html = '';
+      const isEditions = path === 'dates.editions';
+      if (isEditions) {
+        html += `<p class="note">Weekenden toevoegen of verwijderen gebeurt in alle talen tegelijk. Vul daarna per taal de teksten in. De laatste dag wordt automatisch in alle talen gelijk gezet.</p>`;
+      }
       value.forEach((item, i) => {
         if (typeof item === 'object' && item !== null) {
-          html += `<div class="item-box"><h3>${labelFor(keyName)} ${i + 1}</h3><div class="grid-2">`;
+          const head = isEditions
+            ? `<div class="item-head"><h3>${labelFor(keyName)} ${i + 1}</h3><button type="button" class="btn-small btn-remove" data-remove-edition="${i}">Verwijderen</button></div>`
+            : `<h3>${labelFor(keyName)} ${i + 1}</h3>`;
+          html += `<div class="item-box">${head}<div class="grid-2">`;
           Object.keys(item).forEach(k => {
             html += buildNode(item[k], path + '.' + i + '.' + k, k, depth + 1);
           });
@@ -236,6 +252,9 @@
           html += buildNode(item, path + '.' + i, keyName, depth + 1, i + 1);
         }
       });
+      if (isEditions) {
+        html += `<button type="button" class="btn-small btn-add" data-add-edition>+ Weekend toevoegen</button>`;
+      }
       return html;
     }
     if (typeof value === 'object' && value !== null) {
@@ -262,12 +281,13 @@
     return html;
   }
 
-  function renderAllForms(){
+  function renderAllForms(activeLang){
+    activeLang = activeLang || 'nl';
     const host = document.getElementById('formHost');
     host.innerHTML = '';
     LANGS.forEach(lang => {
       const panel = document.createElement('div');
-      panel.className = 'lang-panel' + (lang === 'nl' ? ' active' : '');
+      panel.className = 'lang-panel' + (lang === activeLang ? ' active' : '');
       panel.id = 'panel_' + lang;
       panel.innerHTML = renderLangForm(lang, contentData[lang]);
       host.appendChild(panel);
@@ -286,6 +306,54 @@
     });
     return data;
   }
+
+  // ---------- Weekenden toevoegen / verwijderen (alle talen tegelijk) ----------
+  function activeLang(){
+    const b = document.querySelector('.tab-btn.active');
+    return b ? b.getAttribute('data-lang') : 'nl';
+  }
+  function editWeekends(change){
+    const keepLang = activeLang();
+    const scrollY = window.scrollY;
+    LANGS.forEach(lang => { contentData[lang] = collectLangData(lang); });
+    LANGS.forEach(lang => {
+      const d = contentData[lang];
+      d.dates = d.dates || {};
+      d.dates.editions = d.dates.editions || [];
+      change(d.dates.editions, lang);
+    });
+    renderAllForms(keepLang);
+    window.scrollTo(0, scrollY);
+  }
+  document.getElementById('formHost').addEventListener('click', (e) => {
+    const add = e.target.closest('[data-add-edition]');
+    const remove = e.target.closest('[data-remove-edition]');
+    if (add) {
+      editWeekends(eds => {
+        const last = eds[eds.length - 1] || {};
+        const fresh = {};
+        ['type','month','days','endDate','weekdays','price','priceTag','status','formLabel'].forEach(k => {
+          if (k === 'priceTag' && !('priceTag' in last)) return;
+          fresh[k] = ['type','weekdays','price','status'].includes(k) ? (last[k] || '') : '';
+        });
+        eds.push(fresh);
+      });
+      const boxes = document.querySelectorAll('.lang-panel.active [data-remove-edition]');
+      if (boxes.length) boxes[boxes.length - 1].closest('.item-box').scrollIntoView({behavior:'smooth', block:'center'});
+    } else if (remove) {
+      const i = parseInt(remove.getAttribute('data-remove-edition'), 10);
+      const label = (contentData[activeLang()].dates.editions[i] || {});
+      const name = [label.type, label.days, label.month].filter(Boolean).join(' · ') || ('Weekend ' + (i + 1));
+      if (!confirm('Weekend "' + name + '" verwijderen uit alle talen?\n\nDit wordt pas definitief als je op Publiceren klikt.')) return;
+      editWeekends(eds => { eds.splice(i, 1); });
+    }
+  });
+  // Laatste dag in alle talen gelijk houden
+  document.getElementById('formHost').addEventListener('input', (e) => {
+    const p = e.target.getAttribute('data-path') || '';
+    if (!/^dates\.editions\.\d+\.endDate$/.test(p)) return;
+    document.querySelectorAll('[data-path="' + p + '"]').forEach(el => { if (el !== e.target) el.value = e.target.value; });
+  });
 
   // ---------- Tabs ----------
   document.getElementById('langTabs').addEventListener('click', (e) => {

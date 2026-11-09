@@ -696,9 +696,10 @@
 
   /* DATA / EDITIES */
   .dates-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1080px;margin:0 auto;
+    display:flex;flex-wrap:wrap;justify-content:center;gap:18px;max-width:1080px;margin:0 auto;
   }
   .date-card{
+    flex:0 1 calc((100% - 54px) / 4);min-width:0;
     display:flex;flex-direction:column;background:var(--white);
     border:1px solid rgba(63,74,52,0.10);border-radius:20px;padding:26px 24px 24px;
     box-shadow:0 14px 34px -24px rgba(43,42,34,0.45);
@@ -750,10 +751,12 @@
     font-size:0.9rem;color:#6d6852;line-height:1.6;
   }
   @media (max-width: 980px){
-    .dates-grid{grid-template-columns:repeat(2,1fr);max-width:640px;}
+    .dates-grid{max-width:640px;}
+    .date-card{flex-basis:calc((100% - 18px) / 2);}
   }
   @media (max-width: 540px){
-    .dates-grid{grid-template-columns:1fr;max-width:400px;}
+    .dates-grid{max-width:400px;}
+    .date-card{flex-basis:100%;}
     .date-card:hover{transform:none;}
   }
 
@@ -1790,37 +1793,37 @@
       </div>
 
       <div class="dates-grid">
-        <article class="date-card is-trail reveal" data-edition="trail-2026-11" data-date="2026-11-08" data-past-label="Finalizado">
-          <span class="date-kind"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 18.5 9 7.5l3.6 6 2.2-3.6 6.7 8.6z"/><path d="M2.5 18.5h19"/></svg><span data-key="dates.editions.0.type">Trail running</span></span>
-          <p class="date-month" data-key="dates.editions.0.month">Noviembre 2026</p>
-          <p class="date-days" data-key="dates.editions.0.days">6 – 8 de noviembre</p>
+        <article class="date-card is-hike reveal" data-edition="hike-2026-12" data-date="2026-12-13" data-past-label="Finalizado">
+          <span class="date-kind"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 3.5v7.8c0 1.1-.6 1.9-1.6 2.3l-1.5.7c-1.1.5-1.9 1.4-1.9 2.6v3.1h19v-2.1c0-1.6-1-2.8-2.6-3.2l-4.5-1.2c-1.2-.3-1.9-1.1-1.9-2.3V3.5z"/><path d="M3 17.8h18.5"/><path d="M7.5 7.5h3.5"/></svg><span data-key="dates.editions.0.type">Senderismo</span></span>
+          <p class="date-month" data-key="dates.editions.0.month">Diciembre 2026</p>
+          <p class="date-days" data-key="dates.editions.0.days">11 – 13 de diciembre</p>
           <p class="date-weekdays" data-key="dates.editions.0.weekdays">de viernes a domingo</p>
-          <p class="date-price"><span data-key="dates.editions.0.price">495 € p.p.</span><span class="date-price-tag" data-key="dates.editions.0.priceTag">Precio de lanzamiento</span></p>
+          <p class="date-price"><span data-key="dates.editions.0.price">595 € p.p.</span><span class="date-price-tag" data-key="dates.editions.0.priceTag">Precio de lanzamiento</span></p>
           <p class="date-status" data-key="dates.editions.0.status">Plazas disponibles</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Solicitar esta fecha</button>
         </article>
-        <article class="date-card is-hike reveal" data-edition="hike-2026-12" data-date="2026-12-13" data-past-label="Finalizado">
-          <span class="date-kind"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 3.5v7.8c0 1.1-.6 1.9-1.6 2.3l-1.5.7c-1.1.5-1.9 1.4-1.9 2.6v3.1h19v-2.1c0-1.6-1-2.8-2.6-3.2l-4.5-1.2c-1.2-.3-1.9-1.1-1.9-2.3V3.5z"/><path d="M3 17.8h18.5"/><path d="M7.5 7.5h3.5"/></svg><span data-key="dates.editions.1.type">Senderismo</span></span>
-          <p class="date-month" data-key="dates.editions.1.month">Diciembre 2026</p>
-          <p class="date-days" data-key="dates.editions.1.days">11 – 13 de diciembre</p>
+        <article class="date-card is-trail reveal" data-edition="trail-2027-01" data-date="2027-01-31" data-past-label="Finalizado">
+          <span class="date-kind"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 18.5 9 7.5l3.6 6 2.2-3.6 6.7 8.6z"/><path d="M2.5 18.5h19"/></svg><span data-key="dates.editions.1.type">Trail running</span></span>
+          <p class="date-month" data-key="dates.editions.1.month">Enero 2027</p>
+          <p class="date-days" data-key="dates.editions.1.days">29 – 31 de enero</p>
           <p class="date-weekdays" data-key="dates.editions.1.weekdays">de viernes a domingo</p>
           <p class="date-price"><span data-key="dates.editions.1.price">595 € p.p.</span></p>
           <p class="date-status" data-key="dates.editions.1.status">Plazas disponibles</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Solicitar esta fecha</button>
         </article>
-        <article class="date-card is-trail reveal" data-edition="trail-2027-01" data-date="2027-01-31" data-past-label="Finalizado">
+        <article class="date-card is-trail reveal" data-edition="trail-2027-02" data-date="2027-02-21" data-past-label="Finalizado">
           <span class="date-kind"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 18.5 9 7.5l3.6 6 2.2-3.6 6.7 8.6z"/><path d="M2.5 18.5h19"/></svg><span data-key="dates.editions.2.type">Trail running</span></span>
-          <p class="date-month" data-key="dates.editions.2.month">Enero 2027</p>
-          <p class="date-days" data-key="dates.editions.2.days">29 – 31 de enero</p>
+          <p class="date-month" data-key="dates.editions.2.month">Febrero 2027</p>
+          <p class="date-days" data-key="dates.editions.2.days">19 – 21 de enero</p>
           <p class="date-weekdays" data-key="dates.editions.2.weekdays">de viernes a domingo</p>
           <p class="date-price"><span data-key="dates.editions.2.price">595 € p.p.</span></p>
           <p class="date-status" data-key="dates.editions.2.status">Plazas disponibles</p>
           <button type="button" class="btn btn-primary date-cta" data-key="dates.cta">Solicitar esta fecha</button>
         </article>
-        <article class="date-card is-hike reveal" data-edition="hike-2027-03" data-date="2027-03-07" data-past-label="Finalizado">
-          <span class="date-kind"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 3.5v7.8c0 1.1-.6 1.9-1.6 2.3l-1.5.7c-1.1.5-1.9 1.4-1.9 2.6v3.1h19v-2.1c0-1.6-1-2.8-2.6-3.2l-4.5-1.2c-1.2-.3-1.9-1.1-1.9-2.3V3.5z"/><path d="M3 17.8h18.5"/><path d="M7.5 7.5h3.5"/></svg><span data-key="dates.editions.3.type">Senderismo</span></span>
+        <article class="date-card is-trail reveal" data-edition="trail-2027-03" data-date="2027-03-14" data-past-label="Finalizado">
+          <span class="date-kind"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 18.5 9 7.5l3.6 6 2.2-3.6 6.7 8.6z"/><path d="M2.5 18.5h19"/></svg><span data-key="dates.editions.3.type">Trail running</span></span>
           <p class="date-month" data-key="dates.editions.3.month">Marzo 2027</p>
-          <p class="date-days" data-key="dates.editions.3.days">5 – 7 de marzo</p>
+          <p class="date-days" data-key="dates.editions.3.days">12 – 14 de marzo</p>
           <p class="date-weekdays" data-key="dates.editions.3.weekdays">de viernes a domingo</p>
           <p class="date-price"><span data-key="dates.editions.3.price">595 € p.p.</span></p>
           <p class="date-status" data-key="dates.editions.3.status">Plazas disponibles</p>
@@ -2050,10 +2053,10 @@
 
           <label for="weekend">Fin de semana deseado</label>
           <select id="weekend" name="Fin de semana deseado">
-            <option data-edition="trail-2026-11" data-key="dates.editions.0.formLabel">Fin de semana de trail — 6, 7 y 8 de noviembre de 2026 · 495 €</option>
-            <option data-edition="hike-2026-12" data-key="dates.editions.1.formLabel">Fin de semana de senderismo — 11, 12 y 13 de diciembre de 2026 · 595 €</option>
-            <option data-edition="trail-2027-01" data-key="dates.editions.2.formLabel">Fin de semana de trail — 29, 30 y 31 de enero de 2027 · 595 €</option>
-            <option data-edition="hike-2027-03" data-key="dates.editions.3.formLabel">Fin de semana de senderismo — 5, 6 y 7 de marzo de 2027 · 595 €</option>
+            <option data-edition="hike-2026-12" data-key="dates.editions.0.formLabel">Fin de semana de senderismo — 11, 12 y 13 de diciembre de 2026 · 595 €</option>
+            <option data-edition="trail-2027-01" data-key="dates.editions.1.formLabel">Fin de semana de trail — 29, 30 y 31 de enero de 2027 · 595 €</option>
+            <option data-edition="trail-2027-02" data-key="dates.editions.2.formLabel">Fin de semana de trail — 19, 20 y 21 de enero de 2027 · 595 €</option>
+            <option data-edition="trail-2027-03" data-key="dates.editions.3.formLabel">Fin de semana de trail — 12, 13 y 14 de marzo de 2027 · 595 €</option>
             <option data-key="dates.unsure">Aún no lo sé</option>
           </select>
 
@@ -2228,6 +2231,47 @@
     targets.forEach(function(t){ io.observe(t); });
   }
 
+  // ---- Data-sectie: kaartjes + keuzelijst opbouwen uit het CMS ----
+  // Zo kan het aantal weekenden vrij worden aangepast in het CMS.
+  // Lukt het laden niet, dan blijven de vaste kaartjes uit de HTML staan.
+  function renderDates(data){
+    var eds = data && data.dates && data.dates.editions;
+    var grid = document.querySelector('.dates-grid');
+    if (!Array.isArray(eds) || !eds.length || !grid) return;
+    function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+    var first = grid.querySelector('.date-card');
+    var pastLabel = first ? first.getAttribute('data-past-label') : '';
+    var firstCta = first ? first.querySelector('.date-cta') : null;
+    var ctaText = firstCta ? firstCta.innerHTML : '';
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>';
+    var html = '';
+    eds.forEach(function(ed, i){
+      var k = 'dates.editions.' + i + '.';
+      html += '<article class="date-card reveal" data-edition="edition-' + i + '" data-date="' + esc(ed.endDate) + '" data-past-label="' + esc(pastLabel) + '">'
+        + '<span class="date-kind">' + svg + '<span data-key="' + k + 'type"></span></span>'
+        + '<p class="date-month" data-key="' + k + 'month"></p>'
+        + '<p class="date-days" data-key="' + k + 'days"></p>'
+        + '<p class="date-weekdays" data-key="' + k + 'weekdays"></p>'
+        + '<p class="date-price"><span data-key="' + k + 'price"></span>'
+        + (ed.priceTag ? '<span class="date-price-tag" data-key="' + k + 'priceTag"></span>' : '') + '</p>'
+        + '<p class="date-status" data-key="' + k + 'status"></p>'
+        + '<button type="button" class="btn btn-primary date-cta" data-key="dates.cta">' + ctaText + '</button>'
+        + '</article>';
+    });
+    grid.innerHTML = html;
+    var sel = document.getElementById('weekend');
+    if (sel){
+      sel.querySelectorAll('option[data-edition]').forEach(function(o){ o.remove(); });
+      var unsure = sel.querySelector('option[data-key="dates.unsure"]');
+      eds.forEach(function(ed, i){
+        var o = document.createElement('option');
+        o.setAttribute('data-edition', 'edition-' + i);
+        o.setAttribute('data-key', 'dates.editions.' + i + '.formLabel');
+        sel.insertBefore(o, unsure);
+      });
+    }
+  }
+
   // ---- Content loader (CMS) ----
   function applyContent(data){
     document.querySelectorAll('[data-key]').forEach(function(el){
@@ -2244,7 +2288,20 @@
   // ---- Data-sectie: kaart koppelen aan het aanvraagformulier ----
   function initDates(){
     var today = new Date(); today.setHours(0,0,0,0);
+    var ICONS = {
+      trail: '<path d="M2.5 18.5 9 7.5l3.6 6 2.2-3.6 6.7 8.6z"/><path d="M2.5 18.5h19"/>',
+      hike: '<path d="M7.5 3.5v7.8c0 1.1-.6 1.9-1.6 2.3l-1.5.7c-1.1.5-1.9 1.4-1.9 2.6v3.1h19v-2.1c0-1.6-1-2.8-2.6-3.2l-4.5-1.2c-1.2-.3-1.9-1.1-1.9-2.3V3.5z"/><path d="M3 17.8h18.5"/><path d="M7.5 7.5h3.5"/>'
+    };
     document.querySelectorAll('.date-card').forEach(function(card){
+      // Icoon en kleur volgen het type uit het CMS (hike/senderismo = schoen, anders berg)
+      var kindEl = card.querySelector('.date-kind span');
+      var svg = card.querySelector('.date-kind svg');
+      if (kindEl && svg){
+        var kind = /hike|hiking|wandel|senderismo/i.test(kindEl.textContent) ? 'hike' : 'trail';
+        svg.innerHTML = ICONS[kind];
+        card.classList.toggle('is-hike', kind === 'hike');
+        card.classList.toggle('is-trail', kind === 'trail');
+      }
       var end = card.getAttribute('data-date');
       var btn = card.querySelector('.date-cta');
       if (end && new Date(end + 'T23:59:59') < today){
@@ -2479,7 +2536,7 @@
 
   fetch('../content-es.json?v=' + Date.now())
     .then(function(r){ return r.json(); })
-    .then(function(data){ applyContent(data); })
+    .then(function(data){ renderDates(data); applyContent(data); })
     .catch(function(err){ console.warn('No se pudo cargar content.json de Wildcore, se mantiene el texto por defecto.', err); })
     .finally(function(){ initSite(); });
 </script>

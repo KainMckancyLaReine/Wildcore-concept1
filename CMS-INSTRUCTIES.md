@@ -28,10 +28,18 @@ contactgegevens) in alle drie de talen, plus alle foto's + het logo (door een
 nieuwe foto te uploaden op dezelfde plek). Geüploade foto's worden in de
 browser automatisch verkleind, zodat de site snel blijft.
 
+**Agenda (Data & edities):** de klant kan zelf weekenden toevoegen en
+verwijderen (knoppen in het CMS; dit gebeurt in alle talen tegelijk). De
+kaartjes op de site én de keuzelijst in het aanvraagformulier worden
+automatisch uit deze lijst opgebouwd. Per weekend:
+- *Soort weekend*: bevat het woord hike/hiking/wandel/senderismo, dan krijgt
+  het kaartje het schoen-icoon; anders het berg-icoon (trailrun).
+- *Laatste dag*: na deze datum toont het kaartje "Afgelopen" en verdwijnt het
+  uit de keuzelijst. Deze datum is in alle talen gelijk.
+
 **Niet, met opzet:**
 - De menu-items en footer-tekst (vaste sitenavigatie).
-- De keuzelijst met weekenden in het contactformulier, en het e-mailadres
-  waar het formulier naartoe stuurt.
+- Het e-mailadres waar het formulier naartoe stuurt.
 - De inhoud van het JSON-LD-blok in de `<head>` (waaronder de FAQ-gegevens
   voor Google). Wijzigt de klant de FAQ-teksten, werk dan het `FAQPage`-blok
   in de drie HTML-bestanden bij.
