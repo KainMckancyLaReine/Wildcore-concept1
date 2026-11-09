@@ -64,7 +64,57 @@
   "gallery": {
     "eyebrow": "In beeld",
     "title": "De Sierra Calderona, van dichtbij",
-    "text": "Bergpaden door dennenbos, kloven met stromend water en een villa met uitzicht op de bergen. Klik op een foto om hem groot te bekijken."
+    "text": "Bergpaden door dennenbos, kloven met stromend water en een villa met uitzicht op de bergen. Klik op een foto om hem groot te bekijken.",
+    "photos": [
+      {
+        "image": "images/trail-runner-forest.jpg",
+        "alt": "Trailrunner in het dennenbos"
+      },
+      {
+        "image": "images/ruins-viewpoint.jpg",
+        "alt": "Uitzicht bij oude ruïnes nabij Casinos"
+      },
+      {
+        "image": "images/pool-sunset.jpg?v=2",
+        "alt": "Zwembad bij zonsondergang"
+      },
+      {
+        "image": "images/canyon-cliffs.jpg",
+        "alt": "Uitzicht over de kloof"
+      },
+      {
+        "image": "images/river-canyon.jpg",
+        "alt": "Rivier door een kloof"
+      },
+      {
+        "image": "images/villa-exterior.jpg?v=2",
+        "alt": "Villa El Pinar exterieur"
+      },
+      {
+        "image": "images/waterfall-steps.jpg",
+        "alt": "Watervallen bij de Rebalsadors"
+      },
+      {
+        "image": "images/valley-view.jpg",
+        "alt": "Vergezicht over de vallei"
+      },
+      {
+        "image": "images/villa-flowers.jpg?v=2",
+        "alt": "Villa El Pinar met bloeiende klimplant"
+      },
+      {
+        "image": "images/mountain-steps-trail.jpg",
+        "alt": "Houten trappen tegen de rotswand"
+      },
+      {
+        "image": "images/trail-descent-autumn.jpg",
+        "alt": "Afdaling over een herfstpad"
+      },
+      {
+        "image": "images/host-portrait.jpg",
+        "alt": "Maurizio, je gastheer"
+      }
+    ]
   },
   "program": {
     "eyebrow": "Weekend indeling",

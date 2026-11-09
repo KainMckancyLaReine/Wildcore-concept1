@@ -64,7 +64,57 @@
   "gallery": {
     "eyebrow": "Gallery",
     "title": "The Sierra Calderona, up close",
-    "text": "Mountain trails through pine forest, canyons with running water and a villa with views of the mountains. Tap any photo to view it full size."
+    "text": "Mountain trails through pine forest, canyons with running water and a villa with views of the mountains. Tap any photo to view it full size.",
+    "photos": [
+      {
+        "image": "../images/trail-runner-forest.jpg",
+        "alt": "Trail runner in the pine forest"
+      },
+      {
+        "image": "../images/ruins-viewpoint.jpg",
+        "alt": "Viewpoint at old ruins near Casinos"
+      },
+      {
+        "image": "../images/pool-sunset.jpg?v=2",
+        "alt": "Swimming pool at sunset"
+      },
+      {
+        "image": "../images/canyon-cliffs.jpg",
+        "alt": "View over the canyon"
+      },
+      {
+        "image": "../images/river-canyon.jpg",
+        "alt": "River running through a canyon"
+      },
+      {
+        "image": "../images/villa-exterior.jpg?v=2",
+        "alt": "Villa El Pinar exterior"
+      },
+      {
+        "image": "../images/waterfall-steps.jpg",
+        "alt": "Waterfalls at the Rebalsadors"
+      },
+      {
+        "image": "../images/valley-view.jpg",
+        "alt": "Panoramic view over the valley"
+      },
+      {
+        "image": "../images/villa-flowers.jpg?v=2",
+        "alt": "Villa El Pinar with flowering climbing plant"
+      },
+      {
+        "image": "../images/mountain-steps-trail.jpg",
+        "alt": "Wooden steps against the rock face"
+      },
+      {
+        "image": "../images/trail-descent-autumn.jpg",
+        "alt": "Descending an autumn trail"
+      },
+      {
+        "image": "../images/host-portrait.jpg",
+        "alt": "Maurizio, your host"
+      }
+    ]
   },
   "program": {
     "eyebrow": "Weekend schedule",

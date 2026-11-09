@@ -64,7 +64,57 @@
   "gallery": {
     "eyebrow": "Galería",
     "title": "La Sierra Calderona, de cerca",
-    "text": "Senderos de montaña entre pinares, barrancos con agua corriente y una villa con vistas a las montañas. Toca cualquier foto para verla a pantalla completa."
+    "text": "Senderos de montaña entre pinares, barrancos con agua corriente y una villa con vistas a las montañas. Toca cualquier foto para verla a pantalla completa.",
+    "photos": [
+      {
+        "image": "../images/trail-runner-forest.jpg",
+        "alt": "Corredor de trail en el pinar"
+      },
+      {
+        "image": "../images/ruins-viewpoint.jpg",
+        "alt": "Mirador junto a antiguas ruinas cerca de Casinos"
+      },
+      {
+        "image": "../images/pool-sunset.jpg?v=2",
+        "alt": "Piscina al atardecer"
+      },
+      {
+        "image": "../images/canyon-cliffs.jpg",
+        "alt": "Vista sobre el barranco"
+      },
+      {
+        "image": "../images/river-canyon.jpg",
+        "alt": "Río atravesando un barranco"
+      },
+      {
+        "image": "../images/villa-exterior.jpg?v=2",
+        "alt": "Exterior de Villa El Pinar"
+      },
+      {
+        "image": "../images/waterfall-steps.jpg",
+        "alt": "Cascadas en los Rebalsadors"
+      },
+      {
+        "image": "../images/valley-view.jpg",
+        "alt": "Vista panorámica del valle"
+      },
+      {
+        "image": "../images/villa-flowers.jpg?v=2",
+        "alt": "Villa El Pinar con planta trepadora en flor"
+      },
+      {
+        "image": "../images/mountain-steps-trail.jpg",
+        "alt": "Escalones de madera junto a la pared rocosa"
+      },
+      {
+        "image": "../images/trail-descent-autumn.jpg",
+        "alt": "Bajada por un sendero otoñal"
+      },
+      {
+        "image": "../images/host-portrait.jpg",
+        "alt": "Maurizio, tu anfitrión"
+      }
+    ]
   },
   "program": {
     "eyebrow": "Programa del fin de semana",

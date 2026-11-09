@@ -1195,27 +1195,29 @@
   }
   .g-item:hover .g-more{background:rgba(20,22,14,0.42);}
   .g-item:nth-child(n+9){display:none;}
-  .g-item:nth-child(8) .g-more{display:flex;}
-  .g-item:nth-child(8) .g-zoom{display:none;}
+  .g-more-d{display:flex;}
+  .g-item.more-d .g-zoom{display:none;}
 
   @media (max-width: 860px){
     .gallery-mosaic{grid-template-columns:repeat(3,1fr);gap:12px;}
     .g-item:nth-child(n+7){display:none;}
-    .g-item:nth-child(8) .g-more{display:none;}
-    .g-item:nth-child(6) .g-more{display:flex;}
-    .g-item:nth-child(6) .g-zoom{display:none;}
+    .g-more-d{display:none;}
+    .g-item.more-d .g-zoom{display:flex;}
+    .g-more-t{display:flex;}
+    .g-item.more-t .g-zoom{display:none;}
   }
   @media (max-width: 620px){
     .gallery-mosaic{grid-template-columns:repeat(2,1fr);gap:10px;}
     .g-item{border-radius:12px;}
     .g-item:nth-child(n+5){display:none;}
-    .g-item:nth-child(6) .g-more{display:none;}
-    .g-item:nth-child(4) .g-more{display:flex;font-size:1rem;}
+    .g-more-t{display:none;}
+    .g-item.more-t .g-zoom{display:flex;}
+    .g-more-m{display:flex;font-size:1rem;}
     .g-item:hover{transform:none;}
     .g-item:hover img{transform:none;}
     .g-zoom{width:29px;height:29px;right:8px;bottom:8px;opacity:1;transform:none;}
     .g-zoom svg{width:14px;height:14px;}
-    .g-item:nth-child(4) .g-zoom{display:none;}
+    .g-item.more-m .g-zoom{display:none;}
   }
 
   /* Lightbox */
@@ -1467,28 +1469,28 @@
           <img loading="lazy" decoding="async" width="1400" height="1050" src="../images/pool-sunset.jpg?v=2" alt="Swimming pool at sunset">
           <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21M10.5 7.8v5.4M7.8 10.5h5.4"/></svg></span>
         </button>
-        <button class="g-item" type="button" data-index="3" aria-label="View photo: View over the canyon">
+        <button class="g-item more-m" type="button" data-index="3" aria-label="View photo: View over the canyon">
           <img loading="lazy" decoding="async" width="1400" height="1050" src="../images/canyon-cliffs.jpg" alt="View over the canyon">
           <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21M10.5 7.8v5.4M7.8 10.5h5.4"/></svg></span>
-          <span class="g-more" aria-hidden="true">+8 photos</span>
+          <span class="g-more g-more-m" aria-hidden="true">+8 photos</span>
         </button>
         <button class="g-item" type="button" data-index="4" aria-label="View photo: River running through a canyon">
           <img loading="lazy" decoding="async" width="1050" height="1400" src="../images/river-canyon.jpg" alt="River running through a canyon">
           <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21M10.5 7.8v5.4M7.8 10.5h5.4"/></svg></span>
         </button>
-        <button class="g-item" type="button" data-index="5" aria-label="View photo: Villa El Pinar exterior">
+        <button class="g-item more-t" type="button" data-index="5" aria-label="View photo: Villa El Pinar exterior">
           <img loading="lazy" decoding="async" width="1400" height="1050" src="../images/villa-exterior.jpg?v=2" alt="Villa El Pinar exterior">
           <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21M10.5 7.8v5.4M7.8 10.5h5.4"/></svg></span>
-          <span class="g-more" aria-hidden="true">+6 photos</span>
+          <span class="g-more g-more-t" aria-hidden="true">+6 photos</span>
         </button>
         <button class="g-item" type="button" data-index="6" aria-label="View photo: Waterfalls at the Rebalsadors">
           <img loading="lazy" decoding="async" width="1400" height="1050" src="../images/waterfall-steps.jpg" alt="Waterfalls at the Rebalsadors">
           <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21M10.5 7.8v5.4M7.8 10.5h5.4"/></svg></span>
         </button>
-        <button class="g-item" type="button" data-index="7" aria-label="View photo: Panoramic view over the valley">
+        <button class="g-item more-d" type="button" data-index="7" aria-label="View photo: Panoramic view over the valley">
           <img loading="lazy" decoding="async" width="1400" height="1050" src="../images/valley-view.jpg" alt="Panoramic view over the valley">
           <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21M10.5 7.8v5.4M7.8 10.5h5.4"/></svg></span>
-          <span class="g-more" aria-hidden="true">+4 photos</span>
+          <span class="g-more g-more-d" aria-hidden="true">+4 photos</span>
         </button>
         <button class="g-item" type="button" data-index="8" aria-label="View photo: Villa El Pinar with flowering climbing plant">
           <img loading="lazy" decoding="async" width="1050" height="1400" src="../images/villa-flowers.jpg?v=2" alt="Villa El Pinar with flowering climbing plant">
@@ -2276,6 +2278,39 @@
     }
   }
 
+  // ---- Galerij opbouwen uit het CMS (max. 20 foto's) ----
+  // Lukt het laden niet, dan blijven de vaste foto's uit de HTML staan.
+  function renderGallery(data){
+    var photos = data && data.gallery && data.gallery.photos;
+    var grid = document.getElementById('galleryMosaic');
+    if (!Array.isArray(photos) || !grid) return;
+    photos = photos.filter(function(p){ return p && p.image; }).slice(0, 20);
+    if (!photos.length) return;
+    function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+    var first = grid.querySelector('.g-item');
+    var ariaPrefix = first ? (first.getAttribute('aria-label') || '').split(':')[0] : '';
+    var moreEl = grid.querySelector('.g-more');
+    var moreTpl = moreEl ? moreEl.textContent : '+0';
+    var zoom = first && first.querySelector('.g-zoom') ? first.querySelector('.g-zoom').outerHTML : '';
+    // Laatste zichtbare tegel per schermbreedte: telefoon 4, tablet 6, desktop 8
+    var shown = { m: 4, t: 6, d: 8 };
+    var html = '';
+    photos.forEach(function(p, i){
+      var more = '', cls = 'g-item';
+      Object.keys(shown).forEach(function(k){
+        var rest = photos.length - shown[k];
+        if (i === shown[k] - 1 && rest > 0){
+          cls += ' more-' + k;
+          more += '<span class="g-more g-more-' + k + '" aria-hidden="true">' + esc(moreTpl.replace(/\d+/, rest)) + '</span>';
+        }
+      });
+      html += '<button class="' + cls + '" type="button" data-index="' + i + '" aria-label="' + esc(ariaPrefix + ': ' + (p.alt || '')) + '">'
+        + '<img loading="lazy" decoding="async" src="' + esc(p.image) + '" alt="' + esc(p.alt) + '">'
+        + zoom + more + '</button>';
+    });
+    grid.innerHTML = html;
+  }
+
   // ---- Content loader (CMS) ----
   function applyContent(data){
     document.querySelectorAll('[data-key]').forEach(function(el){
@@ -2540,7 +2575,7 @@
 
   fetch('../content-en.json?v=' + Date.now())
     .then(function(r){ return r.json(); })
-    .then(function(data){ renderDates(data); applyContent(data); })
+    .then(function(data){ renderDates(data); renderGallery(data); applyContent(data); })
     .catch(function(err){ console.warn('Wildcore content.json could not be loaded, default text remains.', err); })
     .finally(function(){ initSite(); });
 </script>

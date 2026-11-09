@@ -81,6 +81,16 @@
   .btn-remove:hover{background:#a3492e;color:#fff;border-color:#a3492e;}
   .btn-add{background:var(--green-deep);color:#fff;border:0;padding:11px 20px;font-size:0.88rem;}
   .btn-add:hover{opacity:0.9;}
+  .photo-row{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:center;}
+  .photo-row img{width:120px;height:90px;object-fit:cover;border-radius:10px;background:#e7ddc7;display:block;}
+  .photo-row .field{margin-bottom:0;}
+  .photo-actions{display:flex;flex-direction:column;gap:8px;align-items:stretch;}
+  .btn-replace{background:transparent;color:var(--green-deep);border:1.5px solid rgba(63,74,52,0.35);text-align:center;}
+  .btn-replace:hover{background:var(--green-deep);color:#fff;}
+  .photo-new{outline:2px solid var(--terracotta);}
+  .photo-count{font-size:0.85rem;color:#8a8266;margin-left:12px;}
+  .btn-add.is-disabled{opacity:0.45;pointer-events:none;}
+  @media (max-width:640px){.photo-row{grid-template-columns:90px 1fr;}.photo-row img{width:90px;height:68px;}.photo-actions{grid-column:1/3;flex-direction:row;}}
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media (max-width:640px){.grid-2{grid-template-columns:1fr;}}
 
@@ -232,6 +242,9 @@
       const displayLabel = labelFor(keyName) + (indexSuffix ? ' ' + indexSuffix : '');
       return `<div class="field"><label for="${id}">${displayLabel}</label>${inputEl}</div>`;
     }
+    if (Array.isArray(value) && path === 'gallery.photos') {
+      return buildGalleryPhotos(value);
+    }
     if (Array.isArray(value)) {
       let html = '';
       const isEditions = path === 'dates.editions';
@@ -266,6 +279,53 @@
       return html;
     }
     return '';
+  }
+
+  // ---------- Galerij-foto's ----------
+  const MAX_GALLERY = 20;
+  function buildGalleryPhotos(photos){
+    let html = `<h3>Galerij-foto's</h3><p class="note">De eerste 8 foto's staan op de pagina; de rest zie je via de "+ foto's"-tegel. Toevoegen, vervangen en verwijderen gebeurt in alle talen tegelijk; de omschrijving vul je per taal in. Maximaal ${MAX_GALLERY} foto's.</p>`;
+    photos.forEach((p, i) => {
+      const src = changedImages[p.image] || ('../' + p.image);
+      const id = 'f_gallery_photos_' + i + '_alt';
+      html += `<div class="item-box${changedImages[p.image] ? ' photo-new' : ''}"><div class="photo-row">
+        <img src="${escapeAttr(src)}" alt="">
+        <div class="field"><label for="${id}">Foto ${i + 1} — omschrijving</label>
+          <input type="hidden" data-path="gallery.photos.${i}.image" value="${escapeAttr(p.image)}">
+          <input type="text" id="${id}" data-path="gallery.photos.${i}.alt" value="${escapeAttr(p.alt || '')}"></div>
+        <div class="photo-actions">
+          <label class="btn-small btn-replace">Vervangen<input type="file" accept="image/*" data-gallery-replace="${i}" hidden></label>
+          <button type="button" class="btn-small btn-remove" data-gallery-remove="${i}">Verwijderen</button>
+        </div></div></div>`;
+    });
+    const full = photos.length >= MAX_GALLERY;
+    html += `<label class="btn-small btn-add${full ? ' is-disabled' : ''}">+ Foto toevoegen<input type="file" accept="image/*" multiple data-gallery-add hidden${full ? ' disabled' : ''}></label>`
+         + `<span class="photo-count">${photos.length} van ${MAX_GALLERY} foto's</span>`;
+    return html;
+  }
+
+  // Foto verkleinen zodat de website snel blijft laden
+  function resizeImage(file, isPng, cb){
+    const maxSide = isPng ? 512 : 1400;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        let { width: w, height: h } = img;
+        const scale = Math.min(1, maxSide / Math.max(w, h));
+        w = Math.round(w * scale); h = Math.round(h * scale);
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        cb(isPng ? canvas.toDataURL('image/png') : canvas.toDataURL('image/jpeg', 0.72));
+      };
+      img.onerror = () => cb(reader.result);
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  }
+  function newGalleryPath(){
+    return 'images/gallery-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 6) + '.jpg';
   }
 
   function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -312,20 +372,69 @@
     const b = document.querySelector('.tab-btn.active');
     return b ? b.getAttribute('data-lang') : 'nl';
   }
-  function editWeekends(change){
+  function editList(section, key, change){
     const keepLang = activeLang();
     const scrollY = window.scrollY;
     LANGS.forEach(lang => { contentData[lang] = collectLangData(lang); });
     LANGS.forEach(lang => {
       const d = contentData[lang];
-      d.dates = d.dates || {};
-      d.dates.editions = d.dates.editions || [];
-      change(d.dates.editions, lang);
+      d[section] = d[section] || {};
+      d[section][key] = d[section][key] || [];
+      change(d[section][key], lang);
     });
     renderAllForms(keepLang);
     window.scrollTo(0, scrollY);
   }
+  function editWeekends(change){ editList('dates', 'editions', change); }
+
+  document.getElementById('formHost').addEventListener('change', (e) => {
+    const add = e.target.closest('[data-gallery-add]');
+    const replace = e.target.closest('[data-gallery-replace]');
+    if (!add && !replace) return;
+    const files = Array.prototype.slice.call(e.target.files || []);
+    if (!files.length) return;
+    if (replace) {
+      const i = parseInt(replace.getAttribute('data-gallery-replace'), 10);
+      resizeImage(files[0], false, (dataUrl) => {
+        const path = newGalleryPath();
+        changedImages[path] = dataUrl;
+        editList('gallery', 'photos', photos => {
+          if (!photos[i]) return;
+          if (changedImages[photos[i].image] && photos[i].image.indexOf('images/gallery-') === 0) delete changedImages[photos[i].image];
+          photos[i].image = path;
+        });
+      });
+      return;
+    }
+    const room = MAX_GALLERY - (contentData.nl.gallery && contentData.nl.gallery.photos ? contentData.nl.gallery.photos.length : 0);
+    if (files.length > room) alert('Er kunnen nog ' + Math.max(room, 0) + " foto's bij (maximaal " + MAX_GALLERY + '). De eerste ' + Math.max(room, 0) + ' worden toegevoegd.');
+    const todo = files.slice(0, Math.max(room, 0));
+    let done = 0; const added = new Array(todo.length);
+    todo.forEach((file, n) => {
+      resizeImage(file, false, (dataUrl) => {
+        const path = newGalleryPath() + '';
+        changedImages[path] = dataUrl;
+        added[n] = path;
+        if (++done === todo.length) {
+          editList('gallery', 'photos', photos => {
+            added.forEach(p => { if (photos.length < MAX_GALLERY) photos.push({ image: p, alt: '' }); });
+          });
+        }
+      });
+    });
+  });
   document.getElementById('formHost').addEventListener('click', (e) => {
+    const gRemove = e.target.closest('[data-gallery-remove]');
+    if (gRemove) {
+      const i = parseInt(gRemove.getAttribute('data-gallery-remove'), 10);
+      if (!confirm('Foto ' + (i + 1) + ' verwijderen uit de galerij (alle talen)?\n\nDit wordt pas definitief als je op Publiceren klikt.')) return;
+      editList('gallery', 'photos', photos => {
+        const p = photos[i];
+        if (p && changedImages[p.image] && p.image.indexOf('images/gallery-') === 0) delete changedImages[p.image];
+        photos.splice(i, 1);
+      });
+      return;
+    }
     const add = e.target.closest('[data-add-edition]');
     const remove = e.target.closest('[data-remove-edition]');
     if (add) {

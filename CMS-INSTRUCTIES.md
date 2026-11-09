@@ -28,6 +28,11 @@ contactgegevens) in alle drie de talen, plus alle foto's + het logo (door een
 nieuwe foto te uploaden op dezelfde plek). Geüploade foto's worden in de
 browser automatisch verkleind, zodat de site snel blijft.
 
+**Galerij (In beeld):** de klant kan tot 20 foto's toevoegen, vervangen en
+verwijderen (in alle talen tegelijk; de omschrijving per taal). Op de pagina
+staan er 8 (tablet 6, telefoon 4); de laatste tegel toont automatisch
+"+N foto's". Nieuwe foto's worden opgeslagen als `images/gallery-….jpg`.
+
 **Agenda (Data & edities):** de klant kan zelf weekenden toevoegen en
 verwijderen (knoppen in het CMS; dit gebeurt in alle talen tegelijk). De
 kaartjes op de site én de keuzelijst in het aanvraagformulier worden
