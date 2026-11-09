@@ -11,111 +11,223 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700&amp;family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#f8f2e6; --cream-deep:#eadec8; --green-deep:#3f4a34; --green-mid:#5c6b48;
-    --sage:#a79b6e; --terracotta:#bd5f31; --terracotta-dark:#a14f26; --ink:#2b2a22; --white:#fff;
+    --cream:#f8f2e6; --cream-deep:#eadec8; --paper:#fffdf8; --line:#e8dcc4; --line-soft:#f0e7d6;
+    --green-deep:#3f4a34; --green-mid:#5c6b48; --sage:#a79b6e; --muted:#7d7860;
+    --terracotta:#bd5f31; --terracotta-dark:#a14f26; --ink:#2b2a22; --white:#fff;
+    --danger:#a3492e; --ok:#4f6b3c;
     --shadow:0 20px 50px -20px rgba(43,42,34,0.35);
+    --shadow-soft:0 1px 2px rgba(43,42,34,0.05), 0 10px 28px -20px rgba(43,42,34,0.35);
+    --radius:16px; --topbar-h:68px;
   }
   *{box-sizing:border-box;}
-  body{margin:0;font-family:'Work Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.5;}
+  html{scroll-padding-top:calc(var(--topbar-h) + 20px);}
+  body{margin:0;font-family:'Work Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;}
   h1,h2,h3{font-family:'Fraunces',serif;color:var(--green-deep);margin:0 0 0.3em;}
   a{color:var(--terracotta-dark);}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  .hidden{display:none !important;}
 
-  /* LOGIN SCREEN */
-  #loginScreen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
-  .login-card{background:var(--white);border-radius:20px;box-shadow:var(--shadow);padding:44px 40px;max-width:380px;width:100%;text-align:center;}
-  .login-card img{height:52px;width:52px;border-radius:50%;margin-bottom:14px;}
-  .login-card p.sub{color:#6c6852;font-size:0.92rem;margin-bottom:1.6em;}
-  .field{text-align:left;margin-bottom:16px;}
-  .field label{display:block;font-size:0.82rem;font-weight:600;color:var(--green-deep);margin-bottom:6px;}
-  .field input, .field textarea{
-    width:100%;padding:12px 14px;border:1.5px solid #e3d9c4;border-radius:10px;
-    font-family:'Work Sans',sans-serif;font-size:0.95rem;background:#fbf7ef;
-  }
-  .field textarea{resize:vertical;min-height:70px;}
+  /* ---------- Knoppen & meldingen ---------- */
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:8px;
-    padding:13px 28px;border-radius:100px;font-weight:600;font-size:0.95rem;
-    border:none;cursor:pointer;transition:all .2s ease;font-family:'Work Sans',sans-serif;
+    padding:13px 28px;border-radius:100px;font-weight:600;font-size:0.95rem;text-decoration:none;
+    border:none;cursor:pointer;transition:background .2s ease,color .2s ease,border-color .2s ease,opacity .2s ease;font-family:'Work Sans',sans-serif;
   }
-  .btn-primary{background:var(--terracotta);color:var(--white);width:100%;}
+  .btn-sm{padding:8px 16px;font-size:0.84rem;}
+  .btn-primary{background:var(--terracotta);color:var(--white);}
   .btn-primary:hover{background:var(--terracotta-dark);}
   .btn-primary:disabled{background:#c9c0a8;cursor:not-allowed;}
-  .btn-ghost{background:transparent;color:var(--green-deep);border:1.5px solid var(--green-deep);}
-  .btn-ghost:hover{background:var(--green-deep);color:var(--white);}
+  .btn-ghost{background:transparent;color:var(--green-deep);border:1.5px solid rgba(63,74,52,0.3);}
+  .btn-ghost:hover{background:var(--green-deep);color:var(--white);border-color:var(--green-deep);}
+  .btn-small{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:7px 14px;font-size:0.8rem;border-radius:100px;cursor:pointer;font-family:inherit;font-weight:600;white-space:nowrap;transition:all .2s ease;}
+  .btn-remove{background:transparent;color:var(--danger);border:1.5px solid #e2c3b7;}
+  .btn-remove:hover{background:var(--danger);color:#fff;border-color:var(--danger);}
+  .btn-add{background:var(--green-deep);color:#fff;border:0;padding:11px 20px;font-size:0.88rem;}
+  .btn-add:hover{background:var(--green-mid);}
+  .btn-add.is-disabled{opacity:0.45;pointer-events:none;}
+  .btn-replace{background:var(--paper);color:var(--green-deep);border:1.5px solid rgba(63,74,52,0.3);}
+  .btn-replace:hover{background:var(--green-deep);color:#fff;border-color:var(--green-deep);}
+  :focus-visible{outline:2px solid var(--terracotta);outline-offset:2px;}
+
   .msg{font-size:0.86rem;margin-top:14px;border-radius:10px;padding:10px 14px;}
   .msg.error{background:#fbe4d9;color:#8a3418;}
   .msg.success{background:#e3ecda;color:var(--green-deep);}
   .msg.info{background:#eee6d4;color:#6c6852;}
-  .hidden{display:none !important;}
+  .msg.warn{background:#fbeedd;color:#8a4a1c;}
+  .note{font-size:0.86rem;color:#6c6852;background:var(--cream);border:1px solid var(--line-soft);border-radius:12px;padding:11px 14px;margin:0 0 18px;line-height:1.55;}
 
-  /* EDITOR SHELL */
-  #editorScreen header{
-    position:sticky;top:0;z-index:20;background:rgba(248,242,230,0.96);backdrop-filter:blur(8px);
-    border-bottom:1px solid rgba(63,74,52,0.12);padding:16px 0;
+  /* ---------- Inloggen ---------- */
+  #loginScreen{
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;
+    background:linear-gradient(180deg, rgba(30,34,24,0.45), rgba(30,34,24,0.7)), url('../images/valley-view.jpg') center/cover no-repeat;
   }
-  #editorScreen header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
-  .brand-row{display:flex;align-items:center;gap:10px;}
+  .login-card{background:var(--paper);border-radius:22px;box-shadow:var(--shadow);padding:42px 38px 36px;max-width:390px;width:100%;text-align:center;}
+  .login-card img{height:64px;width:64px;border-radius:50%;margin-bottom:14px;}
+  .login-card h1{font-size:1.6rem;}
+  .login-card p.sub{color:var(--muted);font-size:0.92rem;margin:0 0 1.6em;}
+  .login-card .btn-primary{width:100%;margin-top:4px;}
+
+  /* ---------- Velden ---------- */
+  .field{text-align:left;margin-bottom:16px;min-width:0;}
+  .field label{display:block;font-size:0.8rem;font-weight:600;color:var(--green-deep);margin-bottom:6px;letter-spacing:0.01em;}
+  .field input, .field textarea{
+    width:100%;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;color:var(--ink);
+    font-family:'Work Sans',sans-serif;font-size:0.95rem;line-height:1.5;background:var(--white);
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .field input:hover, .field textarea:hover{border-color:#d6c7a8;}
+  .field input:focus, .field textarea:focus{outline:none;border-color:var(--green-mid);box-shadow:0 0 0 3px rgba(92,107,72,0.15);}
+  .field textarea{resize:vertical;min-height:48px;overflow:hidden;}
+  .field.is-dirty label::after{content:"gewijzigd";margin-left:8px;font-size:0.68rem;font-weight:600;color:var(--terracotta);text-transform:uppercase;letter-spacing:0.08em;}
+  .field.is-dirty input, .field.is-dirty textarea{border-color:#e3b79c;background:#fffaf5;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;}
+  .grid-2 > .field.wide, .grid-2 > h3, .grid-2 > .item-box, .grid-2 > .sub-block{grid-column:1/-1;}
+
+  /* ---------- Editor: bovenbalk ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:30;height:var(--topbar-h);
+    background:rgba(255,253,248,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{max-width:1280px;height:100%;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:20px;}
+  .brand-row{display:flex;align-items:center;gap:10px;flex-shrink:0;}
   .brand-row img{height:36px;width:36px;border-radius:50%;}
-  .brand-row span{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;}
-  .header-actions{display:flex;align-items:center;gap:12px;}
-
-  .tabs{display:flex;gap:8px;margin:28px 0 8px;flex-wrap:wrap;}
+  .brand-row span{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;color:var(--green-deep);}
+  .tabs{display:flex;gap:4px;padding:4px;background:var(--cream);border:1px solid var(--line);border-radius:100px;margin:0 auto;}
   .tab-btn{
-    background:var(--cream-deep);border:1px solid rgba(63,74,52,0.15);border-radius:100px;
-    padding:9px 20px;font-size:0.88rem;font-weight:600;color:var(--green-deep);cursor:pointer;
+    background:transparent;border:0;border-radius:100px;padding:7px 16px;font-family:inherit;
+    font-size:0.86rem;font-weight:600;color:var(--green-deep);cursor:pointer;transition:background .2s ease,color .2s ease;white-space:nowrap;
   }
+  .tab-btn:hover{background:rgba(63,74,52,0.08);}
   .tab-btn.active{background:var(--green-deep);color:var(--white);}
+  .header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+
+  /* ---------- Editor: indeling ---------- */
+  .layout{max-width:1280px;margin:0 auto;padding:28px 24px 40px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;align-items:start;}
+  .sidebar{position:sticky;top:calc(var(--topbar-h) + 24px);}
+  .layout > *{min-width:0;}
+  @media (max-height: 780px) and (min-width: 961px){ .side-tip{display:none;} .nav-item{padding:7px 12px;} }
+  .side-title{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--muted);margin:0 0 10px 12px;}
+  #sectionNav{display:flex;flex-direction:column;gap:2px;}
+  .nav-item{
+    display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;background:transparent;
+    padding:9px 12px;border-radius:10px;font-family:inherit;font-size:0.92rem;color:#4a4838;cursor:pointer;
+    transition:background .15s ease,color .15s ease;
+  }
+  .nav-item:hover{background:rgba(63,74,52,0.07);color:var(--green-deep);}
+  .nav-item.active{background:var(--paper);color:var(--green-deep);font-weight:600;box-shadow:var(--shadow-soft);}
+  .nav-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;background:var(--cream-deep);color:var(--green-deep);}
+  .nav-item.active .nav-num{background:var(--green-deep);color:#fff;}
+  .nav-label{flex:1;min-width:0;}
+  .nav-dot{width:8px;height:8px;border-radius:50%;background:var(--terracotta);flex-shrink:0;display:none;}
+  .nav-item.is-dirty .nav-dot{display:block;}
+  .side-sep{height:1px;background:var(--line);margin:10px 12px;}
+  .side-tip{margin-top:18px;font-size:0.8rem;color:var(--muted);line-height:1.55;padding:14px;border:1px dashed var(--line);border-radius:12px;}
+  .side-tip strong{color:var(--green-deep);}
 
   .lang-panel{display:none;}
   .lang-panel.active{display:block;}
 
-  .section-card{background:var(--white);border-radius:18px;box-shadow:0 8px 26px -16px rgba(43,42,34,0.3);padding:28px 30px;margin-bottom:22px;}
-  .section-card h2{font-size:1.25rem;margin-bottom:0.9em;padding-bottom:0.5em;border-bottom:1px solid #eee2cd;}
-  .section-card h3{font-size:1rem;color:var(--terracotta-dark);margin:1.2em 0 0.6em;}
-  .item-box{background:#faf6ec;border:1px solid #eee2cd;border-radius:12px;padding:16px 18px;margin-bottom:14px;}
-  .item-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
-  .item-head h3{margin-top:0.2em;}
-  .btn-small{padding:7px 14px;font-size:0.8rem;border-radius:100px;cursor:pointer;font-family:inherit;font-weight:600;}
-  .btn-remove{background:transparent;color:#a3492e;border:1.5px solid #d9b3a6;}
-  .btn-remove:hover{background:#a3492e;color:#fff;border-color:#a3492e;}
-  .btn-add{background:var(--green-deep);color:#fff;border:0;padding:11px 20px;font-size:0.88rem;}
-  .btn-add:hover{opacity:0.9;}
-  .photo-row{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:center;}
-  .photo-row img{width:120px;height:90px;object-fit:cover;border-radius:10px;background:#e7ddc7;display:block;}
+  /* ---------- Onderdeel-kaarten ---------- */
+  .section-card{display:none;background:var(--paper);border:1px solid var(--line-soft);border-radius:var(--radius);box-shadow:var(--shadow-soft);padding:30px 32px 26px;}
+  .section-card.is-current{display:block;}
+  .section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line-soft);}
+  .section-head h2{font-size:1.5rem;margin:0;}
+  .section-hint{margin:4px 0 0;color:var(--muted);font-size:0.9rem;}
+  .lang-badge{flex-shrink:0;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-deep);background:var(--cream);border:1px solid var(--line);border-radius:100px;padding:5px 11px;}
+  .section-card h3{font-size:1.02rem;color:var(--terracotta-dark);margin:1.4em 0 0.7em;}
+  .section-card > h3:first-of-type, .section-head + h3{margin-top:0.4em;}
+  .sub-block{border-top:1px solid var(--line-soft);padding-top:6px;margin-top:6px;}
+
+  /* Inklapbare items (FAQ, weekenden, dagen …) */
+  .item-box{background:var(--white);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;transition:border-color .2s ease, box-shadow .2s ease;}
+  .item-box:hover{border-color:#dccdb0;}
+  details.item-box[open]{box-shadow:var(--shadow-soft);border-color:#dccdb0;}
+  .item-summary{list-style:none;display:flex;align-items:center;gap:12px;padding:13px 16px;cursor:pointer;user-select:none;}
+  .item-summary::-webkit-details-marker{display:none;}
+  .item-summary::before{
+    content:"";width:8px;height:8px;flex-shrink:0;border-right:2px solid var(--green-mid);border-bottom:2px solid var(--green-mid);
+    transform:rotate(-45deg);transition:transform .2s ease;margin:0 4px 0 2px;
+  }
+  details[open] > .item-summary::before{transform:rotate(45deg);}
+  .item-title{font-weight:600;color:var(--green-deep);font-size:0.92rem;flex-shrink:0;}
+  .item-preview{color:var(--muted);font-size:0.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1;}
+  .item-body{padding:4px 18px 14px;border-top:1px solid var(--line-soft);}
+  .item-body > .grid-2{padding-top:14px;}
+  .item-foot{display:flex;justify-content:flex-end;padding-top:4px;}
+  .item-box .item-box{background:var(--cream);}
+  .list-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px;}
+
+  /* Galerij-foto's */
+  .photo-list{display:grid;gap:10px;}
+  .photo-list .item-box{margin:0;padding:12px;}
+  .photo-row{display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:center;}
+  .photo-row img{width:110px;height:82px;object-fit:cover;border-radius:9px;background:#e7ddc7;display:block;}
   .photo-row .field{margin-bottom:0;}
   .photo-actions{display:flex;flex-direction:column;gap:8px;align-items:stretch;}
-  .btn-replace{background:transparent;color:var(--green-deep);border:1.5px solid rgba(63,74,52,0.35);text-align:center;}
-  .btn-replace:hover{background:var(--green-deep);color:#fff;}
-  .photo-new{outline:2px solid var(--terracotta);}
-  .photo-count{font-size:0.85rem;color:#8a8266;margin-left:12px;}
-  .btn-add.is-disabled{opacity:0.45;pointer-events:none;}
-  @media (max-width:640px){.photo-row{grid-template-columns:90px 1fr;}.photo-row img{width:90px;height:68px;}.photo-actions{grid-column:1/3;flex-direction:row;}}
-  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  @media (max-width:640px){.grid-2{grid-template-columns:1fr;}}
+  .photo-new{border-color:var(--terracotta) !important;box-shadow:0 0 0 1px var(--terracotta);}
+  .photo-count{font-size:0.85rem;color:var(--muted);}
 
-  .note{font-size:0.85rem;color:#8a8266;background:var(--cream-deep);border-radius:10px;padding:10px 14px;margin-bottom:22px;}
-
-  /* IMAGES */
-  .img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;}
-  .img-item{background:var(--white);border-radius:14px;box-shadow:0 8px 24px -16px rgba(43,42,34,0.3);overflow:hidden;}
+  /* Overige foto's */
+  .img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px;}
+  .img-item{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
   .img-item img{width:100%;height:130px;object-fit:cover;display:block;background:#e7ddc7;}
-  .img-item .meta{padding:10px 12px;}
-  .img-item .meta code{font-size:0.72rem;color:#8a8266;word-break:break-all;}
-  .img-item input[type=file]{width:100%;font-size:0.72rem;margin-top:8px;}
-  .img-item.changed{outline:2px solid var(--terracotta);}
+  .img-item .meta{padding:11px 12px 12px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .img-item .meta strong{font-size:0.86rem;color:var(--green-deep);line-height:1.35;}
+  .img-item .meta code{font-size:0.7rem;color:var(--muted);word-break:break-all;}
+  .img-item .btn-replace{margin-top:auto;}
+  .img-item.changed{border-color:var(--terracotta);box-shadow:0 0 0 1px var(--terracotta);}
 
+  /* Vorige / volgende */
+  .pager{display:flex;justify-content:space-between;gap:12px;margin-top:18px;}
+  .pager button{border:0;background:transparent;font-family:inherit;font-size:0.88rem;font-weight:600;color:var(--green-mid);cursor:pointer;padding:8px 4px;}
+  .pager button:hover{color:var(--terracotta-dark);}
+  .pager button[hidden]{display:block;visibility:hidden;}
+
+  /* Publiceerbalk */
   .publish-bar{
-    position:sticky;bottom:0;background:rgba(248,242,230,0.97);backdrop-filter:blur(8px);
-    border-top:1px solid rgba(63,74,52,0.15);padding:16px 0;margin-top:10px;
-    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:20;
+    position:sticky;bottom:0;z-index:25;background:rgba(255,253,248,0.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);
   }
-  .publish-bar .msg{margin:0;flex:1;min-width:220px;}
+  .publish-inner{max-width:1280px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .publish-bar .msg{margin:0;flex:1;min-width:0;}
+  .publish-bar .btn-primary{flex-shrink:0;min-width:150px;}
+
+  /* ---------- Tablet & telefoon ---------- */
+  @media (max-width: 960px){
+    :root{--topbar-h:auto;}
+    .topbar{height:auto;}
+    .topbar-inner{flex-wrap:wrap;padding:12px 16px;gap:10px 14px;}
+    .tabs{order:3;margin:0;width:100%;justify-content:center;}
+    .tab-btn{flex:1;padding:7px 8px;}
+    .header-actions{margin-left:auto;}
+    .layout{grid-template-columns:1fr;padding:16px 16px 32px;gap:16px;}
+    .sidebar{position:static;max-height:none;overflow:visible;padding:0;}
+    .side-title, .side-tip, .side-sep{display:none;}
+    #sectionNav{flex-direction:row;overflow-x:auto;gap:6px;padding:2px 2px 8px;scrollbar-width:thin;}
+    .nav-item{width:auto;flex-shrink:0;padding:8px 12px;background:var(--paper);border:1px solid var(--line);}
+    .nav-item.active{border-color:var(--green-deep);}
+    .nav-num{display:none;}
+    .section-card{padding:22px 18px 18px;}
+    .section-head h2{font-size:1.3rem;}
+  }
+  @media (max-width: 640px){
+    .grid-2{grid-template-columns:1fr;}
+    .brand-row span{display:none;}
+    .header-actions .btn-sm{padding:7px 12px;font-size:0.8rem;}
+    .photo-row{grid-template-columns:84px 1fr;}
+    .photo-row img{width:84px;height:64px;}
+    .photo-actions{grid-column:1/-1;flex-direction:row;}
+    .photo-actions .btn-small{flex:1;}
+    .publish-inner{padding:12px 16px;}
+    .publish-bar .msg{font-size:0.8rem;}
+    .publish-bar .btn-primary{min-width:0;padding:12px 20px;}
+    .lang-badge{display:none;}
+  }
 </style>
 </head>
 <body>
 
-<!-- LOGIN -->
+<!-- INLOGGEN -->
 <div id="loginScreen">
   <div class="login-card">
     <img src="../images/logo.png" alt="Wildcore Retreats">
@@ -138,39 +250,58 @@
 
 <!-- EDITOR -->
 <div id="editorScreen" class="hidden">
-  <header>
-    <div class="wrap">
+  <header class="topbar">
+    <div class="topbar-inner">
       <div class="brand-row">
         <img src="../images/logo.png" alt="Wildcore Retreats">
         <span>Wildcore CMS</span>
       </div>
+      <div class="tabs" id="langTabs" aria-label="Taal">
+        <button class="tab-btn active" data-lang="nl">🇳🇱 Nederlands</button>
+        <button class="tab-btn" data-lang="en">🇬🇧 English</button>
+        <button class="tab-btn" data-lang="es">🇪🇸 Español</button>
+      </div>
       <div class="header-actions">
-        <a href="../index.html" target="_blank" class="btn btn-ghost" style="padding:9px 18px;font-size:0.85rem;">Bekijk site ↗</a>
-        <button class="btn btn-ghost" id="logoutBtn" style="padding:9px 18px;font-size:0.85rem;">Uitloggen</button>
+        <a href="../index.html" target="_blank" class="btn btn-ghost btn-sm">Bekijk site ↗</a>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn">Uitloggen</button>
       </div>
     </div>
   </header>
 
-  <div class="wrap">
-    <div class="note">Je kunt hier alle teksten van de website aanpassen, inclusief de FAQ en de algemene voorwaarden (onderaan, bij &ldquo;Praktisch &amp; voorwaarden&rdquo;). Let op: de menu-items en de cijfers in de balk met kilometers en hoogtemeters staan bewust vast. Wil je die wijzigen, neem dan contact op met je ontwikkelaar. Laat juridische teksten altijd nakijken voordat je publiceert.</div>
+  <div class="layout">
+    <aside class="sidebar">
+      <p class="side-title">Onderdelen</p>
+      <nav id="sectionNav" aria-label="Onderdelen van de website"></nav>
+      <div class="side-tip">
+        <strong>Goed om te weten</strong><br>
+        Wijzigingen worden pas live als je op <em>Publiceren</em> klikt. De menu-items en de cijfers in de km/hoogtemeter-balk staan bewust vast; vraag daarvoor je ontwikkelaar. Laat juridische teksten altijd nakijken voordat je publiceert.
+      </div>
+    </aside>
 
-    <div class="tabs" id="langTabs">
-      <button class="tab-btn active" data-lang="nl">🇳🇱 Nederlands</button>
-      <button class="tab-btn" data-lang="en">🇬🇧 English</button>
-      <button class="tab-btn" data-lang="es">🇪🇸 Español</button>
-    </div>
+    <main>
+      <div id="formHost"></div>
 
-    <div id="formHost"></div>
+      <section class="section-card" id="imagesCard" data-section="__images">
+        <div class="section-head">
+          <div>
+            <h2>Overige foto's</h2>
+            <p class="section-hint">Vervang een foto die op een vaste plek op de site staat. De plek blijft hetzelfde, alleen de foto verandert. Geldt voor alle talen.</p>
+          </div>
+        </div>
+        <div class="img-grid" id="imageGrid"></div>
+      </section>
 
-    <h2 style="margin-top:36px;">Foto's</h2>
-    <p class="note">Upload een nieuwe foto om een bestaande te vervangen. De naam en plek van de foto op de website blijven hetzelfde — je vervangt alleen de inhoud.</p>
-    <div class="img-grid" id="imageGrid"></div>
+      <div class="pager">
+        <button type="button" id="prevSection">← Vorige</button>
+        <button type="button" id="nextSection">Volgende →</button>
+      </div>
+    </main>
   </div>
 
   <div class="publish-bar">
-    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;width:100%;">
-      <div id="publishMsg" class="msg info" style="flex:1;min-width:220px;">Wijzigingen worden pas live zodra je op "Publiceren" klikt.</div>
-      <button class="btn btn-primary" id="publishBtn" style="width:auto;">Publiceren</button>
+    <div class="publish-inner">
+      <div id="publishMsg" class="msg info">Wijzigingen worden pas live zodra je op "Publiceren" klikt.</div>
+      <button class="btn btn-primary" id="publishBtn">Publiceren</button>
     </div>
   </div>
 </div>
@@ -191,9 +322,40 @@
   ];
 
   const SECTION_TITLES = {
-    hero:"Hero (bovenaan de pagina)", intro:"Waarom Wildcore", features:"5 kenmerken",
-    gallery:"Galerij — introtekst", program:"Programma", villa:"Villa", host:"Gastheer",
-    pricing:"Prijzen", dates:"Data & edities", practical:"Praktisch & voorwaarden", contact:"Contact"
+    hero:"Hero", intro:"Waarom Wildcore", features:"Kenmerken",
+    gallery:"Galerij", program:"Programma", villa:"Villa", host:"Gastheer",
+    pricing:"Prijzen", dates:"Agenda", practical:"Praktisch & voorwaarden", contact:"Contact",
+    __images:"Overige foto's"
+  };
+  const SECTION_HINTS = {
+    hero:"De grote foto met titel en knoppen bovenaan de pagina.",
+    intro:"Het blok ‘Waarom Wildcore’ direct onder de hero.",
+    features:"De kenmerken met foto, verderop op de pagina.",
+    gallery:"De fotogalerij ‘In beeld’: introtekst en foto's.",
+    program:"Het weekendprogramma, per dag met routes en dagindeling.",
+    villa:"Beschrijving en voorzieningen van Villa El Pinar.",
+    host:"Het blok over je gastheer.",
+    pricing:"De prijskaart, wat er inbegrepen is en de varianten (trail/hike).",
+    dates:"De agenda: welke weekenden er zijn en wanneer.",
+    practical:"Veelgestelde vragen en de algemene voorwaarden.",
+    contact:"Contactgegevens onderaan de pagina."
+  };
+  const IMAGE_LABELS = {
+    "trail-runner-forest.jpg":"Hero-achtergrond (bovenaan)",
+    "trail-descent-autumn.jpg":"Foto bij een kenmerk",
+    "host-portrait.jpg":"Gastheer",
+    "ruins-viewpoint.jpg":"Programma — dag 1",
+    "villa-exterior.jpg":"Villa",
+    "river-canyon.jpg":"Programma — dag 2",
+    "pool-sunset.jpg":"Contact-achtergrond, villa & kenmerk",
+    "valley-view.jpg":"Foto bij een kenmerk",
+    "canyon-cliffs.jpg":"Foto bij een kenmerk",
+    "waterfall-steps.jpg":"Programma — dag 3",
+    "villa-flowers.jpg":"Villa",
+    "mountain-steps-trail.jpg":"Foto bij een kenmerk",
+    "og-cover.jpg":"Voorbeeldfoto bij delen (WhatsApp, social media)",
+    "logo-mark.png":"Logo-embleem op de site",
+    "logo.png":"Logo (inlogscherm en Google)"
   };
   const LABELS = {
     features:"Kenmerk",
@@ -234,13 +396,13 @@
     if (typeof value === 'string') {
       const id = 'f_' + path.replace(/[^a-zA-Z0-9]/g, '_');
       const tag = MULTILINE.has(keyName) || value.length > 60 ? 'textarea' : 'input';
-      const rows = tag === 'textarea' ? ' rows="3"' : '';
+      const rows = tag === 'textarea' ? ' rows="1"' : '';
       const inputType = keyName === 'endDate' ? 'date' : 'text';
       const inputEl = tag === 'textarea'
         ? `<textarea id="${id}" data-path="${path}"${rows}>${escapeHtml(value)}</textarea>`
         : `<input type="${inputType}" id="${id}" data-path="${path}" value="${escapeAttr(value)}">`;
       const displayLabel = labelFor(keyName) + (indexSuffix ? ' ' + indexSuffix : '');
-      return `<div class="field"><label for="${id}">${displayLabel}</label>${inputEl}</div>`;
+      return `<div class="field${tag === 'textarea' ? ' wide' : ''}"><label for="${id}">${displayLabel}</label>${inputEl}</div>`;
     }
     if (Array.isArray(value) && path === 'gallery.photos') {
       return buildGalleryPhotos(value);
@@ -253,29 +415,31 @@
       }
       value.forEach((item, i) => {
         if (typeof item === 'object' && item !== null) {
-          const head = isEditions
-            ? `<div class="item-head"><h3>${labelFor(keyName)} ${i + 1}</h3><button type="button" class="btn-small btn-remove" data-remove-edition="${i}">Verwijderen</button></div>`
-            : `<h3>${labelFor(keyName)} ${i + 1}</h3>`;
-          html += `<div class="item-box">${head}<div class="grid-2">`;
+          const itemPath = path + '.' + i;
+          html += `<details class="item-box" data-item="${itemPath}"${openItems.has(itemPath) ? ' open' : ''}>`
+            + `<summary class="item-summary"><span class="item-title">${labelFor(keyName)} ${i + 1}</span><span class="item-preview"></span></summary>`
+            + `<div class="item-body"><div class="grid-2">`;
           Object.keys(item).forEach(k => {
-            html += buildNode(item[k], path + '.' + i + '.' + k, k, depth + 1);
+            html += buildNode(item[k], itemPath + '.' + k, k, depth + 1);
           });
-          html += `</div></div>`;
+          html += `</div>`;
+          if (isEditions) html += `<div class="item-foot"><button type="button" class="btn-small btn-remove" data-remove-edition="${i}">Weekend verwijderen</button></div>`;
+          html += `</div></details>`;
         } else {
           html += buildNode(item, path + '.' + i, keyName, depth + 1, i + 1);
         }
       });
       if (isEditions) {
-        html += `<button type="button" class="btn-small btn-add" data-add-edition>+ Weekend toevoegen</button>`;
+        html += `<div class="list-actions"><button type="button" class="btn-small btn-add" data-add-edition>+ Weekend toevoegen</button></div>`;
       }
       return html;
     }
     if (typeof value === 'object' && value !== null) {
-      let html = depth > 0 ? `<h3>${labelFor(keyName)}</h3><div class="grid-2">` : '';
+      let html = depth > 0 ? `<div class="sub-block"><h3>${labelFor(keyName)}</h3><div class="grid-2">` : '';
       Object.keys(value).forEach(k => {
         html += buildNode(value[k], path + '.' + k, k, depth + 1);
       });
-      html += depth > 0 ? `</div>` : '';
+      html += depth > 0 ? `</div></div>` : '';
       return html;
     }
     return '';
@@ -284,7 +448,8 @@
   // ---------- Galerij-foto's ----------
   const MAX_GALLERY = 20;
   function buildGalleryPhotos(photos){
-    let html = `<h3>Galerij-foto's</h3><p class="note">De eerste 8 foto's staan op de pagina; de rest zie je via de "+ foto's"-tegel. Toevoegen, vervangen en verwijderen gebeurt in alle talen tegelijk; de omschrijving vul je per taal in. Maximaal ${MAX_GALLERY} foto's.</p>`;
+    let html = `<div class="sub-block"><h3>Foto's in de galerij</h3><p class="note">De eerste 8 foto's staan op de pagina; de rest zie je via de "+ foto's"-tegel. Toevoegen, vervangen en verwijderen gebeurt in alle talen tegelijk; de omschrijving vul je per taal in. Maximaal ${MAX_GALLERY} foto's.</p>`;
+    html += `<div class="photo-list">`;
     photos.forEach((p, i) => {
       const src = changedImages[p.image] || ('../' + p.image);
       const id = 'f_gallery_photos_' + i + '_alt';
@@ -299,8 +464,8 @@
         </div></div></div>`;
     });
     const full = photos.length >= MAX_GALLERY;
-    html += `<label class="btn-small btn-add${full ? ' is-disabled' : ''}">+ Foto toevoegen<input type="file" accept="image/*" multiple data-gallery-add hidden${full ? ' disabled' : ''}></label>`
-         + `<span class="photo-count">${photos.length} van ${MAX_GALLERY} foto's</span>`;
+    html += `</div><div class="list-actions"><label class="btn-small btn-add${full ? ' is-disabled' : ''}">+ Foto toevoegen<input type="file" accept="image/*" multiple data-gallery-add hidden${full ? ' disabled' : ''}></label>`
+         + `<span class="photo-count">${photos.length} van ${MAX_GALLERY} foto's</span></div></div>`;
     return html;
   }
 
@@ -333,13 +498,134 @@
 
   function renderLangForm(lang, data){
     let html = '';
+    const langName = { nl:'Nederlands', en:'English', es:'Español' }[lang];
     Object.keys(data).forEach(section => {
-      html += `<div class="section-card"><h2>${SECTION_TITLES[section] || labelFor(section)}</h2>`;
+      html += `<section class="section-card" data-section="${section}">`
+        + `<div class="section-head"><div><h2>${SECTION_TITLES[section] || labelFor(section)}</h2>`
+        + (SECTION_HINTS[section] ? `<p class="section-hint">${SECTION_HINTS[section]}</p>` : '')
+        + `</div><span class="lang-badge">${langName}</span></div>`;
       html += buildNode(data[section], section, section, 0);
-      html += `</div>`;
+      html += `</section>`;
     });
     return html;
   }
+
+  // ---------- Navigatie per onderdeel ----------
+  let openItems = new Set();
+  let currentSection = null;
+  try { currentSection = sessionStorage.getItem('wildcore_cms_section'); } catch (e) {}
+  function sectionKeys(){
+    const keys = Object.keys(contentData.nl || {});
+    keys.push('__images');
+    return keys;
+  }
+  function renderNav(){
+    const nav = document.getElementById('sectionNav');
+    nav.innerHTML = sectionKeys().map((k, i) =>
+      (k === '__images' ? '<div class="side-sep"></div>' : '')
+      + `<button type="button" class="nav-item" data-nav="${k}"><span class="nav-num">${k === '__images' ? '◎' : i + 1}</span>`
+      + `<span class="nav-label">${SECTION_TITLES[k] || labelFor(k)}</span><span class="nav-dot" title="Niet-gepubliceerde wijzigingen"></span></button>`
+    ).join('');
+    updateDirtyUi();
+  }
+  function showSection(key, scroll){
+    const keys = sectionKeys();
+    if (!keys.includes(key)) key = keys[0];
+    currentSection = key;
+    try { sessionStorage.setItem('wildcore_cms_section', key); } catch (e) {}
+    document.querySelectorAll('.section-card[data-section]').forEach(el => {
+      el.classList.toggle('is-current', el.getAttribute('data-section') === key);
+    });
+    document.querySelectorAll('.nav-item').forEach(el => {
+      const on = el.getAttribute('data-nav') === key;
+      el.classList.toggle('active', on);
+      if (on && window.matchMedia('(max-width: 960px)').matches) el.scrollIntoView({block:'nearest', inline:'center'});
+    });
+    const i = keys.indexOf(key);
+    const prev = document.getElementById('prevSection'), next = document.getElementById('nextSection');
+    prev.hidden = i <= 0; next.hidden = i >= keys.length - 1;
+    if (i > 0) prev.textContent = '← ' + (SECTION_TITLES[keys[i - 1]] || labelFor(keys[i - 1]));
+    if (i < keys.length - 1) next.textContent = (SECTION_TITLES[keys[i + 1]] || labelFor(keys[i + 1])) + ' →';
+    autosizeVisible();
+    if (scroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  document.getElementById('sectionNav').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-nav]');
+    if (b) showSection(b.getAttribute('data-nav'), true);
+  });
+  document.getElementById('prevSection').addEventListener('click', () => {
+    const k = sectionKeys(); showSection(k[k.indexOf(currentSection) - 1], true);
+  });
+  document.getElementById('nextSection').addEventListener('click', () => {
+    const k = sectionKeys(); showSection(k[k.indexOf(currentSection) + 1], true);
+  });
+
+  // Tekstvakken groeien mee met de inhoud
+  function autosize(el){
+    if (!el || el.tagName !== 'TEXTAREA' || !el.offsetParent) return;
+    el.style.height = 'auto';
+    el.style.height = (el.scrollHeight + 3) + 'px';
+  }
+  function autosizeVisible(){
+    document.querySelectorAll('.lang-panel.active .section-card.is-current textarea').forEach(autosize);
+  }
+
+  // Korte samenvatting in de kop van een ingeklapt item
+  function updatePreview(det){
+    const prev = det.querySelector(':scope > .item-summary .item-preview');
+    if (!prev) return;
+    const body = det.querySelector(':scope > .item-body > .grid-2');
+    if (!body) return;
+    const own = Array.prototype.filter.call(body.querySelectorAll(':scope > .field input[data-path], :scope > .field textarea[data-path]'), el => el.type !== 'hidden' && el.type !== 'date');
+    let text;
+    if (/^dates\.editions\.\d+$/.test(det.getAttribute('data-item'))) {
+      text = own.filter(el => /\.(type|days)$/.test(el.getAttribute('data-path'))).map(el => el.value.trim()).filter(Boolean).join(' · ');
+    } else {
+      const firstFilled = own.find(el => el.value.trim());
+      text = firstFilled ? firstFilled.value.trim() : '';
+    }
+    text = text.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ');
+    prev.textContent = text.length > 90 ? text.slice(0, 90) + '…' : text;
+  }
+
+  // ---------- Niet-gepubliceerde wijzigingen bijhouden ----------
+  const dirtySections = new Set();
+  const dirtyFields = new Set();
+  function markDirty(section, fieldKey){
+    if (section) dirtySections.add(section);
+    if (fieldKey) dirtyFields.add(fieldKey);
+    updateDirtyUi();
+  }
+  function clearDirty(){
+    dirtySections.clear(); dirtyFields.clear();
+    document.querySelectorAll('.field.is-dirty').forEach(el => el.classList.remove('is-dirty'));
+    updateDirtyUi();
+  }
+  function updateDirtyUi(){
+    document.querySelectorAll('.nav-item').forEach(el => el.classList.toggle('is-dirty', dirtySections.has(el.getAttribute('data-nav'))));
+    const msg = document.getElementById('publishMsg');
+    if (!msg || msg.dataset.busy) return;
+    if (dirtySections.size) {
+      const names = Array.from(dirtySections).map(k => SECTION_TITLES[k] || labelFor(k));
+      msg.className = 'msg warn';
+      msg.textContent = 'Nog niet gepubliceerd: wijzigingen in ' + names.join(', ') + '.';
+    } else if (!msg.classList.contains('success') && !msg.classList.contains('error')) {
+      msg.className = 'msg info';
+      msg.textContent = 'Wijzigingen worden pas live zodra je op "Publiceren" klikt.';
+    }
+  }
+  function restoreDirtyFields(){
+    dirtyFields.forEach(key => {
+      const [lang, path] = key.split('|');
+      const el = document.querySelector('#panel_' + lang + ' [data-path="' + path + '"]');
+      const field = el && el.closest('.field');
+      if (field) field.classList.add('is-dirty');
+    });
+  }
+  window.addEventListener('beforeunload', (e) => {
+    if (!dirtySections.size || !sessionToken) return;
+    e.preventDefault(); e.returnValue = '';
+  });
 
   function renderAllForms(activeLang){
     activeLang = activeLang || 'nl';
@@ -352,6 +638,10 @@
       panel.innerHTML = renderLangForm(lang, contentData[lang]);
       host.appendChild(panel);
     });
+    host.querySelectorAll('details.item-box').forEach(updatePreview);
+    restoreDirtyFields();
+    if (!document.querySelector('#sectionNav .nav-item')) renderNav();
+    showSection(currentSection);
   }
 
   function collectLangData(lang){
@@ -382,6 +672,7 @@
       d[section][key] = d[section][key] || [];
       change(d[section][key], lang);
     });
+    markDirty(section);
     renderAllForms(keepLang);
     window.scrollTo(0, scrollY);
   }
@@ -448,7 +739,11 @@
         eds.push(fresh);
       });
       const boxes = document.querySelectorAll('.lang-panel.active [data-remove-edition]');
-      if (boxes.length) boxes[boxes.length - 1].closest('.item-box').scrollIntoView({behavior:'smooth', block:'center'});
+      if (boxes.length) {
+        const box = boxes[boxes.length - 1].closest('.item-box');
+        box.open = true;
+        box.scrollIntoView({behavior:'smooth', block:'center'});
+      }
     } else if (remove) {
       const i = parseInt(remove.getAttribute('data-remove-edition'), 10);
       const label = (contentData[activeLang()].dates.editions[i] || {});
@@ -460,9 +755,27 @@
   // Laatste dag in alle talen gelijk houden
   document.getElementById('formHost').addEventListener('input', (e) => {
     const p = e.target.getAttribute('data-path') || '';
+    if (p) {
+      const panel = e.target.closest('.lang-panel');
+      const lang = panel ? panel.id.replace('panel_', '') : 'nl';
+      const field = e.target.closest('.field');
+      if (field) field.classList.add('is-dirty');
+      markDirty(p.split('.')[0], lang + '|' + p);
+      autosize(e.target);
+      const det = e.target.closest('details.item-box');
+      if (det) updatePreview(det);
+    }
     if (!/^dates\.editions\.\d+\.endDate$/.test(p)) return;
     document.querySelectorAll('[data-path="' + p + '"]').forEach(el => { if (el !== e.target) el.value = e.target.value; });
   });
+
+  document.getElementById('formHost').addEventListener('toggle', (e) => {
+    const det = e.target;
+    if (!det.matches || !det.matches('details.item-box')) return;
+    const key = det.getAttribute('data-item');
+    if (det.open) { openItems.add(key); det.querySelectorAll('textarea').forEach(autosize); }
+    else openItems.delete(key);
+  }, true);
 
   // ---------- Tabs ----------
   document.getElementById('langTabs').addEventListener('click', (e) => {
@@ -473,6 +786,7 @@
     const lang = btn.getAttribute('data-lang');
     document.querySelectorAll('.lang-panel').forEach(p => p.classList.remove('active'));
     document.getElementById('panel_' + lang).classList.add('active');
+    autosizeVisible();
   });
 
   // ---------- Images ----------
@@ -485,10 +799,11 @@
       item.className = 'img-item';
       item.id = 'img_' + file.replace(/[^a-zA-Z0-9]/g, '_');
       item.innerHTML = `
-        <img src="../${path}" alt="${file}">
+        <img src="../${path}" alt="${file}" loading="lazy">
         <div class="meta">
+          <strong>${IMAGE_LABELS[file] || file}</strong>
           <code>${file}</code>
-          <input type="file" accept="image/*" data-image-path="${path}">
+          <label class="btn-small btn-replace">Foto vervangen<input type="file" accept="image/*" data-image-path="${path}" hidden></label>
         </div>`;
       grid.appendChild(item);
     });
@@ -516,11 +831,13 @@
         ctx.drawImage(img, 0, 0, w, h);
         const out = isPng ? canvas.toDataURL('image/png') : canvas.toDataURL('image/jpeg', 0.72);
         changedImages[path] = out;
+        markDirty('__images');
         item.classList.add('changed');
         item.querySelector('img').src = out;
       };
       img.onerror = () => {
         changedImages[path] = reader.result;
+        markDirty('__images');
         item.classList.add('changed');
         item.querySelector('img').src = reader.result;
       };
@@ -563,6 +880,8 @@
   });
 
   document.getElementById('logoutBtn').addEventListener('click', () => {
+    if (dirtySections.size && !confirm('Je hebt wijzigingen die nog niet gepubliceerd zijn. Toch uitloggen? Deze wijzigingen gaan dan verloren.')) return;
+    clearDirty();
     sessionStorage.removeItem('wildcore_cms_token');
     sessionToken = null;
     document.getElementById('editorScreen').classList.add('hidden');
@@ -592,6 +911,7 @@
       return;
     }
     btn.disabled = true; btn.textContent = 'Bezig met publiceren...';
+    msg.dataset.busy = '1';
     msg.className = 'msg info';
     msg.textContent = 'Wijzigingen worden gepubliceerd...';
 
@@ -610,17 +930,21 @@
       });
       const data = await res.json();
       if (!res.ok) {
+        delete msg.dataset.busy;
         msg.className = 'msg error';
         msg.textContent = data.error || 'Publiceren is mislukt.';
         btn.disabled = false; btn.textContent = 'Publiceren';
         return;
       }
+      delete msg.dataset.busy;
+      clearDirty();
       msg.className = 'msg success';
       msg.textContent = 'Gepubliceerd! De website wordt bijgewerkt — dit kan tot ongeveer een minuut duren.';
       changedImages = {};
       document.querySelectorAll('.img-item.changed').forEach(el => el.classList.remove('changed'));
       contentData = content;
     } catch (err) {
+      delete msg.dataset.busy;
       msg.className = 'msg error';
       msg.textContent = 'Kon geen verbinding maken met de CMS-backend.';
     }
