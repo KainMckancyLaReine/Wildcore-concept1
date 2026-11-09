@@ -276,6 +276,16 @@
         "price": "€595 pp",
         "status": "Places available",
         "formLabel": "trail weekend — 12, 13, 14 March 2027 · €595"
+      },
+      {
+        "type": "Trail",
+        "month": "",
+        "days": "",
+        "endDate": "",
+        "weekdays": "Friday to Sunday",
+        "price": "€595 pp",
+        "status": "Places available",
+        "formLabel": ""
       }
     ],
     "cta": "Request this date",
