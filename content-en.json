@@ -286,6 +286,36 @@
         "price": "€595 pp",
         "status": "Places available",
         "formLabel": ""
+      },
+      {
+        "type": "Trail",
+        "month": "",
+        "days": "",
+        "endDate": "",
+        "weekdays": "Friday to Sunday",
+        "price": "€595 pp",
+        "status": "Places available",
+        "formLabel": ""
+      },
+      {
+        "type": "Trail",
+        "month": "",
+        "days": "",
+        "endDate": "",
+        "weekdays": "Friday to Sunday",
+        "price": "€595 pp",
+        "status": "Places available",
+        "formLabel": ""
+      },
+      {
+        "type": "Trail",
+        "month": "",
+        "days": "",
+        "endDate": "",
+        "weekdays": "Friday to Sunday",
+        "price": "€595 pp",
+        "status": "Places available",
+        "formLabel": ""
       }
     ],
     "cta": "Request this date",
